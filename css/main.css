@@ -1341,7 +1341,7 @@ img:hover {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #d08cc8;
+  background: #e2afff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
