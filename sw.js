@@ -26,6 +26,10 @@ var precacheUrls = [];
 
   precacheUrls.push('/2020/09/06/e812d43c41a8/');
 
+  precacheUrls.push('/2020/09/14/92bc5d86a1a4/');
+
+  precacheUrls.push('/2020/09/14/f47ba8306040/');
+
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":5};
 
