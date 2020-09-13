@@ -103,9 +103,10 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
+- type: git
+  repo: https://openharmony.gitee.com/Courage-He/courage-he.git
+- type: git
   repo: https://github.com/CourageHe/CourageHe.github.io.git
-  branch: master
 
 #Progressive Web Apps
 pwa:
