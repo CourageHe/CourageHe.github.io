@@ -401,7 +401,7 @@
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Courage He</span>
     <span class="post-meta-divider">|</span>
@@ -426,7 +426,7 @@
 <script>
     var now = new Date();
     function createtime() {
-        var grt= new Date("08/13/2018 00:00:00");
+        var grt= new Date("09/12/2020 00:00:00");//此处修改你的建站时间或者网站上线时间 
         now.setTime(now.getTime()+250);
         days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
         hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
@@ -515,8 +515,9 @@
 
   
 
+
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1600020114971')
+  navigator.serviceWorker.register('/sw.js?t=1600622666271')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
