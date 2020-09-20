@@ -57,8 +57,7 @@ footer:
   # Icon between year and copyright info.
   icon:
     # Icon name in Font Awesome. See: https://fontawesome.com/icons
-    # name: fa fa-heart  #如果name的值为heart表示引用fontawesome网站上的心形图标
-    name: heart 
+    name: fa fa-heart  
     # If you want to animate the icon, set it to true.
     animated: true  #如果想用动态图标应该将animated的值设为true
     # Change the color of icon, using Hex Code.
@@ -261,10 +260,9 @@ symbols_count_time:
   item_text_total: true   # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）
   awl: 4                   # Average Word Length
   wpm: 275                 # Words Per Minute（每分钟阅读词数）
-  suffix: mins.
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
-tag_icon: false
+tag_icon: true
 
 # Reward (Donate)
 # Front-matter variable (unsupport animation).
@@ -575,7 +573,7 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
-  active:
+  active: gitalk
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Lazyload all comment systems.
@@ -642,17 +640,17 @@ livere_uid: # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
 gitalk:
-  enable: false
-  github_id: # GitHub repo owner
-  repo: # Repository name to store issues
-  client_id: # GitHub Application Client ID
-  client_secret: # GitHub Application Client Secret
-  admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  enable: true
+  github_id: CourageHe # GitHub repo owner
+  repo: CourageHe.github.io # Repository name to store issues
+  client_id: 28d7fc7ce73567f9384d # GitHub Application Client ID
+  client_secret: e9fe559f9756ad0207de22b34cf552a2a8a7d0ac # GitHub Application Client Secret
+  admin_user: CourageHe # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
-  language:
+  language: zh-CN
 
 
 # ---------------------------------------------------------------
