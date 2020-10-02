@@ -191,3 +191,13 @@ symbols_count_time:
   total_symbols: true          # 站点总字数统计
   total_time: true             # 站点总阅读时长
   exclude_codeblock: false     # 排除代码字数统计
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: " "
+  order_by: -date
+  icon: icon.png

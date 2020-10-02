@@ -2,6 +2,7 @@
 title: 关于我
 date: 2020-09-14 01:31:57
 type: about
+comments: false
 ---
 ## 个人简介
 
