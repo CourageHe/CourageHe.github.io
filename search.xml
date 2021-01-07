@@ -242,6 +242,33 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux常用命令</title>
+    <url>/2021/01/07/78f8c1f0d089/</url>
+    <content><![CDATA[<h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><blockquote>
+<p>本文主要用于记录，在工作学习中经常需要使用的常见Linux命令。在<a href="https://couragehe.github.io/">CourageHe’s Blog</a>不间断更新，欢迎各位看官指教。</p>
+</blockquote>
+<p>Linux资源查看</p>
+<p>各分区使用情况</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001504.png" alt="image-20210107001503961"></p>
+<p>查看进程</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -ef</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001625.png" alt="image-20210107001625631"></p>
+<p>查看内存使用情况</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001741.png" alt="image-20210107001741107"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fre -m</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001916.png" alt="image-20210107001916338"></p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/09/06/e812d43c41a8/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
