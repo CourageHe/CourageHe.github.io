@@ -294,4 +294,92 @@
         <tag>Hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title> FRP内网穿透</title>
+    <url>/2021/01/17/d7b5f6a10a19/</url>
+    <content><![CDATA[<h1 id="FRP内网穿透"><a href="#FRP内网穿透" class="headerlink" title="FRP内网穿透"></a>FRP内网穿透</h1><blockquote>
+<p>frp 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。</p>
+</blockquote>
+<h2 id="使用缘由"><a href="#使用缘由" class="headerlink" title="使用缘由"></a>使用缘由</h2><p>因为疫情的原因，公司提前休假，在家办公。公司的测试环境还有私服GIT都是在内网下，出于安全考虑，不考虑将GIT仓库移至GITHUB、GITEE等平台。首先想到的解决方案是使用类似花生壳这种内网穿透的服务，但是考虑到服务的收费标准与本司的使用需求相差较大。公司有六、七个端口需要转发，使用期限为一个月左右，而花生壳的套餐是按年付费，且线路数有限制，增加线路另外收费。然后想到了本人在大二时候使用的一个开源的内网穿透的代理应用，比较符合公司的解决方案。</p>
+<a id="more"></a>
+<h2 id="设备环境"><a href="#设备环境" class="headerlink" title="设备环境"></a>设备环境</h2><ul>
+<li><p>一台具有公网ip的服务器</p>
+</li>
+<li><p>N台内网服务器（需要内网穿透的服务器）</p>
+</li>
+</ul>
+<h2 id="系统选型"><a href="#系统选型" class="headerlink" title="系统选型"></a>系统选型</h2><p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117180715.png" alt="image-20210117180715013"></p>
+<table>
+<thead>
+<tr>
+<th>frp支持的</th>
+<th>Linux系统架构</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>386</td>
+<td>X86架构</td>
+</tr>
+<tr>
+<td>amd64</td>
+<td>amd架构</td>
+</tr>
+<tr>
+<td>arm</td>
+<td>arm架构</td>
+</tr>
+<tr>
+<td>arm64</td>
+<td>64位arm架构</td>
+</tr>
+<tr>
+<td>mips</td>
+<td>mips架构</td>
+</tr>
+<tr>
+<td>mips64</td>
+<td>64位mips架构</td>
+</tr>
+<tr>
+<td>mipsle</td>
+<td>mipsle架构</td>
+</tr>
+<tr>
+<td>mips64le</td>
+<td>64位mipsle架构</td>
+</tr>
+</tbody></table>
+<p><a href="https://blog.csdn.net/lixuande19871015/article/details/90485929">查看Linux的系统架构</a></p>
+<h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><p>本人搭建的服务端为Centos7.X，系统架构为X86加否；客户端为Windows10，系统架构为amd64。下载解压即可，根据实际需要配置文件即可。下面给一个常用的配置模板，仅供参考。</p>
+<h3 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">bind_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set dashboard_addr and dashboard_port to view dashboard of frps</span></span><br><span class="line"><span class="comment"># dashboard_addr&#x27;s default value is same with bind_addr</span></span><br><span class="line"><span class="comment"># dashboard is available only if dashboard_port is set</span></span><br><span class="line"><span class="attr">dashboard_addr</span> = <span class="number">0.0</span>.<span class="number">0.0</span></span><br><span class="line"><span class="attr">dashboard_port</span> = <span class="number">7500</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># dashboard user and passwd for basic auth protect, if not set, both default value is admin</span></span><br><span class="line"><span class="attr">dashboard_user</span> = admin</span><br><span class="line"><span class="attr">dashboard_pwd</span> = admin</span><br></pre></td></tr></table></figure>
+
+<p><code>XX.XX.XX.XX:7500</code>为FRP的监控平台网页，账号密码为<code>admin/admin</code>.<img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117191329.png" alt="image-20210117191328912"></p>
+<p><code>bind_port</code> ：为FRP 服务器用户接收客户端连接的端口：</p>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>这种方式启动的话，将会把日志打印至<code>frp.log</code>下，用户退出该进程任然存在。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nohup ./frps -c frps.ini &gt;frp.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+
+<h4 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查找端口为7000的进程</span></span><br><span class="line">netstat -nlp | grep 7000</span><br><span class="line"><span class="comment">#杀死 pid为10263的进程</span></span><br><span class="line"><span class="built_in">kill</span> -9 10263</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">server_addr</span> = XX.XX.XX.XX</span><br><span class="line"><span class="attr">server_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line">@Windows 远程桌面</span><br><span class="line"><span class="section">[Test Windows Server Connection]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3389</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Liunx ssh</span></span><br><span class="line"><span class="section">[Test Linux Server Connection ssh]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">22</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6002</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Mysql数据库</span></span><br><span class="line"><span class="section">[Test MySQL Sever jdbc]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3306</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6003</span></span><br></pre></td></tr></table></figure>
+
+<p><code>server_addr</code>：服务器地址</p>
+<p><code>server_port</code>：服务器端口</p>
+<p><code>local_ip</code>：本地需要暴露到公网的服务地址。客户端网络环境下的ip地址皆可。</p>
+<p><code>local_port</code>：本地需要暴露到公网的服务端口</p>
+<p><code>remote_port</code>：在 frp 服务端监听的端口，访问此端口的流量将会被转发到本地服务对应的端口。</p>
+<h4 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">frpc.ext -c frpc.ini </span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>实用工具</category>
+      </categories>
+      <tags>
+        <tag>FRP</tag>
+        <tag>Liunx</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
 </search>

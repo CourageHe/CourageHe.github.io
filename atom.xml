@@ -6,7 +6,7 @@
   <link href="https://couragehe.github.io/atom.xml" rel="self"/>
   
   <link href="https://couragehe.github.io/"/>
-  <updated>2021-01-07T05:28:06.959Z</updated>
+  <updated>2021-01-17T11:45:37.850Z</updated>
   <id>https://couragehe.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title> FRP内网穿透</title>
+    <link href="https://couragehe.github.io/2021/01/17/d7b5f6a10a19/"/>
+    <id>https://couragehe.github.io/2021/01/17/d7b5f6a10a19/</id>
+    <published>2021-01-17T11:43:46.000Z</published>
+    <updated>2021-01-17T11:45:37.850Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;FRP内网穿透&quot;&gt;&lt;a href=&quot;#FRP内网穿透&quot; class=&quot;headerlink&quot; title=&quot;FRP内网穿透&quot;&gt;&lt;/a&gt;FRP内网穿透&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;frp 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;使用缘由&quot;&gt;&lt;a href=&quot;#使用缘由&quot; class=&quot;headerlink&quot; title=&quot;使用缘由&quot;&gt;&lt;/a&gt;使用缘由&lt;/h2&gt;&lt;p&gt;因为疫情的原因，公司提前休假，在家办公。公司的测试环境还有私服GIT都是在内网下，出于安全考虑，不考虑将GIT仓库移至GITHUB、GITEE等平台。首先想到的解决方案是使用类似花生壳这种内网穿透的服务，但是考虑到服务的收费标准与本司的使用需求相差较大。公司有六、七个端口需要转发，使用期限为一个月左右，而花生壳的套餐是按年付费，且线路数有限制，增加线路另外收费。然后想到了本人在大二时候使用的一个开源的内网穿透的代理应用，比较符合公司的解决方案。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="实用工具" scheme="https://couragehe.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="FRP" scheme="https://couragehe.github.io/tags/FRP/"/>
+    
+    <category term="Liunx" scheme="https://couragehe.github.io/tags/Liunx/"/>
+    
+    <category term="Windows" scheme="https://couragehe.github.io/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux常用命令</title>
