@@ -6,7 +6,7 @@
   <link href="https://couragehe.github.io/atom.xml" rel="self"/>
   
   <link href="https://couragehe.github.io/"/>
-  <updated>2021-01-17T11:45:37.850Z</updated>
+  <updated>2021-01-17T17:26:46.580Z</updated>
   <id>https://couragehe.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GitBlit安装与使用</title>
+    <link href="https://couragehe.github.io/2021/01/18/88be214e4a9f/"/>
+    <id>https://couragehe.github.io/2021/01/18/88be214e4a9f/</id>
+    <published>2021-01-17T17:25:58.000Z</published>
+    <updated>2021-01-17T17:26:46.580Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;GitBlit安装&quot;&gt;&lt;a href=&quot;#GitBlit安装&quot; class=&quot;headerlink&quot; title=&quot;GitBlit安装&quot;&gt;&lt;/a&gt;GitBlit安装&lt;/h1&gt;&lt;h2 id=&quot;1-安装&quot;&gt;&lt;a href=&quot;#1-安装&quot; class=&quot;headerlink&quot; title=&quot;1. 安装&quot;&gt;&lt;/a&gt;1. 安装&lt;/h2&gt;&lt;p&gt;要求Windows电脑安装JAVA环境，在&lt;a href=&quot;http://gitblit.github.io/gitblit/&quot;&gt;GitBlit首页&lt;/a&gt;可根据操作系统选择不同的版本安装。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200211.png&quot; alt=&quot;image-20210117200211238&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Git" scheme="https://couragehe.github.io/categories/Git/"/>
+    
+    
+    <category term="Windows" scheme="https://couragehe.github.io/tags/Windows/"/>
+    
+    <category term="Git" scheme="https://couragehe.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title> FRP内网穿透</title>

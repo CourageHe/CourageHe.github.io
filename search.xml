@@ -382,4 +382,62 @@
         <tag>Windows</tag>
       </tags>
   </entry>
+  <entry>
+    <title>GitBlit安装与使用</title>
+    <url>/2021/01/18/88be214e4a9f/</url>
+    <content><![CDATA[<h1 id="GitBlit安装"><a href="#GitBlit安装" class="headerlink" title="GitBlit安装"></a>GitBlit安装</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>要求Windows电脑安装JAVA环境，在<a href="http://gitblit.github.io/gitblit/">GitBlit首页</a>可根据操作系统选择不同的版本安装。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200211.png" alt="image-20210117200211238"></p>
+<a id="more"></a>
+
+<h2 id="2-解压"><a href="#2-解压" class="headerlink" title="2.  解压"></a>2.  解压</h2><p>文件下载后，解压至一个文件夹下即可，无需安装。下图是解压后的文件列表。</p>
+<h2 id="3-配置文件"><a href="#3-配置文件" class="headerlink" title="3. 配置文件"></a><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200502.png" alt="image-20210117200502037">3. 配置文件</h2><p>Gitblit目录下的data文件夹中的<code>defaults.properties</code>是默认配置文件，另外需要修改<code>gitblit.properties</code>以覆盖默认配置。</p>
+<ul>
+<li><code>server.httpPort</code>：http协议端口号</li>
+<li><code>server.httpBindInterface</code>：http服务器的ip地址</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># GITBLIT.PROPERTIES</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your custom settings in this file and/or include settings defined in</span></span><br><span class="line"><span class="comment"># other properties files.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Include Gitblit&#x27;s &#x27;defaults.properties&#x27; within your configuration.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># <span class="doctag">NOTE:</span> Gitblit will not automatically reload &quot;included&quot; properties.  Gitblit</span></span><br><span class="line"><span class="comment"># only watches the &#x27;gitblit.properties&#x27; file for modifications.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Paths may be relative to the $&#123;baseFolder&#125; or they may be absolute.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># COMMA-DELIMITED</span></span><br><span class="line"><span class="comment"># SINCE 1.7.0</span></span><br><span class="line"><span class="attr">include</span> = <span class="string">defaults.properties</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your overrides or custom settings below</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Standard http port to serve.  &lt;= 0 disables this connector.</span></span><br><span class="line"><span class="comment"># On Unix/Linux systems, ports &lt; 1024 require root permissions.</span></span><br><span class="line"><span class="comment"># Recommended value: 80 or 8080</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpPort</span> = <span class="string">9999</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify the interface for Jetty to bind the standard connector.</span></span><br><span class="line"><span class="comment"># You may specify an ip or an empty value to bind to all interfaces.</span></span><br><span class="line"><span class="comment"># Specifying localhost will result in Gitblit ONLY listening to requests to</span></span><br><span class="line"><span class="comment"># localhost.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpBindInterface</span> = <span class="string">localhost</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-服务启动"><a href="#4-服务启动" class="headerlink" title="4.  服务启动"></a>4.  服务启动</h2><p>GitBlit目录下，在<code>installService.cmd</code>中。</p>
+<ul>
+<li>修改ARCH，32位系统：<code>SET ARCH=x86</code>；64位系统：<code>SET ARCH=amd64</code>。</li>
+<li>添加CD为程序目录 <code>SET CD=D:\newsoft\gitblit-1.9.1</code>(安装目录)。</li>
+<li><code>StartParams</code>里的启动参数，置空</li>
+</ul>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004401.png" alt="image-20210118004401684"></p>
+<p>服务注册表中即可查看该服务，可重启、停止。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004537.png" alt="image-20210118004536991"></p>
+<h2 id="5-浏览器访问"><a href="#5-浏览器访问" class="headerlink" title="5. 浏览器访问"></a>5. 浏览器访问</h2><p>账号密码默认<code>admin/admin</code></p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004801.png" alt="image-20210118004801412"></p>
+<h1 id="GitBlit简单使用"><a href="#GitBlit简单使用" class="headerlink" title="GitBlit简单使用"></a>GitBlit简单使用</h1><h2 id="1-克隆仓库"><a href="#1-克隆仓库" class="headerlink" title="1.克隆仓库"></a>1.克隆仓库</h2><p>&emsp;&emsp;进入仓库概况页面，在版本仓库地址栏选择<code>http</code>协议的<strong>git</strong>链接，复制该链接。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029220747.png" alt="image-20201029220747735"></p>
+<p>&emsp;&emsp;选择本地合适的文件路径，打开cmd窗口克隆该仓库即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git <span class="built_in">clone</span> http://couragehe@XX.XX.XX.XX:9999/r/demo.git</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029221614.png" alt="image-20201029221614544"></p>
+<h2 id="2-账户认证"><a href="#2-账户认证" class="headerlink" title="2.账户认证"></a>2.账户认证</h2><p>&emsp;&emsp;打开项目路径的cmd窗口，推送项目至远程<code>git</code>仓库，首次推送会弹出windows安全认证，输入密码即可保存至windows。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029221556.png" alt="image-20201029221556682"></p>
+<h2 id="3-分支问题"><a href="#3-分支问题" class="headerlink" title="3.分支问题"></a>3.分支问题</h2><p><strong>gitblit</strong>中没有创建工单（分支）的按钮，但并不代表不支持分支。做法便是将git仓库拉取至本地中，新建分支然后上传至远端仓库即可。</p>
+<h3 id="3-1-显示分支列表"><a href="#3-1-显示分支列表" class="headerlink" title="3.1 显示分支列表"></a>3.1 显示分支列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch </span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-新建分支"><a href="#3-2-新建分支" class="headerlink" title="3.2 新建分支"></a>3.2 新建分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-切换分支"><a href="#3-3-切换分支" class="headerlink" title="3.3 切换分支"></a>3.3 切换分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-远程分支新建"><a href="#3-4-远程分支新建" class="headerlink" title="3.4 远程分支新建"></a>3.4 远程分支新建</h3><p>&emsp;&emsp;在本地新分支下，推送本地分支至远程仓库中的分支（非强制要求同名），使用以下命令对应即可。其中第一个分支名<code>demo</code>对应的是本地分支名，第二个分支名<code>demo</code>对应的是远程分支名。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin demo:demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-本地仓库分支关联远程分支"><a href="#3-5-本地仓库分支关联远程分支" class="headerlink" title="3.5 本地仓库分支关联远程分支"></a>3.5 本地仓库分支关联远程分支</h3><p>使用该句之前必须确保远程仓库存在该分支，否则报错。关联之后便可直接使用<code>git push</code>或者<code>git pull</code>进行推送或拉取，命令简单明了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch --<span class="built_in">set</span>-upstream-to=origin/demo</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
 </search>
