@@ -59,37 +59,6 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2021/01/31/98ee9cbb89ac/</url>
-    <content><![CDATA[<h1 id="新鲜出炉的Centos"><a href="#新鲜出炉的Centos" class="headerlink" title="新鲜出炉的Centos"></a>新鲜出炉的Centos</h1><h2 id="一、配置yum国内镜像源"><a href="#一、配置yum国内镜像源" class="headerlink" title="一、配置yum国内镜像源"></a>一、配置yum国内镜像源</h2><h3 id="1、备份"><a href="#1、备份" class="headerlink" title="1、备份"></a>1、备份</h3><p>如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure>
-
-<p>该文件是Centos的镜像文件配置，一般国内都会配置成阿里云、网易、清华大学。我这里选择的式清华大学的镜像源，编辑 <code>/etc/yum.repos.d/CentOS-Base.repo </code>文件，在 <code>mirrorlist=</code> 开头行前面加 <code>#</code> 注释掉；并将 <code>baseurl=</code> 开头行取消注释（如果被注释的话），把该行内的域名（例如<code>mirror.centos.org</code>）替换为 <code>mirrors.tuna.tsinghua.edu.cn</code>。</p>
-<h3 id="2、Centos7示例"><a href="#2、Centos7示例" class="headerlink" title="2、Centos7示例"></a>2、Centos7示例</h3><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#CentOS-Base.repo</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The mirror system uses the connecting IP address of the client and the</span></span><br><span class="line"><span class="comment"># update status of each mirror to pick mirrors that are updated to and</span></span><br><span class="line"><span class="comment"># geographically close to the client.  You should use this for CentOS updates</span></span><br><span class="line"><span class="comment"># unless you are manually picking other mirrors.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># If the mirrorlist= does not work for you, as a fall back you can try the</span></span><br><span class="line"><span class="comment"># remarked out baseurl= line instead.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">[base]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Base</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/os/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#released updates</span></span><br><span class="line"><span class="attr">[updates]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Updates</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/updates/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line"><span class="attr">[extras]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Extras</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/extras/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line"><span class="attr">[centosplus]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Plus</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/centosplus/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">0</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="3、更新软件包缓存"><a href="#3、更新软件包缓存" class="headerlink" title="3、更新软件包缓存"></a>3、更新软件包缓存</h3><p>清楚之前的软件包缓存，然后更新软件包缓存</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
-
-<h3 id="4、更新软件包"><a href="#4、更新软件包" class="headerlink" title="4、更新软件包"></a>4、更新软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
-
-<p>参考：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">https://mirrors.tuna.tsinghua.edu.cn/help/centos/</a></p>
-<h2 id="二、rz、sz命令传输文件"><a href="#二、rz、sz命令传输文件" class="headerlink" title="二、rz、sz命令传输文件"></a>二、rz、sz命令传输文件</h2><p>大文件传输的话，建议使用<code>Filezilla</code>进行传输，个别的小文件传输的话，仅以使用<code>lrzsz</code>，更方便哦！！！</p>
-<h3 id="1、安装-lrzsz"><a href="#1、安装-lrzsz" class="headerlink" title="1、安装 lrzsz"></a>1、安装 lrzsz</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install lrzsz</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、上传文件"><a href="#2、上传文件" class="headerlink" title="2、上传文件"></a>2、上传文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rz</span><br></pre></td></tr></table></figure>
-
-<p>rz命令打开文件选择框，选择要发送的文件即可发送至当前目录。</p>
-<p>从Windows/Mac直接拖动至XShell窗口也是同样的哦！！！</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103215423.png" alt="image-20210103215423075"></p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103214524.png" alt="image-20210103214523798"></p>
-<h3 id="3、下载文件"><a href="#3、下载文件" class="headerlink" title="3、下载文件"></a>3、下载文件</h3><p><code>sz 文件名</code>便可下载该文件至本地，选择本地文件夹即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sz /etc/yum.repos.d/CentOS-Base.repo</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103221932.png" alt="image-20210103221932546"></p>
-<p>三、</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Hexo博客安装(一)</title>
     <url>/2020/09/14/ed31eabc1ddf/</url>
     <content><![CDATA[<p>欢迎使用 Hexo，本文档将帮助您快速上手。如果您在使用过程中遇到问题，请查看 <a href="https://hexo.io/zh-cn/docs/troubleshooting">问题解答</a> 中的解答，或者在 <a href="https://github.com/hexojs/hexo/issues">GitHub</a>、<a href="https://groups.google.com/group/hexo">Google Group</a> 上提问。</p>
@@ -278,38 +247,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux常用命令</title>
-    <url>/2021/01/07/75eb06482a73/</url>
-    <content><![CDATA[<h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><blockquote>
-<p>本文主要用于记录，在工作学习中经常需要使用的常见Linux命令。在<a href="https://couragehe.github.io/">CourageHe’s Blog</a>不间断更新，欢迎各位看官指教。</p>
-</blockquote>
-<a id="more"></a>
-
-<p>Linux资源查看</p>
-<p>各分区使用情况</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001504.png" alt="image-20210107001503961"></p>
-<p>查看进程</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -ef</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001625.png" alt="image-20210107001625631"></p>
-<p>查看内存使用情况</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001741.png" alt="image-20210107001741107"></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fre -m</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001916.png" alt="image-20210107001916338"></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo添加分类、标签、关于页(二)</title>
     <url>/2020/09/14/993996b2e602/</url>
     <content><![CDATA[<blockquote>
@@ -363,6 +300,37 @@
       </tags>
   </entry>
   <entry>
+    <title></title>
+    <url>/2021/01/31/98ee9cbb89ac/</url>
+    <content><![CDATA[<h1 id="新鲜出炉的Centos"><a href="#新鲜出炉的Centos" class="headerlink" title="新鲜出炉的Centos"></a>新鲜出炉的Centos</h1><h2 id="一、配置yum国内镜像源"><a href="#一、配置yum国内镜像源" class="headerlink" title="一、配置yum国内镜像源"></a>一、配置yum国内镜像源</h2><h3 id="1、备份"><a href="#1、备份" class="headerlink" title="1、备份"></a>1、备份</h3><p>如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure>
+
+<p>该文件是Centos的镜像文件配置，一般国内都会配置成阿里云、网易、清华大学。我这里选择的式清华大学的镜像源，编辑 <code>/etc/yum.repos.d/CentOS-Base.repo </code>文件，在 <code>mirrorlist=</code> 开头行前面加 <code>#</code> 注释掉；并将 <code>baseurl=</code> 开头行取消注释（如果被注释的话），把该行内的域名（例如<code>mirror.centos.org</code>）替换为 <code>mirrors.tuna.tsinghua.edu.cn</code>。</p>
+<h3 id="2、Centos7示例"><a href="#2、Centos7示例" class="headerlink" title="2、Centos7示例"></a>2、Centos7示例</h3><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#CentOS-Base.repo</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The mirror system uses the connecting IP address of the client and the</span></span><br><span class="line"><span class="comment"># update status of each mirror to pick mirrors that are updated to and</span></span><br><span class="line"><span class="comment"># geographically close to the client.  You should use this for CentOS updates</span></span><br><span class="line"><span class="comment"># unless you are manually picking other mirrors.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># If the mirrorlist= does not work for you, as a fall back you can try the</span></span><br><span class="line"><span class="comment"># remarked out baseurl= line instead.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">[base]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Base</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/os/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#released updates</span></span><br><span class="line"><span class="attr">[updates]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Updates</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/updates/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line"><span class="attr">[extras]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Extras</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/extras/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line"><span class="attr">[centosplus]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Plus</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/centosplus/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">0</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3、更新软件包缓存"><a href="#3、更新软件包缓存" class="headerlink" title="3、更新软件包缓存"></a>3、更新软件包缓存</h3><p>清楚之前的软件包缓存，然后更新软件包缓存</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、更新软件包"><a href="#4、更新软件包" class="headerlink" title="4、更新软件包"></a>4、更新软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
+
+<p>参考：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">https://mirrors.tuna.tsinghua.edu.cn/help/centos/</a></p>
+<h2 id="二、rz、sz命令传输文件"><a href="#二、rz、sz命令传输文件" class="headerlink" title="二、rz、sz命令传输文件"></a>二、rz、sz命令传输文件</h2><p>大文件传输的话，建议使用<code>Filezilla</code>进行传输，个别的小文件传输的话，仅以使用<code>lrzsz</code>，更方便哦！！！</p>
+<h3 id="1、安装-lrzsz"><a href="#1、安装-lrzsz" class="headerlink" title="1、安装 lrzsz"></a>1、安装 lrzsz</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install lrzsz</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、上传文件"><a href="#2、上传文件" class="headerlink" title="2、上传文件"></a>2、上传文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rz</span><br></pre></td></tr></table></figure>
+
+<p>rz命令打开文件选择框，选择要发送的文件即可发送至当前目录。</p>
+<p>从Windows/Mac直接拖动至XShell窗口也是同样的哦！！！</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103215423.png" alt="image-20210103215423075"></p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103214524.png" alt="image-20210103214523798"></p>
+<h3 id="3、下载文件"><a href="#3、下载文件" class="headerlink" title="3、下载文件"></a>3、下载文件</h3><p><code>sz 文件名</code>便可下载该文件至本地，选择本地文件夹即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sz /etc/yum.repos.d/CentOS-Base.repo</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103221932.png" alt="image-20210103221932546"></p>
+<p>三、</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/09/06/b9889e0f3b8b/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -385,6 +353,38 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux常用命令</title>
+    <url>/2021/01/07/75eb06482a73/</url>
+    <content><![CDATA[<h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><blockquote>
+<p>本文主要用于记录，在工作学习中经常需要使用的常见Linux命令。在<a href="https://couragehe.github.io/">CourageHe’s Blog</a>不间断更新，欢迎各位看官指教。</p>
+</blockquote>
+<a id="more"></a>
+
+<p>Linux资源查看</p>
+<p>各分区使用情况</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001504.png" alt="image-20210107001503961"></p>
+<p>查看进程</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -ef</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001625.png" alt="image-20210107001625631"></p>
+<p>查看内存使用情况</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001741.png" alt="image-20210107001741107"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fre -m</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001916.png" alt="image-20210107001916338"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -473,6 +473,121 @@
         <tag>Windows</tag>
         <tag>Linux</tag>
         <tag>FRP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Lombok常用注解</title>
+    <url>/2020/08/16/c2f37b230581/</url>
+    <content><![CDATA[<h1 id="Lombok常用注解"><a href="#Lombok常用注解" class="headerlink" title="Lombok常用注解"></a>Lombok常用注解</h1><blockquote>
+<p>Lombok通过注解的方式省掉大量代码的编写，尤其对于POJO类的set()、get()、toString()等。在源代码只需要加上相应的注解，编译过程中Lombok插件就会自行生辰相关代码。减少冗杂且重复的代码，简化开发易于修改。本文即为对Lombok常见注解的介绍及对生成的代码的展示。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="安装Lombok"><a href="#安装Lombok" class="headerlink" title="安装Lombok"></a>安装Lombok</h2><p>&emsp;&emsp;在菜单栏依次选择<code>File</code>-&gt;<code>Settings</code>-&gt;<code>Plugins</code>，输入<code>Lombok</code>搜索该插件，得到搜索结果选择Lombok进行安装即可。安装完毕提示重启即安装成功。</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816144238.jpeg"></p>
+<p>&emsp;&emsp;Maven项目中引入Lombok依赖的编译支持，在pom文件中的<code>dependences</code>里添加即可</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.16.18<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h2><ul>
+<li>@Data</li>
+</ul>
+<ul>
+<li>@Setter</li>
+<li>@Getter</li>
+<li>@Log4j</li>
+<li>@AllArgsConstructor</li>
+<li>@NoArgsConstructor</li>
+<li>@EqualsAndHashCode</li>
+<li>@NonNull</li>
+<li>@Cleanup</li>
+<li>@ToString</li>
+<li>@RequiredArgsConstructor</li>
+<li>@Value</li>
+<li>@SneakyThrows</li>
+<li>@Synchronized</li>
+</ul>
+<h2 id="注解作用"><a href="#注解作用" class="headerlink" title="注解作用"></a>注解作用</h2><h3 id="Data"><a href="#Data" class="headerlink" title="@Data"></a>@Data</h3><p>注解在<strong>类</strong>上，提供类所有属性的get和set方法，此外还提供了equals、canEqual、toString方法以及默认构造函数</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816115230.png" alt="img"></p>
+<h3 id="Setter"><a href="#Setter" class="headerlink" title="@Setter"></a>@Setter</h3><ul>
+<li>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>set</strong>方法</li>
+<li>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>set</strong>方法</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816125332.png" alt="image-20200816125332552"></p>
+<h3 id="Getter"><a href="#Getter" class="headerlink" title="@Getter"></a>@Getter</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>get</strong>方法</p>
+</li>
+<li><p>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>get</strong>方法</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816145537.png" alt="image-20200816125753543"></p>
+</li>
+</ul>
+<h3 id="Log4j"><a href="#Log4j" class="headerlink" title="@Log4j"></a>@Log4j</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及该类的日志对象</p>
+<p>如果项目中没有对应的日志依赖，建议pom文件中加入</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.15<span class="tag">&lt;/<span class="name">version</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.mail<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.jms<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jms<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.jdmk<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jmxtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.jmx<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jmxri<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span> </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<p>  <img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816131455.png"></p>
+<h3 id="AllArgsConstructor"><a href="#AllArgsConstructor" class="headerlink" title="@AllArgsConstructor"></a>@AllArgsConstructor</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供含类全部属性的<strong>构造函数</strong></p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816132129.png" alt="image-20200816132129118"></p>
+</li>
+</ul>
+<h3 id="NoArgsConstructor"><a href="#NoArgsConstructor" class="headerlink" title="@NoArgsConstructor"></a>@NoArgsConstructor</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong></p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816132510.png" alt="image-20200816132510412"></p>
+</li>
+</ul>
+<h3 id="EqualsAndHashCode"><a href="#EqualsAndHashCode" class="headerlink" title="@EqualsAndHashCode"></a>@EqualsAndHashCode</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>、<strong>equals</strong>方法、<strong>canEqual</strong>方法、<strong>HashCode</strong>方法</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816132954.png" alt="image-20200816132954099"></p>
+</li>
+</ul>
+<h3 id="NonNull"><a href="#NonNull" class="headerlink" title="@NonNull"></a>@NonNull</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及如果有属性为NULL则抛<strong>NullPointException</strong></p>
+</li>
+<li><p>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及该属性为NULL则抛<strong>NullPointException</strong></p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816135351.png" alt="image-20200816133630219"></p>
+</li>
+</ul>
+<h3 id="Cleanup"><a href="#Cleanup" class="headerlink" title="@Cleanup"></a>@Cleanup</h3><ul>
+<li><p>注解在<strong>属性</strong>上，注解在那种使用完需要<code>close</code>的对象，会自动在finally里代码块中生成<code>close</code>代码</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816135523.png" alt="image-20200816135522627"></p>
+</li>
+</ul>
+<h3 id="ToString"><a href="#ToString" class="headerlink" title="@ToString"></a>@ToString</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及**toString()**方法</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816135750.png" alt="image-20200816135750664"></p>
+</li>
+</ul>
+<h3 id="RequiredArgsConstructor"><a href="#RequiredArgsConstructor" class="headerlink" title="@RequiredArgsConstructor"></a>@RequiredArgsConstructor</h3><ul>
+<li><p>注解在<strong>属性</strong>上，提供类中<strong>final</strong>修饰和**@NONULL<strong>注解的所有属性的</strong>构造函数**</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816140650.png" alt="image-20200816140650718"></p>
+</li>
+</ul>
+<h3 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供含类全部属性的<strong>构造函数</strong>以及<strong>get()**、</strong>equals()<strong>、</strong>hashCode()<strong>、</strong>toString()**方法</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816142559.png" alt="image-20200816142558874"></p>
+</li>
+</ul>
+<h3 id="SneakyThrows"><a href="#SneakyThrows" class="headerlink" title="@SneakyThrows"></a>@SneakyThrows</h3><ul>
+<li><p>注解在<strong>方法</strong>上，作用是将方法内的代码块用try-catch包围起来，并以<code>@SneakyThrows(Exception.class)</code>的形式指定抛出Exception的类型。同时也会生成默认构造函数。</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816142944.png" alt="image-20200816142943894"></p>
+</li>
+</ul>
+<h3 id="Synchronized"><a href="#Synchronized" class="headerlink" title="@Synchronized"></a>@Synchronized</h3><ul>
+<li><p>注解在<strong>方法</strong>上，与在方法名左边直接加<strong>synchronized</strong>关键字效果类似，对于静态方法和实例方法，synchornized关键字的锁对象分别是<strong>class</strong>对象和<strong>this</strong>对象；**@Synchronized<strong>则对应的锁对象分别是</strong>私有静态final对象<strong>lock和</strong>私有final对象** lock，同时也可以以<code>@Synchronized(&quot;属性名&quot;)</code>形式自定义锁对象。同时也会生成默认构造函数。</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816163424.png" alt="image-20200816163423807"></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>实用工具</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>

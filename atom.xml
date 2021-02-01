@@ -242,4 +242,25 @@
     
   </entry>
   
+  <entry>
+    <title>Lombok常用注解</title>
+    <link href="https://couragehe.github.io/2020/08/16/c2f37b230581/"/>
+    <id>https://couragehe.github.io/2020/08/16/c2f37b230581/</id>
+    <published>2020-08-16T09:07:09.000Z</published>
+    <updated>2021-02-01T08:23:06.906Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Lombok常用注解&quot;&gt;&lt;a href=&quot;#Lombok常用注解&quot; class=&quot;headerlink&quot; title=&quot;Lombok常用注解&quot;&gt;&lt;/a&gt;Lombok常用注解&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Lombok通过注解的方式省掉大量代码的编写，尤其对于POJO类的set()、get()、toString()等。在源代码只需要加上相应的注解，编译过程中Lombok插件就会自行生辰相关代码。减少冗杂且重复的代码，简化开发易于修改。本文即为对Lombok常见注解的介绍及对生成的代码的展示。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="实用工具" scheme="https://couragehe.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="JAVA" scheme="https://couragehe.github.io/tags/JAVA/"/>
+    
+  </entry>
+  
 </feed>
