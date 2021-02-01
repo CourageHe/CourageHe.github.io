@@ -22,20 +22,30 @@
     var CONFIG = {"hostname":"couragehe.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="GitBlit安装1. 安装要求Windows电脑安装JAVA环境，在GitBlit首页可根据操作系统选择不同的版本安装。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://couragehe.github.io/2020/09/06/e812d43c41a8/index.html">
+<meta property="og:title" content="GitBlit安装与使用">
+<meta property="og:url" content="https://couragehe.github.io/2021/01/18/e4bb3bf545c5/index.html">
 <meta property="og:site_name" content="CourageHe&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="GitBlit安装1. 安装要求Windows电脑安装JAVA环境，在GitBlit首页可根据操作系统选择不同的版本安装。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-09-06T03:48:32.799Z">
-<meta property="article:modified_time" content="2020-09-13T18:01:12.319Z">
+<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200211.png">
+<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200502.png">
+<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004401.png">
+<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004537.png">
+<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004801.png">
+<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029220747.png">
+<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029221614.png">
+<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029221556.png">
+<meta property="article:published_time" content="2021-01-17T17:25:58.000Z">
+<meta property="article:modified_time" content="2021-01-17T17:26:46.580Z">
 <meta property="article:author" content="Courage He">
-<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200211.png">
 
-<link rel="canonical" href="https://couragehe.github.io/2020/09/06/e812d43c41a8/">
+<link rel="canonical" href="https://couragehe.github.io/2021/01/18/e4bb3bf545c5/">
 
 
 <script id="page-configurations">
@@ -48,7 +58,7 @@
   };
 </script>
 
-  <title>Hello World | CourageHe's Blog</title>
+  <title>GitBlit安装与使用 | CourageHe's Blog</title>
   
 
 
@@ -125,17 +135,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">6</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -201,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2020/09/06/e812d43c41a8/">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/01/18/e4bb3bf545c5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -214,7 +224,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          GitBlit安装与使用
         </h1>
 
         <div class="post-meta">
@@ -223,23 +233,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-09-06 11:48:32" itemprop="dateCreated datePublished" datetime="2020-09-06T11:48:32+08:00">2020-09-06</time>
+              <time title="创建时间：2021-01-18 01:25:58 / 修改时间：01:26:46" itemprop="dateCreated datePublished" datetime="2021-01-18T01:25:58+08:00">2021-01-18</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-14 02:01:12" itemprop="dateModified" datetime="2020-09-14T02:01:12+08:00">2020-09-14</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
                 </span>
             </span>
 
@@ -256,14 +260,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>367</span>
+              <span>2.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -275,21 +279,53 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+        <h1 id="GitBlit安装"><a href="#GitBlit安装" class="headerlink" title="GitBlit安装"></a>GitBlit安装</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>要求Windows电脑安装JAVA环境，在<a target="_blank" rel="noopener" href="http://gitblit.github.io/gitblit/">GitBlit首页</a>可根据操作系统选择不同的版本安装。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200211.png" alt="image-20210117200211238"></p>
 <a id="more"></a>
 
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="2-解压"><a href="#2-解压" class="headerlink" title="2.  解压"></a>2.  解压</h2><p>文件下载后，解压至一个文件夹下即可，无需安装。下图是解压后的文件列表。</p>
+<h2 id="3-配置文件"><a href="#3-配置文件" class="headerlink" title="3. 配置文件"></a><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200502.png" alt="image-20210117200502037">3. 配置文件</h2><p>Gitblit目录下的data文件夹中的<code>defaults.properties</code>是默认配置文件，另外需要修改<code>gitblit.properties</code>以覆盖默认配置。</p>
+<ul>
+<li><code>server.httpPort</code>：http协议端口号</li>
+<li><code>server.httpBindInterface</code>：http服务器的ip地址</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># GITBLIT.PROPERTIES</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your custom settings in this file and/or include settings defined in</span></span><br><span class="line"><span class="comment"># other properties files.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Include Gitblit&#x27;s &#x27;defaults.properties&#x27; within your configuration.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># <span class="doctag">NOTE:</span> Gitblit will not automatically reload &quot;included&quot; properties.  Gitblit</span></span><br><span class="line"><span class="comment"># only watches the &#x27;gitblit.properties&#x27; file for modifications.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Paths may be relative to the $&#123;baseFolder&#125; or they may be absolute.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># COMMA-DELIMITED</span></span><br><span class="line"><span class="comment"># SINCE 1.7.0</span></span><br><span class="line"><span class="attr">include</span> = <span class="string">defaults.properties</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your overrides or custom settings below</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Standard http port to serve.  &lt;= 0 disables this connector.</span></span><br><span class="line"><span class="comment"># On Unix/Linux systems, ports &lt; 1024 require root permissions.</span></span><br><span class="line"><span class="comment"># Recommended value: 80 or 8080</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpPort</span> = <span class="string">9999</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify the interface for Jetty to bind the standard connector.</span></span><br><span class="line"><span class="comment"># You may specify an ip or an empty value to bind to all interfaces.</span></span><br><span class="line"><span class="comment"># Specifying localhost will result in Gitblit ONLY listening to requests to</span></span><br><span class="line"><span class="comment"># localhost.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpBindInterface</span> = <span class="string">localhost</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h2 id="4-服务启动"><a href="#4-服务启动" class="headerlink" title="4.  服务启动"></a>4.  服务启动</h2><p>GitBlit目录下，在<code>installService.cmd</code>中。</p>
+<ul>
+<li>修改ARCH，32位系统：<code>SET ARCH=x86</code>；64位系统：<code>SET ARCH=amd64</code>。</li>
+<li>添加CD为程序目录 <code>SET CD=D:\newsoft\gitblit-1.9.1</code>(安装目录)。</li>
+<li><code>StartParams</code>里的启动参数，置空</li>
+</ul>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004401.png" alt="image-20210118004401684"></p>
+<p>服务注册表中即可查看该服务，可重启、停止。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004537.png" alt="image-20210118004536991"></p>
+<h2 id="5-浏览器访问"><a href="#5-浏览器访问" class="headerlink" title="5. 浏览器访问"></a>5. 浏览器访问</h2><p>账号密码默认<code>admin/admin</code></p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004801.png" alt="image-20210118004801412"></p>
+<h1 id="GitBlit简单使用"><a href="#GitBlit简单使用" class="headerlink" title="GitBlit简单使用"></a>GitBlit简单使用</h1><h2 id="1-克隆仓库"><a href="#1-克隆仓库" class="headerlink" title="1.克隆仓库"></a>1.克隆仓库</h2><p>&emsp;&emsp;进入仓库概况页面，在版本仓库地址栏选择<code>http</code>协议的<strong>git</strong>链接，复制该链接。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029220747.png" alt="image-20201029220747735"></p>
+<p>&emsp;&emsp;选择本地合适的文件路径，打开cmd窗口克隆该仓库即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git <span class="built_in">clone</span> http://couragehe@XX.XX.XX.XX:9999/r/demo.git</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029221614.png" alt="image-20201029221614544"></p>
+<h2 id="2-账户认证"><a href="#2-账户认证" class="headerlink" title="2.账户认证"></a>2.账户认证</h2><p>&emsp;&emsp;打开项目路径的cmd窗口，推送项目至远程<code>git</code>仓库，首次推送会弹出windows安全认证，输入密码即可保存至windows。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029221556.png" alt="image-20201029221556682"></p>
+<h2 id="3-分支问题"><a href="#3-分支问题" class="headerlink" title="3.分支问题"></a>3.分支问题</h2><p><strong>gitblit</strong>中没有创建工单（分支）的按钮，但并不代表不支持分支。做法便是将git仓库拉取至本地中，新建分支然后上传至远端仓库即可。</p>
+<h3 id="3-1-显示分支列表"><a href="#3-1-显示分支列表" class="headerlink" title="3.1 显示分支列表"></a>3.1 显示分支列表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch </span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-新建分支"><a href="#3-2-新建分支" class="headerlink" title="3.2 新建分支"></a>3.2 新建分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-切换分支"><a href="#3-3-切换分支" class="headerlink" title="3.3 切换分支"></a>3.3 切换分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-远程分支新建"><a href="#3-4-远程分支新建" class="headerlink" title="3.4 远程分支新建"></a>3.4 远程分支新建</h3><p>&emsp;&emsp;在本地新分支下，推送本地分支至远程仓库中的分支（非强制要求同名），使用以下命令对应即可。其中第一个分支名<code>demo</code>对应的是本地分支名，第二个分支名<code>demo</code>对应的是远程分支名。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin demo:demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-本地仓库分支关联远程分支"><a href="#3-5-本地仓库分支关联远程分支" class="headerlink" title="3.5 本地仓库分支关联远程分支"></a>3.5 本地仓库分支关联远程分支</h3><p>使用该句之前必须确保远程仓库存在该分支，否则报错。关联之后便可直接使用<code>git push</code>或者<code>git pull</code>进行推送或拉取，命令简单明了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch --<span class="built_in">set</span>-upstream-to=origin/demo</span><br></pre></td></tr></table></figure>
     </div>
      <div>
     
@@ -332,7 +368,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://couragehe.github.io/2020/09/06/e812d43c41a8/" title="Hello World">https://couragehe.github.io/2020/09/06/e812d43c41a8/</a>
+    <a href="https://couragehe.github.io/2021/01/18/e4bb3bf545c5/" title="GitBlit安装与使用">https://couragehe.github.io/2021/01/18/e4bb3bf545c5/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -363,7 +399,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+              <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
+              <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
           </div>
 
         
@@ -371,10 +408,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/09/14/92bc5d86a1a4/" rel="next" title="Hexo博客安装(一)">
-      Hexo博客安装(一) <i class="fa fa-chevron-right"></i>
+    <a href="/2021/01/17/dd7e0bbf808e/" rel="prev" title=" FRP内网穿透">
+      <i class="fa fa-chevron-left"></i>  FRP内网穿透
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/26/ec8237ba0fb1/" rel="next" title="剑指 Offer 03. 数组中重复的数字">
+      剑指 Offer 03. 数组中重复的数字 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -435,7 +475,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GitBlit%E5%AE%89%E8%A3%85"><span class="nav-text">GitBlit安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85"><span class="nav-text">1. 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%A7%A3%E5%8E%8B"><span class="nav-text">2.  解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">3. 配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8"><span class="nav-text">4.  服务启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AE"><span class="nav-text">5. 浏览器访问</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GitBlit%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8"><span class="nav-text">GitBlit简单使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93"><span class="nav-text">1.克隆仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%B4%A6%E6%88%B7%E8%AE%A4%E8%AF%81"><span class="nav-text">2.账户认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%88%86%E6%94%AF%E9%97%AE%E9%A2%98"><span class="nav-text">3.分支问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%98%BE%E7%A4%BA%E5%88%86%E6%94%AF%E5%88%97%E8%A1%A8"><span class="nav-text">3.1 显示分支列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF"><span class="nav-text">3.2 新建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="nav-text">3.3 切换分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E6%96%B0%E5%BB%BA"><span class="nav-text">3.4 远程分支新建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%88%86%E6%94%AF%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-text">3.5 本地仓库分支关联远程分支</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -451,20 +491,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -521,13 +561,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">8k</span>
+    <span title="站点总字数">14k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">8 分钟</span>
+    <span title="站点阅读时长">13 分钟</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -638,7 +678,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'CourageHe.github.io',
       owner       : 'CourageHe',
       admin       : ['CourageHe'],
-      id          : 'bedab08f739cb1e90764b0759994aa01',
+      id          : 'a08676c12c7b3f2ccf89f8d574648578',
         language: 'zh-CN',
       distractionFreeMode: true
     });
@@ -648,7 +688,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 </script>
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1610904423929')
+  navigator.serviceWorker.register('/sw.js?t=1612167216380')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

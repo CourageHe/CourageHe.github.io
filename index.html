@@ -123,17 +123,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">6</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -198,7 +198,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/01/18/88be214e4a9f/">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/01/31/98ee9cbb89ac/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -212,7 +212,439 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/18/88be214e4a9f/" class="post-title-link" itemprop="url">GitBlit安装与使用</a>
+            <a href="/2021/01/31/98ee9cbb89ac/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 23:56:07" itemprop="dateCreated datePublished" datetime="2021-01-31T23:56:07+08:00">2021-01-31</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="新鲜出炉的Centos"><a href="#新鲜出炉的Centos" class="headerlink" title="新鲜出炉的Centos"></a>新鲜出炉的Centos</h1><h2 id="一、配置yum国内镜像源"><a href="#一、配置yum国内镜像源" class="headerlink" title="一、配置yum国内镜像源"></a>一、配置yum国内镜像源</h2><h3 id="1、备份"><a href="#1、备份" class="headerlink" title="1、备份"></a>1、备份</h3><p>如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure>
+
+<p>该文件是Centos的镜像文件配置，一般国内都会配置成阿里云、网易、清华大学。我这里选择的式清华大学的镜像源，编辑 <code>/etc/yum.repos.d/CentOS-Base.repo </code>文件，在 <code>mirrorlist=</code> 开头行前面加 <code>#</code> 注释掉；并将 <code>baseurl=</code> 开头行取消注释（如果被注释的话），把该行内的域名（例如<code>mirror.centos.org</code>）替换为 <code>mirrors.tuna.tsinghua.edu.cn</code>。</p>
+<h3 id="2、Centos7示例"><a href="#2、Centos7示例" class="headerlink" title="2、Centos7示例"></a>2、Centos7示例</h3><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#CentOS-Base.repo</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The mirror system uses the connecting IP address of the client and the</span></span><br><span class="line"><span class="comment"># update status of each mirror to pick mirrors that are updated to and</span></span><br><span class="line"><span class="comment"># geographically close to the client.  You should use this for CentOS updates</span></span><br><span class="line"><span class="comment"># unless you are manually picking other mirrors.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># If the mirrorlist= does not work for you, as a fall back you can try the</span></span><br><span class="line"><span class="comment"># remarked out baseurl= line instead.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">[base]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Base</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/os/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#released updates</span></span><br><span class="line"><span class="attr">[updates]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Updates</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/updates/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line"><span class="attr">[extras]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Extras</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/extras/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line"><span class="attr">[centosplus]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Plus</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/centosplus/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">0</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3、更新软件包缓存"><a href="#3、更新软件包缓存" class="headerlink" title="3、更新软件包缓存"></a>3、更新软件包缓存</h3><p>清楚之前的软件包缓存，然后更新软件包缓存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、更新软件包"><a href="#4、更新软件包" class="headerlink" title="4、更新软件包"></a>4、更新软件包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
+
+<p>参考：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">https://mirrors.tuna.tsinghua.edu.cn/help/centos/</a></p>
+<h2 id="二、rz、sz命令传输文件"><a href="#二、rz、sz命令传输文件" class="headerlink" title="二、rz、sz命令传输文件"></a>二、rz、sz命令传输文件</h2><p>大文件传输的话，建议使用<code>Filezilla</code>进行传输，个别的小文件传输的话，仅以使用<code>lrzsz</code>，更方便哦！！！</p>
+<h3 id="1、安装-lrzsz"><a href="#1、安装-lrzsz" class="headerlink" title="1、安装 lrzsz"></a>1、安装 lrzsz</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install lrzsz</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、上传文件"><a href="#2、上传文件" class="headerlink" title="2、上传文件"></a>2、上传文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rz</span><br></pre></td></tr></table></figure>
+
+<p>rz命令打开文件选择框，选择要发送的文件即可发送至当前目录。</p>
+<p>从Windows/Mac直接拖动至XShell窗口也是同样的哦！！！</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103215423.png" alt="image-20210103215423075"></p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103214524.png" alt="image-20210103214523798"></p>
+<h3 id="3、下载文件"><a href="#3、下载文件" class="headerlink" title="3、下载文件"></a>3、下载文件</h3><p><code>sz 文件名</code>便可下载该文件至本地，选择本地文件夹即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sz /etc/yum.repos.d/CentOS-Base.repo</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103221932.png" alt="image-20210103221932546"></p>
+<p>三、</p>
+
+      
+    </div>
+     <div>
+    
+  </div>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/01/26/f6d039b5ce46/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courage He">
+      <meta itemprop="description" content="一万年太久，只争朝夕！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CourageHe's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/26/f6d039b5ce46/" class="post-title-link" itemprop="url">1128.等价多米诺骨牌对的数量</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-26 14:33:26" itemprop="dateCreated datePublished" datetime="2021-01-26T14:33:26+08:00">2021-01-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 16:12:45" itemprop="dateModified" datetime="2021-02-01T16:12:45+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1128-等价多米诺骨牌对的数量"><a href="#1128-等价多米诺骨牌对的数量" class="headerlink" title="1128.等价多米诺骨牌对的数量"></a>1128.等价多米诺骨牌对的数量</h1><blockquote>
+<p>每日一题：2020-01-26</p>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/">https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个由一些多米诺骨牌组成的列表<code> dominoes</code>。</p>
+<p>如果其中某一张多米诺骨牌可以通过旋转 0 度或 180 度得到另一张多米诺骨牌，我们就认为这两张牌是等价的。</p>
+<p>形式上，<code>dominoes[i] = [a, b] </code>和<code>dominoes[j] = [c, d]</code>等价的前提是 <code>a==c</code> 且<code> b==d</code>，或是 <code>a==d</code> 且<code> b==c</code>。</p>
+<p>在 <code>0 &lt;= i &lt; j &lt; dominoes.length</code> 的前提下，找出满足 dominoes[i] 和 dominoes[j] 等价的骨牌对 (i, j) 的数量。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：dominoes &#x3D; [[1,2],[2,1],[3,4],[5,6]]</span><br><span class="line">输出：1</span><br></pre></td></tr></table></figure>
+
+
+<p>提示：</p>
+<ul>
+<li><code>1 &lt;= dominoes.length &lt;= 40000</code></li>
+<li><code>1 &lt;= dominoes [i][j] &lt;= 9</code></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/26/f6d039b5ce46/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+     <div>
+    
+  </div>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/01/26/9778df2a97c8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courage He">
+      <meta itemprop="description" content="一万年太久，只争朝夕！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CourageHe's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/26/9778df2a97c8/" class="post-title-link" itemprop="url">剑指 Offer 03. 数组中重复的数字</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-26 00:25:23" itemprop="dateCreated datePublished" datetime="2021-01-26T00:25:23+08:00">2021-01-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 16:12:06" itemprop="dateModified" datetime="2021-02-01T16:12:06+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>817</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="剑指-Offer-03-数组中重复的数字"><a href="#剑指-Offer-03-数组中重复的数字" class="headerlink" title="剑指 Offer 03. 数组中重复的数字"></a>剑指 Offer 03. 数组中重复的数字</h1><blockquote>
+<p>题目来源：剑指Offer03</p>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>找出数组中重复的数字。</p>
+<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
+<p>示例 1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line">[2, 3, 1, 0, 2, 5, 3]</span><br><span class="line">输出：2 或 3 </span><br></pre></td></tr></table></figure>
+
+
+<p>限制：</p>
+<ul>
+<li><code>2 &lt;= n &lt;= 100000</code></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/26/9778df2a97c8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+     <div>
+    
+  </div>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/01/26/ec8237ba0fb1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courage He">
+      <meta itemprop="description" content="一万年太久，只争朝夕！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CourageHe's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/26/ec8237ba0fb1/" class="post-title-link" itemprop="url">剑指 Offer 03. 数组中重复的数字</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-26 00:25:23" itemprop="dateCreated datePublished" datetime="2021-01-26T00:25:23+08:00">2021-01-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 16:12:51" itemprop="dateModified" datetime="2021-02-01T16:12:51+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>817</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="剑指-Offer-03-数组中重复的数字"><a href="#剑指-Offer-03-数组中重复的数字" class="headerlink" title="剑指 Offer 03. 数组中重复的数字"></a>剑指 Offer 03. 数组中重复的数字</h1><blockquote>
+<p>题目来源：剑指Offer03</p>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>找出数组中重复的数字。</p>
+<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
+<p>示例 1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line">[2, 3, 1, 0, 2, 5, 3]</span><br><span class="line">输出：2 或 3 </span><br></pre></td></tr></table></figure>
+
+
+<p>限制：</p>
+<ul>
+<li><code>2 &lt;= n &lt;= 100000</code></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/26/ec8237ba0fb1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+     <div>
+    
+  </div>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/01/18/e4bb3bf545c5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courage He">
+      <meta itemprop="description" content="一万年太久，只争朝夕！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CourageHe's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/18/e4bb3bf545c5/" class="post-title-link" itemprop="url">GitBlit安装与使用</a>
         </h2>
 
         <div class="post-meta">
@@ -264,7 +696,7 @@
 <p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200211.png" alt="image-20210117200211238"></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/01/18/88be214e4a9f/#more" rel="contents">
+              <a class="btn" href="/2021/01/18/e4bb3bf545c5/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -290,7 +722,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/01/17/d7b5f6a10a19/">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/01/17/dd7e0bbf808e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -304,7 +736,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/17/d7b5f6a10a19/" class="post-title-link" itemprop="url"> FRP内网穿透</a>
+            <a href="/2021/01/17/dd7e0bbf808e/" class="post-title-link" itemprop="url"> FRP内网穿透</a>
         </h2>
 
         <div class="post-meta">
@@ -313,10 +745,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-01-17 19:43:46 / 修改时间：19:45:37" itemprop="dateCreated datePublished" datetime="2021-01-17T19:43:46+08:00">2021-01-17</time>
+              <time title="创建时间：2021-01-17 19:43:46" itemprop="dateCreated datePublished" datetime="2021-01-17T19:43:46+08:00">2021-01-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-31 23:07:26" itemprop="dateModified" datetime="2021-01-31T23:07:26+08:00">2021-01-31</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -358,7 +796,7 @@
 <h2 id="使用缘由"><a href="#使用缘由" class="headerlink" title="使用缘由"></a>使用缘由</h2><p>因为疫情的原因，公司提前休假，在家办公。公司的测试环境还有私服GIT都是在内网下，出于安全考虑，不考虑将GIT仓库移至GITHUB、GITEE等平台。首先想到的解决方案是使用类似花生壳这种内网穿透的服务，但是考虑到服务的收费标准与本司的使用需求相差较大。公司有六、七个端口需要转发，使用期限为一个月左右，而花生壳的套餐是按年付费，且线路数有限制，增加线路另外收费。然后想到了本人在大二时候使用的一个开源的内网穿透的代理应用，比较符合公司的解决方案。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/01/17/d7b5f6a10a19/#more" rel="contents">
+              <a class="btn" href="/2021/01/17/dd7e0bbf808e/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -384,7 +822,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/01/07/78f8c1f0d089/">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/01/07/75eb06482a73/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -398,7 +836,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/07/78f8c1f0d089/" class="post-title-link" itemprop="url">Linux常用命令</a>
+            <a href="/2021/01/07/75eb06482a73/" class="post-title-link" itemprop="url">Linux常用命令</a>
         </h2>
 
         <div class="post-meta">
@@ -407,9 +845,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-01-07 13:19:44 / 修改时间：13:28:06" itemprop="dateCreated datePublished" datetime="2021-01-07T13:19:44+08:00">2021-01-07</time>
+              <time title="创建时间：2021-01-07 13:19:44" itemprop="dateCreated datePublished" datetime="2021-01-07T13:19:44+08:00">2021-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 14:39:35" itemprop="dateModified" datetime="2021-02-01T14:39:35+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
             </span>
 
           <br>
@@ -442,7 +895,7 @@
 </blockquote>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/01/07/78f8c1f0d089/#more" rel="contents">
+              <a class="btn" href="/2021/01/07/75eb06482a73/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -468,7 +921,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2020/09/14/f47ba8306040/">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2020/09/14/993996b2e602/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -482,7 +935,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/14/f47ba8306040/" class="post-title-link" itemprop="url">Hexo添加分类、标签、关于页(二)</a>
+            <a href="/2020/09/14/993996b2e602/" class="post-title-link" itemprop="url">Hexo添加分类、标签、关于页(二)</a>
         </h2>
 
         <div class="post-meta">
@@ -546,7 +999,7 @@
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/09/14/f47ba8306040/#more" rel="contents">
+              <a class="btn" href="/2020/09/14/993996b2e602/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -572,7 +1025,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2020/09/14/92bc5d86a1a4/">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2020/09/14/ed31eabc1ddf/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -586,7 +1039,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/14/92bc5d86a1a4/" class="post-title-link" itemprop="url">Hexo博客安装(一)</a>
+            <a href="/2020/09/14/ed31eabc1ddf/" class="post-title-link" itemprop="url">Hexo博客安装(一)</a>
         </h2>
 
         <div class="post-meta">
@@ -638,7 +1091,7 @@
 <h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/09/14/92bc5d86a1a4/#more" rel="contents">
+              <a class="btn" href="/2020/09/14/ed31eabc1ddf/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -664,7 +1117,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2020/09/06/e812d43c41a8/">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2020/09/06/b9889e0f3b8b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -678,7 +1131,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/06/e812d43c41a8/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2020/09/06/b9889e0f3b8b/" class="post-title-link" itemprop="url">Hello World</a>
         </h2>
 
         <div class="post-meta">
@@ -735,7 +1188,7 @@
           <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/09/06/e812d43c41a8/#more" rel="contents">
+              <a class="btn" href="/2020/09/06/b9889e0f3b8b/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -825,20 +1278,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -895,13 +1348,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">8k</span>
+    <span title="站点总字数">14k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">8 分钟</span>
+    <span title="站点阅读时长">13 分钟</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -1003,7 +1456,7 @@
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1610904423929')
+  navigator.serviceWorker.register('/sw.js?t=1612167216380')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

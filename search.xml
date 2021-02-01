@@ -1,61 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo添加分类、标签、关于页(二)</title>
-    <url>/2020/09/14/f47ba8306040/</url>
-    <content><![CDATA[<blockquote>
-<p>生成的新文件夹都在source下也就是和放文章的文件夹一块 以下所有命令都是在博客文件目录下执行</p>
+    <title>剑指 Offer 03. 数组中重复的数字</title>
+    <url>/2021/01/26/9778df2a97c8/</url>
+    <content><![CDATA[<h1 id="剑指-Offer-03-数组中重复的数字"><a href="#剑指-Offer-03-数组中重复的数字" class="headerlink" title="剑指 Offer 03. 数组中重复的数字"></a>剑指 Offer 03. 数组中重复的数字</h1><blockquote>
+<p>题目来源：剑指Offer03</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/</a></p>
 </blockquote>
-<h2 id="创建“分类”选项"><a href="#创建“分类”选项" class="headerlink" title="创建“分类”选项"></a>创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行下方命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>找出数组中重复的数字。</p>
+<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
+<p>示例 1：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">[2, 3, 1, 0, 2, 5, 3]</span><br><span class="line">输出：2 或 3 </span><br></pre></td></tr></table></figure>
 
-<p>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>限制：</p>
+<ul>
+<li><code>2 &lt;= n &lt;= 100000</code></li>
+</ul>
 <a id="more"></a>
-<p>添加type: “categories”到内容中，添加后是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>保存并关闭文件。</p>
-<p>给文章添加“categories”属性</p>
-<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>统计重复元素常用方法是使用哈希表，如果统计的是元素明确范围的话建议使用数组。</p>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="哈希表统计"><a href="#哈希表统计" class="headerlink" title="哈希表统计"></a>哈希表统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt;nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(set.contains(nums[i]))&#123;</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               set.add(nums[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>至此，成功给文章添加分类，点击首页的“分类”可以看到该分类下的所有文章。当然，只有添加了categories: xxx的文章才会被收录到首页的“分类”中。</p>
-<h2 id="创建“标签”选项"><a href="#创建“标签”选项" class="headerlink" title="创建“标签”选项"></a>创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210126002427.png" alt="image-20210126002427040"></p>
+<h3 id="数组统计"><a href="#数组统计" class="headerlink" title="数组统计"></a>数组统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[nums[i]] == <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                arr[nums[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>保存并关闭文件。</p>
-<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo博客安装</span><br><span class="line">date: 2020-09-14 00:58:33</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建“关于”选项"><a href="#创建“关于”选项" class="headerlink" title="创建“关于”选项"></a>创建“关于”选项</h2><p>生成“关于”页并添加tpye属性</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure>
-
-<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 关于我</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">type: about</span><br><span class="line">---</span><br><span class="line"><span class="section">## 个人简介</span></span><br><span class="line">……</span><br><span class="line"><span class="section">## 其他</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
-
-<p>保存并关闭文件。</p>
-<p>点击首页的“关于”可以看到该文件所书写的内容。</p>
+<p>执行结果：</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210201152224.png" alt="image-20210126002415245"></p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>Algorithm</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>LeetCode</tag>
+        <tag>剑指 Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/01/31/98ee9cbb89ac/</url>
+    <content><![CDATA[<h1 id="新鲜出炉的Centos"><a href="#新鲜出炉的Centos" class="headerlink" title="新鲜出炉的Centos"></a>新鲜出炉的Centos</h1><h2 id="一、配置yum国内镜像源"><a href="#一、配置yum国内镜像源" class="headerlink" title="一、配置yum国内镜像源"></a>一、配置yum国内镜像源</h2><h3 id="1、备份"><a href="#1、备份" class="headerlink" title="1、备份"></a>1、备份</h3><p>如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure>
+
+<p>该文件是Centos的镜像文件配置，一般国内都会配置成阿里云、网易、清华大学。我这里选择的式清华大学的镜像源，编辑 <code>/etc/yum.repos.d/CentOS-Base.repo </code>文件，在 <code>mirrorlist=</code> 开头行前面加 <code>#</code> 注释掉；并将 <code>baseurl=</code> 开头行取消注释（如果被注释的话），把该行内的域名（例如<code>mirror.centos.org</code>）替换为 <code>mirrors.tuna.tsinghua.edu.cn</code>。</p>
+<h3 id="2、Centos7示例"><a href="#2、Centos7示例" class="headerlink" title="2、Centos7示例"></a>2、Centos7示例</h3><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#CentOS-Base.repo</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The mirror system uses the connecting IP address of the client and the</span></span><br><span class="line"><span class="comment"># update status of each mirror to pick mirrors that are updated to and</span></span><br><span class="line"><span class="comment"># geographically close to the client.  You should use this for CentOS updates</span></span><br><span class="line"><span class="comment"># unless you are manually picking other mirrors.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># If the mirrorlist= does not work for you, as a fall back you can try the</span></span><br><span class="line"><span class="comment"># remarked out baseurl= line instead.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">[base]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Base</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/os/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#released updates</span></span><br><span class="line"><span class="attr">[updates]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Updates</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/updates/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line"><span class="attr">[extras]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Extras</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/extras/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line"><span class="attr">[centosplus]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Plus</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/centosplus/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">0</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3、更新软件包缓存"><a href="#3、更新软件包缓存" class="headerlink" title="3、更新软件包缓存"></a>3、更新软件包缓存</h3><p>清楚之前的软件包缓存，然后更新软件包缓存</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、更新软件包"><a href="#4、更新软件包" class="headerlink" title="4、更新软件包"></a>4、更新软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
+
+<p>参考：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">https://mirrors.tuna.tsinghua.edu.cn/help/centos/</a></p>
+<h2 id="二、rz、sz命令传输文件"><a href="#二、rz、sz命令传输文件" class="headerlink" title="二、rz、sz命令传输文件"></a>二、rz、sz命令传输文件</h2><p>大文件传输的话，建议使用<code>Filezilla</code>进行传输，个别的小文件传输的话，仅以使用<code>lrzsz</code>，更方便哦！！！</p>
+<h3 id="1、安装-lrzsz"><a href="#1、安装-lrzsz" class="headerlink" title="1、安装 lrzsz"></a>1、安装 lrzsz</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install lrzsz</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、上传文件"><a href="#2、上传文件" class="headerlink" title="2、上传文件"></a>2、上传文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rz</span><br></pre></td></tr></table></figure>
+
+<p>rz命令打开文件选择框，选择要发送的文件即可发送至当前目录。</p>
+<p>从Windows/Mac直接拖动至XShell窗口也是同样的哦！！！</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103215423.png" alt="image-20210103215423075"></p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103214524.png" alt="image-20210103214523798"></p>
+<h3 id="3、下载文件"><a href="#3、下载文件" class="headerlink" title="3、下载文件"></a>3、下载文件</h3><p><code>sz 文件名</code>便可下载该文件至本地，选择本地文件夹即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sz /etc/yum.repos.d/CentOS-Base.repo</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103221932.png" alt="image-20210103221932546"></p>
+<p>三、</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>GitBlit安装与使用</title>
+    <url>/2021/01/18/e4bb3bf545c5/</url>
+    <content><![CDATA[<h1 id="GitBlit安装"><a href="#GitBlit安装" class="headerlink" title="GitBlit安装"></a>GitBlit安装</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>要求Windows电脑安装JAVA环境，在<a href="http://gitblit.github.io/gitblit/">GitBlit首页</a>可根据操作系统选择不同的版本安装。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200211.png" alt="image-20210117200211238"></p>
+<a id="more"></a>
+
+<h2 id="2-解压"><a href="#2-解压" class="headerlink" title="2.  解压"></a>2.  解压</h2><p>文件下载后，解压至一个文件夹下即可，无需安装。下图是解压后的文件列表。</p>
+<h2 id="3-配置文件"><a href="#3-配置文件" class="headerlink" title="3. 配置文件"></a><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200502.png" alt="image-20210117200502037">3. 配置文件</h2><p>Gitblit目录下的data文件夹中的<code>defaults.properties</code>是默认配置文件，另外需要修改<code>gitblit.properties</code>以覆盖默认配置。</p>
+<ul>
+<li><code>server.httpPort</code>：http协议端口号</li>
+<li><code>server.httpBindInterface</code>：http服务器的ip地址</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># GITBLIT.PROPERTIES</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your custom settings in this file and/or include settings defined in</span></span><br><span class="line"><span class="comment"># other properties files.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Include Gitblit&#x27;s &#x27;defaults.properties&#x27; within your configuration.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># <span class="doctag">NOTE:</span> Gitblit will not automatically reload &quot;included&quot; properties.  Gitblit</span></span><br><span class="line"><span class="comment"># only watches the &#x27;gitblit.properties&#x27; file for modifications.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Paths may be relative to the $&#123;baseFolder&#125; or they may be absolute.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># COMMA-DELIMITED</span></span><br><span class="line"><span class="comment"># SINCE 1.7.0</span></span><br><span class="line"><span class="attr">include</span> = <span class="string">defaults.properties</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your overrides or custom settings below</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Standard http port to serve.  &lt;= 0 disables this connector.</span></span><br><span class="line"><span class="comment"># On Unix/Linux systems, ports &lt; 1024 require root permissions.</span></span><br><span class="line"><span class="comment"># Recommended value: 80 or 8080</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpPort</span> = <span class="string">9999</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify the interface for Jetty to bind the standard connector.</span></span><br><span class="line"><span class="comment"># You may specify an ip or an empty value to bind to all interfaces.</span></span><br><span class="line"><span class="comment"># Specifying localhost will result in Gitblit ONLY listening to requests to</span></span><br><span class="line"><span class="comment"># localhost.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpBindInterface</span> = <span class="string">localhost</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-服务启动"><a href="#4-服务启动" class="headerlink" title="4.  服务启动"></a>4.  服务启动</h2><p>GitBlit目录下，在<code>installService.cmd</code>中。</p>
+<ul>
+<li>修改ARCH，32位系统：<code>SET ARCH=x86</code>；64位系统：<code>SET ARCH=amd64</code>。</li>
+<li>添加CD为程序目录 <code>SET CD=D:\newsoft\gitblit-1.9.1</code>(安装目录)。</li>
+<li><code>StartParams</code>里的启动参数，置空</li>
+</ul>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004401.png" alt="image-20210118004401684"></p>
+<p>服务注册表中即可查看该服务，可重启、停止。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004537.png" alt="image-20210118004536991"></p>
+<h2 id="5-浏览器访问"><a href="#5-浏览器访问" class="headerlink" title="5. 浏览器访问"></a>5. 浏览器访问</h2><p>账号密码默认<code>admin/admin</code></p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004801.png" alt="image-20210118004801412"></p>
+<h1 id="GitBlit简单使用"><a href="#GitBlit简单使用" class="headerlink" title="GitBlit简单使用"></a>GitBlit简单使用</h1><h2 id="1-克隆仓库"><a href="#1-克隆仓库" class="headerlink" title="1.克隆仓库"></a>1.克隆仓库</h2><p>&emsp;&emsp;进入仓库概况页面，在版本仓库地址栏选择<code>http</code>协议的<strong>git</strong>链接，复制该链接。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029220747.png" alt="image-20201029220747735"></p>
+<p>&emsp;&emsp;选择本地合适的文件路径，打开cmd窗口克隆该仓库即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git <span class="built_in">clone</span> http://couragehe@XX.XX.XX.XX:9999/r/demo.git</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029221614.png" alt="image-20201029221614544"></p>
+<h2 id="2-账户认证"><a href="#2-账户认证" class="headerlink" title="2.账户认证"></a>2.账户认证</h2><p>&emsp;&emsp;打开项目路径的cmd窗口，推送项目至远程<code>git</code>仓库，首次推送会弹出windows安全认证，输入密码即可保存至windows。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029221556.png" alt="image-20201029221556682"></p>
+<h2 id="3-分支问题"><a href="#3-分支问题" class="headerlink" title="3.分支问题"></a>3.分支问题</h2><p><strong>gitblit</strong>中没有创建工单（分支）的按钮，但并不代表不支持分支。做法便是将git仓库拉取至本地中，新建分支然后上传至远端仓库即可。</p>
+<h3 id="3-1-显示分支列表"><a href="#3-1-显示分支列表" class="headerlink" title="3.1 显示分支列表"></a>3.1 显示分支列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch </span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-新建分支"><a href="#3-2-新建分支" class="headerlink" title="3.2 新建分支"></a>3.2 新建分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-切换分支"><a href="#3-3-切换分支" class="headerlink" title="3.3 切换分支"></a>3.3 切换分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-远程分支新建"><a href="#3-4-远程分支新建" class="headerlink" title="3.4 远程分支新建"></a>3.4 远程分支新建</h3><p>&emsp;&emsp;在本地新分支下，推送本地分支至远程仓库中的分支（非强制要求同名），使用以下命令对应即可。其中第一个分支名<code>demo</code>对应的是本地分支名，第二个分支名<code>demo</code>对应的是远程分支名。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin demo:demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-本地仓库分支关联远程分支"><a href="#3-5-本地仓库分支关联远程分支" class="headerlink" title="3.5 本地仓库分支关联远程分支"></a>3.5 本地仓库分支关联远程分支</h3><p>使用该句之前必须确保远程仓库存在该分支，否则报错。关联之后便可直接使用<code>git push</code>或者<code>git pull</code>进行推送或拉取，命令简单明了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch --<span class="built_in">set</span>-upstream-to=origin/demo</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
     <title>Hexo博客安装(一)</title>
-    <url>/2020/09/14/92bc5d86a1a4/</url>
+    <url>/2020/09/14/ed31eabc1ddf/</url>
     <content><![CDATA[<p>欢迎使用 Hexo，本文档将帮助您快速上手。如果您在使用过程中遇到问题，请查看 <a href="https://hexo.io/zh-cn/docs/troubleshooting">问题解答</a> 中的解答，或者在 <a href="https://github.com/hexojs/hexo/issues">GitHub</a>、<a href="https://groups.google.com/group/hexo">Google Group</a> 上提问。</p>
 <h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
 <a id="more"></a>
@@ -242,36 +315,61 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux常用命令</title>
-    <url>/2021/01/07/78f8c1f0d089/</url>
-    <content><![CDATA[<h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><blockquote>
-<p>本文主要用于记录，在工作学习中经常需要使用的常见Linux命令。在<a href="https://couragehe.github.io/">CourageHe’s Blog</a>不间断更新，欢迎各位看官指教。</p>
+    <title>Hexo添加分类、标签、关于页(二)</title>
+    <url>/2020/09/14/993996b2e602/</url>
+    <content><![CDATA[<blockquote>
+<p>生成的新文件夹都在source下也就是和放文章的文件夹一块 以下所有命令都是在博客文件目录下执行</p>
 </blockquote>
+<h2 id="创建“分类”选项"><a href="#创建“分类”选项" class="headerlink" title="创建“分类”选项"></a>创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行下方命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<p>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>Linux资源查看</p>
-<p>各分区使用情况</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+<p>添加type: “categories”到内容中，添加后是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001504.png" alt="image-20210107001503961"></p>
-<p>查看进程</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -ef</span><br></pre></td></tr></table></figure>
+<p>保存并关闭文件。</p>
+<p>给文章添加“categories”属性</p>
+<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001625.png" alt="image-20210107001625631"></p>
-<p>查看内存使用情况</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
+<p>至此，成功给文章添加分类，点击首页的“分类”可以看到该分类下的所有文章。当然，只有添加了categories: xxx的文章才会被收录到首页的“分类”中。</p>
+<h2 id="创建“标签”选项"><a href="#创建“标签”选项" class="headerlink" title="创建“标签”选项"></a>创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001741.png" alt="image-20210107001741107"></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fre -m</span><br></pre></td></tr></table></figure>
+<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001916.png" alt="image-20210107001916338"></p>
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>保存并关闭文件。</p>
+<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo博客安装</span><br><span class="line">date: 2020-09-14 00:58:33</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建“关于”选项"><a href="#创建“关于”选项" class="headerlink" title="创建“关于”选项"></a>创建“关于”选项</h2><p>生成“关于”页并添加tpye属性</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure>
+
+<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 关于我</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">type: about</span><br><span class="line">---</span><br><span class="line"><span class="section">## 个人简介</span></span><br><span class="line">……</span><br><span class="line"><span class="section">## 其他</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<p>保存并关闭文件。</p>
+<p>点击首页的“关于”可以看到该文件所书写的内容。</p>
 ]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
       <tags>
-        <tag>Linux</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2020/09/06/e812d43c41a8/</url>
+    <url>/2020/09/06/b9889e0f3b8b/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <a id="more"></a>
 
@@ -295,8 +393,40 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux常用命令</title>
+    <url>/2021/01/07/75eb06482a73/</url>
+    <content><![CDATA[<h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><blockquote>
+<p>本文主要用于记录，在工作学习中经常需要使用的常见Linux命令。在<a href="https://couragehe.github.io/">CourageHe’s Blog</a>不间断更新，欢迎各位看官指教。</p>
+</blockquote>
+<a id="more"></a>
+
+<p>Linux资源查看</p>
+<p>各分区使用情况</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001504.png" alt="image-20210107001503961"></p>
+<p>查看进程</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -ef</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001625.png" alt="image-20210107001625631"></p>
+<p>查看内存使用情况</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001741.png" alt="image-20210107001741107"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fre -m</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001916.png" alt="image-20210107001916338"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title> FRP内网穿透</title>
-    <url>/2021/01/17/d7b5f6a10a19/</url>
+    <url>/2021/01/17/dd7e0bbf808e/</url>
     <content><![CDATA[<h1 id="FRP内网穿透"><a href="#FRP内网穿透" class="headerlink" title="FRP内网穿透"></a>FRP内网穿透</h1><blockquote>
 <p>frp 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。</p>
 </blockquote>
@@ -369,7 +499,7 @@
 <p><code>local_ip</code>：本地需要暴露到公网的服务地址。客户端网络环境下的ip地址皆可。</p>
 <p><code>local_port</code>：本地需要暴露到公网的服务端口</p>
 <p><code>remote_port</code>：在 frp 服务端监听的端口，访问此端口的流量将会被转发到本地服务对应的端口。</p>
-<h4 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">frpc.ext -c frpc.ini </span><br></pre></td></tr></table></figure>
+<h4 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">frpc.exe -c frpc.ini </span><br></pre></td></tr></table></figure>
 
 
 ]]></content>
@@ -377,67 +507,88 @@
         <category>实用工具</category>
       </categories>
       <tags>
-        <tag>FRP</tag>
-        <tag>Liunx</tag>
         <tag>Windows</tag>
+        <tag>Linux</tag>
+        <tag>FRP</tag>
       </tags>
   </entry>
   <entry>
-    <title>GitBlit安装与使用</title>
-    <url>/2021/01/18/88be214e4a9f/</url>
-    <content><![CDATA[<h1 id="GitBlit安装"><a href="#GitBlit安装" class="headerlink" title="GitBlit安装"></a>GitBlit安装</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>要求Windows电脑安装JAVA环境，在<a href="http://gitblit.github.io/gitblit/">GitBlit首页</a>可根据操作系统选择不同的版本安装。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200211.png" alt="image-20210117200211238"></p>
+    <title>剑指 Offer 03. 数组中重复的数字</title>
+    <url>/2021/01/26/ec8237ba0fb1/</url>
+    <content><![CDATA[<h1 id="剑指-Offer-03-数组中重复的数字"><a href="#剑指-Offer-03-数组中重复的数字" class="headerlink" title="剑指 Offer 03. 数组中重复的数字"></a>剑指 Offer 03. 数组中重复的数字</h1><blockquote>
+<p>题目来源：剑指Offer03</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>找出数组中重复的数字。</p>
+<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
+<p>示例 1：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">[2, 3, 1, 0, 2, 5, 3]</span><br><span class="line">输出：2 或 3 </span><br></pre></td></tr></table></figure>
+
+
+<p>限制：</p>
+<ul>
+<li><code>2 &lt;= n &lt;= 100000</code></li>
+</ul>
 <a id="more"></a>
 
-<h2 id="2-解压"><a href="#2-解压" class="headerlink" title="2.  解压"></a>2.  解压</h2><p>文件下载后，解压至一个文件夹下即可，无需安装。下图是解压后的文件列表。</p>
-<h2 id="3-配置文件"><a href="#3-配置文件" class="headerlink" title="3. 配置文件"></a><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200502.png" alt="image-20210117200502037">3. 配置文件</h2><p>Gitblit目录下的data文件夹中的<code>defaults.properties</code>是默认配置文件，另外需要修改<code>gitblit.properties</code>以覆盖默认配置。</p>
-<ul>
-<li><code>server.httpPort</code>：http协议端口号</li>
-<li><code>server.httpBindInterface</code>：http服务器的ip地址</li>
-</ul>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># GITBLIT.PROPERTIES</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your custom settings in this file and/or include settings defined in</span></span><br><span class="line"><span class="comment"># other properties files.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Include Gitblit&#x27;s &#x27;defaults.properties&#x27; within your configuration.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># <span class="doctag">NOTE:</span> Gitblit will not automatically reload &quot;included&quot; properties.  Gitblit</span></span><br><span class="line"><span class="comment"># only watches the &#x27;gitblit.properties&#x27; file for modifications.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Paths may be relative to the $&#123;baseFolder&#125; or they may be absolute.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># COMMA-DELIMITED</span></span><br><span class="line"><span class="comment"># SINCE 1.7.0</span></span><br><span class="line"><span class="attr">include</span> = <span class="string">defaults.properties</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your overrides or custom settings below</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Standard http port to serve.  &lt;= 0 disables this connector.</span></span><br><span class="line"><span class="comment"># On Unix/Linux systems, ports &lt; 1024 require root permissions.</span></span><br><span class="line"><span class="comment"># Recommended value: 80 or 8080</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpPort</span> = <span class="string">9999</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify the interface for Jetty to bind the standard connector.</span></span><br><span class="line"><span class="comment"># You may specify an ip or an empty value to bind to all interfaces.</span></span><br><span class="line"><span class="comment"># Specifying localhost will result in Gitblit ONLY listening to requests to</span></span><br><span class="line"><span class="comment"># localhost.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpBindInterface</span> = <span class="string">localhost</span></span><br></pre></td></tr></table></figure>
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>统计重复元素常用方法是使用哈希表，如果统计的是元素明确范围的话建议使用数组。</p>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="哈希表统计"><a href="#哈希表统计" class="headerlink" title="哈希表统计"></a>哈希表统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt;nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(set.contains(nums[i]))&#123;</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               set.add(nums[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="4-服务启动"><a href="#4-服务启动" class="headerlink" title="4.  服务启动"></a>4.  服务启动</h2><p>GitBlit目录下，在<code>installService.cmd</code>中。</p>
-<ul>
-<li>修改ARCH，32位系统：<code>SET ARCH=x86</code>；64位系统：<code>SET ARCH=amd64</code>。</li>
-<li>添加CD为程序目录 <code>SET CD=D:\newsoft\gitblit-1.9.1</code>(安装目录)。</li>
-<li><code>StartParams</code>里的启动参数，置空</li>
-</ul>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004401.png" alt="image-20210118004401684"></p>
-<p>服务注册表中即可查看该服务，可重启、停止。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004537.png" alt="image-20210118004536991"></p>
-<h2 id="5-浏览器访问"><a href="#5-浏览器访问" class="headerlink" title="5. 浏览器访问"></a>5. 浏览器访问</h2><p>账号密码默认<code>admin/admin</code></p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004801.png" alt="image-20210118004801412"></p>
-<h1 id="GitBlit简单使用"><a href="#GitBlit简单使用" class="headerlink" title="GitBlit简单使用"></a>GitBlit简单使用</h1><h2 id="1-克隆仓库"><a href="#1-克隆仓库" class="headerlink" title="1.克隆仓库"></a>1.克隆仓库</h2><p>&emsp;&emsp;进入仓库概况页面，在版本仓库地址栏选择<code>http</code>协议的<strong>git</strong>链接，复制该链接。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029220747.png" alt="image-20201029220747735"></p>
-<p>&emsp;&emsp;选择本地合适的文件路径，打开cmd窗口克隆该仓库即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git <span class="built_in">clone</span> http://couragehe@XX.XX.XX.XX:9999/r/demo.git</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210126002427.png" alt="image-20210126002427040"></p>
+<h3 id="数组统计"><a href="#数组统计" class="headerlink" title="数组统计"></a>数组统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[nums[i]] == <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                arr[nums[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029221614.png" alt="image-20201029221614544"></p>
-<h2 id="2-账户认证"><a href="#2-账户认证" class="headerlink" title="2.账户认证"></a>2.账户认证</h2><p>&emsp;&emsp;打开项目路径的cmd窗口，推送项目至远程<code>git</code>仓库，首次推送会弹出windows安全认证，输入密码即可保存至windows。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
-
-
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029221556.png" alt="image-20201029221556682"></p>
-<h2 id="3-分支问题"><a href="#3-分支问题" class="headerlink" title="3.分支问题"></a>3.分支问题</h2><p><strong>gitblit</strong>中没有创建工单（分支）的按钮，但并不代表不支持分支。做法便是将git仓库拉取至本地中，新建分支然后上传至远端仓库即可。</p>
-<h3 id="3-1-显示分支列表"><a href="#3-1-显示分支列表" class="headerlink" title="3.1 显示分支列表"></a>3.1 显示分支列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch </span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-新建分支"><a href="#3-2-新建分支" class="headerlink" title="3.2 新建分支"></a>3.2 新建分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch demo</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-切换分支"><a href="#3-3-切换分支" class="headerlink" title="3.3 切换分支"></a>3.3 切换分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout demo</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-远程分支新建"><a href="#3-4-远程分支新建" class="headerlink" title="3.4 远程分支新建"></a>3.4 远程分支新建</h3><p>&emsp;&emsp;在本地新分支下，推送本地分支至远程仓库中的分支（非强制要求同名），使用以下命令对应即可。其中第一个分支名<code>demo</code>对应的是本地分支名，第二个分支名<code>demo</code>对应的是远程分支名。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin demo:demo</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-5-本地仓库分支关联远程分支"><a href="#3-5-本地仓库分支关联远程分支" class="headerlink" title="3.5 本地仓库分支关联远程分支"></a>3.5 本地仓库分支关联远程分支</h3><p>使用该句之前必须确保远程仓库存在该分支，否则报错。关联之后便可直接使用<code>git push</code>或者<code>git pull</code>进行推送或拉取，命令简单明了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch --<span class="built_in">set</span>-upstream-to=origin/demo</span><br></pre></td></tr></table></figure>]]></content>
+<p>执行结果：</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210201152224.png" alt="image-20210126002415245"></p>
+]]></content>
       <categories>
-        <category>Git</category>
+        <category>Algorithm</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
-        <tag>Git</tag>
+        <tag>LeetCode</tag>
+        <tag>剑指 Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>1128.等价多米诺骨牌对的数量</title>
+    <url>/2021/01/26/f6d039b5ce46/</url>
+    <content><![CDATA[<h1 id="1128-等价多米诺骨牌对的数量"><a href="#1128-等价多米诺骨牌对的数量" class="headerlink" title="1128.等价多米诺骨牌对的数量"></a>1128.等价多米诺骨牌对的数量</h1><blockquote>
+<p>每日一题：2020-01-26</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/">https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个由一些多米诺骨牌组成的列表<code> dominoes</code>。</p>
+<p>如果其中某一张多米诺骨牌可以通过旋转 0 度或 180 度得到另一张多米诺骨牌，我们就认为这两张牌是等价的。</p>
+<p>形式上，<code>dominoes[i] = [a, b] </code>和<code>dominoes[j] = [c, d]</code>等价的前提是 <code>a==c</code> 且<code> b==d</code>，或是 <code>a==d</code> 且<code> b==c</code>。</p>
+<p>在 <code>0 &lt;= i &lt; j &lt; dominoes.length</code> 的前提下，找出满足 dominoes[i] 和 dominoes[j] 等价的骨牌对 (i, j) 的数量。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：dominoes &#x3D; [[1,2],[2,1],[3,4],[5,6]]</span><br><span class="line">输出：1</span><br></pre></td></tr></table></figure>
+
+
+<p>提示：</p>
+<ul>
+<li><code>1 &lt;= dominoes.length &lt;= 40000</code></li>
+<li><code>1 &lt;= dominoes [i][j] &lt;= 9</code></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>就其题目描述而言，显而易见可以想到暴力循环解题的方法，时间复杂度<code>O(n^2)</code>。提示中有提示数组长度为<code>40000</code>,试想如果不加以利用提示条件必然会导致运行超时。第二条提示是指数组的值为<code>1-9</code>的整数，充分利用这个提示条件则是解题的关键。</p>
+<p>本题中我们需要统计所有等价的多米诺骨牌，其中多米诺骨牌使用二元对代表，「等价」的定义是，在允许翻转两个二元对的的情况下，使它们的元素一一对应相等。于是我们不妨直接让每一个二元对都变为指定的格式，即第一维必须不大于第二维。这样两个二元对「等价」当且仅当两个二元对完全相同。注意到二元对中的元素均不大于 99，因此我们可以将每一个二元对拼接成一个两位的正整数，即<code> (x, y) =&gt; 10x + y</code>。这样就无需使用哈希表统计元素数量，而直接使用长度为 100的数组即可。</p>
+<p>元素数量统计出来后，求各个元素的等差数列之和即可，<strong>切记</strong>数量为一的不计。</p>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="采用暴力循环法"><a href="#采用暴力循环法" class="headerlink" title="采用暴力循环法"></a>采用暴力循环法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numEquivDominoPairs</span><span class="params">(<span class="keyword">int</span>[][] dominoes)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;dominoes.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j&lt;dominoes.length;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(dominoes[i][<span class="number">1</span>] == dominoes[j][<span class="number">1</span>])&#123;</span><br><span class="line">                    <span class="keyword">if</span>(dominoes[i][<span class="number">0</span>] == dominoes[j][<span class="number">0</span>])&#123;</span><br><span class="line">                        ans++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(dominoes[i][<span class="number">1</span>] == dominoes[j][<span class="number">0</span>])&#123;</span><br><span class="line">                    <span class="keyword">if</span>(dominoes[i][<span class="number">0</span>] == dominoes[j][<span class="number">1</span>])&#123;</span><br><span class="line">                        ans++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210127002655.png" alt="image-20210127002655515"></p>
+<h3 id="采用统计法"><a href="#采用统计法" class="headerlink" title="采用统计法"></a>采用统计法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numEquivDominoPairs</span><span class="params">(<span class="keyword">int</span>[][] dominoes)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; dominoes.length;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> num = dominoes[i][<span class="number">0</span>] &gt; dominoes[i][<span class="number">1</span>]? (dominoes[i][<span class="number">0</span>]*<span class="number">10</span>+ dominoes[i][<span class="number">1</span>]) :  (dominoes[i][<span class="number">1</span>]*<span class="number">10</span>+ dominoes[i][<span class="number">0</span>]);<span class="comment">//组合成取值最大的十进制数字</span></span><br><span class="line">            arr[num]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; arr.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i] &lt; <span class="number">2</span>) <span class="keyword">continue</span>; </span><br><span class="line">            ans += (arr[i]-<span class="number">1</span>+<span class="number">1</span>)*(arr[i]-<span class="number">1</span>) /<span class="number">2</span>;<span class="comment">//等差数列组合</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210127002558.png" alt="image-20210127002558645"></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>每日一题</tag>
       </tags>
   </entry>
 </search>
