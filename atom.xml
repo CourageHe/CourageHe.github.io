@@ -6,7 +6,7 @@
   <link href="https://couragehe.github.io/atom.xml" rel="self"/>
   
   <link href="https://couragehe.github.io/"/>
-  <updated>2021-01-31T15:56:07.880Z</updated>
+  <updated>2021-02-01T08:12:45.785Z</updated>
   <id>https://couragehe.github.io/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://couragehe.github.io/2021/01/31/98ee9cbb89ac/"/>
-    <id>https://couragehe.github.io/2021/01/31/98ee9cbb89ac/</id>
-    <published>2021-01-31T15:56:07.879Z</published>
-    <updated>2021-01-31T15:56:07.880Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;新鲜出炉的Centos&quot;&gt;&lt;a href=&quot;#新鲜出炉的Centos&quot; class=&quot;headerlink&quot; title=&quot;新鲜出炉的Centos&quot;&gt;&lt;/a&gt;新鲜出炉的Centos&lt;/h1&gt;&lt;h2 id=&quot;一、配置yum国内镜像源&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>1128.等价多米诺骨牌对的数量</title>
@@ -148,11 +127,33 @@
     <category term="实用工具" scheme="https://couragehe.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Windows" scheme="https://couragehe.github.io/tags/Windows/"/>
+    <category term="FRP" scheme="https://couragehe.github.io/tags/FRP/"/>
     
     <category term="Linux" scheme="https://couragehe.github.io/tags/Linux/"/>
     
-    <category term="FRP" scheme="https://couragehe.github.io/tags/FRP/"/>
+    <category term="Windows" scheme="https://couragehe.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用rz和sz命令传输文件</title>
+    <link href="https://couragehe.github.io/2021/01/07/818b6f02a79d/"/>
+    <id>https://couragehe.github.io/2021/01/07/818b6f02a79d/</id>
+    <published>2021-01-07T05:19:44.000Z</published>
+    <updated>2021-02-01T08:25:42.794Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;新鲜出炉的Centos&quot;&gt;&lt;a href=&quot;#新鲜出炉的Centos&quot; class=&quot;headerlink&quot; title=&quot;新鲜出炉的Centos&quot;&gt;&lt;/a&gt;新鲜出炉的Centos&lt;/h1&gt;&lt;h2 id=&quot;一、配置yum国内镜像源&quot;&gt;&lt;a href=&quot;#一、配置yum国内镜像源&quot; class=&quot;headerlink&quot; title=&quot;一、配置yum国内镜像源&quot;&gt;&lt;/a&gt;一、配置yum国内镜像源&lt;/h2&gt;&lt;h3 id=&quot;1、备份&quot;&gt;&lt;a href=&quot;#1、备份&quot; class=&quot;headerlink&quot; title=&quot;1、备份&quot;&gt;&lt;/a&gt;1、备份&lt;/h3&gt;&lt;p&gt;如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;该文件是Centos的镜像文件配置，一般国内都会配置成阿里云、网易、清华大学。我这里选择的式清华大学的镜像源，编辑 &lt;code&gt;/etc/yum.repos.d/CentOS-Base.repo &lt;/code&gt;文件，在 &lt;code&gt;mirrorlist=&lt;/code&gt; 开头行前面加 &lt;code&gt;#&lt;/code&gt; 注释掉；并将 &lt;code&gt;baseurl=&lt;/code&gt; 开头行取消注释（如果被注释的话），把该行内的域名（例如&lt;code&gt;mirror.centos.org&lt;/code&gt;）替换为 &lt;code&gt;mirrors.tuna.tsinghua.edu.cn&lt;/code&gt;。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Linux" scheme="https://couragehe.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://couragehe.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -244,8 +245,8 @@
   
   <entry>
     <title>Lombok常用注解</title>
-    <link href="https://couragehe.github.io/2020/08/16/c2f37b230581/"/>
-    <id>https://couragehe.github.io/2020/08/16/c2f37b230581/</id>
+    <link href="https://couragehe.github.io/2020/08/16/cf24db6abcf6/"/>
+    <id>https://couragehe.github.io/2020/08/16/cf24db6abcf6/</id>
     <published>2020-08-16T09:07:09.000Z</published>
     <updated>2021-02-01T08:23:06.906Z</updated>
     
