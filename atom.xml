@@ -76,40 +76,6 @@
   
   <entry>
     <title>剑指 Offer 03. 数组中重复的数字</title>
-    <link href="https://couragehe.github.io/2021/01/26/9778df2a97c8/"/>
-    <id>https://couragehe.github.io/2021/01/26/9778df2a97c8/</id>
-    <published>2021-01-25T16:25:23.000Z</published>
-    <updated>2021-02-01T08:12:06.909Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;剑指-Offer-03-数组中重复的数字&quot;&gt;&lt;a href=&quot;#剑指-Offer-03-数组中重复的数字&quot; class=&quot;headerlink&quot; title=&quot;剑指 Offer 03. 数组中重复的数字&quot;&gt;&lt;/a&gt;剑指 Offer 03. 数组中重复的数字&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;题目来源：剑指Offer03&lt;/p&gt;
-&lt;p&gt;题目链接：&lt;a href=&quot;https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/&quot;&gt;https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;找出数组中重复的数字。&lt;/p&gt;
-&lt;p&gt;在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。&lt;/p&gt;
-&lt;p&gt;示例 1：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[2, 3, 1, 0, 2, 5, 3]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出：2 或 3 &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-
-&lt;p&gt;限制：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;2 &amp;lt;= n &amp;lt;= 100000&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Algorithm" scheme="https://couragehe.github.io/categories/Algorithm/"/>
-    
-    
-    <category term="LeetCode" scheme="https://couragehe.github.io/tags/LeetCode/"/>
-    
-    <category term="剑指 Offer" scheme="https://couragehe.github.io/tags/%E5%89%91%E6%8C%87-Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>剑指 Offer 03. 数组中重复的数字</title>
     <link href="https://couragehe.github.io/2021/01/26/ec8237ba0fb1/"/>
     <id>https://couragehe.github.io/2021/01/26/ec8237ba0fb1/</id>
     <published>2021-01-25T16:25:23.000Z</published>
