@@ -22,24 +22,23 @@
     var CONFIG = {"hostname":"couragehe.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="新鲜出炉的Centos一、配置yum国内镜像源1、备份如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。 1sudo cp &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.bak  该文件是Centos的镜像文件配置，一般国内都会配置成阿里云、网易、清华大学。我这里选择的式清华大学的镜像源，编辑 &#x2F;e">
+  <meta name="description" content="辛丑牛年新年展望（2021）&amp;emsp;&amp;emsp;2021年2月12日为辛丑牛年正月初一，就农历而言，今天便就是中国的农历新年。作为一个对传统佳节有浓厚感情的传统国人，辞旧迎新、展望未来便是本文的初衷。2020元旦总结虽有稍许记录，却未整理成文，今天借这个机会发表啦！ 2020年度总结&amp;emsp;&amp;emsp;兜兜转转，大学本科已经步入最后一个年头了。这一年，正经世界百年未有之大变局，时代选择我们">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用rz和sz命令传输文件">
-<meta property="og:url" content="https://couragehe.github.io/2021/01/07/818b6f02a79d/index.html">
+<meta property="og:title" content="辛丑牛年新年展望（2021）">
+<meta property="og:url" content="https://couragehe.github.io/2021/02/12/6ea85d902251/index.html">
 <meta property="og:site_name" content="CourageHe&#39;s Blog">
-<meta property="og:description" content="新鲜出炉的Centos一、配置yum国内镜像源1、备份如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。 1sudo cp &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.bak  该文件是Centos的镜像文件配置，一般国内都会配置成阿里云、网易、清华大学。我这里选择的式清华大学的镜像源，编辑 &#x2F;e">
+<meta property="og:description" content="辛丑牛年新年展望（2021）&amp;emsp;&amp;emsp;2021年2月12日为辛丑牛年正月初一，就农历而言，今天便就是中国的农历新年。作为一个对传统佳节有浓厚感情的传统国人，辞旧迎新、展望未来便是本文的初衷。2020元旦总结虽有稍许记录，却未整理成文，今天借这个机会发表啦！ 2020年度总结&amp;emsp;&amp;emsp;兜兜转转，大学本科已经步入最后一个年头了。这一年，正经世界百年未有之大变局，时代选择我们">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103215423.png">
-<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103214524.png">
-<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103221932.png">
-<meta property="article:published_time" content="2021-01-07T05:19:44.000Z">
-<meta property="article:modified_time" content="2021-02-01T08:25:42.794Z">
+<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210213010621.png">
+<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210213011312.png">
+<meta property="article:published_time" content="2021-02-12T13:21:21.000Z">
+<meta property="article:modified_time" content="2021-02-13T15:34:30.063Z">
 <meta property="article:author" content="Courage He">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="CourageHe,有勇须知方,博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103215423.png">
+<meta name="twitter:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210213010621.png">
 
-<link rel="canonical" href="https://couragehe.github.io/2021/01/07/818b6f02a79d/">
+<link rel="canonical" href="https://couragehe.github.io/2021/02/12/6ea85d902251/">
 
 
 <script id="page-configurations">
@@ -52,7 +51,7 @@
   };
 </script>
 
-  <title>使用rz和sz命令传输文件 | CourageHe's Blog</title>
+  <title>辛丑牛年新年展望（2021） | CourageHe's Blog</title>
   
 
 
@@ -205,7 +204,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/01/07/818b6f02a79d/">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/02/12/6ea85d902251/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -218,7 +217,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          使用rz和sz命令传输文件
+          辛丑牛年新年展望（2021）
         </h1>
 
         <div class="post-meta">
@@ -228,14 +227,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-01-07 13:19:44" itemprop="dateCreated datePublished" datetime="2021-01-07T13:19:44+08:00">2021-01-07</time>
+              <time title="创建时间：2021-02-12 21:21:21" itemprop="dateCreated datePublished" datetime="2021-02-12T21:21:21+08:00">2021-02-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 16:25:42" itemprop="dateModified" datetime="2021-02-01T16:25:42+08:00">2021-02-01</time>
+                <time title="修改时间：2021-02-13 23:34:30" itemprop="dateModified" datetime="2021-02-13T23:34:30+08:00">2021-02-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,7 +242,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/%E4%B8%AA%E4%BA%BA%E6%9C%89%E6%84%9F/" itemprop="url" rel="index"><span itemprop="name">个人有感</span></a>
                 </span>
             </span>
 
@@ -279,34 +278,77 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="新鲜出炉的Centos"><a href="#新鲜出炉的Centos" class="headerlink" title="新鲜出炉的Centos"></a>新鲜出炉的Centos</h1><h2 id="一、配置yum国内镜像源"><a href="#一、配置yum国内镜像源" class="headerlink" title="一、配置yum国内镜像源"></a>一、配置yum国内镜像源</h2><h3 id="1、备份"><a href="#1、备份" class="headerlink" title="1、备份"></a>1、备份</h3><p>如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure>
-
-<p>该文件是Centos的镜像文件配置，一般国内都会配置成阿里云、网易、清华大学。我这里选择的式清华大学的镜像源，编辑 <code>/etc/yum.repos.d/CentOS-Base.repo </code>文件，在 <code>mirrorlist=</code> 开头行前面加 <code>#</code> 注释掉；并将 <code>baseurl=</code> 开头行取消注释（如果被注释的话），把该行内的域名（例如<code>mirror.centos.org</code>）替换为 <code>mirrors.tuna.tsinghua.edu.cn</code>。</p>
-<a id="more"></a>
-
-<h3 id="2、Centos7示例"><a href="#2、Centos7示例" class="headerlink" title="2、Centos7示例"></a>2、Centos7示例</h3><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#CentOS-Base.repo</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The mirror system uses the connecting IP address of the client and the</span></span><br><span class="line"><span class="comment"># update status of each mirror to pick mirrors that are updated to and</span></span><br><span class="line"><span class="comment"># geographically close to the client.  You should use this for CentOS updates</span></span><br><span class="line"><span class="comment"># unless you are manually picking other mirrors.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># If the mirrorlist= does not work for you, as a fall back you can try the</span></span><br><span class="line"><span class="comment"># remarked out baseurl= line instead.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">[base]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Base</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/os/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#released updates</span></span><br><span class="line"><span class="attr">[updates]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Updates</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/updates/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line"><span class="attr">[extras]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Extras</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/extras/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line"><span class="attr">[centosplus]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Plus</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/centosplus/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">0</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="3、更新软件包缓存"><a href="#3、更新软件包缓存" class="headerlink" title="3、更新软件包缓存"></a>3、更新软件包缓存</h3><p>清楚之前的软件包缓存，然后更新软件包缓存</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
-
-<h3 id="4、更新软件包"><a href="#4、更新软件包" class="headerlink" title="4、更新软件包"></a>4、更新软件包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
-
-<p>参考：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">https://mirrors.tuna.tsinghua.edu.cn/help/centos/</a></p>
-<h2 id="二、rz、sz命令传输文件"><a href="#二、rz、sz命令传输文件" class="headerlink" title="二、rz、sz命令传输文件"></a>二、rz、sz命令传输文件</h2><p>大文件传输的话，建议使用<code>Filezilla</code>进行传输，个别的小文件传输的话，仅以使用<code>lrzsz</code>，更方便哦！！！</p>
-<h3 id="1、安装-lrzsz"><a href="#1、安装-lrzsz" class="headerlink" title="1、安装 lrzsz"></a>1、安装 lrzsz</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install lrzsz</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、上传文件"><a href="#2、上传文件" class="headerlink" title="2、上传文件"></a>2、上传文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rz</span><br></pre></td></tr></table></figure>
-
-<p>rz命令打开文件选择框，选择要发送的文件即可发送至当前目录。</p>
-<p>从Windows/Mac直接拖动至XShell窗口也是同样的哦！！！</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103215423.png" alt="image-20210103215423075"></p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103214524.png" alt="image-20210103214523798"></p>
-<h3 id="3、下载文件"><a href="#3、下载文件" class="headerlink" title="3、下载文件"></a>3、下载文件</h3><p><code>sz 文件名</code>便可下载该文件至本地，选择本地文件夹即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sz /etc/yum.repos.d/CentOS-Base.repo</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103221932.png" alt="image-20210103221932546"></p>
-<p>三、</p>
+        <h1 id="辛丑牛年新年展望（2021）"><a href="#辛丑牛年新年展望（2021）" class="headerlink" title="辛丑牛年新年展望（2021）"></a>辛丑牛年新年展望（2021）</h1><p>&emsp;&emsp;2021年2月12日为辛丑牛年正月初一，就农历而言，今天便就是中国的农历新年。作为一个对传统佳节有浓厚感情的传统国人，辞旧迎新、展望未来便是本文的初衷。2020元旦总结虽有稍许记录，却未整理成文，今天借这个机会发表啦！</p>
+<h2 id="2020年度总结"><a href="#2020年度总结" class="headerlink" title="2020年度总结"></a>2020年度总结</h2><p>&emsp;&emsp;兜兜转转，大学本科已经步入最后一个年头了。这一年，正经世界百年未有之大变局，时代选择我们来见证，也是由我们来建设这个时代。本文便来讲讲我这一年的见证与建设，首先就开门见山说说2020 的个人生涯关键词：<strong>迷茫</strong>、<strong>焦虑</strong>、<strong>尝试</strong>、<strong>奋斗</strong>。</p>
+<h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><ul>
+<li><strong>迷茫</strong></li>
+</ul>
+<p>&emsp;&emsp;为什么说是迷茫呢？因为疫情前期一直待在家中，本人对未来考研<strong>OR</strong>工作还未明确目标。目标未定，规划更无须再论。那段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
+<ul>
+<li><strong>焦虑</strong></li>
+</ul>
+<p>&emsp;&emsp;每个找工作的娃的焦虑，想必每个人都或多或少有过经历！希望早日结束这个状态，现在终于明白铁饭碗为什么这么香了！</p>
+<ul>
+<li><strong>尝试</strong></li>
+</ul>
+<p>&emsp;&emsp;应届生的身份，敞开了许多大门，事业单位、公务员、研究生、企业等都可以去尝试，去争取。在2020这一年，我一直都在不断尝试，海投简历、面试IT公司、尝试事业单位和备考研究生等等……</p>
+<ul>
+<li><strong>奋斗</strong></li>
+</ul>
+<p>&emsp;&emsp;机会虽然很多，但只有那些有准备的人才能抓住。这一年也是在不断奋斗的一年，同疫情做斗争、刷题背八股文、上海得帆实习、考研备考等。</p>
+<h3 id="月历表"><a href="#月历表" class="headerlink" title="月历表"></a>月历表</h3><ul>
+<li><strong>1月</strong>：大学本科生涯最后的课程正规考试，回家！！！</li>
+</ul>
+<p>&emsp;&emsp;大三上学期的期末考试在一月进行，《数据库原理及应用》，《计算机组成与系统结构》等科目进行闭卷考试，因为疫情在家上网课的原因，这便是最后一次正规的课程结课考试了。1月11号放寒假回家，归家途中经过疫情还未报道的武汉，回家不久就安排在家居家隔离，每天都有村里干部来测体温。</p>
+<ul>
+<li><strong>2月</strong>：疫情造成的蝴蝶效应！</li>
+</ul>
+<p>&emsp;&emsp;2月的头号大事便是春节啦！记忆之初，春节都是热热闹闹的，百年未有之大变局中的春节只能是远程拜年啦！隔离的春节，爱心却两不相隔，一方有难，八方来援这句话在湖北得到广泛运用。一省帮一市、村里送菜送粮、邻里互帮互助等等奉献爱心的行为都让我深受感动。相比之下，国外的某些XXX恶言恶语、不怀好意的反响就显得太过无耻卑鄙，进一步加深了我对ZF的认同并坚定自身立场。</p>
+<ul>
+<li><strong>3月</strong>：疫情期间在家赋闲，陷入焦虑</li>
+</ul>
+<p>&emsp;&emsp;这段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
+<p>疫情实时播报频道：<a target="_blank" rel="noopener" href="https://t.me/nCoV2019">https://t.me/nCoV2019</a></p>
+<ul>
+<li><strong>4月</strong>：第一次接单干活，实现技术变现</li>
+</ul>
+<p>&emsp;&emsp;这段期间在家里上网课，课余时间便想找些事情做一下。机缘巧合之下加了一个做私活的群，其中接了一个安卓app的项目，主要任务是写一个类似星巴克咖啡店的APP。另外是一个Web端图书管理系统，前后端交互的形式，由于时间不太够前端草草写了一下。小项目没赚几个钱，但这是首次使用技术变现，值得纪念一下。不得不说，写的界面真丑！哈哈哈</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210213010621.png" alt="image-20210213010621705"></p>
+<ul>
+<li><strong>5月</strong>：面试、准备面试相交织</li>
+</ul>
+<p>&emsp;&emsp;这是一个面试月，投的基本都是各大公司的实习岗位，有上海得帆、字节跳动、华讯网络等。有喜有忧，大公司基本都被拒了，也是自身准备不足的结果，特别是字节跳动的笔试特别考核算法，所以还需历练！所幸还是有所斩获，收获了上海得帆的实习offer。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210213011312.png" alt="image-20210213011312539"></p>
+<ul>
+<li><strong>6月</strong>：石油项目</li>
+</ul>
+<p>&emsp;&emsp;第一次接触实际项目,学校老师招人干的一个分父子模块的后台管理项目。这是一个从需求到项目成型的实际项目，我主要参与前期的数据库建表、项目搭建。</p>
+<ul>
+<li><strong>7月</strong>：得帆公司培训</li>
+</ul>
+<p>&emsp;&emsp;7月21日上海得帆实习，第一次独自走向远方，第一次参与这种IT规范培训。在这期间结识了不少优秀的同仁，见贤思齐焉！加油！</p>
+<ul>
+<li><strong>8-9月</strong>：上海实习</li>
+</ul>
+<p>&emsp;&emsp;上海得帆公司外派我前往中骏地产参与了ESB项目的开发，新力地产的门户项目。</p>
+<ul>
+<li><strong>10-11月</strong>：回校工作，成为公司第一个员工</li>
+</ul>
+<p>&emsp;&emsp;学校老师创建的一个初创公司，领头的一个老师是我大三参赛的一个项目的指导老师，老师认为我能力还行，便邀请我加入公司。当时我正在上海实习，待了大概两个多月也想换个新环境多多历练。话说初创公司确实很锻炼人啊，就你一个人，啥事都是你。刚开始去的那段时间都没开始写代码，都是搞什么流程讨论，原型设计等。这个决定也深深影响到我找工作的进程，一是留校读研边工作，二是出去工作。利弊难论，马上要到选择的时刻了！</p>
+<ul>
+<li><strong>12月</strong>：临阵考研，加油！！！冲！冲！冲！</li>
+</ul>
+<p>&emsp;&emsp;2020年12月26日考研，这一月脱产备考，无论是否要读都尽力一试。</p>
+<h3 id="年度总结"><a href="#年度总结" class="headerlink" title="年度总结"></a>年度总结</h3><p>&emsp;&emsp;2020许多第一次，第一次接私活，第一次做实际项目，第一次实习，第一次考研。许多第一次做得或许不够好，因此更需努力充实自己。2020，有收获，也有遗憾。这是变化最大的一年，从学校学子到接触社会工作，试错的机会更少，所作的每一个决定都影响着未来数年的路。总的来说，2020让我深刻认识到了自己的不足，见贤思齐焉！！！只思是不够的，更要付诸行动。成功的背后，都是不断的坚持与努力，优秀都是经过一次次碰壁调整出来的。不知从何时起难以专注学习/工作，自制力一直都在减弱，这种状态实在难堪。新的一年希望能够扭转这些疲敝之态，多多历练，想到就去做，一万年太久！只争朝夕！</p>
+<h3 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h3><ul>
+<li>一天至少一道算法题</li>
+</ul>
+<p>&emsp;&emsp;<a target="_blank" rel="noopener" href="https://github.com/CourageHe/Algorithm-Daily-Practice">算法日常联系代码库</a></p>
+<ul>
+<li>勤写博客总结经验</li>
+<li>海投岗位，找工作</li>
+<li>看几本书（剑指Offer、JAVA8函数式编程、设计模式）</li>
+</ul>
 
     </div>
      <div>
@@ -350,7 +392,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://couragehe.github.io/2021/01/07/818b6f02a79d/" title="使用rz和sz命令传输文件">https://couragehe.github.io/2021/01/07/818b6f02a79d/</a>
+    <a href="https://couragehe.github.io/2021/02/12/6ea85d902251/" title="辛丑牛年新年展望（2021）">https://couragehe.github.io/2021/02/12/6ea85d902251/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -379,10 +421,6 @@
 
 
       <footer class="post-footer">
-          
-          <div class="post-tags">
-              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
-          </div>
 
         
 
@@ -390,13 +428,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/01/07/75eb06482a73/" rel="prev" title="Linux常用命令">
-      <i class="fa fa-chevron-left"></i> Linux常用命令
+    <a href="/2021/01/26/f6d039b5ce46/" rel="prev" title="1128.等价多米诺骨牌对的数量">
+      <i class="fa fa-chevron-left"></i> 1128.等价多米诺骨牌对的数量
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/01/17/dd7e0bbf808e/" rel="next" title="FRP内网穿透">
-      FRP内网穿透 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -409,7 +444,6 @@
 
           </div>
           
-    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -456,7 +490,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E9%B2%9C%E5%87%BA%E7%82%89%E7%9A%84Centos"><span class="nav-text">新鲜出炉的Centos</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%85%8D%E7%BD%AEyum%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90"><span class="nav-text">一、配置yum国内镜像源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E5%A4%87%E4%BB%BD"><span class="nav-text">1、备份</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81Centos7%E7%A4%BA%E4%BE%8B"><span class="nav-text">2、Centos7示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%BC%93%E5%AD%98"><span class="nav-text">3、更新软件包缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%8C%85"><span class="nav-text">4、更新软件包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81rz%E3%80%81sz%E5%91%BD%E4%BB%A4%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6"><span class="nav-text">二、rz、sz命令传输文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85-lrzsz"><span class="nav-text">1、安装 lrzsz</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6"><span class="nav-text">2、上传文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6"><span class="nav-text">3、下载文件</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%9B%E4%B8%91%E7%89%9B%E5%B9%B4%E6%96%B0%E5%B9%B4%E5%B1%95%E6%9C%9B%EF%BC%882021%EF%BC%89"><span class="nav-text">辛丑牛年新年展望（2021）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2020%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93"><span class="nav-text">2020年度总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D"><span class="nav-text">关键词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%88%E5%8E%86%E8%A1%A8"><span class="nav-text">月历表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93"><span class="nav-text">年度总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%95%E6%9C%9B%E6%9C%AA%E6%9D%A5"><span class="nav-text">展望未来</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -648,25 +682,6 @@
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : '28d7fc7ce73567f9384d',
-      clientSecret: 'e9fe559f9756ad0207de22b34cf552a2a8a7d0ac',
-      repo        : 'CourageHe.github.io',
-      owner       : 'CourageHe',
-      admin       : ['CourageHe'],
-      id          : '215c311a39ad3bcd764b19bc42a9d5b0',
-        language: 'zh-CN',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-});
-</script>
 
 <script>if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js?t=1613230489371')
