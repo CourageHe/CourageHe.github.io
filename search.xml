@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/09/06/b9889e0f3b8b/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo博客安装(一)</title>
     <url>/2020/09/14/ed31eabc1ddf/</url>
     <content><![CDATA[<p>欢迎使用 Hexo，本文档将帮助您快速上手。如果您在使用过程中遇到问题，请查看 <a href="https://hexo.io/zh-cn/docs/troubleshooting">问题解答</a> 中的解答，或者在 <a href="https://github.com/hexojs/hexo/issues">GitHub</a>、<a href="https://groups.google.com/group/hexo">Google Group</a> 上提问。</p>
@@ -214,146 +189,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo添加分类、标签、关于页(二)</title>
-    <url>/2020/09/14/993996b2e602/</url>
-    <content><![CDATA[<blockquote>
-<p>生成的新文件夹都在source下也就是和放文章的文件夹一块 以下所有命令都是在博客文件目录下执行</p>
-</blockquote>
-<h2 id="创建“分类”选项"><a href="#创建“分类”选项" class="headerlink" title="创建“分类”选项"></a>创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行下方命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
-
-<p>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>添加type: “categories”到内容中，添加后是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>保存并关闭文件。</p>
-<p>给文章添加“categories”属性</p>
-<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>至此，成功给文章添加分类，点击首页的“分类”可以看到该分类下的所有文章。当然，只有添加了categories: xxx的文章才会被收录到首页的“分类”中。</p>
-<h2 id="创建“标签”选项"><a href="#创建“标签”选项" class="headerlink" title="创建“标签”选项"></a>创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-
-<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>保存并关闭文件。</p>
-<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo博客安装</span><br><span class="line">date: 2020-09-14 00:58:33</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建“关于”选项"><a href="#创建“关于”选项" class="headerlink" title="创建“关于”选项"></a>创建“关于”选项</h2><p>生成“关于”页并添加tpye属性</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure>
-
-<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 关于我</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">type: about</span><br><span class="line">---</span><br><span class="line"><span class="section">## 个人简介</span></span><br><span class="line">……</span><br><span class="line"><span class="section">## 其他</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
-
-<p>保存并关闭文件。</p>
-<p>点击首页的“关于”可以看到该文件所书写的内容。</p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FRP内网穿透</title>
-    <url>/2021/01/17/dd7e0bbf808e/</url>
-    <content><![CDATA[<h1 id="FRP内网穿透"><a href="#FRP内网穿透" class="headerlink" title="FRP内网穿透"></a>FRP内网穿透</h1><blockquote>
-<p>frp 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。</p>
-</blockquote>
-<h2 id="使用缘由"><a href="#使用缘由" class="headerlink" title="使用缘由"></a>使用缘由</h2><p>因为疫情的原因，公司提前休假，在家办公。公司的测试环境还有私服GIT都是在内网下，出于安全考虑，不考虑将GIT仓库移至GITHUB、GITEE等平台。首先想到的解决方案是使用类似花生壳这种内网穿透的服务，但是考虑到服务的收费标准与本司的使用需求相差较大。公司有六、七个端口需要转发，使用期限为一个月左右，而花生壳的套餐是按年付费，且线路数有限制，增加线路另外收费。然后想到了本人在大二时候使用的一个开源的内网穿透的代理应用，比较符合公司的解决方案。</p>
-<a id="more"></a>
-<h2 id="设备环境"><a href="#设备环境" class="headerlink" title="设备环境"></a>设备环境</h2><ul>
-<li><p>一台具有公网ip的服务器</p>
-</li>
-<li><p>N台内网服务器（需要内网穿透的服务器）</p>
-</li>
-</ul>
-<h2 id="系统选型"><a href="#系统选型" class="headerlink" title="系统选型"></a>系统选型</h2><p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117180715.png" alt="image-20210117180715013"></p>
-<table>
-<thead>
-<tr>
-<th>frp支持的</th>
-<th>Linux系统架构</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>386</td>
-<td>X86架构</td>
-</tr>
-<tr>
-<td>amd64</td>
-<td>amd架构</td>
-</tr>
-<tr>
-<td>arm</td>
-<td>arm架构</td>
-</tr>
-<tr>
-<td>arm64</td>
-<td>64位arm架构</td>
-</tr>
-<tr>
-<td>mips</td>
-<td>mips架构</td>
-</tr>
-<tr>
-<td>mips64</td>
-<td>64位mips架构</td>
-</tr>
-<tr>
-<td>mipsle</td>
-<td>mipsle架构</td>
-</tr>
-<tr>
-<td>mips64le</td>
-<td>64位mipsle架构</td>
-</tr>
-</tbody></table>
-<p><a href="https://blog.csdn.net/lixuande19871015/article/details/90485929">查看Linux的系统架构</a></p>
-<h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><p>本人搭建的服务端为Centos7.X，系统架构为X86加否；客户端为Windows10，系统架构为amd64。下载解压即可，根据实际需要配置文件即可。下面给一个常用的配置模板，仅供参考。</p>
-<h3 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">bind_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set dashboard_addr and dashboard_port to view dashboard of frps</span></span><br><span class="line"><span class="comment"># dashboard_addr&#x27;s default value is same with bind_addr</span></span><br><span class="line"><span class="comment"># dashboard is available only if dashboard_port is set</span></span><br><span class="line"><span class="attr">dashboard_addr</span> = <span class="number">0.0</span>.<span class="number">0.0</span></span><br><span class="line"><span class="attr">dashboard_port</span> = <span class="number">7500</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># dashboard user and passwd for basic auth protect, if not set, both default value is admin</span></span><br><span class="line"><span class="attr">dashboard_user</span> = admin</span><br><span class="line"><span class="attr">dashboard_pwd</span> = admin</span><br></pre></td></tr></table></figure>
-
-<p><code>XX.XX.XX.XX:7500</code>为FRP的监控平台网页，账号密码为<code>admin/admin</code>.<img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117191329.png" alt="image-20210117191328912"></p>
-<p><code>bind_port</code> ：为FRP 服务器用户接收客户端连接的端口：</p>
-<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>这种方式启动的话，将会把日志打印至<code>frp.log</code>下，用户退出该进程任然存在。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nohup ./frps -c frps.ini &gt;frp.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
-
-<h4 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查找端口为7000的进程</span></span><br><span class="line">netstat -nlp | grep 7000</span><br><span class="line"><span class="comment">#杀死 pid为10263的进程</span></span><br><span class="line"><span class="built_in">kill</span> -9 10263</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">server_addr</span> = XX.XX.XX.XX</span><br><span class="line"><span class="attr">server_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line">@Windows 远程桌面</span><br><span class="line"><span class="section">[Test Windows Server Connection]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3389</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Liunx ssh</span></span><br><span class="line"><span class="section">[Test Linux Server Connection ssh]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">22</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6002</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Mysql数据库</span></span><br><span class="line"><span class="section">[Test MySQL Sever jdbc]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3306</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6003</span></span><br></pre></td></tr></table></figure>
-
-<p><code>server_addr</code>：服务器地址</p>
-<p><code>server_port</code>：服务器端口</p>
-<p><code>local_ip</code>：本地需要暴露到公网的服务地址。客户端网络环境下的ip地址皆可。</p>
-<p><code>local_port</code>：本地需要暴露到公网的服务端口</p>
-<p><code>remote_port</code>：在 frp 服务端监听的端口，访问此端口的流量将会被转发到本地服务对应的端口。</p>
-<h4 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">frpc.exe -c frpc.ini </span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>实用工具</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GitBlit安装与使用</title>
     <url>/2021/01/18/e4bb3bf545c5/</url>
     <content><![CDATA[<h1 id="GitBlit安装"><a href="#GitBlit安装" class="headerlink" title="GitBlit安装"></a>GitBlit安装</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>要求Windows电脑安装JAVA环境，在<a href="http://gitblit.github.io/gitblit/">GitBlit首页</a>可根据操作系统选择不同的版本安装。</p>
@@ -412,472 +247,57 @@
       </tags>
   </entry>
   <entry>
-    <title>使用rz和sz命令传输文件</title>
-    <url>/2021/01/07/818b6f02a79d/</url>
-    <content><![CDATA[<h1 id="新鲜出炉的Centos"><a href="#新鲜出炉的Centos" class="headerlink" title="新鲜出炉的Centos"></a>新鲜出炉的Centos</h1><h2 id="一、配置yum国内镜像源"><a href="#一、配置yum国内镜像源" class="headerlink" title="一、配置yum国内镜像源"></a>一、配置yum国内镜像源</h2><h3 id="1、备份"><a href="#1、备份" class="headerlink" title="1、备份"></a>1、备份</h3><p>如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure>
+    <title>Hexo添加分类、标签、关于页(二)</title>
+    <url>/2020/09/14/993996b2e602/</url>
+    <content><![CDATA[<blockquote>
+<p>生成的新文件夹都在source下也就是和放文章的文件夹一块 以下所有命令都是在博客文件目录下执行</p>
+</blockquote>
+<h2 id="创建“分类”选项"><a href="#创建“分类”选项" class="headerlink" title="创建“分类”选项"></a>创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行下方命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
 
-<p>该文件是Centos的镜像文件配置，一般国内都会配置成阿里云、网易、清华大学。我这里选择的式清华大学的镜像源，编辑 <code>/etc/yum.repos.d/CentOS-Base.repo </code>文件，在 <code>mirrorlist=</code> 开头行前面加 <code>#</code> 注释掉；并将 <code>baseurl=</code> 开头行取消注释（如果被注释的话），把该行内的域名（例如<code>mirror.centos.org</code>）替换为 <code>mirrors.tuna.tsinghua.edu.cn</code>。</p>
+<p>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
+<p>添加type: “categories”到内容中，添加后是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h3 id="2、Centos7示例"><a href="#2、Centos7示例" class="headerlink" title="2、Centos7示例"></a>2、Centos7示例</h3><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#CentOS-Base.repo</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The mirror system uses the connecting IP address of the client and the</span></span><br><span class="line"><span class="comment"># update status of each mirror to pick mirrors that are updated to and</span></span><br><span class="line"><span class="comment"># geographically close to the client.  You should use this for CentOS updates</span></span><br><span class="line"><span class="comment"># unless you are manually picking other mirrors.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># If the mirrorlist= does not work for you, as a fall back you can try the</span></span><br><span class="line"><span class="comment"># remarked out baseurl= line instead.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">[base]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Base</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/os/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#released updates</span></span><br><span class="line"><span class="attr">[updates]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Updates</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/updates/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line"><span class="attr">[extras]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Extras</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/extras/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line"><span class="attr">[centosplus]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Plus</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/centosplus/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">0</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>保存并关闭文件。</p>
+<p>给文章添加“categories”属性</p>
+<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-<h3 id="3、更新软件包缓存"><a href="#3、更新软件包缓存" class="headerlink" title="3、更新软件包缓存"></a>3、更新软件包缓存</h3><p>清楚之前的软件包缓存，然后更新软件包缓存</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+<p>至此，成功给文章添加分类，点击首页的“分类”可以看到该分类下的所有文章。当然，只有添加了categories: xxx的文章才会被收录到首页的“分类”中。</p>
+<h2 id="创建“标签”选项"><a href="#创建“标签”选项" class="headerlink" title="创建“标签”选项"></a>创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
 
-<h3 id="4、更新软件包"><a href="#4、更新软件包" class="headerlink" title="4、更新软件包"></a>4、更新软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
+<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-<p>参考：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">https://mirrors.tuna.tsinghua.edu.cn/help/centos/</a></p>
-<h2 id="二、rz、sz命令传输文件"><a href="#二、rz、sz命令传输文件" class="headerlink" title="二、rz、sz命令传输文件"></a>二、rz、sz命令传输文件</h2><p>大文件传输的话，建议使用<code>Filezilla</code>进行传输，个别的小文件传输的话，仅以使用<code>lrzsz</code>，更方便哦！！！</p>
-<h3 id="1、安装-lrzsz"><a href="#1、安装-lrzsz" class="headerlink" title="1、安装 lrzsz"></a>1、安装 lrzsz</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install lrzsz</span><br></pre></td></tr></table></figure>
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-<h3 id="2、上传文件"><a href="#2、上传文件" class="headerlink" title="2、上传文件"></a>2、上传文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rz</span><br></pre></td></tr></table></figure>
+<p>保存并关闭文件。</p>
+<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo博客安装</span><br><span class="line">date: 2020-09-14 00:58:33</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-<p>rz命令打开文件选择框，选择要发送的文件即可发送至当前目录。</p>
-<p>从Windows/Mac直接拖动至XShell窗口也是同样的哦！！！</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103215423.png" alt="image-20210103215423075"></p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103214524.png" alt="image-20210103214523798"></p>
-<h3 id="3、下载文件"><a href="#3、下载文件" class="headerlink" title="3、下载文件"></a>3、下载文件</h3><p><code>sz 文件名</code>便可下载该文件至本地，选择本地文件夹即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sz /etc/yum.repos.d/CentOS-Base.repo</span><br></pre></td></tr></table></figure>
+<h2 id="创建“关于”选项"><a href="#创建“关于”选项" class="headerlink" title="创建“关于”选项"></a>创建“关于”选项</h2><p>生成“关于”页并添加tpye属性</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103221932.png" alt="image-20210103221932546"></p>
-<p>三、</p>
+<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 关于我</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">type: about</span><br><span class="line">---</span><br><span class="line"><span class="section">## 个人简介</span></span><br><span class="line">……</span><br><span class="line"><span class="section">## 其他</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<p>保存并关闭文件。</p>
+<p>点击首页的“关于”可以看到该文件所书写的内容。</p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
+        <tag>Hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Linux常用命令</title>
-    <url>/2021/01/07/75eb06482a73/</url>
-    <content><![CDATA[<h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><blockquote>
-<p>本文主要用于记录，在工作学习中经常需要使用的常见Linux命令。在<a href="https://couragehe.github.io/">CourageHe’s Blog</a>不间断更新，欢迎各位看官指教。</p>
-</blockquote>
-<a id="more"></a>
-
-<p>Linux资源查看</p>
-<p>各分区使用情况</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001504.png" alt="image-20210107001503961"></p>
-<p>查看进程</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -ef</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001625.png" alt="image-20210107001625631"></p>
-<p>查看内存使用情况</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001741.png" alt="image-20210107001741107"></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fre -m</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001916.png" alt="image-20210107001916338"></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>剑指 Offer 03. 数组中重复的数字</title>
-    <url>/2021/01/26/ec8237ba0fb1/</url>
-    <content><![CDATA[<h1 id="剑指-Offer-03-数组中重复的数字"><a href="#剑指-Offer-03-数组中重复的数字" class="headerlink" title="剑指 Offer 03. 数组中重复的数字"></a>剑指 Offer 03. 数组中重复的数字</h1><blockquote>
-<p>题目来源：剑指Offer03</p>
-<p>题目链接：<a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/</a></p>
-</blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>找出数组中重复的数字。</p>
-<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
-<p>示例 1：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">[2, 3, 1, 0, 2, 5, 3]</span><br><span class="line">输出：2 或 3 </span><br></pre></td></tr></table></figure>
-
-
-<p>限制：</p>
-<ul>
-<li><code>2 &lt;= n &lt;= 100000</code></li>
-</ul>
-<a id="more"></a>
-
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>统计重复元素常用方法是使用哈希表，如果统计的是元素明确范围的话建议使用数组。</p>
-<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="哈希表统计"><a href="#哈希表统计" class="headerlink" title="哈希表统计"></a>哈希表统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt;nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(set.contains(nums[i]))&#123;</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               set.add(nums[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210126002427.png" alt="image-20210126002427040"></p>
-<h3 id="数组统计"><a href="#数组统计" class="headerlink" title="数组统计"></a>数组统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[nums[i]] == <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                arr[nums[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210201152224.png" alt="image-20210126002415245"></p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>剑指 Offer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>1128.等价多米诺骨牌对的数量</title>
-    <url>/2021/01/26/f6d039b5ce46/</url>
-    <content><![CDATA[<h1 id="1128-等价多米诺骨牌对的数量"><a href="#1128-等价多米诺骨牌对的数量" class="headerlink" title="1128.等价多米诺骨牌对的数量"></a>1128.等价多米诺骨牌对的数量</h1><blockquote>
-<p>每日一题：2020-01-26</p>
-<p>题目链接：<a href="https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/">https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/</a></p>
-</blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个由一些多米诺骨牌组成的列表<code> dominoes</code>。</p>
-<p>如果其中某一张多米诺骨牌可以通过旋转 0 度或 180 度得到另一张多米诺骨牌，我们就认为这两张牌是等价的。</p>
-<p>形式上，<code>dominoes[i] = [a, b] </code>和<code>dominoes[j] = [c, d]</code>等价的前提是 <code>a==c</code> 且<code> b==d</code>，或是 <code>a==d</code> 且<code> b==c</code>。</p>
-<p>在 <code>0 &lt;= i &lt; j &lt; dominoes.length</code> 的前提下，找出满足 dominoes[i] 和 dominoes[j] 等价的骨牌对 (i, j) 的数量。</p>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：dominoes &#x3D; [[1,2],[2,1],[3,4],[5,6]]</span><br><span class="line">输出：1</span><br></pre></td></tr></table></figure>
-
-
-<p>提示：</p>
-<ul>
-<li><code>1 &lt;= dominoes.length &lt;= 40000</code></li>
-<li><code>1 &lt;= dominoes [i][j] &lt;= 9</code></li>
-</ul>
-<a id="more"></a>
-
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>就其题目描述而言，显而易见可以想到暴力循环解题的方法，时间复杂度<code>O(n^2)</code>。提示中有提示数组长度为<code>40000</code>,试想如果不加以利用提示条件必然会导致运行超时。第二条提示是指数组的值为<code>1-9</code>的整数，充分利用这个提示条件则是解题的关键。</p>
-<p>本题中我们需要统计所有等价的多米诺骨牌，其中多米诺骨牌使用二元对代表，「等价」的定义是，在允许翻转两个二元对的的情况下，使它们的元素一一对应相等。于是我们不妨直接让每一个二元对都变为指定的格式，即第一维必须不大于第二维。这样两个二元对「等价」当且仅当两个二元对完全相同。注意到二元对中的元素均不大于 99，因此我们可以将每一个二元对拼接成一个两位的正整数，即<code> (x, y) =&gt; 10x + y</code>。这样就无需使用哈希表统计元素数量，而直接使用长度为 100的数组即可。</p>
-<p>元素数量统计出来后，求各个元素的等差数列之和即可，<strong>切记</strong>数量为一的不计。</p>
-<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="采用暴力循环法"><a href="#采用暴力循环法" class="headerlink" title="采用暴力循环法"></a>采用暴力循环法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numEquivDominoPairs</span><span class="params">(<span class="keyword">int</span>[][] dominoes)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;dominoes.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j&lt;dominoes.length;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(dominoes[i][<span class="number">1</span>] == dominoes[j][<span class="number">1</span>])&#123;</span><br><span class="line">                    <span class="keyword">if</span>(dominoes[i][<span class="number">0</span>] == dominoes[j][<span class="number">0</span>])&#123;</span><br><span class="line">                        ans++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(dominoes[i][<span class="number">1</span>] == dominoes[j][<span class="number">0</span>])&#123;</span><br><span class="line">                    <span class="keyword">if</span>(dominoes[i][<span class="number">0</span>] == dominoes[j][<span class="number">1</span>])&#123;</span><br><span class="line">                        ans++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210127002655.png" alt="image-20210127002655515"></p>
-<h3 id="采用统计法"><a href="#采用统计法" class="headerlink" title="采用统计法"></a>采用统计法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numEquivDominoPairs</span><span class="params">(<span class="keyword">int</span>[][] dominoes)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; dominoes.length;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> num = dominoes[i][<span class="number">0</span>] &gt; dominoes[i][<span class="number">1</span>]? (dominoes[i][<span class="number">0</span>]*<span class="number">10</span>+ dominoes[i][<span class="number">1</span>]) :  (dominoes[i][<span class="number">1</span>]*<span class="number">10</span>+ dominoes[i][<span class="number">0</span>]);<span class="comment">//组合成取值最大的十进制数字</span></span><br><span class="line">            arr[num]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; arr.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i] &lt; <span class="number">2</span>) <span class="keyword">continue</span>; </span><br><span class="line">            ans += (arr[i]-<span class="number">1</span>+<span class="number">1</span>)*(arr[i]-<span class="number">1</span>) /<span class="number">2</span>;<span class="comment">//等差数列组合</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210127002558.png" alt="image-20210127002558645"></p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>每日一题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Lombok常用注解</title>
-    <url>/2020/08/16/c2f37b230581/</url>
-    <content><![CDATA[<h1 id="Lombok常用注解"><a href="#Lombok常用注解" class="headerlink" title="Lombok常用注解"></a>Lombok常用注解</h1><blockquote>
-<p>Lombok通过注解的方式省掉大量代码的编写，尤其对于POJO类的set()、get()、toString()等。在源代码只需要加上相应的注解，编译过程中Lombok插件就会自行生辰相关代码。减少冗杂且重复的代码，简化开发易于修改。本文即为对Lombok常见注解的介绍及对生成的代码的展示。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="安装Lombok"><a href="#安装Lombok" class="headerlink" title="安装Lombok"></a>安装Lombok</h2><p>&emsp;&emsp;在菜单栏依次选择<code>File</code>-&gt;<code>Settings</code>-&gt;<code>Plugins</code>，输入<code>Lombok</code>搜索该插件，得到搜索结果选择Lombok进行安装即可。安装完毕提示重启即安装成功。</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816144238.jpeg"></p>
-<p>&emsp;&emsp;Maven项目中引入Lombok依赖的编译支持，在pom文件中的<code>dependences</code>里添加即可</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.16.18<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h2><ul>
-<li>@Data</li>
-</ul>
-<ul>
-<li>@Setter</li>
-<li>@Getter</li>
-<li>@Log4j</li>
-<li>@AllArgsConstructor</li>
-<li>@NoArgsConstructor</li>
-<li>@EqualsAndHashCode</li>
-<li>@NonNull</li>
-<li>@Cleanup</li>
-<li>@ToString</li>
-<li>@RequiredArgsConstructor</li>
-<li>@Value</li>
-<li>@SneakyThrows</li>
-<li>@Synchronized</li>
-</ul>
-<h2 id="注解作用"><a href="#注解作用" class="headerlink" title="注解作用"></a>注解作用</h2><h3 id="Data"><a href="#Data" class="headerlink" title="@Data"></a>@Data</h3><p>注解在<strong>类</strong>上，提供类所有属性的get和set方法，此外还提供了equals、canEqual、toString方法以及默认构造函数</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816115230.png" alt="img"></p>
-<h3 id="Setter"><a href="#Setter" class="headerlink" title="@Setter"></a>@Setter</h3><ul>
-<li>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>set</strong>方法</li>
-<li>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>set</strong>方法</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816125332.png" alt="image-20200816125332552"></p>
-<h3 id="Getter"><a href="#Getter" class="headerlink" title="@Getter"></a>@Getter</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>get</strong>方法</p>
-</li>
-<li><p>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>get</strong>方法</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816145537.png" alt="image-20200816125753543"></p>
-</li>
-</ul>
-<h3 id="Log4j"><a href="#Log4j" class="headerlink" title="@Log4j"></a>@Log4j</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及该类的日志对象</p>
-<p>如果项目中没有对应的日志依赖，建议pom文件中加入</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.15<span class="tag">&lt;/<span class="name">version</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.mail<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.jms<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jms<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.jdmk<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jmxtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.jmx<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jmxri<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span> </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<p>  <img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816131455.png"></p>
-<h3 id="AllArgsConstructor"><a href="#AllArgsConstructor" class="headerlink" title="@AllArgsConstructor"></a>@AllArgsConstructor</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供含类全部属性的<strong>构造函数</strong></p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816132129.png" alt="image-20200816132129118"></p>
-</li>
-</ul>
-<h3 id="NoArgsConstructor"><a href="#NoArgsConstructor" class="headerlink" title="@NoArgsConstructor"></a>@NoArgsConstructor</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong></p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816132510.png" alt="image-20200816132510412"></p>
-</li>
-</ul>
-<h3 id="EqualsAndHashCode"><a href="#EqualsAndHashCode" class="headerlink" title="@EqualsAndHashCode"></a>@EqualsAndHashCode</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>、<strong>equals</strong>方法、<strong>canEqual</strong>方法、<strong>HashCode</strong>方法</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816132954.png" alt="image-20200816132954099"></p>
-</li>
-</ul>
-<h3 id="NonNull"><a href="#NonNull" class="headerlink" title="@NonNull"></a>@NonNull</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及如果有属性为NULL则抛<strong>NullPointException</strong></p>
-</li>
-<li><p>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及该属性为NULL则抛<strong>NullPointException</strong></p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816135351.png" alt="image-20200816133630219"></p>
-</li>
-</ul>
-<h3 id="Cleanup"><a href="#Cleanup" class="headerlink" title="@Cleanup"></a>@Cleanup</h3><ul>
-<li><p>注解在<strong>属性</strong>上，注解在那种使用完需要<code>close</code>的对象，会自动在finally里代码块中生成<code>close</code>代码</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816135523.png" alt="image-20200816135522627"></p>
-</li>
-</ul>
-<h3 id="ToString"><a href="#ToString" class="headerlink" title="@ToString"></a>@ToString</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及**toString()**方法</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816135750.png" alt="image-20200816135750664"></p>
-</li>
-</ul>
-<h3 id="RequiredArgsConstructor"><a href="#RequiredArgsConstructor" class="headerlink" title="@RequiredArgsConstructor"></a>@RequiredArgsConstructor</h3><ul>
-<li><p>注解在<strong>属性</strong>上，提供类中<strong>final</strong>修饰和**@NONULL<strong>注解的所有属性的</strong>构造函数**</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816140650.png" alt="image-20200816140650718"></p>
-</li>
-</ul>
-<h3 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供含类全部属性的<strong>构造函数</strong>以及<strong>get()**、</strong>equals()<strong>、</strong>hashCode()<strong>、</strong>toString()**方法</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816142559.png" alt="image-20200816142558874"></p>
-</li>
-</ul>
-<h3 id="SneakyThrows"><a href="#SneakyThrows" class="headerlink" title="@SneakyThrows"></a>@SneakyThrows</h3><ul>
-<li><p>注解在<strong>方法</strong>上，作用是将方法内的代码块用try-catch包围起来，并以<code>@SneakyThrows(Exception.class)</code>的形式指定抛出Exception的类型。同时也会生成默认构造函数。</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816142944.png" alt="image-20200816142943894"></p>
-</li>
-</ul>
-<h3 id="Synchronized"><a href="#Synchronized" class="headerlink" title="@Synchronized"></a>@Synchronized</h3><ul>
-<li><p>注解在<strong>方法</strong>上，与在方法名左边直接加<strong>synchronized</strong>关键字效果类似，对于静态方法和实例方法，synchornized关键字的锁对象分别是<strong>class</strong>对象和<strong>this</strong>对象；**@Synchronized<strong>则对应的锁对象分别是</strong>私有静态final对象<strong>lock和</strong>私有final对象** lock，同时也可以以<code>@Synchronized(&quot;属性名&quot;)</code>形式自定义锁对象。同时也会生成默认构造函数。</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816163424.png" alt="image-20200816163423807"></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>实用工具</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>辛丑牛年新年展望（2021）</title>
-    <url>/2021/02/12/6ea85d902251/</url>
-    <content><![CDATA[<h1 id="辛丑牛年新年展望（2021）"><a href="#辛丑牛年新年展望（2021）" class="headerlink" title="辛丑牛年新年展望（2021）"></a>辛丑牛年新年展望（2021）</h1><p>&emsp;&emsp;2021年2月12日为辛丑牛年正月初一，就农历而言，今天便就是中国的农历新年。作为一个对传统佳节有浓厚感情的传统国人，辞旧迎新、展望未来便是本文的初衷。2020元旦总结虽有稍许记录，却未整理成文，今天借这个机会发表啦！</p>
-<a id="more"></a>
-
-<h2 id="2020年度总结"><a href="#2020年度总结" class="headerlink" title="2020年度总结"></a>2020年度总结</h2><p>&emsp;&emsp;兜兜转转，大学本科已经步入最后一个年头了。这一年，正经世界百年未有之大变局，时代选择我们来见证，也是由我们来建设这个时代。本文便来讲讲我这一年的见证与建设，首先就开门见山说说2020 的个人生涯关键词：<strong>迷茫</strong>、<strong>焦虑</strong>、<strong>尝试</strong>、<strong>奋斗</strong>。</p>
-<h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><ul>
-<li><strong>迷茫</strong></li>
-</ul>
-<p>&emsp;&emsp;为什么说是迷茫呢？因为疫情前期一直待在家中，本人对未来考研<strong>OR</strong>工作还未明确目标。目标未定，规划更无须再论。那段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
-<ul>
-<li><strong>焦虑</strong></li>
-</ul>
-<p>&emsp;&emsp;每个找工作的娃的焦虑，想必每个人都或多或少有过经历！希望早日结束这个状态，现在终于明白铁饭碗为什么这么香了！</p>
-<ul>
-<li><strong>尝试</strong></li>
-</ul>
-<p>&emsp;&emsp;应届生的身份，敞开了许多大门，事业单位、公务员、研究生、企业等都可以去尝试，去争取。在2020这一年，我一直都在不断尝试，海投简历、面试IT公司、尝试事业单位和备考研究生等等……</p>
-<ul>
-<li><strong>奋斗</strong></li>
-</ul>
-<p>&emsp;&emsp;机会虽然很多，但只有那些有准备的人才能抓住。这一年也是在不断奋斗的一年，同疫情做斗争、刷题背八股文、上海得帆实习、考研备考等。</p>
-<h3 id="月历表"><a href="#月历表" class="headerlink" title="月历表"></a>月历表</h3><ul>
-<li><strong>1月</strong>：大学本科生涯最后的课程正规考试，回家！！！</li>
-</ul>
-<p>&emsp;&emsp;大三上学期的期末考试在一月进行，《数据库原理及应用》，《计算机组成与系统结构》等科目进行闭卷考试，因为疫情在家上网课的原因，这便是最后一次正规的课程结课考试了。1月11号放寒假回家，归家途中经过疫情还未报道的武汉，回家不久就安排在家居家隔离，每天都有村里干部来测体温。</p>
-<ul>
-<li><strong>2月</strong>：疫情造成的蝴蝶效应！</li>
-</ul>
-<p>&emsp;&emsp;2月的头号大事便是春节啦！记忆之初，春节都是热热闹闹的，百年未有之大变局中的春节只能是远程拜年啦！隔离的春节，爱心却两不相隔，一方有难，八方来援这句话在湖北得到广泛运用。一省帮一市、村里送菜送粮、邻里互帮互助等等奉献爱心的行为都让我深受感动。相比之下，国外的某些XXX恶言恶语、不怀好意的反响就显得太过无耻卑鄙，进一步加深了我对ZF的认同并坚定自身立场。</p>
-<ul>
-<li><strong>3月</strong>：疫情期间在家赋闲，陷入焦虑</li>
-</ul>
-<p>&emsp;&emsp;这段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
-<p>疫情实时播报频道：<a href="https://t.me/nCoV2019">https://t.me/nCoV2019</a></p>
-<ul>
-<li><strong>4月</strong>：第一次接单干活，实现技术变现</li>
-</ul>
-<p>&emsp;&emsp;这段期间在家里上网课，课余时间便想找些事情做一下。机缘巧合之下加了一个做私活的群，其中接了一个安卓app的项目，主要任务是写一个类似星巴克咖啡店的APP。另外是一个Web端图书管理系统，前后端交互的形式，由于时间不太够前端草草写了一下。小项目没赚几个钱，但这是首次使用技术变现，值得纪念一下。不得不说，写的界面真丑！哈哈哈</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210213010621.png" alt="image-20210213010621705"></p>
-<ul>
-<li><strong>5月</strong>：面试、准备面试相交织</li>
-</ul>
-<p>&emsp;&emsp;这是一个面试月，投的基本都是各大公司的实习岗位，有上海得帆、字节跳动、华讯网络等。有喜有忧，大公司基本都被拒了，也是自身准备不足的结果，特别是字节跳动的笔试特别考核算法，所以还需历练！所幸还是有所斩获，收获了上海得帆的实习offer。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210213011312.png" alt="image-20210213011312539"></p>
-<ul>
-<li><strong>6月</strong>：石油项目</li>
-</ul>
-<p>&emsp;&emsp;第一次接触实际项目,学校老师招人干的一个分父子模块的后台管理项目。这是一个从需求到项目成型的实际项目，我主要参与前期的数据库建表、项目搭建。</p>
-<ul>
-<li><strong>7月</strong>：得帆公司培训</li>
-</ul>
-<p>&emsp;&emsp;7月21日上海得帆实习，第一次独自走向远方，第一次参与这种IT规范培训。在这期间结识了不少优秀的同仁，见贤思齐焉！加油！</p>
-<ul>
-<li><strong>8-9月</strong>：上海实习</li>
-</ul>
-<p>&emsp;&emsp;上海得帆公司外派我前往中骏地产参与了ESB项目的开发，新力地产的门户项目。</p>
-<ul>
-<li><strong>10-11月</strong>：回校工作，成为公司第一个员工</li>
-</ul>
-<p>&emsp;&emsp;学校老师创建的一个初创公司，领头的一个老师是我大三参赛的一个项目的指导老师，老师认为我能力还行，便邀请我加入公司。当时我正在上海实习，待了大概两个多月也想换个新环境多多历练。话说初创公司确实很锻炼人啊，就你一个人，啥事都是你。刚开始去的那段时间都没开始写代码，都是搞什么流程讨论，原型设计等。这个决定也深深影响到我找工作的进程，一是留校读研边工作，二是出去工作。利弊难论，马上要到选择的时刻了！</p>
-<ul>
-<li><strong>12月</strong>：临阵考研，加油！！！冲！冲！冲！</li>
-</ul>
-<p>&emsp;&emsp;2020年12月26日考研，这一月脱产备考，无论是否要读都尽力一试。</p>
-<h3 id="年度总结"><a href="#年度总结" class="headerlink" title="年度总结"></a>年度总结</h3><p>&emsp;&emsp;2020许多第一次，第一次接私活，第一次做实际项目，第一次实习，第一次考研。许多第一次做得或许不够好，因此更需努力充实自己。2020，有收获，也有遗憾。这是变化最大的一年，从学校学子到接触社会工作，试错的机会更少，所作的每一个决定都影响着未来数年的路。总的来说，2020让我深刻认识到了自己的不足，见贤思齐焉！！！只思是不够的，更要付诸行动。成功的背后，都是不断的坚持与努力，优秀都是经过一次次碰壁调整出来的。不知从何时起难以专注学习/工作，自制力一直都在减弱，这种状态实在难堪。新的一年希望能够扭转这些疲敝之态，多多历练，想到就去做，一万年太久！只争朝夕！</p>
-<h3 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h3><ul>
-<li>一天至少一道算法题</li>
-</ul>
-<p>&emsp;&emsp;<a href="https://github.com/CourageHe/Algorithm-Daily-Practice">算法日常练习代码库</a></p>
-<ul>
-<li>勤写博客总结经验</li>
-<li>海投岗位，找工作</li>
-<li>看几本书（剑指Offer、JAVA8函数式编程、设计模式）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>个人有感</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>驾照考试-刷题总结</title>
-    <url>/2021/03/04/e831abc0a85c/</url>
-    <content><![CDATA[<h1 id="驾照考试-刷题总结"><a href="#驾照考试-刷题总结" class="headerlink" title="驾照考试-刷题总结"></a>驾照考试-刷题总结</h1><blockquote>
-<p>本文主要用于记录，在准备驾照考试中总结的日常经验。在<a href="https://couragehe.github.io/">CourageHe’s Blog</a>不间断更新，欢迎各位看官指教。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="2021-03-04"><a href="#2021-03-04" class="headerlink" title="2021-03-04"></a>2021-03-04</h2><p>右让左，左让直，转弯让直行。</p>
-<p>在高速公路匝道上提速到每小时60公里以上时，应先打开左转向灯，在不妨碍其他车辆的情况下驶入车道。</p>
-<p>违反道路交通安全法律法规都属于违法行为</p>
-<p>车辆发生故障无法移动时，警告标志应放置于车辆后的150M以外</p>
-<p>70周岁以上的机动车驾驶人，应每年进行一次身体检查，并向有关部门申报身体情况</p>
-<p>防抱死制动系统故障</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210304210635.png" alt="image-20210304210635318"></p>
-<p>车辆在泥泞道路发生侧滑时，正确做法是车尾向哪一侧移动，即向哪一侧适当调整方向盘。</p>
-<p>此标志是左侧通行，^表示两侧通行，/这个表示左侧通行，\这个表示右侧通行。</p>
-<p>简记：上左下右</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210304211839.png" alt="image-20210304211839461"></p>
-<p>禁止车辆长时间停放，临时停放不受限制。中间一个红叉是禁止停车，中间一个斜杠是禁止长时间停车。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210304212057.png" alt="image-20210304212057360"></p>
-<p>交警手势速记口诀：<a href="https://www.bilibili.com/video/BV1eV411m7CM/">https://www.bilibili.com/video/BV1eV411m7CM/</a></p>
-<p>左高右放要叫停，左右折叠是直行。</p>
-<p>左手在下左转弯，右手在下右转弯。</p>
-<p>左手下摆即待转，右手平摆要变道。</p>
-<p>右手放下要减速，左手抬起靠边停。</p>
-<h2 id="2021-03-05"><a href="#2021-03-05" class="headerlink" title="2021-03-05"></a>2021-03-05</h2><p>雾灯绿左黄右，绿左黄右。</p>
-<p>绿光在左是前雾灯，黄光在右是后雾灯。</p>
-<p><strong>二条车道</strong>： 左:100<del>120 右:60</del>100</p>
-<p>三条车道：  最左：110-120  中间：90-110 最右：60-90</p>
-<p>四条车道：最左:110<del>120 中间二条:90</del>110 最右:60~80</p>
-<p>进入高速加速车道,尽快提到(60公里)以上</p>
-<p>假一吊二撤三醉五逃终生</p>
-<p>边缘线为实线，禁止跨越实线行驶；边缘线为虚线，可临时跨越行驶。</p>
-<p>无中心线，城3公4；有中心线，城5公7；</p>
-<p>科目一技巧：<a href="https://zhuanlan.zhihu.com/p/37515599">https://zhuanlan.zhihu.com/p/37515599</a></p>
-<p>致人重伤、死亡的：3年以下<br>使公私财产遭受重大损失的：3年以下<br>致人死亡且逃逸的：3年以上7年以下<br>因逃逸导致他人死亡的：7年以上</p>
-<p>关于时间：</p>
-<p>道路交通安全违法行为累计记分一个周期满分为12个月<br>驾驶证期满90天申请换证，<br>驾驶证记载信息发生变化30天内申请换证。<br>驾驶人因出国等原因无法办理审验时，延长期限不得超过3年<br>申领小型汽车驾驶证的人年龄条件18周岁以上70周岁以下<br>60周岁驾驶人每1年需提交一次身体体检证明</p>
-<p>驾驶人户籍迁出原车辆管理所需要向迁入地车辆管理所提出申请<br>驾驶人在驾驶证核发地车辆管理所管辖区以外居住的，可以向居住地车辆管理申请换证</p>
-<p>夜间在道路会车，距离对向来车150以外将远光灯改为近光灯。</p>
-<p>那些情况不得停车；在站点如公交站，消防站30米以内，在易发事故的路段，如交叉路口，转弯路、窄路隧道50米以内</p>
-<p>扣分的行为：</p>
-<p>凡是有涉及酒的（酒驾）、号牌的（故意遮挡、污损、不安装号牌的，使用伪造、变造号牌或者使用其他号牌的），逃逸的，<strong>与准驾车型不符的</strong>，车速超过规定时速50%的，高速公路的（高速公路倒车、逆行、穿越中央隔离带掉头）一律扣12分。</p>
-<p>六分：</p>
-<p>1、违法占用应急车道行驶</p>
-<p>2、违反交通信号灯通行、</p>
-<p>3、不按规定避让校车 </p>
-<p>4、驾驶证被扣期间驾驶机动车</p>
-<p>扣3分：不按规定年检、道路上发生故障不按规定使用灯光和警告标志与禁令标志、禁止标线等行为、逆行 、禁停路停车，<strong>高速上</strong>超过规定时速10%-20%</p>
-<p>任何时候空挡滑行都错。</p>
-<p>交警可扣留驾驶证：<br>饮酒后驾驶机动车的<br>将机动车交给驾驶证被吊销的人驾驶的<br>一个记分周期内累计记分达12分的</p>
-<p>扇形的是前车窗，长方形的是后车窗</p>
-<p>灯光标志：向左照的是前灯，向右照的是后灯</p>
-<p>两个同心红三角是危险报警闪烁灯是停车时人为开启的</p>
-<p>道路养护车、工程作业车在进行作业时，不受交通标志、标线限制</p>
-<p>洒水车、清扫车等在进行作业时，不受车辆分道行驶限制</p>
-<p>扣证后开车，拘留十五天，罚款200-2000</p>
-<p>1212高速公路救援电话</p>
-<p>实习期上高速，要有三年以上驾龄的驾驶人陪同</p>
-<p>未悬挂机动车号牌、检验合格标志、保险标志、行驶证、驾驶证的，相关部门应扣留机动车</p>
-<h2 id="2021-03-07"><a href="#2021-03-07" class="headerlink" title="2021-03-07"></a>2021-03-07</h2><p>“两弯反向，三弯连续”，拐两个弯的都是反向弯路，拐三个弯的是连续弯路。</p>
-<p>261：能见度低于200米，车速不得超过每小时60公里，车距100米。</p>
-<p>145，能见度低于100米，车速不得超过每小时40公里，车距50米。</p>
-<p>高速公路上：</p>
-<p>车速超过每小时100公里时，与同车道前车保持100米以上的距离。</p>
-<p>车速低于每小时100公里时，与同车道前车保持最小距离不得少于50米。</p>
-<p>伪造变造XX证，十五日拘留并罚款2000-5000</p>
-<p>非法安装报警器、标志等，予以收缴，并处200-2000罚款</p>
-<p>机动车抵押时，要向<strong>登记地</strong>车管所申请。</p>
-<p>以下情形注销机动车驾驶证：</p>
-<p>1、死亡</p>
-<p>2、身体条件不适合</p>
-<p>3、提出注销申请</p>
-<p>4、丧事行为能力，监护人申请</p>
-<p>5、超过机动车驾驶证有效期一年以上未换证</p>
-<p>机动车强制险的保险期为一年</p>
-<p>罚款：</p>
-<p>伪造变造证书：2000-5000</p>
-<p>醉酒：1000-2000</p>
-<p>牛表示牲畜、鹿表示野生动物</p>
-<p>一个凸起，中间是实心代表高突，中间有洞代表驼峰桥。</p>
-<p>指示图标：</p>
-<p>分向行驶：虚线隔开，没有距离和文字提示</p>
-<p>分道信息：没有线，单个图形，有距离和文字</p>
-<p>交叉路口：实线隔开，有文字和距离</p>
-<p>中间有虚线就是紧停车带，没有虚线的是错车道。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210307165335.jpg" alt="images"></p>
-<p>线形诱导标志：</p>
-<p>一般道路为蓝底白图案，高速公路为绿底白图案，警告性线形诱导标志为红底白图案。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210307165821.jpg" alt="c172ef5c4f5bb097c5aa67e1c7fea81b"></p>
-<p>菱形标志：前方有人行横道，车辆应减速慢行或停车等待。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210307170830.jpg" alt="images"></p>
-<p>速度限制标志：黄色数字是最高限速，白色数字是最低限速。</p>
-<p>路边的黄色虚线禁止长时间停车，实现禁止停车。</p>
-<p>停车位：白色收费、黄色为专属停车位、蓝色为免费停车位</p>
-<p>通过没有路灯或路灯照明不良的路段时可开启远光灯，但是前方有车或行人时，应关闭远光灯开启近光灯。</p>
-<p>轮胎气不足，会造成轮胎与地面的摩擦范围增大，使温度升高，从而爆胎。压力过低和过高都会导致爆胎。</p>
-<p>没带各种证件与没证差不多，扣车加罚款</p>
-<p>安全头枕需要对准后脑勺来保护驾驶员</p>
-<p>关于饮酒醉酒：</p>
-<p>饮酒驾驶机动车：罚款1000-2000元，记12分并暂扣驾照6个月；</p>
-<p>醉酒驾驶机动车：吊销驾照，五年内不得重新获取驾照。</p>
-<p>饮酒驾驶营运机动车，罚款5000元，记12分，处以15日以下拘留，吊销驾照，并且5年内不得重新获取驾照。</p>
-<p>醉酒驾驶营运机动车，吊销驾照，10年内不得重新获取驾照，终生不得驾驶运营车辆。</p>
-<h2 id="2021-03-09"><a href="#2021-03-09" class="headerlink" title="2021-03-09"></a>2021-03-09</h2><p>初次申领驾照的实习期为12个月</p>
-<p>总结处200-2000元罚款，并处吊销驾驶证的情况：</p>
-<p>1、超速20%</p>
-<p>2、醉酒行驶</p>
-<p>3、将车交给驾驶证被吊销人员</p>
-<p>为承认做心肺复苏时，胸外按压频率时100-120次/分</p>
-<p>转向灯 ==&gt;上右下左</p>
-<h2 id="2021-03-10"><a href="#2021-03-10" class="headerlink" title="2021-03-10"></a>2021-03-10</h2><p>扣两分：</p>
-<p>驾驶机动车打电话</p>
-<p>高速公路与城市快速路上，为使用安全带，罚款50元，扣2分，其他道路罚款50元</p>
-<p>驾驶证相关的都去核发地，行驶证相关的都去登记地。</p>
-<h2 id="2021-03-12"><a href="#2021-03-12" class="headerlink" title="2021-03-12"></a>2021-03-12</h2><p>&emsp;&emsp;科一考试，93分通过测试。一个人去参加考试，遇到一个小插曲，原来手机要提前放在储物柜，因此都走在考场门口了不得不重新排队。加油啦！后面还有科二、科三、科四，好好准备，沉着应考，认真对待每一次的考核与考验！</p>
-]]></content>
-      <categories>
-        <category>学海无涯</category>
-      </categories>
   </entry>
   <entry>
     <title>Nginx安装及常用命令</title>
@@ -1026,9 +446,250 @@
       </tags>
   </entry>
   <entry>
+    <title>辛丑牛年新年展望（2021）</title>
+    <url>/2021/02/12/6ea85d902251/</url>
+    <content><![CDATA[<h1 id="辛丑牛年新年展望（2021）"><a href="#辛丑牛年新年展望（2021）" class="headerlink" title="辛丑牛年新年展望（2021）"></a>辛丑牛年新年展望（2021）</h1><p>&emsp;&emsp;2021年2月12日为辛丑牛年正月初一，就农历而言，今天便就是中国的农历新年。作为一个对传统佳节有浓厚感情的传统国人，辞旧迎新、展望未来便是本文的初衷。2020元旦总结虽有稍许记录，却未整理成文，今天借这个机会发表啦！</p>
+<a id="more"></a>
+
+<h2 id="2020年度总结"><a href="#2020年度总结" class="headerlink" title="2020年度总结"></a>2020年度总结</h2><p>&emsp;&emsp;兜兜转转，大学本科已经步入最后一个年头了。这一年，正经世界百年未有之大变局，时代选择我们来见证，也是由我们来建设这个时代。本文便来讲讲我这一年的见证与建设，首先就开门见山说说2020 的个人生涯关键词：<strong>迷茫</strong>、<strong>焦虑</strong>、<strong>尝试</strong>、<strong>奋斗</strong>。</p>
+<h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><ul>
+<li><strong>迷茫</strong></li>
+</ul>
+<p>&emsp;&emsp;为什么说是迷茫呢？因为疫情前期一直待在家中，本人对未来考研<strong>OR</strong>工作还未明确目标。目标未定，规划更无须再论。那段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
+<ul>
+<li><strong>焦虑</strong></li>
+</ul>
+<p>&emsp;&emsp;每个找工作的娃的焦虑，想必每个人都或多或少有过经历！希望早日结束这个状态，现在终于明白铁饭碗为什么这么香了！</p>
+<ul>
+<li><strong>尝试</strong></li>
+</ul>
+<p>&emsp;&emsp;应届生的身份，敞开了许多大门，事业单位、公务员、研究生、企业等都可以去尝试，去争取。在2020这一年，我一直都在不断尝试，海投简历、面试IT公司、尝试事业单位和备考研究生等等……</p>
+<ul>
+<li><strong>奋斗</strong></li>
+</ul>
+<p>&emsp;&emsp;机会虽然很多，但只有那些有准备的人才能抓住。这一年也是在不断奋斗的一年，同疫情做斗争、刷题背八股文、上海得帆实习、考研备考等。</p>
+<h3 id="月历表"><a href="#月历表" class="headerlink" title="月历表"></a>月历表</h3><ul>
+<li><strong>1月</strong>：大学本科生涯最后的课程正规考试，回家！！！</li>
+</ul>
+<p>&emsp;&emsp;大三上学期的期末考试在一月进行，《数据库原理及应用》，《计算机组成与系统结构》等科目进行闭卷考试，因为疫情在家上网课的原因，这便是最后一次正规的课程结课考试了。1月11号放寒假回家，归家途中经过疫情还未报道的武汉，回家不久就安排在家居家隔离，每天都有村里干部来测体温。</p>
+<ul>
+<li><strong>2月</strong>：疫情造成的蝴蝶效应！</li>
+</ul>
+<p>&emsp;&emsp;2月的头号大事便是春节啦！记忆之初，春节都是热热闹闹的，百年未有之大变局中的春节只能是远程拜年啦！隔离的春节，爱心却两不相隔，一方有难，八方来援这句话在湖北得到广泛运用。一省帮一市、村里送菜送粮、邻里互帮互助等等奉献爱心的行为都让我深受感动。相比之下，国外的某些XXX恶言恶语、不怀好意的反响就显得太过无耻卑鄙，进一步加深了我对ZF的认同并坚定自身立场。</p>
+<ul>
+<li><strong>3月</strong>：疫情期间在家赋闲，陷入焦虑</li>
+</ul>
+<p>&emsp;&emsp;这段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
+<p>疫情实时播报频道：<a href="https://t.me/nCoV2019">https://t.me/nCoV2019</a></p>
+<ul>
+<li><strong>4月</strong>：第一次接单干活，实现技术变现</li>
+</ul>
+<p>&emsp;&emsp;这段期间在家里上网课，课余时间便想找些事情做一下。机缘巧合之下加了一个做私活的群，其中接了一个安卓app的项目，主要任务是写一个类似星巴克咖啡店的APP。另外是一个Web端图书管理系统，前后端交互的形式，由于时间不太够前端草草写了一下。小项目没赚几个钱，但这是首次使用技术变现，值得纪念一下。不得不说，写的界面真丑！哈哈哈</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210213010621.png" alt="image-20210213010621705"></p>
+<ul>
+<li><strong>5月</strong>：面试、准备面试相交织</li>
+</ul>
+<p>&emsp;&emsp;这是一个面试月，投的基本都是各大公司的实习岗位，有上海得帆、字节跳动、华讯网络等。有喜有忧，大公司基本都被拒了，也是自身准备不足的结果，特别是字节跳动的笔试特别考核算法，所以还需历练！所幸还是有所斩获，收获了上海得帆的实习offer。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210213011312.png" alt="image-20210213011312539"></p>
+<ul>
+<li><strong>6月</strong>：石油项目</li>
+</ul>
+<p>&emsp;&emsp;第一次接触实际项目,学校老师招人干的一个分父子模块的后台管理项目。这是一个从需求到项目成型的实际项目，我主要参与前期的数据库建表、项目搭建。</p>
+<ul>
+<li><strong>7月</strong>：得帆公司培训</li>
+</ul>
+<p>&emsp;&emsp;7月21日上海得帆实习，第一次独自走向远方，第一次参与这种IT规范培训。在这期间结识了不少优秀的同仁，见贤思齐焉！加油！</p>
+<ul>
+<li><strong>8-9月</strong>：上海实习</li>
+</ul>
+<p>&emsp;&emsp;上海得帆公司外派我前往中骏地产参与了ESB项目的开发，新力地产的门户项目。</p>
+<ul>
+<li><strong>10-11月</strong>：回校工作，成为公司第一个员工</li>
+</ul>
+<p>&emsp;&emsp;学校老师创建的一个初创公司，领头的一个老师是我大三参赛的一个项目的指导老师，老师认为我能力还行，便邀请我加入公司。当时我正在上海实习，待了大概两个多月也想换个新环境多多历练。话说初创公司确实很锻炼人啊，就你一个人，啥事都是你。刚开始去的那段时间都没开始写代码，都是搞什么流程讨论，原型设计等。这个决定也深深影响到我找工作的进程，一是留校读研边工作，二是出去工作。利弊难论，马上要到选择的时刻了！</p>
+<ul>
+<li><strong>12月</strong>：临阵考研，加油！！！冲！冲！冲！</li>
+</ul>
+<p>&emsp;&emsp;2020年12月26日考研，这一月脱产备考，无论是否要读都尽力一试。</p>
+<h3 id="年度总结"><a href="#年度总结" class="headerlink" title="年度总结"></a>年度总结</h3><p>&emsp;&emsp;2020许多第一次，第一次接私活，第一次做实际项目，第一次实习，第一次考研。许多第一次做得或许不够好，因此更需努力充实自己。2020，有收获，也有遗憾。这是变化最大的一年，从学校学子到接触社会工作，试错的机会更少，所作的每一个决定都影响着未来数年的路。总的来说，2020让我深刻认识到了自己的不足，见贤思齐焉！！！只思是不够的，更要付诸行动。成功的背后，都是不断的坚持与努力，优秀都是经过一次次碰壁调整出来的。不知从何时起难以专注学习/工作，自制力一直都在减弱，这种状态实在难堪。新的一年希望能够扭转这些疲敝之态，多多历练，想到就去做，一万年太久！只争朝夕！</p>
+<h3 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h3><ul>
+<li>一天至少一道算法题</li>
+</ul>
+<p>&emsp;&emsp;<a href="https://github.com/CourageHe/Algorithm-Daily-Practice">算法日常练习代码库</a></p>
+<ul>
+<li>勤写博客总结经验</li>
+<li>海投岗位，找工作</li>
+<li>看几本书（剑指Offer、JAVA8函数式编程、设计模式）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>个人有感</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>使用rz和sz命令传输文件</title>
+    <url>/2021/01/07/818b6f02a79d/</url>
+    <content><![CDATA[<h1 id="新鲜出炉的Centos"><a href="#新鲜出炉的Centos" class="headerlink" title="新鲜出炉的Centos"></a>新鲜出炉的Centos</h1><h2 id="一、配置yum国内镜像源"><a href="#一、配置yum国内镜像源" class="headerlink" title="一、配置yum国内镜像源"></a>一、配置yum国内镜像源</h2><h3 id="1、备份"><a href="#1、备份" class="headerlink" title="1、备份"></a>1、备份</h3><p>如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure>
+
+<p>该文件是Centos的镜像文件配置，一般国内都会配置成阿里云、网易、清华大学。我这里选择的式清华大学的镜像源，编辑 <code>/etc/yum.repos.d/CentOS-Base.repo </code>文件，在 <code>mirrorlist=</code> 开头行前面加 <code>#</code> 注释掉；并将 <code>baseurl=</code> 开头行取消注释（如果被注释的话），把该行内的域名（例如<code>mirror.centos.org</code>）替换为 <code>mirrors.tuna.tsinghua.edu.cn</code>。</p>
+<a id="more"></a>
+
+<h3 id="2、Centos7示例"><a href="#2、Centos7示例" class="headerlink" title="2、Centos7示例"></a>2、Centos7示例</h3><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#CentOS-Base.repo</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The mirror system uses the connecting IP address of the client and the</span></span><br><span class="line"><span class="comment"># update status of each mirror to pick mirrors that are updated to and</span></span><br><span class="line"><span class="comment"># geographically close to the client.  You should use this for CentOS updates</span></span><br><span class="line"><span class="comment"># unless you are manually picking other mirrors.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># If the mirrorlist= does not work for you, as a fall back you can try the</span></span><br><span class="line"><span class="comment"># remarked out baseurl= line instead.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">[base]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Base</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/os/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#released updates</span></span><br><span class="line"><span class="attr">[updates]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Updates</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/updates/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line"><span class="attr">[extras]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Extras</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/extras/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line"><span class="attr">[centosplus]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Plus</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/centosplus/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">0</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3、更新软件包缓存"><a href="#3、更新软件包缓存" class="headerlink" title="3、更新软件包缓存"></a>3、更新软件包缓存</h3><p>清楚之前的软件包缓存，然后更新软件包缓存</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、更新软件包"><a href="#4、更新软件包" class="headerlink" title="4、更新软件包"></a>4、更新软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
+
+<p>参考：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">https://mirrors.tuna.tsinghua.edu.cn/help/centos/</a></p>
+<h2 id="二、rz、sz命令传输文件"><a href="#二、rz、sz命令传输文件" class="headerlink" title="二、rz、sz命令传输文件"></a>二、rz、sz命令传输文件</h2><p>大文件传输的话，建议使用<code>Filezilla</code>进行传输，个别的小文件传输的话，仅以使用<code>lrzsz</code>，更方便哦！！！</p>
+<h3 id="1、安装-lrzsz"><a href="#1、安装-lrzsz" class="headerlink" title="1、安装 lrzsz"></a>1、安装 lrzsz</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install lrzsz</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、上传文件"><a href="#2、上传文件" class="headerlink" title="2、上传文件"></a>2、上传文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rz</span><br></pre></td></tr></table></figure>
+
+<p>rz命令打开文件选择框，选择要发送的文件即可发送至当前目录。</p>
+<p>从Windows/Mac直接拖动至XShell窗口也是同样的哦！！！</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103215423.png" alt="image-20210103215423075"></p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103214524.png" alt="image-20210103214523798"></p>
+<h3 id="3、下载文件"><a href="#3、下载文件" class="headerlink" title="3、下载文件"></a>3、下载文件</h3><p><code>sz 文件名</code>便可下载该文件至本地，选择本地文件夹即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sz /etc/yum.repos.d/CentOS-Base.repo</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103221932.png" alt="image-20210103221932546"></p>
+<p>三、</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux常用命令</title>
+    <url>/2021/01/07/75eb06482a73/</url>
+    <content><![CDATA[<h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><blockquote>
+<p>本文主要用于记录，在工作学习中经常需要使用的常见Linux命令。在<a href="https://couragehe.github.io/">CourageHe’s Blog</a>不间断更新，欢迎各位看官指教。</p>
+</blockquote>
+<a id="more"></a>
+
+<p>Linux资源查看</p>
+<p>各分区使用情况</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001504.png" alt="image-20210107001503961"></p>
+<p>查看进程</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -ef</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001625.png" alt="image-20210107001625631"></p>
+<p>查看内存使用情况</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001741.png" alt="image-20210107001741107"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fre -m</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001916.png" alt="image-20210107001916338"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FRP内网穿透</title>
+    <url>/2021/01/17/dd7e0bbf808e/</url>
+    <content><![CDATA[<h1 id="FRP内网穿透"><a href="#FRP内网穿透" class="headerlink" title="FRP内网穿透"></a>FRP内网穿透</h1><blockquote>
+<p>frp 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。</p>
+</blockquote>
+<h2 id="使用缘由"><a href="#使用缘由" class="headerlink" title="使用缘由"></a>使用缘由</h2><p>因为疫情的原因，公司提前休假，在家办公。公司的测试环境还有私服GIT都是在内网下，出于安全考虑，不考虑将GIT仓库移至GITHUB、GITEE等平台。首先想到的解决方案是使用类似花生壳这种内网穿透的服务，但是考虑到服务的收费标准与本司的使用需求相差较大。公司有六、七个端口需要转发，使用期限为一个月左右，而花生壳的套餐是按年付费，且线路数有限制，增加线路另外收费。然后想到了本人在大二时候使用的一个开源的内网穿透的代理应用，比较符合公司的解决方案。</p>
+<a id="more"></a>
+<h2 id="设备环境"><a href="#设备环境" class="headerlink" title="设备环境"></a>设备环境</h2><ul>
+<li><p>一台具有公网ip的服务器</p>
+</li>
+<li><p>N台内网服务器（需要内网穿透的服务器）</p>
+</li>
+</ul>
+<h2 id="系统选型"><a href="#系统选型" class="headerlink" title="系统选型"></a>系统选型</h2><p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117180715.png" alt="image-20210117180715013"></p>
+<table>
+<thead>
+<tr>
+<th>frp支持的</th>
+<th>Linux系统架构</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>386</td>
+<td>X86架构</td>
+</tr>
+<tr>
+<td>amd64</td>
+<td>amd架构</td>
+</tr>
+<tr>
+<td>arm</td>
+<td>arm架构</td>
+</tr>
+<tr>
+<td>arm64</td>
+<td>64位arm架构</td>
+</tr>
+<tr>
+<td>mips</td>
+<td>mips架构</td>
+</tr>
+<tr>
+<td>mips64</td>
+<td>64位mips架构</td>
+</tr>
+<tr>
+<td>mipsle</td>
+<td>mipsle架构</td>
+</tr>
+<tr>
+<td>mips64le</td>
+<td>64位mipsle架构</td>
+</tr>
+</tbody></table>
+<p><a href="https://blog.csdn.net/lixuande19871015/article/details/90485929">查看Linux的系统架构</a></p>
+<h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><p>本人搭建的服务端为Centos7.X，系统架构为X86加否；客户端为Windows10，系统架构为amd64。下载解压即可，根据实际需要配置文件即可。下面给一个常用的配置模板，仅供参考。</p>
+<h3 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">bind_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set dashboard_addr and dashboard_port to view dashboard of frps</span></span><br><span class="line"><span class="comment"># dashboard_addr&#x27;s default value is same with bind_addr</span></span><br><span class="line"><span class="comment"># dashboard is available only if dashboard_port is set</span></span><br><span class="line"><span class="attr">dashboard_addr</span> = <span class="number">0.0</span>.<span class="number">0.0</span></span><br><span class="line"><span class="attr">dashboard_port</span> = <span class="number">7500</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># dashboard user and passwd for basic auth protect, if not set, both default value is admin</span></span><br><span class="line"><span class="attr">dashboard_user</span> = admin</span><br><span class="line"><span class="attr">dashboard_pwd</span> = admin</span><br></pre></td></tr></table></figure>
+
+<p><code>XX.XX.XX.XX:7500</code>为FRP的监控平台网页，账号密码为<code>admin/admin</code>.<img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117191329.png" alt="image-20210117191328912"></p>
+<p><code>bind_port</code> ：为FRP 服务器用户接收客户端连接的端口：</p>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>这种方式启动的话，将会把日志打印至<code>frp.log</code>下，用户退出该进程任然存在。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nohup ./frps -c frps.ini &gt;frp.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+
+<h4 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查找端口为7000的进程</span></span><br><span class="line">netstat -nlp | grep 7000</span><br><span class="line"><span class="comment">#杀死 pid为10263的进程</span></span><br><span class="line"><span class="built_in">kill</span> -9 10263</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">server_addr</span> = XX.XX.XX.XX</span><br><span class="line"><span class="attr">server_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line">@Windows 远程桌面</span><br><span class="line"><span class="section">[Test Windows Server Connection]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3389</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Liunx ssh</span></span><br><span class="line"><span class="section">[Test Linux Server Connection ssh]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">22</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6002</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Mysql数据库</span></span><br><span class="line"><span class="section">[Test MySQL Sever jdbc]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3306</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6003</span></span><br></pre></td></tr></table></figure>
+
+<p><code>server_addr</code>：服务器地址</p>
+<p><code>server_port</code>：服务器端口</p>
+<p><code>local_ip</code>：本地需要暴露到公网的服务地址。客户端网络环境下的ip地址皆可。</p>
+<p><code>local_port</code>：本地需要暴露到公网的服务端口</p>
+<p><code>remote_port</code>：在 frp 服务端监听的端口，访问此端口的流量将会被转发到本地服务对应的端口。</p>
+<h4 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">frpc.exe -c frpc.ini </span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>实用工具</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows小技巧</title>
     <url>/2021/04/10/5a457db9baf9/</url>
     <content><![CDATA[<h1 id="Windows小技巧"><a href="#Windows小技巧" class="headerlink" title="Windows小技巧"></a>Windows小技巧</h1><p>&emsp;&emsp;用于记录日常使用Windows的小技巧，后期会不断更新。勤于记录，孰能生巧。</p>
+<a id="more"></a>
+
 <h2 id="一、巧用命令行"><a href="#一、巧用命令行" class="headerlink" title="一、巧用命令行"></a>一、巧用命令行</h2><h3 id="1、窗口下载命令"><a href="#1、窗口下载命令" class="headerlink" title="1、窗口下载命令"></a>1、窗口下载命令</h3><p>&emsp;&emsp;打开powershell，输入以下命令行即可将网路文件下载至指定文件夹。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="variable">$client</span> = new-object System.Net.WebClient</span><br><span class="line">&gt; <span class="variable">$client</span>.DownloadFile(<span class="string">&#x27;https://gitee.com/Courage-He/PicBed/raw/master/data/20210410215919.png&#x27;</span>, <span class="string">&#x27;D:\test.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
@@ -1041,6 +702,347 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Lombok常用注解</title>
+    <url>/2020/08/16/c2f37b230581/</url>
+    <content><![CDATA[<h1 id="Lombok常用注解"><a href="#Lombok常用注解" class="headerlink" title="Lombok常用注解"></a>Lombok常用注解</h1><blockquote>
+<p>Lombok通过注解的方式省掉大量代码的编写，尤其对于POJO类的set()、get()、toString()等。在源代码只需要加上相应的注解，编译过程中Lombok插件就会自行生辰相关代码。减少冗杂且重复的代码，简化开发易于修改。本文即为对Lombok常见注解的介绍及对生成的代码的展示。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="安装Lombok"><a href="#安装Lombok" class="headerlink" title="安装Lombok"></a>安装Lombok</h2><p>&emsp;&emsp;在菜单栏依次选择<code>File</code>-&gt;<code>Settings</code>-&gt;<code>Plugins</code>，输入<code>Lombok</code>搜索该插件，得到搜索结果选择Lombok进行安装即可。安装完毕提示重启即安装成功。</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816144238.jpeg"></p>
+<p>&emsp;&emsp;Maven项目中引入Lombok依赖的编译支持，在pom文件中的<code>dependences</code>里添加即可</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.16.18<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h2><ul>
+<li>@Data</li>
+</ul>
+<ul>
+<li>@Setter</li>
+<li>@Getter</li>
+<li>@Log4j</li>
+<li>@AllArgsConstructor</li>
+<li>@NoArgsConstructor</li>
+<li>@EqualsAndHashCode</li>
+<li>@NonNull</li>
+<li>@Cleanup</li>
+<li>@ToString</li>
+<li>@RequiredArgsConstructor</li>
+<li>@Value</li>
+<li>@SneakyThrows</li>
+<li>@Synchronized</li>
+</ul>
+<h2 id="注解作用"><a href="#注解作用" class="headerlink" title="注解作用"></a>注解作用</h2><h3 id="Data"><a href="#Data" class="headerlink" title="@Data"></a>@Data</h3><p>注解在<strong>类</strong>上，提供类所有属性的get和set方法，此外还提供了equals、canEqual、toString方法以及默认构造函数</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816115230.png" alt="img"></p>
+<h3 id="Setter"><a href="#Setter" class="headerlink" title="@Setter"></a>@Setter</h3><ul>
+<li>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>set</strong>方法</li>
+<li>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>set</strong>方法</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816125332.png" alt="image-20200816125332552"></p>
+<h3 id="Getter"><a href="#Getter" class="headerlink" title="@Getter"></a>@Getter</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>get</strong>方法</p>
+</li>
+<li><p>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>get</strong>方法</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816145537.png" alt="image-20200816125753543"></p>
+</li>
+</ul>
+<h3 id="Log4j"><a href="#Log4j" class="headerlink" title="@Log4j"></a>@Log4j</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及该类的日志对象</p>
+<p>如果项目中没有对应的日志依赖，建议pom文件中加入</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.15<span class="tag">&lt;/<span class="name">version</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.mail<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.jms<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jms<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.jdmk<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jmxtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.jmx<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jmxri<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span> </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<p>  <img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816131455.png"></p>
+<h3 id="AllArgsConstructor"><a href="#AllArgsConstructor" class="headerlink" title="@AllArgsConstructor"></a>@AllArgsConstructor</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供含类全部属性的<strong>构造函数</strong></p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816132129.png" alt="image-20200816132129118"></p>
+</li>
+</ul>
+<h3 id="NoArgsConstructor"><a href="#NoArgsConstructor" class="headerlink" title="@NoArgsConstructor"></a>@NoArgsConstructor</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong></p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816132510.png" alt="image-20200816132510412"></p>
+</li>
+</ul>
+<h3 id="EqualsAndHashCode"><a href="#EqualsAndHashCode" class="headerlink" title="@EqualsAndHashCode"></a>@EqualsAndHashCode</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>、<strong>equals</strong>方法、<strong>canEqual</strong>方法、<strong>HashCode</strong>方法</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816132954.png" alt="image-20200816132954099"></p>
+</li>
+</ul>
+<h3 id="NonNull"><a href="#NonNull" class="headerlink" title="@NonNull"></a>@NonNull</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及如果有属性为NULL则抛<strong>NullPointException</strong></p>
+</li>
+<li><p>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及该属性为NULL则抛<strong>NullPointException</strong></p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816135351.png" alt="image-20200816133630219"></p>
+</li>
+</ul>
+<h3 id="Cleanup"><a href="#Cleanup" class="headerlink" title="@Cleanup"></a>@Cleanup</h3><ul>
+<li><p>注解在<strong>属性</strong>上，注解在那种使用完需要<code>close</code>的对象，会自动在finally里代码块中生成<code>close</code>代码</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816135523.png" alt="image-20200816135522627"></p>
+</li>
+</ul>
+<h3 id="ToString"><a href="#ToString" class="headerlink" title="@ToString"></a>@ToString</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及**toString()**方法</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816135750.png" alt="image-20200816135750664"></p>
+</li>
+</ul>
+<h3 id="RequiredArgsConstructor"><a href="#RequiredArgsConstructor" class="headerlink" title="@RequiredArgsConstructor"></a>@RequiredArgsConstructor</h3><ul>
+<li><p>注解在<strong>属性</strong>上，提供类中<strong>final</strong>修饰和**@NONULL<strong>注解的所有属性的</strong>构造函数**</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816140650.png" alt="image-20200816140650718"></p>
+</li>
+</ul>
+<h3 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供含类全部属性的<strong>构造函数</strong>以及<strong>get()**、</strong>equals()<strong>、</strong>hashCode()<strong>、</strong>toString()**方法</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816142559.png" alt="image-20200816142558874"></p>
+</li>
+</ul>
+<h3 id="SneakyThrows"><a href="#SneakyThrows" class="headerlink" title="@SneakyThrows"></a>@SneakyThrows</h3><ul>
+<li><p>注解在<strong>方法</strong>上，作用是将方法内的代码块用try-catch包围起来，并以<code>@SneakyThrows(Exception.class)</code>的形式指定抛出Exception的类型。同时也会生成默认构造函数。</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816142944.png" alt="image-20200816142943894"></p>
+</li>
+</ul>
+<h3 id="Synchronized"><a href="#Synchronized" class="headerlink" title="@Synchronized"></a>@Synchronized</h3><ul>
+<li><p>注解在<strong>方法</strong>上，与在方法名左边直接加<strong>synchronized</strong>关键字效果类似，对于静态方法和实例方法，synchornized关键字的锁对象分别是<strong>class</strong>对象和<strong>this</strong>对象；**@Synchronized<strong>则对应的锁对象分别是</strong>私有静态final对象<strong>lock和</strong>私有final对象** lock，同时也可以以<code>@Synchronized(&quot;属性名&quot;)</code>形式自定义锁对象。同时也会生成默认构造函数。</p>
+<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816163424.png" alt="image-20200816163423807"></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>实用工具</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>驾照考试-刷题总结</title>
+    <url>/2021/03/04/e831abc0a85c/</url>
+    <content><![CDATA[<h1 id="驾照考试-刷题总结"><a href="#驾照考试-刷题总结" class="headerlink" title="驾照考试-刷题总结"></a>驾照考试-刷题总结</h1><blockquote>
+<p>本文主要用于记录，在准备驾照考试中总结的日常经验。在<a href="https://couragehe.github.io/">CourageHe’s Blog</a>不间断更新，欢迎各位看官指教。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="2021-03-04"><a href="#2021-03-04" class="headerlink" title="2021-03-04"></a>2021-03-04</h2><p>右让左，左让直，转弯让直行。</p>
+<p>在高速公路匝道上提速到每小时60公里以上时，应先打开左转向灯，在不妨碍其他车辆的情况下驶入车道。</p>
+<p>违反道路交通安全法律法规都属于违法行为</p>
+<p>车辆发生故障无法移动时，警告标志应放置于车辆后的150M以外</p>
+<p>70周岁以上的机动车驾驶人，应每年进行一次身体检查，并向有关部门申报身体情况</p>
+<p>防抱死制动系统故障</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210304210635.png" alt="image-20210304210635318"></p>
+<p>车辆在泥泞道路发生侧滑时，正确做法是车尾向哪一侧移动，即向哪一侧适当调整方向盘。</p>
+<p>此标志是左侧通行，^表示两侧通行，/这个表示左侧通行，\这个表示右侧通行。</p>
+<p>简记：上左下右</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210304211839.png" alt="image-20210304211839461"></p>
+<p>禁止车辆长时间停放，临时停放不受限制。中间一个红叉是禁止停车，中间一个斜杠是禁止长时间停车。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210304212057.png" alt="image-20210304212057360"></p>
+<p>交警手势速记口诀：<a href="https://www.bilibili.com/video/BV1eV411m7CM/">https://www.bilibili.com/video/BV1eV411m7CM/</a></p>
+<p>左高右放要叫停，左右折叠是直行。</p>
+<p>左手在下左转弯，右手在下右转弯。</p>
+<p>左手下摆即待转，右手平摆要变道。</p>
+<p>右手放下要减速，左手抬起靠边停。</p>
+<h2 id="2021-03-05"><a href="#2021-03-05" class="headerlink" title="2021-03-05"></a>2021-03-05</h2><p>雾灯绿左黄右，绿左黄右。</p>
+<p>绿光在左是前雾灯，黄光在右是后雾灯。</p>
+<p><strong>二条车道</strong>： 左:100<del>120 右:60</del>100</p>
+<p>三条车道：  最左：110-120  中间：90-110 最右：60-90</p>
+<p>四条车道：最左:110<del>120 中间二条:90</del>110 最右:60~80</p>
+<p>进入高速加速车道,尽快提到(60公里)以上</p>
+<p>假一吊二撤三醉五逃终生</p>
+<p>边缘线为实线，禁止跨越实线行驶；边缘线为虚线，可临时跨越行驶。</p>
+<p>无中心线，城3公4；有中心线，城5公7；</p>
+<p>科目一技巧：<a href="https://zhuanlan.zhihu.com/p/37515599">https://zhuanlan.zhihu.com/p/37515599</a></p>
+<p>致人重伤、死亡的：3年以下<br>使公私财产遭受重大损失的：3年以下<br>致人死亡且逃逸的：3年以上7年以下<br>因逃逸导致他人死亡的：7年以上</p>
+<p>关于时间：</p>
+<p>道路交通安全违法行为累计记分一个周期满分为12个月<br>驾驶证期满90天申请换证，<br>驾驶证记载信息发生变化30天内申请换证。<br>驾驶人因出国等原因无法办理审验时，延长期限不得超过3年<br>申领小型汽车驾驶证的人年龄条件18周岁以上70周岁以下<br>60周岁驾驶人每1年需提交一次身体体检证明</p>
+<p>驾驶人户籍迁出原车辆管理所需要向迁入地车辆管理所提出申请<br>驾驶人在驾驶证核发地车辆管理所管辖区以外居住的，可以向居住地车辆管理申请换证</p>
+<p>夜间在道路会车，距离对向来车150以外将远光灯改为近光灯。</p>
+<p>那些情况不得停车；在站点如公交站，消防站30米以内，在易发事故的路段，如交叉路口，转弯路、窄路隧道50米以内</p>
+<p>扣分的行为：</p>
+<p>凡是有涉及酒的（酒驾）、号牌的（故意遮挡、污损、不安装号牌的，使用伪造、变造号牌或者使用其他号牌的），逃逸的，<strong>与准驾车型不符的</strong>，车速超过规定时速50%的，高速公路的（高速公路倒车、逆行、穿越中央隔离带掉头）一律扣12分。</p>
+<p>六分：</p>
+<p>1、违法占用应急车道行驶</p>
+<p>2、违反交通信号灯通行、</p>
+<p>3、不按规定避让校车 </p>
+<p>4、驾驶证被扣期间驾驶机动车</p>
+<p>扣3分：不按规定年检、道路上发生故障不按规定使用灯光和警告标志与禁令标志、禁止标线等行为、逆行 、禁停路停车，<strong>高速上</strong>超过规定时速10%-20%</p>
+<p>任何时候空挡滑行都错。</p>
+<p>交警可扣留驾驶证：<br>饮酒后驾驶机动车的<br>将机动车交给驾驶证被吊销的人驾驶的<br>一个记分周期内累计记分达12分的</p>
+<p>扇形的是前车窗，长方形的是后车窗</p>
+<p>灯光标志：向左照的是前灯，向右照的是后灯</p>
+<p>两个同心红三角是危险报警闪烁灯是停车时人为开启的</p>
+<p>道路养护车、工程作业车在进行作业时，不受交通标志、标线限制</p>
+<p>洒水车、清扫车等在进行作业时，不受车辆分道行驶限制</p>
+<p>扣证后开车，拘留十五天，罚款200-2000</p>
+<p>1212高速公路救援电话</p>
+<p>实习期上高速，要有三年以上驾龄的驾驶人陪同</p>
+<p>未悬挂机动车号牌、检验合格标志、保险标志、行驶证、驾驶证的，相关部门应扣留机动车</p>
+<h2 id="2021-03-07"><a href="#2021-03-07" class="headerlink" title="2021-03-07"></a>2021-03-07</h2><p>“两弯反向，三弯连续”，拐两个弯的都是反向弯路，拐三个弯的是连续弯路。</p>
+<p>261：能见度低于200米，车速不得超过每小时60公里，车距100米。</p>
+<p>145，能见度低于100米，车速不得超过每小时40公里，车距50米。</p>
+<p>高速公路上：</p>
+<p>车速超过每小时100公里时，与同车道前车保持100米以上的距离。</p>
+<p>车速低于每小时100公里时，与同车道前车保持最小距离不得少于50米。</p>
+<p>伪造变造XX证，十五日拘留并罚款2000-5000</p>
+<p>非法安装报警器、标志等，予以收缴，并处200-2000罚款</p>
+<p>机动车抵押时，要向<strong>登记地</strong>车管所申请。</p>
+<p>以下情形注销机动车驾驶证：</p>
+<p>1、死亡</p>
+<p>2、身体条件不适合</p>
+<p>3、提出注销申请</p>
+<p>4、丧事行为能力，监护人申请</p>
+<p>5、超过机动车驾驶证有效期一年以上未换证</p>
+<p>机动车强制险的保险期为一年</p>
+<p>罚款：</p>
+<p>伪造变造证书：2000-5000</p>
+<p>醉酒：1000-2000</p>
+<p>牛表示牲畜、鹿表示野生动物</p>
+<p>一个凸起，中间是实心代表高突，中间有洞代表驼峰桥。</p>
+<p>指示图标：</p>
+<p>分向行驶：虚线隔开，没有距离和文字提示</p>
+<p>分道信息：没有线，单个图形，有距离和文字</p>
+<p>交叉路口：实线隔开，有文字和距离</p>
+<p>中间有虚线就是紧停车带，没有虚线的是错车道。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210307165335.jpg" alt="images"></p>
+<p>线形诱导标志：</p>
+<p>一般道路为蓝底白图案，高速公路为绿底白图案，警告性线形诱导标志为红底白图案。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210307165821.jpg" alt="c172ef5c4f5bb097c5aa67e1c7fea81b"></p>
+<p>菱形标志：前方有人行横道，车辆应减速慢行或停车等待。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210307170830.jpg" alt="images"></p>
+<p>速度限制标志：黄色数字是最高限速，白色数字是最低限速。</p>
+<p>路边的黄色虚线禁止长时间停车，实现禁止停车。</p>
+<p>停车位：白色收费、黄色为专属停车位、蓝色为免费停车位</p>
+<p>通过没有路灯或路灯照明不良的路段时可开启远光灯，但是前方有车或行人时，应关闭远光灯开启近光灯。</p>
+<p>轮胎气不足，会造成轮胎与地面的摩擦范围增大，使温度升高，从而爆胎。压力过低和过高都会导致爆胎。</p>
+<p>没带各种证件与没证差不多，扣车加罚款</p>
+<p>安全头枕需要对准后脑勺来保护驾驶员</p>
+<p>关于饮酒醉酒：</p>
+<p>饮酒驾驶机动车：罚款1000-2000元，记12分并暂扣驾照6个月；</p>
+<p>醉酒驾驶机动车：吊销驾照，五年内不得重新获取驾照。</p>
+<p>饮酒驾驶营运机动车，罚款5000元，记12分，处以15日以下拘留，吊销驾照，并且5年内不得重新获取驾照。</p>
+<p>醉酒驾驶营运机动车，吊销驾照，10年内不得重新获取驾照，终生不得驾驶运营车辆。</p>
+<h2 id="2021-03-09"><a href="#2021-03-09" class="headerlink" title="2021-03-09"></a>2021-03-09</h2><p>初次申领驾照的实习期为12个月</p>
+<p>总结处200-2000元罚款，并处吊销驾驶证的情况：</p>
+<p>1、超速20%</p>
+<p>2、醉酒行驶</p>
+<p>3、将车交给驾驶证被吊销人员</p>
+<p>为承认做心肺复苏时，胸外按压频率时100-120次/分</p>
+<p>转向灯 ==&gt;上右下左</p>
+<h2 id="2021-03-10"><a href="#2021-03-10" class="headerlink" title="2021-03-10"></a>2021-03-10</h2><p>扣两分：</p>
+<p>驾驶机动车打电话</p>
+<p>高速公路与城市快速路上，为使用安全带，罚款50元，扣2分，其他道路罚款50元</p>
+<p>驾驶证相关的都去核发地，行驶证相关的都去登记地。</p>
+<h2 id="2021-03-12"><a href="#2021-03-12" class="headerlink" title="2021-03-12"></a>2021-03-12</h2><p>&emsp;&emsp;科一考试，93分通过测试。一个人去参加考试，遇到一个小插曲，原来手机要提前放在储物柜，因此都走在考场门口了不得不重新排队。加油啦！后面还有科二、科三、科四，好好准备，沉着应考，认真对待每一次的考核与考验！</p>
+]]></content>
+      <categories>
+        <category>学海无涯</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/09/06/b9889e0f3b8b/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指 Offer 03. 数组中重复的数字</title>
+    <url>/2021/01/26/ec8237ba0fb1/</url>
+    <content><![CDATA[<h1 id="剑指-Offer-03-数组中重复的数字"><a href="#剑指-Offer-03-数组中重复的数字" class="headerlink" title="剑指 Offer 03. 数组中重复的数字"></a>剑指 Offer 03. 数组中重复的数字</h1><blockquote>
+<p>题目来源：剑指Offer03</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>找出数组中重复的数字。</p>
+<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
+<p>示例 1：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">[2, 3, 1, 0, 2, 5, 3]</span><br><span class="line">输出：2 或 3 </span><br></pre></td></tr></table></figure>
+
+
+<p>限制：</p>
+<ul>
+<li><code>2 &lt;= n &lt;= 100000</code></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>统计重复元素常用方法是使用哈希表，如果统计的是元素明确范围的话建议使用数组。</p>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="哈希表统计"><a href="#哈希表统计" class="headerlink" title="哈希表统计"></a>哈希表统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt;nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(set.contains(nums[i]))&#123;</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               set.add(nums[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210126002427.png" alt="image-20210126002427040"></p>
+<h3 id="数组统计"><a href="#数组统计" class="headerlink" title="数组统计"></a>数组统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[nums[i]] == <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                arr[nums[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210201152224.png" alt="image-20210126002415245"></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>剑指 Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>1128.等价多米诺骨牌对的数量</title>
+    <url>/2021/01/26/f6d039b5ce46/</url>
+    <content><![CDATA[<h1 id="1128-等价多米诺骨牌对的数量"><a href="#1128-等价多米诺骨牌对的数量" class="headerlink" title="1128.等价多米诺骨牌对的数量"></a>1128.等价多米诺骨牌对的数量</h1><blockquote>
+<p>每日一题：2020-01-26</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/">https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个由一些多米诺骨牌组成的列表<code> dominoes</code>。</p>
+<p>如果其中某一张多米诺骨牌可以通过旋转 0 度或 180 度得到另一张多米诺骨牌，我们就认为这两张牌是等价的。</p>
+<p>形式上，<code>dominoes[i] = [a, b] </code>和<code>dominoes[j] = [c, d]</code>等价的前提是 <code>a==c</code> 且<code> b==d</code>，或是 <code>a==d</code> 且<code> b==c</code>。</p>
+<p>在 <code>0 &lt;= i &lt; j &lt; dominoes.length</code> 的前提下，找出满足 dominoes[i] 和 dominoes[j] 等价的骨牌对 (i, j) 的数量。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：dominoes &#x3D; [[1,2],[2,1],[3,4],[5,6]]</span><br><span class="line">输出：1</span><br></pre></td></tr></table></figure>
+
+
+<p>提示：</p>
+<ul>
+<li><code>1 &lt;= dominoes.length &lt;= 40000</code></li>
+<li><code>1 &lt;= dominoes [i][j] &lt;= 9</code></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>就其题目描述而言，显而易见可以想到暴力循环解题的方法，时间复杂度<code>O(n^2)</code>。提示中有提示数组长度为<code>40000</code>,试想如果不加以利用提示条件必然会导致运行超时。第二条提示是指数组的值为<code>1-9</code>的整数，充分利用这个提示条件则是解题的关键。</p>
+<p>本题中我们需要统计所有等价的多米诺骨牌，其中多米诺骨牌使用二元对代表，「等价」的定义是，在允许翻转两个二元对的的情况下，使它们的元素一一对应相等。于是我们不妨直接让每一个二元对都变为指定的格式，即第一维必须不大于第二维。这样两个二元对「等价」当且仅当两个二元对完全相同。注意到二元对中的元素均不大于 99，因此我们可以将每一个二元对拼接成一个两位的正整数，即<code> (x, y) =&gt; 10x + y</code>。这样就无需使用哈希表统计元素数量，而直接使用长度为 100的数组即可。</p>
+<p>元素数量统计出来后，求各个元素的等差数列之和即可，<strong>切记</strong>数量为一的不计。</p>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="采用暴力循环法"><a href="#采用暴力循环法" class="headerlink" title="采用暴力循环法"></a>采用暴力循环法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numEquivDominoPairs</span><span class="params">(<span class="keyword">int</span>[][] dominoes)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;dominoes.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j&lt;dominoes.length;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(dominoes[i][<span class="number">1</span>] == dominoes[j][<span class="number">1</span>])&#123;</span><br><span class="line">                    <span class="keyword">if</span>(dominoes[i][<span class="number">0</span>] == dominoes[j][<span class="number">0</span>])&#123;</span><br><span class="line">                        ans++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(dominoes[i][<span class="number">1</span>] == dominoes[j][<span class="number">0</span>])&#123;</span><br><span class="line">                    <span class="keyword">if</span>(dominoes[i][<span class="number">0</span>] == dominoes[j][<span class="number">1</span>])&#123;</span><br><span class="line">                        ans++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210127002655.png" alt="image-20210127002655515"></p>
+<h3 id="采用统计法"><a href="#采用统计法" class="headerlink" title="采用统计法"></a>采用统计法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numEquivDominoPairs</span><span class="params">(<span class="keyword">int</span>[][] dominoes)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; dominoes.length;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> num = dominoes[i][<span class="number">0</span>] &gt; dominoes[i][<span class="number">1</span>]? (dominoes[i][<span class="number">0</span>]*<span class="number">10</span>+ dominoes[i][<span class="number">1</span>]) :  (dominoes[i][<span class="number">1</span>]*<span class="number">10</span>+ dominoes[i][<span class="number">0</span>]);<span class="comment">//组合成取值最大的十进制数字</span></span><br><span class="line">            arr[num]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; arr.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i] &lt; <span class="number">2</span>) <span class="keyword">continue</span>; </span><br><span class="line">            ans += (arr[i]-<span class="number">1</span>+<span class="number">1</span>)*(arr[i]-<span class="number">1</span>) /<span class="number">2</span>;<span class="comment">//等差数列组合</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210127002558.png" alt="image-20210127002558645"></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>每日一题</tag>
       </tags>
   </entry>
 </search>
