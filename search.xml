@@ -1025,4 +1025,22 @@
         <tag>Nginx</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Windows小技巧</title>
+    <url>/2021/04/10/5a457db9baf9/</url>
+    <content><![CDATA[<h1 id="Windows小技巧"><a href="#Windows小技巧" class="headerlink" title="Windows小技巧"></a>Windows小技巧</h1><p>&emsp;&emsp;用于记录日常使用Windows的小技巧，后期会不断更新。勤于记录，孰能生巧。</p>
+<h2 id="一、巧用命令行"><a href="#一、巧用命令行" class="headerlink" title="一、巧用命令行"></a>一、巧用命令行</h2><h3 id="1、窗口下载命令"><a href="#1、窗口下载命令" class="headerlink" title="1、窗口下载命令"></a>1、窗口下载命令</h3><p>&emsp;&emsp;打开powershell，输入以下命令行即可将网路文件下载至指定文件夹。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="variable">$client</span> = new-object System.Net.WebClient</span><br><span class="line">&gt; <span class="variable">$client</span>.DownloadFile(<span class="string">&#x27;https://gitee.com/Courage-He/PicBed/raw/master/data/20210410215919.png&#x27;</span>, <span class="string">&#x27;D:\test.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210410215919.png" alt="image-20210410215919216"></p>
+<h2 id="二、快捷键巧用"><a href="#二、快捷键巧用" class="headerlink" title="二、快捷键巧用"></a>二、快捷键巧用</h2><h3 id="1、自带截屏功能"><a href="#1、自带截屏功能" class="headerlink" title="1、自带截屏功能"></a>1、自带截屏功能</h3><p>&emsp;&emsp;全局按钮<code>Win</code>+<code>Shift</code>+<code>S</code>即可开启Windows系统自带的截屏功能。</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210410220449.png" alt="image-20210410220449531"></p>
+]]></content>
+      <categories>
+        <category>实用工具</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
 </search>
