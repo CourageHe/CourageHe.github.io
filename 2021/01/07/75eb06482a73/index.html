@@ -29,16 +29,16 @@
 <meta property="og:site_name" content="CourageHe&#39;s Blog">
 <meta property="og:description" content="Linux常用命令 本文主要用于记录，在工作学习中经常需要使用的常见Linux命令。在CourageHe’s Blog不间断更新，欢迎各位看官指教。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001504.png">
-<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001625.png">
-<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001741.png">
-<meta property="og:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001916.png">
+<meta property="og:image" content="https://couragehe.github.io/images/data/20210107001504.png">
+<meta property="og:image" content="https://couragehe.github.io/images/data/20210107001625.png">
+<meta property="og:image" content="https://couragehe.github.io/images/data/20210107001741.png">
+<meta property="og:image" content="https://couragehe.github.io/images/data/20210107001916.png">
 <meta property="article:published_time" content="2021-01-07T05:19:44.000Z">
-<meta property="article:modified_time" content="2021-02-01T06:39:35.306Z">
+<meta property="article:modified_time" content="2022-08-11T03:30:12.007Z">
 <meta property="article:author" content="Courage He">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001504.png">
+<meta name="twitter:image" content="https://couragehe.github.io/images/data/20210107001504.png">
 
 <link rel="canonical" href="https://couragehe.github.io/2021/01/07/75eb06482a73/">
 
@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -236,7 +236,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 14:39:35" itemprop="dateModified" datetime="2021-02-01T14:39:35+08:00">2021-02-01</time>
+                <time title="修改时间：2022-08-11 11:30:12" itemprop="dateModified" datetime="2022-08-11T11:30:12+08:00">2022-08-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,14 +261,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>121</span>
+              <span>3.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -289,18 +289,168 @@
 <p>各分区使用情况</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001504.png" alt="image-20210107001503961"></p>
+<p><img src="/images/data/20210107001504.png" alt="image-20210107001503961"></p>
 <p>查看进程</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001625.png" alt="image-20210107001625631"></p>
+<p><img src="/images/data/20210107001625.png" alt="image-20210107001625631"></p>
 <p>查看内存使用情况</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001741.png" alt="image-20210107001741107"></p>
+<p><img src="/images/data/20210107001741.png" alt="image-20210107001741107"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fre -m</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001916.png" alt="image-20210107001916338"></p>
+<p><img src="/images/data/20210107001916.png" alt="image-20210107001916338"></p>
+<h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p>1、开放端口管理</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 永久开放某端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=3000/tcp --permanent</span><br><span class="line"><span class="meta">#</span><span class="bash"> 永久开放一段端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port==6000-6600/tcp --permanent</span><br><span class="line"><span class="meta">#</span><span class="bash"> 永久关闭某端口</span></span><br><span class="line">firewall-cmd --remove-port=3000/tcp --permanent</span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新防火墙规则</span></span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<p>2、检查防火墙规则</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看接口信息</span></span><br><span class="line">firewall-cmd --list-all</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看运行状态</span></span><br><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+
+<p>3、防火墙操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开启防火墙</span></span><br><span class="line">systemctl start firewalld</span><br><span class="line"><span class="meta">#</span><span class="bash"> 关闭防火墙</span></span><br><span class="line">systemctl stop firewalld</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启防火墙</span></span><br><span class="line">systemctl restart firewalld</span><br><span class="line"><span class="meta">#</span><span class="bash"> 防火墙开机自启</span></span><br><span class="line">systemctl enable firewalld</span><br><span class="line"><span class="meta">#</span><span class="bash"> 取消防火墙自启</span></span><br><span class="line">systemctl disable firewalld</span><br><span class="line"><span class="meta">#</span><span class="bash"> 防火墙运行状态</span></span><br><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure>
+
+<p>4、扩展</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 然后转发 tcp 22 端口至 9527</span></span><br><span class="line">firewall-cmd --zone=public --add-forward-port=port=22:proto=tcp:toport=9527</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><ul>
+<li><p>Linux系统对文件的权限有严格的控制，如果想对某个文件执行某种操作，必须具有对应的权限方可执行成功。</p>
+</li>
+<li><p>读写执行：r、w、x</p>
+</li>
+<li><p>权限粒度有拥有者、群组、其他组三种。每个文件都可以针对三个力度，设置不同的rwx(读写执行)权限。通常情况下，一个文件只能归属于一个用户和组，如果其他用户想有这个文件的权限，则可以将该用户加入具备权限的群组，一个用户可以同时归属多个组。</p>
+</li>
+<li><p>通常使用chmod命令对文件的权限进行设置和更改</p>
+</li>
+</ul>
+<p><strong>数字权限使用格式：</strong></p>
+<p>r=4，w=2，x=1。其他的权限组合也可以用其他的八进制数字表示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rwx &#x3D; 4+2+1 &#x3D; 7</span><br><span class="line">rw &#x3D; 4+2 &#x3D; 6</span><br><span class="line">rx &#x3D; 4+1 &#x3D; 5</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<ul>
+<li>所有人可读写执行</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 777 filename</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>拥有者可读写，拥有者群组、其他组不可读写执行</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 600 filename</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>拥有者可读写，拥有者群组可读，其他组不可读写执行</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 640 filename</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对文件夹文件循环授权 <code>-R</code></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -R  640 dirname</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SSH服务"><a href="#SSH服务" class="headerlink" title="SSH服务"></a>SSH服务</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> s</span></span><br><span class="line">service sshd status</span><br><span class="line"></span><br><span class="line">yum install sshd</span><br><span class="line">yum install openssh-server</span><br><span class="line"></span><br><span class="line">service sshd start</span><br><span class="line">yum remove sshd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>删除密钥</p>
+<p>linux 系统上使用ssh工具远程登录设备时，如果之前保存过该设备的密钥，之后该设备密钥更新，此时需执行以下命令才能后续的ssh正常登录。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -f  &quot;/root/.ssh/known_hosts&quot; -R 192.168.0.1</span><br><span class="line"></span><br><span class="line"> -f filename     #指定密钥文件名。</span><br><span class="line"> -R hostname   #从 known_hosts 文件中删除所有属于 hostname 的密钥。</span><br></pre></td></tr></table></figure>
+
+<h2 id="vim命令快捷键"><a href="#vim命令快捷键" class="headerlink" title="vim命令快捷键"></a>vim命令快捷键</h2><p><strong>基本工作模式</strong></p>
+<ul>
+<li><strong>命令行模式</strong></li>
+</ul>
+<p>任何时候，不管用户处于何种模式，只要按一下<strong>ESC</strong>键，即可使Vi进入命令模式；我们在shell环境(提示符为$)下输入启动Vi命令，进入编辑器时，也是处于该模式下。在该模式下，用户可以输入各种合法的Vi命令，用于管理自己的文档。此时从键盘上输入的任何字符都被当做编辑命令来解释，若输入的字符是合法的Vi命令，则Vi在接受用户命令之后完成相应的动作。但需注意的是，所输入的命令并不在屏幕上显示出来。若输入的字符不是Vi的合法命令，Vi会响铃报警。</p>
+<ul>
+<li><strong>文本输入模式</strong></li>
+</ul>
+<p>在命令模式下输入插入命令<strong>i</strong>、附加命令<strong>a</strong> 、打开命令<strong>o</strong>、修改命令<strong>c</strong>、取代命令<strong>r</strong>或替换命令<strong>s</strong>都可以进入文本输入模式。在该模式下，用户输入的任何字符都被Vi当做文件内容保存起来，并将其显示在屏幕上。在文本输入过程中，若想回到命令模式下，按键<strong>ESC</strong>即可。</p>
+<ul>
+<li><strong>末行模式</strong></li>
+</ul>
+<p>末行模式也称ex转义模式。在命令模式下，用户按“**:<strong>”键即可进入末行模式下，此时Vi会在显示窗口的最后一行(通常也是屏幕的最后一行)显示一个“</strong>:**”作为末行模式的提示符，等待用户输入命令。多数文件管理命令都是在此模式下执行的(如把编辑缓冲区的内容写到文件中等)。末行命令执行完后，Vi自动回到命令模式。</p>
+<p><strong>进入插入模式:</strong></p>
+<p>i: 插入光标前一个字符 </p>
+<p>I: 插入行首 </p>
+<p>a: 插入光标后一个字符 </p>
+<p>A: 插入行未 </p>
+<p>o: 向下新开一行,插入行首 </p>
+<p>O: 向上新开一行,插入行首</p>
+<p><strong>进入末行模式</strong></p>
+<p>在命令模式下，用户按“:”键即可进入末行模式</p>
+<p><strong>退出</strong></p>
+<p>:q 退出</p>
+<p>:q! 退出并不保存</p>
+<p>:w 保存</p>
+<p>:wq 保存并退出</p>
+<p>:x 保存并退出</p>
+<p><strong>查找命令:</strong></p>
+<p>/: str查找</p>
+<p>n: 下一个</p>
+<p>N：上一个</p>
+<p><strong>替换命令：</strong></p>
+<p>把abc全部替换成123</p>
+<p>末行模式下，将当前文件中的所有abc替换成123。如果不使用 g，则只会替换每一行的第一个 abc</p>
+<p>:%s/abc/123/g</p>
+<p>末行模式下，将第一行至第10行之间的abc替换成123</p>
+<p>:1, 10s/abc/123/g</p>
+<p><strong>vim</strong>里执行 <strong>shell</strong> 下命令:</p>
+<p>末行模式里输入!,后面跟命令</p>
+<p> <strong>进入命令模式:</strong></p>
+<p>ESC:从插入模式或末行模式进入命令模式</p>
+<p><strong>移动光标:</strong></p>
+<p>h: 左移 </p>
+<p>j: 下移 </p>
+<p>k: 上移 </p>
+<p>l: 右移</p>
+<p>M: 光标移动到当前屏幕的中间行 </p>
+<p>L: 光标移动到当前屏幕最后一行行首 </p>
+<p>gg: 光标移动文件开头 </p>
+<p>G: 光标移动到文件末尾</p>
+<p>G: 移动到指定行,行号G (扩展：打开文件时跳转指定行,vi 文件名 +行数)</p>
+<p>w: 向后一次移动一个字 </p>
+<p>b: 向前一次移动一个字</p>
+<p>{: 按段移动,上移 </p>
+<p>}: 按段移动,下移</p>
+<p>Ctr-d: 向下翻半屏 </p>
+<p>Ctr-u: 向上翻半屏</p>
+<p>Ctr-f: 向下翻一屏 </p>
+<p>Ctr-b: 向上翻一屏</p>
+<p><strong>撤销命令:</strong></p>
+<p>u: 一步一步撤销 </p>
+<p>Ctr-r: 反撤销</p>
+<p><strong>删除命令:</strong></p>
+<p>x: 删除光标后一个字符,相当于 Del </p>
+<p>X: 删除光标前一个字符,相当于 Backspace</p>
+<p>dd: 删除光标所在行,n dd 删除指定的行数</p>
+<p>D: 删除光标后本行所有内容,包含光标所在字符 </p>
+<p>d0: 删除光标前本行所有内容,不包含光标所在字符</p>
+<p>dw: 删除光标开始位置的字,包含光标所在字符</p>
+<p><strong>复制粘贴:</strong></p>
+<p>yy: 复制当前行,n yy 复制 n 行 </p>
+<p>p: 在光标所在位置向下新开辟一行,粘贴</p>
+<p><strong>替换操作:</strong></p>
+<p>r: 替换当前字符 </p>
+<p>R: 替换当前行光标后的字符</p>
+<p><strong>文本行移动:</strong></p>
+<p>&gt;&gt;: 文本行右移 </p>
+<p>&lt;&lt;: 文本行左移</p>
+<p><strong>重复命令:</strong></p>
+<p>.: 重复上一次操作的命令</p>
+<p><strong>可视模式:</strong></p>
+<p>v: 按字符移动,选中文本 </p>
+<p>V: 按行移动,选中文本可视模式可以配合 d, y, &gt;&gt;, &lt;&lt; 实现对文本块的删除,复制,左右移动</p>
+<h2 id="进程管理命令"><a href="#进程管理命令" class="headerlink" title="进程管理命令"></a>进程管理命令</h2><p><strong>ps aux | grep xxx</strong>         <strong>查看系统中所有进程</strong></p>
+<p><strong>ps -ef | grep xxx</strong>          <strong>可以查看子父进程之间的关系</strong></p>
+<p><strong>kill -9 PID</strong>         <strong>强制杀死进程</strong></p>
+<p><strong>top</strong>            <strong>查看所有进程/cpu/内存/负载</strong></p>
+<p><strong>netstat -anp |grep</strong> <strong>进程号</strong>    <strong>查看该进程网络信息</strong></p>
+<p><strong>netstat -nlp   | grep</strong> <strong>端口号</strong>  <strong>查看网络端口号占用情况</strong></p>
+<p>（如netstat：未找到命令，运行<code>yum install net-tools -y</code>命令安装网络工具即可）</p>
 
     </div>
      <div>
@@ -450,7 +600,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux常用命令</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99"><span class="nav-text">防火墙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="nav-text">文件权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH%E6%9C%8D%E5%8A%A1"><span class="nav-text">SSH服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim%E5%91%BD%E4%BB%A4%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">vim命令快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="nav-text">进程管理命令</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -466,7 +616,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -489,13 +639,7 @@
         <a href="https://github.com/CourageHe" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;CourageHe" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:hecourage@gmail.com" title="E-Mail → mailto:hecourage@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/shen-qiu-wu-hen-66/activities" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;shen-qiu-wu-hen-66&#x2F;activities" rel="noopener" target="_blank"><i class="snapchat fa-fw"></i>知乎</a>
+        <a href="mailto:courage.he@gmail.com" title="E-Mail → mailto:courage.he@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
         <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
@@ -526,7 +670,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -536,13 +680,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">29k</span>
+    <span title="站点总字数">37k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">33 分钟</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -663,7 +807,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 </script>
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1618064411684')
+  navigator.serviceWorker.register('/sw.js?t=1676379255558')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

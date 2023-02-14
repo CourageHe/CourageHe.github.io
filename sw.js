@@ -26,13 +26,13 @@ var precacheUrls = [];
 
   precacheUrls.push('/2020/08/16/c2f37b230581/');
 
-  precacheUrls.push('/2020/09/06/b9889e0f3b8b/');
-
   precacheUrls.push('/2020/09/14/ed31eabc1ddf/');
 
   precacheUrls.push('/2020/09/14/993996b2e602/');
 
   precacheUrls.push('/2020/10/15/4a9e23212be1/');
+
+  precacheUrls.push('/2020/10/18/7a13413b21cc/');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":5};

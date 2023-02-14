@@ -189,61 +189,28 @@
       </tags>
   </entry>
   <entry>
-    <title>GitBlit安装与使用</title>
-    <url>/2021/01/18/e4bb3bf545c5/</url>
-    <content><![CDATA[<h1 id="GitBlit安装"><a href="#GitBlit安装" class="headerlink" title="GitBlit安装"></a>GitBlit安装</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>要求Windows电脑安装JAVA环境，在<a href="http://gitblit.github.io/gitblit/">GitBlit首页</a>可根据操作系统选择不同的版本安装。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200211.png" alt="image-20210117200211238"></p>
+    <title>Hello World</title>
+    <url>/2022/07/20/8875b2568660/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <a id="more"></a>
 
-<h2 id="2-解压"><a href="#2-解压" class="headerlink" title="2.  解压"></a>2.  解压</h2><p>文件下载后，解压至一个文件夹下即可，无需安装。下图是解压后的文件列表。</p>
-<h2 id="3-配置文件"><a href="#3-配置文件" class="headerlink" title="3. 配置文件"></a><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117200502.png" alt="image-20210117200502037">3. 配置文件</h2><p>Gitblit目录下的data文件夹中的<code>defaults.properties</code>是默认配置文件，另外需要修改<code>gitblit.properties</code>以覆盖默认配置。</p>
-<ul>
-<li><code>server.httpPort</code>：http协议端口号</li>
-<li><code>server.httpBindInterface</code>：http服务器的ip地址</li>
-</ul>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># GITBLIT.PROPERTIES</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your custom settings in this file and/or include settings defined in</span></span><br><span class="line"><span class="comment"># other properties files.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Include Gitblit&#x27;s &#x27;defaults.properties&#x27; within your configuration.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># <span class="doctag">NOTE:</span> Gitblit will not automatically reload &quot;included&quot; properties.  Gitblit</span></span><br><span class="line"><span class="comment"># only watches the &#x27;gitblit.properties&#x27; file for modifications.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Paths may be relative to the $&#123;baseFolder&#125; or they may be absolute.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># COMMA-DELIMITED</span></span><br><span class="line"><span class="comment"># SINCE 1.7.0</span></span><br><span class="line"><span class="attr">include</span> = <span class="string">defaults.properties</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your overrides or custom settings below</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Standard http port to serve.  &lt;= 0 disables this connector.</span></span><br><span class="line"><span class="comment"># On Unix/Linux systems, ports &lt; 1024 require root permissions.</span></span><br><span class="line"><span class="comment"># Recommended value: 80 or 8080</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpPort</span> = <span class="string">9999</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify the interface for Jetty to bind the standard connector.</span></span><br><span class="line"><span class="comment"># You may specify an ip or an empty value to bind to all interfaces.</span></span><br><span class="line"><span class="comment"># Specifying localhost will result in Gitblit ONLY listening to requests to</span></span><br><span class="line"><span class="comment"># localhost.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpBindInterface</span> = <span class="string">localhost</span></span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<h2 id="4-服务启动"><a href="#4-服务启动" class="headerlink" title="4.  服务启动"></a>4.  服务启动</h2><p>GitBlit目录下，在<code>installService.cmd</code>中。</p>
-<ul>
-<li>修改ARCH，32位系统：<code>SET ARCH=x86</code>；64位系统：<code>SET ARCH=amd64</code>。</li>
-<li>添加CD为程序目录 <code>SET CD=D:\newsoft\gitblit-1.9.1</code>(安装目录)。</li>
-<li><code>StartParams</code>里的启动参数，置空</li>
-</ul>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004401.png" alt="image-20210118004401684"></p>
-<p>服务注册表中即可查看该服务，可重启、停止。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004537.png" alt="image-20210118004536991"></p>
-<h2 id="5-浏览器访问"><a href="#5-浏览器访问" class="headerlink" title="5. 浏览器访问"></a>5. 浏览器访问</h2><p>账号密码默认<code>admin/admin</code></p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210118004801.png" alt="image-20210118004801412"></p>
-<h1 id="GitBlit简单使用"><a href="#GitBlit简单使用" class="headerlink" title="GitBlit简单使用"></a>GitBlit简单使用</h1><h2 id="1-克隆仓库"><a href="#1-克隆仓库" class="headerlink" title="1.克隆仓库"></a>1.克隆仓库</h2><p>&emsp;&emsp;进入仓库概况页面，在版本仓库地址栏选择<code>http</code>协议的<strong>git</strong>链接，复制该链接。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029220747.png" alt="image-20201029220747735"></p>
-<p>&emsp;&emsp;选择本地合适的文件路径，打开cmd窗口克隆该仓库即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git <span class="built_in">clone</span> http://couragehe@XX.XX.XX.XX:9999/r/demo.git</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029221614.png" alt="image-20201029221614544"></p>
-<h2 id="2-账户认证"><a href="#2-账户认证" class="headerlink" title="2.账户认证"></a>2.账户认证</h2><p>&emsp;&emsp;打开项目路径的cmd窗口，推送项目至远程<code>git</code>仓库，首次推送会弹出windows安全认证，输入密码即可保存至windows。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20201029221556.png" alt="image-20201029221556682"></p>
-<h2 id="3-分支问题"><a href="#3-分支问题" class="headerlink" title="3.分支问题"></a>3.分支问题</h2><p><strong>gitblit</strong>中没有创建工单（分支）的按钮，但并不代表不支持分支。做法便是将git仓库拉取至本地中，新建分支然后上传至远端仓库即可。</p>
-<h3 id="3-1-显示分支列表"><a href="#3-1-显示分支列表" class="headerlink" title="3.1 显示分支列表"></a>3.1 显示分支列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch </span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-新建分支"><a href="#3-2-新建分支" class="headerlink" title="3.2 新建分支"></a>3.2 新建分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch demo</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-切换分支"><a href="#3-3-切换分支" class="headerlink" title="3.3 切换分支"></a>3.3 切换分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout demo</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-远程分支新建"><a href="#3-4-远程分支新建" class="headerlink" title="3.4 远程分支新建"></a>3.4 远程分支新建</h3><p>&emsp;&emsp;在本地新分支下，推送本地分支至远程仓库中的分支（非强制要求同名），使用以下命令对应即可。其中第一个分支名<code>demo</code>对应的是本地分支名，第二个分支名<code>demo</code>对应的是远程分支名。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin demo:demo</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-5-本地仓库分支关联远程分支"><a href="#3-5-本地仓库分支关联远程分支" class="headerlink" title="3.5 本地仓库分支关联远程分支"></a>3.5 本地仓库分支关联远程分支</h3><p>使用该句之前必须确保远程仓库存在该分支，否则报错。关联之后便可直接使用<code>git push</code>或者<code>git pull</code>进行推送或拉取，命令简单明了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch --<span class="built_in">set</span>-upstream-to=origin/demo</span><br></pre></td></tr></table></figure>]]></content>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
       <categories>
-        <category>Git</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
-        <tag>Git</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -300,6 +267,286 @@
       </tags>
   </entry>
   <entry>
+    <title>GitBlit安装与使用</title>
+    <url>/2021/01/18/e4bb3bf545c5/</url>
+    <content><![CDATA[<h1 id="GitBlit安装"><a href="#GitBlit安装" class="headerlink" title="GitBlit安装"></a>GitBlit安装</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>要求Windows电脑安装JAVA环境，在<a href="http://gitblit.github.io/gitblit/">GitBlit首页</a>可根据操作系统选择不同的版本安装。</p>
+<p><img src="/images/data/20210117200211.png" alt="image-20210117200211238"></p>
+<a id="more"></a>
+
+<h2 id="2-解压"><a href="#2-解压" class="headerlink" title="2.  解压"></a>2.  解压</h2><p>文件下载后，解压至一个文件夹下即可，无需安装。下图是解压后的文件列表。</p>
+<h2 id="3-配置文件"><a href="#3-配置文件" class="headerlink" title="3. 配置文件"></a><img src="/images/data/20210117200502.png" alt="image-20210117200502037">3. 配置文件</h2><p>Gitblit目录下的data文件夹中的<code>defaults.properties</code>是默认配置文件，另外需要修改<code>gitblit.properties</code>以覆盖默认配置。</p>
+<ul>
+<li><code>server.httpPort</code>：http协议端口号</li>
+<li><code>server.httpBindInterface</code>：http服务器的ip地址</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># GITBLIT.PROPERTIES</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your custom settings in this file and/or include settings defined in</span></span><br><span class="line"><span class="comment"># other properties files.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Include Gitblit&#x27;s &#x27;defaults.properties&#x27; within your configuration.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># <span class="doctag">NOTE:</span> Gitblit will not automatically reload &quot;included&quot; properties.  Gitblit</span></span><br><span class="line"><span class="comment"># only watches the &#x27;gitblit.properties&#x27; file for modifications.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Paths may be relative to the $&#123;baseFolder&#125; or they may be absolute.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># COMMA-DELIMITED</span></span><br><span class="line"><span class="comment"># SINCE 1.7.0</span></span><br><span class="line"><span class="attr">include</span> = <span class="string">defaults.properties</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your overrides or custom settings below</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Standard http port to serve.  &lt;= 0 disables this connector.</span></span><br><span class="line"><span class="comment"># On Unix/Linux systems, ports &lt; 1024 require root permissions.</span></span><br><span class="line"><span class="comment"># Recommended value: 80 or 8080</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpPort</span> = <span class="string">9999</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify the interface for Jetty to bind the standard connector.</span></span><br><span class="line"><span class="comment"># You may specify an ip or an empty value to bind to all interfaces.</span></span><br><span class="line"><span class="comment"># Specifying localhost will result in Gitblit ONLY listening to requests to</span></span><br><span class="line"><span class="comment"># localhost.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpBindInterface</span> = <span class="string">localhost</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-服务启动"><a href="#4-服务启动" class="headerlink" title="4.  服务启动"></a>4.  服务启动</h2><p>GitBlit目录下，在<code>installService.cmd</code>中。</p>
+<ul>
+<li>修改ARCH，32位系统：<code>SET ARCH=x86</code>；64位系统：<code>SET ARCH=amd64</code>。</li>
+<li>添加CD为程序目录 <code>SET CD=D:\newsoft\gitblit-1.9.1</code>(安装目录)。</li>
+<li><code>StartParams</code>里的启动参数，置空</li>
+</ul>
+<p><img src="/images/data/20210118004401.png" alt="image-20210118004401684"></p>
+<p>服务注册表中即可查看该服务，可重启、停止。</p>
+<p><img src="/images/data/20210118004401-16583185810044.png" alt="image-20210118004401684"></p>
+<h2 id="5-浏览器访问"><a href="#5-浏览器访问" class="headerlink" title="5. 浏览器访问"></a>5. 浏览器访问</h2><p>账号密码默认<code>admin/admin</code></p>
+<p><img src="/images/data/20210118004801.png" alt="image-20210118004801412"></p>
+<h1 id="GitBlit简单使用"><a href="#GitBlit简单使用" class="headerlink" title="GitBlit简单使用"></a>GitBlit简单使用</h1><h2 id="1-克隆仓库"><a href="#1-克隆仓库" class="headerlink" title="1.克隆仓库"></a>1.克隆仓库</h2><p>&emsp;&emsp;进入仓库概况页面，在版本仓库地址栏选择<code>http</code>协议的<strong>git</strong>链接，复制该链接。</p>
+<p><img src="/images/data/20201029220747.png" alt="image-20201029220747735"></p>
+<p>&emsp;&emsp;选择本地合适的文件路径，打开cmd窗口克隆该仓库即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git <span class="built_in">clone</span> http://couragehe@XX.XX.XX.XX:9999/r/demo.git</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/data/20201029221614.png" alt="image-20201029221614544"></p>
+<h2 id="2-账户认证"><a href="#2-账户认证" class="headerlink" title="2.账户认证"></a>2.账户认证</h2><p>&emsp;&emsp;打开项目路径的cmd窗口，推送项目至远程<code>git</code>仓库，首次推送会弹出windows安全认证，输入密码即可保存至windows。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/images/data/20201029221556.png" alt="image-20201029221556682"></p>
+<h2 id="3-分支问题"><a href="#3-分支问题" class="headerlink" title="3.分支问题"></a>3.分支问题</h2><p><strong>gitblit</strong>中没有创建工单（分支）的按钮，但并不代表不支持分支。做法便是将git仓库拉取至本地中，新建分支然后上传至远端仓库即可。</p>
+<h3 id="3-1-显示分支列表"><a href="#3-1-显示分支列表" class="headerlink" title="3.1 显示分支列表"></a>3.1 显示分支列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch </span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-新建分支"><a href="#3-2-新建分支" class="headerlink" title="3.2 新建分支"></a>3.2 新建分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-切换分支"><a href="#3-3-切换分支" class="headerlink" title="3.3 切换分支"></a>3.3 切换分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-远程分支新建"><a href="#3-4-远程分支新建" class="headerlink" title="3.4 远程分支新建"></a>3.4 远程分支新建</h3><p>&emsp;&emsp;在本地新分支下，推送本地分支至远程仓库中的分支（非强制要求同名），使用以下命令对应即可。其中第一个分支名<code>demo</code>对应的是本地分支名，第二个分支名<code>demo</code>对应的是远程分支名。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin demo:demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-本地仓库分支关联远程分支"><a href="#3-5-本地仓库分支关联远程分支" class="headerlink" title="3.5 本地仓库分支关联远程分支"></a>3.5 本地仓库分支关联远程分支</h3><p>使用该句之前必须确保远程仓库存在该分支，否则报错。关联之后便可直接使用<code>git push</code>或者<code>git pull</code>进行推送或拉取，命令简单明了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch --<span class="built_in">set</span>-upstream-to=origin/demo</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用rz和sz命令传输文件</title>
+    <url>/2021/01/07/818b6f02a79d/</url>
+    <content><![CDATA[<h1 id="新鲜出炉的Centos"><a href="#新鲜出炉的Centos" class="headerlink" title="新鲜出炉的Centos"></a>新鲜出炉的Centos</h1><h2 id="一、配置yum国内镜像源"><a href="#一、配置yum国内镜像源" class="headerlink" title="一、配置yum国内镜像源"></a>一、配置yum国内镜像源</h2><h3 id="1、备份"><a href="#1、备份" class="headerlink" title="1、备份"></a>1、备份</h3><p>如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure>
+
+<p>该文件是Centos的镜像文件配置，一般国内都会配置成阿里云、网易、清华大学。我这里选择的式清华大学的镜像源，编辑 <code>/etc/yum.repos.d/CentOS-Base.repo </code>文件，在 <code>mirrorlist=</code> 开头行前面加 <code>#</code> 注释掉；并将 <code>baseurl=</code> 开头行取消注释（如果被注释的话），把该行内的域名（例如<code>mirror.centos.org</code>）替换为 <code>mirrors.tuna.tsinghua.edu.cn</code>。</p>
+<a id="more"></a>
+
+<h3 id="2、Centos镜像源替换"><a href="#2、Centos镜像源替换" class="headerlink" title="2、Centos镜像源替换"></a>2、Centos镜像源替换</h3><p>这里以Centos7的阿里镜像源为例，通过该命令下载保存为本机镜像文件名即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo </span><br></pre></td></tr></table></figure>
+
+<p>如果上述命令执行失败，则可能时没有安装<code>wget</code>工具，则使用 <code>yum -y install wget </code>即可安装，再执行上述命令即可。</p>
+<h3 id="3、更新软件包缓存"><a href="#3、更新软件包缓存" class="headerlink" title="3、更新软件包缓存"></a>3、更新软件包缓存</h3><p>清楚之前的软件包缓存，然后更新软件包缓存</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、更新软件包"><a href="#4、更新软件包" class="headerlink" title="4、更新软件包"></a>4、更新软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
+
+<p>参考：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">https://mirrors.tuna.tsinghua.edu.cn/help/centos/</a></p>
+<h2 id="二、rz、sz命令传输文件"><a href="#二、rz、sz命令传输文件" class="headerlink" title="二、rz、sz命令传输文件"></a>二、rz、sz命令传输文件</h2><p>大文件传输的话，建议使用<code>Filezilla</code>进行传输，个别的小文件传输的话，仅以使用<code>lrzsz</code>，更方便哦！！！</p>
+<h3 id="1、安装-lrzsz"><a href="#1、安装-lrzsz" class="headerlink" title="1、安装 lrzsz"></a>1、安装 lrzsz</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install lrzsz -y</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、上传文件"><a href="#2、上传文件" class="headerlink" title="2、上传文件"></a>2、上传文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rz</span><br></pre></td></tr></table></figure>
+
+<p>rz命令打开文件选择框，选择要发送的文件即可发送至当前目录。</p>
+<p>从Windows/Mac直接拖动至XShell窗口也是同样的哦！！！</p>
+<p><img src="/images/data/20210103215423.png" alt="image-20210103215423075"></p>
+<p><img src="/images/data/20210103214524.png" alt="image-20210103214523798"></p>
+<h3 id="3、下载文件"><a href="#3、下载文件" class="headerlink" title="3、下载文件"></a>3、下载文件</h3><p><code>sz 文件名</code>便可下载该文件至本地，选择本地文件夹即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sz /etc/yum.repos.d/CentOS-Base.repo</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/data/20210103221932.png" alt="image-20210103221932546"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux常用命令</title>
+    <url>/2021/01/07/75eb06482a73/</url>
+    <content><![CDATA[<h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><blockquote>
+<p>本文主要用于记录，在工作学习中经常需要使用的常见Linux命令。在<a href="https://couragehe.github.io/">CourageHe’s Blog</a>不间断更新，欢迎各位看官指教。</p>
+</blockquote>
+<a id="more"></a>
+
+<p>Linux资源查看</p>
+<p>各分区使用情况</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/data/20210107001504.png" alt="image-20210107001503961"></p>
+<p>查看进程</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -ef</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/data/20210107001625.png" alt="image-20210107001625631"></p>
+<p>查看内存使用情况</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/data/20210107001741.png" alt="image-20210107001741107"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fre -m</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/data/20210107001916.png" alt="image-20210107001916338"></p>
+<h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p>1、开放端口管理</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 永久开放某端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=3000/tcp --permanent</span><br><span class="line"><span class="meta">#</span><span class="bash"> 永久开放一段端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port==6000-6600/tcp --permanent</span><br><span class="line"><span class="meta">#</span><span class="bash"> 永久关闭某端口</span></span><br><span class="line">firewall-cmd --remove-port=3000/tcp --permanent</span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新防火墙规则</span></span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<p>2、检查防火墙规则</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看接口信息</span></span><br><span class="line">firewall-cmd --list-all</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看运行状态</span></span><br><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+
+<p>3、防火墙操作</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开启防火墙</span></span><br><span class="line">systemctl start firewalld</span><br><span class="line"><span class="meta">#</span><span class="bash"> 关闭防火墙</span></span><br><span class="line">systemctl stop firewalld</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启防火墙</span></span><br><span class="line">systemctl restart firewalld</span><br><span class="line"><span class="meta">#</span><span class="bash"> 防火墙开机自启</span></span><br><span class="line">systemctl enable firewalld</span><br><span class="line"><span class="meta">#</span><span class="bash"> 取消防火墙自启</span></span><br><span class="line">systemctl disable firewalld</span><br><span class="line"><span class="meta">#</span><span class="bash"> 防火墙运行状态</span></span><br><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure>
+
+<p>4、扩展</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 然后转发 tcp 22 端口至 9527</span></span><br><span class="line">firewall-cmd --zone=public --add-forward-port=port=22:proto=tcp:toport=9527</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><ul>
+<li><p>Linux系统对文件的权限有严格的控制，如果想对某个文件执行某种操作，必须具有对应的权限方可执行成功。</p>
+</li>
+<li><p>读写执行：r、w、x</p>
+</li>
+<li><p>权限粒度有拥有者、群组、其他组三种。每个文件都可以针对三个力度，设置不同的rwx(读写执行)权限。通常情况下，一个文件只能归属于一个用户和组，如果其他用户想有这个文件的权限，则可以将该用户加入具备权限的群组，一个用户可以同时归属多个组。</p>
+</li>
+<li><p>通常使用chmod命令对文件的权限进行设置和更改</p>
+</li>
+</ul>
+<p><strong>数字权限使用格式：</strong></p>
+<p>r=4，w=2，x=1。其他的权限组合也可以用其他的八进制数字表示</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rwx &#x3D; 4+2+1 &#x3D; 7</span><br><span class="line">rw &#x3D; 4+2 &#x3D; 6</span><br><span class="line">rx &#x3D; 4+1 &#x3D; 5</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<ul>
+<li>所有人可读写执行</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 777 filename</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>拥有者可读写，拥有者群组、其他组不可读写执行</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 600 filename</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>拥有者可读写，拥有者群组可读，其他组不可读写执行</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 640 filename</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对文件夹文件循环授权 <code>-R</code></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod -R  640 dirname</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SSH服务"><a href="#SSH服务" class="headerlink" title="SSH服务"></a>SSH服务</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> s</span></span><br><span class="line">service sshd status</span><br><span class="line"></span><br><span class="line">yum install sshd</span><br><span class="line">yum install openssh-server</span><br><span class="line"></span><br><span class="line">service sshd start</span><br><span class="line">yum remove sshd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>删除密钥</p>
+<p>linux 系统上使用ssh工具远程登录设备时，如果之前保存过该设备的密钥，之后该设备密钥更新，此时需执行以下命令才能后续的ssh正常登录。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -f  &quot;/root/.ssh/known_hosts&quot; -R 192.168.0.1</span><br><span class="line"></span><br><span class="line"> -f filename     #指定密钥文件名。</span><br><span class="line"> -R hostname   #从 known_hosts 文件中删除所有属于 hostname 的密钥。</span><br></pre></td></tr></table></figure>
+
+<h2 id="vim命令快捷键"><a href="#vim命令快捷键" class="headerlink" title="vim命令快捷键"></a>vim命令快捷键</h2><p><strong>基本工作模式</strong></p>
+<ul>
+<li><strong>命令行模式</strong></li>
+</ul>
+<p>任何时候，不管用户处于何种模式，只要按一下<strong>ESC</strong>键，即可使Vi进入命令模式；我们在shell环境(提示符为$)下输入启动Vi命令，进入编辑器时，也是处于该模式下。在该模式下，用户可以输入各种合法的Vi命令，用于管理自己的文档。此时从键盘上输入的任何字符都被当做编辑命令来解释，若输入的字符是合法的Vi命令，则Vi在接受用户命令之后完成相应的动作。但需注意的是，所输入的命令并不在屏幕上显示出来。若输入的字符不是Vi的合法命令，Vi会响铃报警。</p>
+<ul>
+<li><strong>文本输入模式</strong></li>
+</ul>
+<p>在命令模式下输入插入命令<strong>i</strong>、附加命令<strong>a</strong> 、打开命令<strong>o</strong>、修改命令<strong>c</strong>、取代命令<strong>r</strong>或替换命令<strong>s</strong>都可以进入文本输入模式。在该模式下，用户输入的任何字符都被Vi当做文件内容保存起来，并将其显示在屏幕上。在文本输入过程中，若想回到命令模式下，按键<strong>ESC</strong>即可。</p>
+<ul>
+<li><strong>末行模式</strong></li>
+</ul>
+<p>末行模式也称ex转义模式。在命令模式下，用户按“**:<strong>”键即可进入末行模式下，此时Vi会在显示窗口的最后一行(通常也是屏幕的最后一行)显示一个“</strong>:**”作为末行模式的提示符，等待用户输入命令。多数文件管理命令都是在此模式下执行的(如把编辑缓冲区的内容写到文件中等)。末行命令执行完后，Vi自动回到命令模式。</p>
+<p><strong>进入插入模式:</strong></p>
+<p>i: 插入光标前一个字符 </p>
+<p>I: 插入行首 </p>
+<p>a: 插入光标后一个字符 </p>
+<p>A: 插入行未 </p>
+<p>o: 向下新开一行,插入行首 </p>
+<p>O: 向上新开一行,插入行首</p>
+<p><strong>进入末行模式</strong></p>
+<p>在命令模式下，用户按“:”键即可进入末行模式</p>
+<p><strong>退出</strong></p>
+<p>:q 退出</p>
+<p>:q! 退出并不保存</p>
+<p>:w 保存</p>
+<p>:wq 保存并退出</p>
+<p>:x 保存并退出</p>
+<p><strong>查找命令:</strong></p>
+<p>/: str查找</p>
+<p>n: 下一个</p>
+<p>N：上一个</p>
+<p><strong>替换命令：</strong></p>
+<p>把abc全部替换成123</p>
+<p>末行模式下，将当前文件中的所有abc替换成123。如果不使用 g，则只会替换每一行的第一个 abc</p>
+<p>:%s/abc/123/g</p>
+<p>末行模式下，将第一行至第10行之间的abc替换成123</p>
+<p>:1, 10s/abc/123/g</p>
+<p><strong>vim</strong>里执行 <strong>shell</strong> 下命令:</p>
+<p>末行模式里输入!,后面跟命令</p>
+<p> <strong>进入命令模式:</strong></p>
+<p>ESC:从插入模式或末行模式进入命令模式</p>
+<p><strong>移动光标:</strong></p>
+<p>h: 左移 </p>
+<p>j: 下移 </p>
+<p>k: 上移 </p>
+<p>l: 右移</p>
+<p>M: 光标移动到当前屏幕的中间行 </p>
+<p>L: 光标移动到当前屏幕最后一行行首 </p>
+<p>gg: 光标移动文件开头 </p>
+<p>G: 光标移动到文件末尾</p>
+<p>G: 移动到指定行,行号G (扩展：打开文件时跳转指定行,vi 文件名 +行数)</p>
+<p>w: 向后一次移动一个字 </p>
+<p>b: 向前一次移动一个字</p>
+<p>{: 按段移动,上移 </p>
+<p>}: 按段移动,下移</p>
+<p>Ctr-d: 向下翻半屏 </p>
+<p>Ctr-u: 向上翻半屏</p>
+<p>Ctr-f: 向下翻一屏 </p>
+<p>Ctr-b: 向上翻一屏</p>
+<p><strong>撤销命令:</strong></p>
+<p>u: 一步一步撤销 </p>
+<p>Ctr-r: 反撤销</p>
+<p><strong>删除命令:</strong></p>
+<p>x: 删除光标后一个字符,相当于 Del </p>
+<p>X: 删除光标前一个字符,相当于 Backspace</p>
+<p>dd: 删除光标所在行,n dd 删除指定的行数</p>
+<p>D: 删除光标后本行所有内容,包含光标所在字符 </p>
+<p>d0: 删除光标前本行所有内容,不包含光标所在字符</p>
+<p>dw: 删除光标开始位置的字,包含光标所在字符</p>
+<p><strong>复制粘贴:</strong></p>
+<p>yy: 复制当前行,n yy 复制 n 行 </p>
+<p>p: 在光标所在位置向下新开辟一行,粘贴</p>
+<p><strong>替换操作:</strong></p>
+<p>r: 替换当前字符 </p>
+<p>R: 替换当前行光标后的字符</p>
+<p><strong>文本行移动:</strong></p>
+<p>&gt;&gt;: 文本行右移 </p>
+<p>&lt;&lt;: 文本行左移</p>
+<p><strong>重复命令:</strong></p>
+<p>.: 重复上一次操作的命令</p>
+<p><strong>可视模式:</strong></p>
+<p>v: 按字符移动,选中文本 </p>
+<p>V: 按行移动,选中文本可视模式可以配合 d, y, &gt;&gt;, &lt;&lt; 实现对文本块的删除,复制,左右移动</p>
+<h2 id="进程管理命令"><a href="#进程管理命令" class="headerlink" title="进程管理命令"></a>进程管理命令</h2><p><strong>ps aux | grep xxx</strong>         <strong>查看系统中所有进程</strong></p>
+<p><strong>ps -ef | grep xxx</strong>          <strong>可以查看子父进程之间的关系</strong></p>
+<p><strong>kill -9 PID</strong>         <strong>强制杀死进程</strong></p>
+<p><strong>top</strong>            <strong>查看所有进程/cpu/内存/负载</strong></p>
+<p><strong>netstat -anp |grep</strong> <strong>进程号</strong>    <strong>查看该进程网络信息</strong></p>
+<p><strong>netstat -nlp   | grep</strong> <strong>端口号</strong>  <strong>查看网络端口号占用情况</strong></p>
+<p>（如netstat：未找到命令，运行<code>yum install net-tools -y</code>命令安装网络工具即可）</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nginx安装及常用命令</title>
     <url>/2020/10/15/4a9e23212be1/</url>
     <content><![CDATA[<h1 id="Nginx安装及常用命令"><a href="#Nginx安装及常用命令" class="headerlink" title="Nginx安装及常用命令"></a>Nginx安装及常用命令</h1><blockquote>
@@ -325,11 +572,11 @@
 <li><h3 id="prefix：指点安装目录"><a href="#prefix：指点安装目录" class="headerlink" title="--prefix：指点安装目录"></a><code>--prefix</code>：指点安装目录</h3></li>
 <li><code>--with</code>：指定安装模块</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost pcre-8.35]# ./configure  --prefix=/usr/local/nginx --with-http_ssl_module --with-http_gzip_static_module --with-http_stub_status_module </span><br><span class="line">[root@localhost pcre-8.35]# make &amp;&amp; make instal</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost pcre-8.35]# ./configure  --prefix=/usr/local/nginx --with-http_ssl_module --with-http_gzip_static_module --with-http_stub_status_module </span><br><span class="line">[root@localhost pcre-8.35]# make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 
 <h3 id="5-查看Nginx版本"><a href="#5-查看Nginx版本" class="headerlink" title="5.查看Nginx版本"></a>5.查看Nginx版本</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# /usr/local/nginx/sbin/ -v</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20200821234746.png" alt="image-20200821234746176"></p>
+<p><img src="/images/data/20200821234746.png" alt="image-20200821234746176"></p>
 <h2 id="三、Nginx配置"><a href="#三、Nginx配置" class="headerlink" title="三、Nginx配置"></a>三、Nginx配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# cd /usr/local/nginx/conf/</span><br><span class="line">[root@localhost conf]# vim nginx.conf</span><br></pre></td></tr></table></figure>
 
 <h3 id="1-Nginx的默认配置文件"><a href="#1-Nginx的默认配置文件" class="headerlink" title="1.Nginx的默认配置文件"></a>1.Nginx的默认配置文件</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">    #                  &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">    #                  &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       81;</span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        #error_page  404              /404.html;</span><br><span class="line"></span><br><span class="line">        # redirect server error pages to the static page /50x.html</span><br><span class="line">        #</span><br><span class="line">        error_page   500 502 503 504  /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">            root   html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        # proxy the PHP scripts to Apache listening on 127.0.0.1:80</span><br><span class="line">        #</span><br><span class="line">        #location ~ \.php$ &#123;</span><br><span class="line">        #    proxy_pass   http://127.0.0.1;</span><br><span class="line">        #&#125;</span><br><span class="line"></span><br><span class="line">        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span><br><span class="line">        #</span><br><span class="line">        #location ~ \.php$ &#123;</span><br><span class="line">        #    root           html;</span><br><span class="line">        #    fastcgi_pass   127.0.0.1:9000;</span><br><span class="line">        #    fastcgi_index  index.php;</span><br><span class="line">        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span><br><span class="line">        #    include        fastcgi_params;</span><br><span class="line">        #&#125;</span><br><span class="line"></span><br><span class="line">        # deny access to .htaccess files, if Apache&#x27;s document root</span><br><span class="line">        # concurs with nginx&#x27;s one</span><br><span class="line">        #</span><br><span class="line">        #location ~ /\.ht &#123;</span><br><span class="line">        #    deny  all;</span><br><span class="line">        #&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       8000;</span><br><span class="line">    #    listen       somename:8080;</span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       443 ssl;</span><br><span class="line">    #    server_name  localhost;</span><br><span class="line"></span><br><span class="line">    #    ssl_certificate      cert.pem;</span><br><span class="line">    #    ssl_certificate_key  cert.key;</span><br><span class="line"></span><br><span class="line">    #    ssl_session_cache    shared:SSL:1m;</span><br><span class="line">    #    ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">    #    ssl_ciphers  HIGH:!aNULL:!MD5;</span><br><span class="line">    #    ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -359,7 +606,7 @@
 <h4 id="2-惊群现象"><a href="#2-惊群现象" class="headerlink" title="2. 惊群现象"></a>2. 惊群现象</h4><p>一个网路连接到来，多个睡眠的进程被同事叫醒，但只有一个进程能获得链接，这样会影响系统性能。</p>
 <h4 id="3-指令必须分号结束"><a href="#3-指令必须分号结束" class="headerlink" title="3. 指令必须分号结束"></a>3. 指令必须分号结束</h4><h3 id="4-检查Nginx配置文件"><a href="#4-检查Nginx配置文件" class="headerlink" title="4.检查Nginx配置文件"></a>4.检查Nginx配置文件</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# /usr/local/nginx/sbin/nginx -t</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20200822182926.png" alt="image-20200822182926429"></p>
+<p><img src="/images/data/20200822182926.png" alt="image-20200822182926429"></p>
 <h2 id="四、Nginx常用命令"><a href="#四、Nginx常用命令" class="headerlink" title="四、Nginx常用命令"></a>四、Nginx常用命令</h2><h3 id="1-启动Nginx"><a href="#1-启动Nginx" class="headerlink" title="1. 启动Nginx"></a>1. 启动Nginx</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# /usr/local/nginx/sbin/nginx</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-重新载入配置文件"><a href="#2-重新载入配置文件" class="headerlink" title="2.重新载入配置文件"></a>2.重新载入配置文件</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# /usr/local/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure>
@@ -420,19 +667,19 @@
 <h2 id="4-执行make"><a href="#4-执行make" class="headerlink" title="4. 执行make"></a>4. 执行make</h2><p>（注意：千万别 make install ，否则就覆盖安装了）， make完之后在<code>/data/portal/nginx/nginx-1.6.2/objs/</code>目录下就多了个nginx，这个就是新版本的程序了。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost nginx]# make</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20200823120359.png" alt="image-20200823120359688"></p>
+<p><img src="/images/data/20200823120359.png" alt="image-20200823120359688"></p>
 <h2 id="5-备份旧的nginx程序"><a href="#5-备份旧的nginx程序" class="headerlink" title="5. 备份旧的nginx程序"></a>5. 备份旧的nginx程序</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# cd /usr/local/nginx/sbin</span><br><span class="line">[root@localhost sbin]#mv nginx nginx_bak</span><br></pre></td></tr></table></figure>
 
 <h2 id="6-把新的nginx程序复制至-usr-local-nginx-sbin"><a href="#6-把新的nginx程序复制至-usr-local-nginx-sbin" class="headerlink" title="6. 把新的nginx程序复制至/usr/local/nginx/sbin"></a>6. 把新的nginx程序复制至<code>/usr/local/nginx/sbin</code></h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# cp /data/portal/nginx/nginx-1.6.2/objs/nginx /usr/local/nginx/sbin/</span><br></pre></td></tr></table></figure>
 
 <h2 id="7-检测程序是否正确"><a href="#7-检测程序是否正确" class="headerlink" title="7. 检测程序是否正确"></a>7. 检测程序是否正确</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]#/usr/local/nginx/sbin/nginx -t</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20200823121719.png" alt="image-20200822182926429"></p>
+<p><img src="/images/data/20200823121719.png" alt="image-20200822182926429"></p>
 <h2 id="8-平滑启动服务"><a href="#8-平滑启动服务" class="headerlink" title="8. 平滑启动服务"></a>8. 平滑启动服务</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]#/usr/local/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure>
 
 <h2 id="9-查看模块是否安装"><a href="#9-查看模块是否安装" class="headerlink" title="9. 查看模块是否安装"></a>9. 查看模块是否安装</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# /usr/local/nginx/sbin/nginx -V</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20200824001843.png" alt="image-20200824001842900"></p>
+<p><img src="/images/data/20200824001843.png" alt="image-20200824001842900"></p>
 <h2 id="10-重启nginx"><a href="#10-重启nginx" class="headerlink" title="10. 重启nginx"></a>10. 重启nginx</h2><p>Nginx重新安装模块后，必须先退出，然后再次启动，该模块才会生效。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# /usr/local/nginx/sbin/nginx -s quit</span><br><span class="line">[root@localhost ~]# /usr/local/nginx/sbin/nginx</span><br></pre></td></tr></table></figure>
 
@@ -485,12 +732,12 @@
 <li><strong>4月</strong>：第一次接单干活，实现技术变现</li>
 </ul>
 <p>&emsp;&emsp;这段期间在家里上网课，课余时间便想找些事情做一下。机缘巧合之下加了一个做私活的群，其中接了一个安卓app的项目，主要任务是写一个类似星巴克咖啡店的APP。另外是一个Web端图书管理系统，前后端交互的形式，由于时间不太够前端草草写了一下。小项目没赚几个钱，但这是首次使用技术变现，值得纪念一下。不得不说，写的界面真丑！哈哈哈</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210213010621.png" alt="image-20210213010621705"></p>
+<p><img src="/images/data/20210213010621.png" alt="image-20210213010621705"></p>
 <ul>
 <li><strong>5月</strong>：面试、准备面试相交织</li>
 </ul>
 <p>&emsp;&emsp;这是一个面试月，投的基本都是各大公司的实习岗位，有上海得帆、字节跳动、华讯网络等。有喜有忧，大公司基本都被拒了，也是自身准备不足的结果，特别是字节跳动的笔试特别考核算法，所以还需历练！所幸还是有所斩获，收获了上海得帆的实习offer。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210213011312.png" alt="image-20210213011312539"></p>
+<p><img src="/images/20210213011312.png" alt="image-20210213011312539"></p>
 <ul>
 <li><strong>6月</strong>：石油项目</li>
 </ul>
@@ -527,299 +774,6 @@
       </categories>
   </entry>
   <entry>
-    <title>使用rz和sz命令传输文件</title>
-    <url>/2021/01/07/818b6f02a79d/</url>
-    <content><![CDATA[<h1 id="新鲜出炉的Centos"><a href="#新鲜出炉的Centos" class="headerlink" title="新鲜出炉的Centos"></a>新鲜出炉的Centos</h1><h2 id="一、配置yum国内镜像源"><a href="#一、配置yum国内镜像源" class="headerlink" title="一、配置yum国内镜像源"></a>一、配置yum国内镜像源</h2><h3 id="1、备份"><a href="#1、备份" class="headerlink" title="1、备份"></a>1、备份</h3><p>如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure>
-
-<p>该文件是Centos的镜像文件配置，一般国内都会配置成阿里云、网易、清华大学。我这里选择的式清华大学的镜像源，编辑 <code>/etc/yum.repos.d/CentOS-Base.repo </code>文件，在 <code>mirrorlist=</code> 开头行前面加 <code>#</code> 注释掉；并将 <code>baseurl=</code> 开头行取消注释（如果被注释的话），把该行内的域名（例如<code>mirror.centos.org</code>）替换为 <code>mirrors.tuna.tsinghua.edu.cn</code>。</p>
-<a id="more"></a>
-
-<h3 id="2、Centos7示例"><a href="#2、Centos7示例" class="headerlink" title="2、Centos7示例"></a>2、Centos7示例</h3><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#CentOS-Base.repo</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The mirror system uses the connecting IP address of the client and the</span></span><br><span class="line"><span class="comment"># update status of each mirror to pick mirrors that are updated to and</span></span><br><span class="line"><span class="comment"># geographically close to the client.  You should use this for CentOS updates</span></span><br><span class="line"><span class="comment"># unless you are manually picking other mirrors.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># If the mirrorlist= does not work for you, as a fall back you can try the</span></span><br><span class="line"><span class="comment"># remarked out baseurl= line instead.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">[base]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Base</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/os/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#released updates</span></span><br><span class="line"><span class="attr">[updates]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Updates</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/updates/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line"><span class="attr">[extras]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Extras</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/extras/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line"><span class="attr">[centosplus]</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">CentOS-$releasever - Plus</span></span><br><span class="line"><span class="attr">baseurl</span>=<span class="string">https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/centosplus/$basearch/</span></span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="string">0</span></span><br><span class="line"><span class="attr">gpgkey</span>=<span class="string">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-7</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="3、更新软件包缓存"><a href="#3、更新软件包缓存" class="headerlink" title="3、更新软件包缓存"></a>3、更新软件包缓存</h3><p>清楚之前的软件包缓存，然后更新软件包缓存</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
-
-<h3 id="4、更新软件包"><a href="#4、更新软件包" class="headerlink" title="4、更新软件包"></a>4、更新软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
-
-<p>参考：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">https://mirrors.tuna.tsinghua.edu.cn/help/centos/</a></p>
-<h2 id="二、rz、sz命令传输文件"><a href="#二、rz、sz命令传输文件" class="headerlink" title="二、rz、sz命令传输文件"></a>二、rz、sz命令传输文件</h2><p>大文件传输的话，建议使用<code>Filezilla</code>进行传输，个别的小文件传输的话，仅以使用<code>lrzsz</code>，更方便哦！！！</p>
-<h3 id="1、安装-lrzsz"><a href="#1、安装-lrzsz" class="headerlink" title="1、安装 lrzsz"></a>1、安装 lrzsz</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install lrzsz</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、上传文件"><a href="#2、上传文件" class="headerlink" title="2、上传文件"></a>2、上传文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rz</span><br></pre></td></tr></table></figure>
-
-<p>rz命令打开文件选择框，选择要发送的文件即可发送至当前目录。</p>
-<p>从Windows/Mac直接拖动至XShell窗口也是同样的哦！！！</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103215423.png" alt="image-20210103215423075"></p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103214524.png" alt="image-20210103214523798"></p>
-<h3 id="3、下载文件"><a href="#3、下载文件" class="headerlink" title="3、下载文件"></a>3、下载文件</h3><p><code>sz 文件名</code>便可下载该文件至本地，选择本地文件夹即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sz /etc/yum.repos.d/CentOS-Base.repo</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210103221932.png" alt="image-20210103221932546"></p>
-<p>三、</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux常用命令</title>
-    <url>/2021/01/07/75eb06482a73/</url>
-    <content><![CDATA[<h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><blockquote>
-<p>本文主要用于记录，在工作学习中经常需要使用的常见Linux命令。在<a href="https://couragehe.github.io/">CourageHe’s Blog</a>不间断更新，欢迎各位看官指教。</p>
-</blockquote>
-<a id="more"></a>
-
-<p>Linux资源查看</p>
-<p>各分区使用情况</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001504.png" alt="image-20210107001503961"></p>
-<p>查看进程</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -ef</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001625.png" alt="image-20210107001625631"></p>
-<p>查看内存使用情况</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001741.png" alt="image-20210107001741107"></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fre -m</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210107001916.png" alt="image-20210107001916338"></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FRP内网穿透</title>
-    <url>/2021/01/17/dd7e0bbf808e/</url>
-    <content><![CDATA[<h1 id="FRP内网穿透"><a href="#FRP内网穿透" class="headerlink" title="FRP内网穿透"></a>FRP内网穿透</h1><blockquote>
-<p>frp 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。</p>
-</blockquote>
-<h2 id="使用缘由"><a href="#使用缘由" class="headerlink" title="使用缘由"></a>使用缘由</h2><p>因为疫情的原因，公司提前休假，在家办公。公司的测试环境还有私服GIT都是在内网下，出于安全考虑，不考虑将GIT仓库移至GITHUB、GITEE等平台。首先想到的解决方案是使用类似花生壳这种内网穿透的服务，但是考虑到服务的收费标准与本司的使用需求相差较大。公司有六、七个端口需要转发，使用期限为一个月左右，而花生壳的套餐是按年付费，且线路数有限制，增加线路另外收费。然后想到了本人在大二时候使用的一个开源的内网穿透的代理应用，比较符合公司的解决方案。</p>
-<a id="more"></a>
-<h2 id="设备环境"><a href="#设备环境" class="headerlink" title="设备环境"></a>设备环境</h2><ul>
-<li><p>一台具有公网ip的服务器</p>
-</li>
-<li><p>N台内网服务器（需要内网穿透的服务器）</p>
-</li>
-</ul>
-<h2 id="系统选型"><a href="#系统选型" class="headerlink" title="系统选型"></a>系统选型</h2><p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117180715.png" alt="image-20210117180715013"></p>
-<table>
-<thead>
-<tr>
-<th>frp支持的</th>
-<th>Linux系统架构</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>386</td>
-<td>X86架构</td>
-</tr>
-<tr>
-<td>amd64</td>
-<td>amd架构</td>
-</tr>
-<tr>
-<td>arm</td>
-<td>arm架构</td>
-</tr>
-<tr>
-<td>arm64</td>
-<td>64位arm架构</td>
-</tr>
-<tr>
-<td>mips</td>
-<td>mips架构</td>
-</tr>
-<tr>
-<td>mips64</td>
-<td>64位mips架构</td>
-</tr>
-<tr>
-<td>mipsle</td>
-<td>mipsle架构</td>
-</tr>
-<tr>
-<td>mips64le</td>
-<td>64位mipsle架构</td>
-</tr>
-</tbody></table>
-<p><a href="https://blog.csdn.net/lixuande19871015/article/details/90485929">查看Linux的系统架构</a></p>
-<h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><p>本人搭建的服务端为Centos7.X，系统架构为X86加否；客户端为Windows10，系统架构为amd64。下载解压即可，根据实际需要配置文件即可。下面给一个常用的配置模板，仅供参考。</p>
-<h3 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">bind_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set dashboard_addr and dashboard_port to view dashboard of frps</span></span><br><span class="line"><span class="comment"># dashboard_addr&#x27;s default value is same with bind_addr</span></span><br><span class="line"><span class="comment"># dashboard is available only if dashboard_port is set</span></span><br><span class="line"><span class="attr">dashboard_addr</span> = <span class="number">0.0</span>.<span class="number">0.0</span></span><br><span class="line"><span class="attr">dashboard_port</span> = <span class="number">7500</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># dashboard user and passwd for basic auth protect, if not set, both default value is admin</span></span><br><span class="line"><span class="attr">dashboard_user</span> = admin</span><br><span class="line"><span class="attr">dashboard_pwd</span> = admin</span><br></pre></td></tr></table></figure>
-
-<p><code>XX.XX.XX.XX:7500</code>为FRP的监控平台网页，账号密码为<code>admin/admin</code>.<img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117191329.png" alt="image-20210117191328912"></p>
-<p><code>bind_port</code> ：为FRP 服务器用户接收客户端连接的端口：</p>
-<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>这种方式启动的话，将会把日志打印至<code>frp.log</code>下，用户退出该进程任然存在。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nohup ./frps -c frps.ini &gt;frp.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
-
-<h4 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查找端口为7000的进程</span></span><br><span class="line">netstat -nlp | grep 7000</span><br><span class="line"><span class="comment">#杀死 pid为10263的进程</span></span><br><span class="line"><span class="built_in">kill</span> -9 10263</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">server_addr</span> = XX.XX.XX.XX</span><br><span class="line"><span class="attr">server_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line">@Windows 远程桌面</span><br><span class="line"><span class="section">[Test Windows Server Connection]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3389</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Liunx ssh</span></span><br><span class="line"><span class="section">[Test Linux Server Connection ssh]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">22</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6002</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Mysql数据库</span></span><br><span class="line"><span class="section">[Test MySQL Sever jdbc]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3306</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6003</span></span><br></pre></td></tr></table></figure>
-
-<p><code>server_addr</code>：服务器地址</p>
-<p><code>server_port</code>：服务器端口</p>
-<p><code>local_ip</code>：本地需要暴露到公网的服务地址。客户端网络环境下的ip地址皆可。</p>
-<p><code>local_port</code>：本地需要暴露到公网的服务端口</p>
-<p><code>remote_port</code>：在 frp 服务端监听的端口，访问此端口的流量将会被转发到本地服务对应的端口。</p>
-<h4 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">frpc.exe -c frpc.ini </span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>实用工具</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows小技巧</title>
-    <url>/2021/04/10/5a457db9baf9/</url>
-    <content><![CDATA[<h1 id="Windows小技巧"><a href="#Windows小技巧" class="headerlink" title="Windows小技巧"></a>Windows小技巧</h1><p>&emsp;&emsp;用于记录日常使用Windows的小技巧，后期会不断更新。勤于记录，孰能生巧。</p>
-<a id="more"></a>
-
-<h2 id="一、巧用命令行"><a href="#一、巧用命令行" class="headerlink" title="一、巧用命令行"></a>一、巧用命令行</h2><h3 id="1、窗口下载命令"><a href="#1、窗口下载命令" class="headerlink" title="1、窗口下载命令"></a>1、窗口下载命令</h3><p>&emsp;&emsp;打开powershell，输入以下命令行即可将网路文件下载至指定文件夹。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="variable">$client</span> = new-object System.Net.WebClient</span><br><span class="line">&gt; <span class="variable">$client</span>.DownloadFile(<span class="string">&#x27;https://gitee.com/Courage-He/PicBed/raw/master/data/20210410215919.png&#x27;</span>, <span class="string">&#x27;D:\test.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210410215919.png" alt="image-20210410215919216"></p>
-<h2 id="二、快捷键巧用"><a href="#二、快捷键巧用" class="headerlink" title="二、快捷键巧用"></a>二、快捷键巧用</h2><h3 id="1、自带截屏功能"><a href="#1、自带截屏功能" class="headerlink" title="1、自带截屏功能"></a>1、自带截屏功能</h3><p>&emsp;&emsp;全局按钮<code>Win</code>+<code>Shift</code>+<code>S</code>即可开启Windows系统自带的截屏功能。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210410220449.png" alt="image-20210410220449531"></p>
-]]></content>
-      <categories>
-        <category>实用工具</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Lombok常用注解</title>
-    <url>/2020/08/16/c2f37b230581/</url>
-    <content><![CDATA[<h1 id="Lombok常用注解"><a href="#Lombok常用注解" class="headerlink" title="Lombok常用注解"></a>Lombok常用注解</h1><blockquote>
-<p>Lombok通过注解的方式省掉大量代码的编写，尤其对于POJO类的set()、get()、toString()等。在源代码只需要加上相应的注解，编译过程中Lombok插件就会自行生辰相关代码。减少冗杂且重复的代码，简化开发易于修改。本文即为对Lombok常见注解的介绍及对生成的代码的展示。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="安装Lombok"><a href="#安装Lombok" class="headerlink" title="安装Lombok"></a>安装Lombok</h2><p>&emsp;&emsp;在菜单栏依次选择<code>File</code>-&gt;<code>Settings</code>-&gt;<code>Plugins</code>，输入<code>Lombok</code>搜索该插件，得到搜索结果选择Lombok进行安装即可。安装完毕提示重启即安装成功。</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816144238.jpeg"></p>
-<p>&emsp;&emsp;Maven项目中引入Lombok依赖的编译支持，在pom文件中的<code>dependences</code>里添加即可</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.16.18<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h2><ul>
-<li>@Data</li>
-</ul>
-<ul>
-<li>@Setter</li>
-<li>@Getter</li>
-<li>@Log4j</li>
-<li>@AllArgsConstructor</li>
-<li>@NoArgsConstructor</li>
-<li>@EqualsAndHashCode</li>
-<li>@NonNull</li>
-<li>@Cleanup</li>
-<li>@ToString</li>
-<li>@RequiredArgsConstructor</li>
-<li>@Value</li>
-<li>@SneakyThrows</li>
-<li>@Synchronized</li>
-</ul>
-<h2 id="注解作用"><a href="#注解作用" class="headerlink" title="注解作用"></a>注解作用</h2><h3 id="Data"><a href="#Data" class="headerlink" title="@Data"></a>@Data</h3><p>注解在<strong>类</strong>上，提供类所有属性的get和set方法，此外还提供了equals、canEqual、toString方法以及默认构造函数</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816115230.png" alt="img"></p>
-<h3 id="Setter"><a href="#Setter" class="headerlink" title="@Setter"></a>@Setter</h3><ul>
-<li>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>set</strong>方法</li>
-<li>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>set</strong>方法</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816125332.png" alt="image-20200816125332552"></p>
-<h3 id="Getter"><a href="#Getter" class="headerlink" title="@Getter"></a>@Getter</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>get</strong>方法</p>
-</li>
-<li><p>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>get</strong>方法</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816145537.png" alt="image-20200816125753543"></p>
-</li>
-</ul>
-<h3 id="Log4j"><a href="#Log4j" class="headerlink" title="@Log4j"></a>@Log4j</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及该类的日志对象</p>
-<p>如果项目中没有对应的日志依赖，建议pom文件中加入</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.15<span class="tag">&lt;/<span class="name">version</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.mail<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.jms<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jms<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.jdmk<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jmxtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.jmx<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jmxri<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span> </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<p>  <img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816131455.png"></p>
-<h3 id="AllArgsConstructor"><a href="#AllArgsConstructor" class="headerlink" title="@AllArgsConstructor"></a>@AllArgsConstructor</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供含类全部属性的<strong>构造函数</strong></p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816132129.png" alt="image-20200816132129118"></p>
-</li>
-</ul>
-<h3 id="NoArgsConstructor"><a href="#NoArgsConstructor" class="headerlink" title="@NoArgsConstructor"></a>@NoArgsConstructor</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong></p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816132510.png" alt="image-20200816132510412"></p>
-</li>
-</ul>
-<h3 id="EqualsAndHashCode"><a href="#EqualsAndHashCode" class="headerlink" title="@EqualsAndHashCode"></a>@EqualsAndHashCode</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>、<strong>equals</strong>方法、<strong>canEqual</strong>方法、<strong>HashCode</strong>方法</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816132954.png" alt="image-20200816132954099"></p>
-</li>
-</ul>
-<h3 id="NonNull"><a href="#NonNull" class="headerlink" title="@NonNull"></a>@NonNull</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及如果有属性为NULL则抛<strong>NullPointException</strong></p>
-</li>
-<li><p>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及该属性为NULL则抛<strong>NullPointException</strong></p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816135351.png" alt="image-20200816133630219"></p>
-</li>
-</ul>
-<h3 id="Cleanup"><a href="#Cleanup" class="headerlink" title="@Cleanup"></a>@Cleanup</h3><ul>
-<li><p>注解在<strong>属性</strong>上，注解在那种使用完需要<code>close</code>的对象，会自动在finally里代码块中生成<code>close</code>代码</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816135523.png" alt="image-20200816135522627"></p>
-</li>
-</ul>
-<h3 id="ToString"><a href="#ToString" class="headerlink" title="@ToString"></a>@ToString</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及**toString()**方法</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816135750.png" alt="image-20200816135750664"></p>
-</li>
-</ul>
-<h3 id="RequiredArgsConstructor"><a href="#RequiredArgsConstructor" class="headerlink" title="@RequiredArgsConstructor"></a>@RequiredArgsConstructor</h3><ul>
-<li><p>注解在<strong>属性</strong>上，提供类中<strong>final</strong>修饰和**@NONULL<strong>注解的所有属性的</strong>构造函数**</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816140650.png" alt="image-20200816140650718"></p>
-</li>
-</ul>
-<h3 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h3><ul>
-<li><p>注解在<strong>类</strong>上，提供含类全部属性的<strong>构造函数</strong>以及<strong>get()**、</strong>equals()<strong>、</strong>hashCode()<strong>、</strong>toString()**方法</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816142559.png" alt="image-20200816142558874"></p>
-</li>
-</ul>
-<h3 id="SneakyThrows"><a href="#SneakyThrows" class="headerlink" title="@SneakyThrows"></a>@SneakyThrows</h3><ul>
-<li><p>注解在<strong>方法</strong>上，作用是将方法内的代码块用try-catch包围起来，并以<code>@SneakyThrows(Exception.class)</code>的形式指定抛出Exception的类型。同时也会生成默认构造函数。</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816142944.png" alt="image-20200816142943894"></p>
-</li>
-</ul>
-<h3 id="Synchronized"><a href="#Synchronized" class="headerlink" title="@Synchronized"></a>@Synchronized</h3><ul>
-<li><p>注解在<strong>方法</strong>上，与在方法名左边直接加<strong>synchronized</strong>关键字效果类似，对于静态方法和实例方法，synchornized关键字的锁对象分别是<strong>class</strong>对象和<strong>this</strong>对象；**@Synchronized<strong>则对应的锁对象分别是</strong>私有静态final对象<strong>lock和</strong>私有final对象** lock，同时也可以以<code>@Synchronized(&quot;属性名&quot;)</code>形式自定义锁对象。同时也会生成默认构造函数。</p>
-<p><img src="https://raw.githubusercontent.com/CourageHe/PicBed/master/data/20200816163424.png" alt="image-20200816163423807"></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>实用工具</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>驾照考试-刷题总结</title>
     <url>/2021/03/04/e831abc0a85c/</url>
     <content><![CDATA[<h1 id="驾照考试-刷题总结"><a href="#驾照考试-刷题总结" class="headerlink" title="驾照考试-刷题总结"></a>驾照考试-刷题总结</h1><blockquote>
@@ -833,13 +787,13 @@
 <p>车辆发生故障无法移动时，警告标志应放置于车辆后的150M以外</p>
 <p>70周岁以上的机动车驾驶人，应每年进行一次身体检查，并向有关部门申报身体情况</p>
 <p>防抱死制动系统故障</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210304210635.png" alt="image-20210304210635318"></p>
+<p><img src="/images/data/20210304210635.png" alt="image-20210304210635318"></p>
 <p>车辆在泥泞道路发生侧滑时，正确做法是车尾向哪一侧移动，即向哪一侧适当调整方向盘。</p>
 <p>此标志是左侧通行，^表示两侧通行，/这个表示左侧通行，\这个表示右侧通行。</p>
 <p>简记：上左下右</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210304211839.png" alt="image-20210304211839461"></p>
+<p><img src="/images/data/20210304211839.png" alt="image-20210304211839461"></p>
 <p>禁止车辆长时间停放，临时停放不受限制。中间一个红叉是禁止停车，中间一个斜杠是禁止长时间停车。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210304212057.png" alt="image-20210304212057360"></p>
+<p><img src="/images/data/20210304212057.png" alt="image-20210304212057360"></p>
 <p>交警手势速记口诀：<a href="https://www.bilibili.com/video/BV1eV411m7CM/">https://www.bilibili.com/video/BV1eV411m7CM/</a></p>
 <p>左高右放要叫停，左右折叠是直行。</p>
 <p>左手在下左转弯，右手在下右转弯。</p>
@@ -906,12 +860,12 @@
 <p>分道信息：没有线，单个图形，有距离和文字</p>
 <p>交叉路口：实线隔开，有文字和距离</p>
 <p>中间有虚线就是紧停车带，没有虚线的是错车道。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210307165335.jpg" alt="images"></p>
+<p><img src="/images/data/20210307165335.jpg" alt="images"></p>
 <p>线形诱导标志：</p>
 <p>一般道路为蓝底白图案，高速公路为绿底白图案，警告性线形诱导标志为红底白图案。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210307165821.jpg" alt="c172ef5c4f5bb097c5aa67e1c7fea81b"></p>
+<p><img src="/images/data/20210307165821.jpg" alt="c172ef5c4f5bb097c5aa67e1c7fea81b"></p>
 <p>菱形标志：前方有人行横道，车辆应减速慢行或停车等待。</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210307170830.jpg" alt="images"></p>
+<p><img src="/images/data/20210307170830.jpg" alt="images"></p>
 <p>速度限制标志：黄色数字是最高限速，白色数字是最低限速。</p>
 <p>路边的黄色虚线禁止长时间停车，实现禁止停车。</p>
 <p>停车位：白色收费、黄色为专属停车位、蓝色为免费停车位</p>
@@ -942,65 +896,225 @@
       </categories>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/09/06/b9889e0f3b8b/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <title>FRP内网穿透</title>
+    <url>/2021/01/17/dd7e0bbf808e/</url>
+    <content><![CDATA[<h1 id="FRP内网穿透"><a href="#FRP内网穿透" class="headerlink" title="FRP内网穿透"></a>FRP内网穿透</h1><blockquote>
+<p>frp 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。</p>
+</blockquote>
+<h2 id="使用缘由"><a href="#使用缘由" class="headerlink" title="使用缘由"></a>使用缘由</h2><p>因为疫情的原因，公司提前休假，在家办公。公司的测试环境还有私服GIT都是在内网下，出于安全考虑，不考虑将GIT仓库移至GITHUB、GITEE等平台。首先想到的解决方案是使用类似花生壳这种内网穿透的服务，但是考虑到服务的收费标准与本司的使用需求相差较大。公司有六、七个端口需要转发，使用期限为一个月左右，而花生壳的套餐是按年付费，且线路数有限制，增加线路另外收费。然后想到了本人在大二时候使用的一个开源的内网穿透的代理应用，比较符合公司的解决方案。</p>
 <a id="more"></a>
+<h2 id="设备环境"><a href="#设备环境" class="headerlink" title="设备环境"></a>设备环境</h2><ul>
+<li><p>一台具有公网ip的服务器</p>
+</li>
+<li><p>N台内网服务器（需要内网穿透的服务器）</p>
+</li>
+</ul>
+<h2 id="系统选型"><a href="#系统选型" class="headerlink" title="系统选型"></a>系统选型</h2><p><img src="/images/data/20210117180715.png" alt="image-20210117180715013"></p>
+<table>
+<thead>
+<tr>
+<th>frp支持的</th>
+<th>Linux系统架构</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>386</td>
+<td>X86架构</td>
+</tr>
+<tr>
+<td>amd64</td>
+<td>amd架构</td>
+</tr>
+<tr>
+<td>arm</td>
+<td>arm架构</td>
+</tr>
+<tr>
+<td>arm64</td>
+<td>64位arm架构</td>
+</tr>
+<tr>
+<td>mips</td>
+<td>mips架构</td>
+</tr>
+<tr>
+<td>mips64</td>
+<td>64位mips架构</td>
+</tr>
+<tr>
+<td>mipsle</td>
+<td>mipsle架构</td>
+</tr>
+<tr>
+<td>mips64le</td>
+<td>64位mipsle架构</td>
+</tr>
+</tbody></table>
+<p><a href="https://blog.csdn.net/lixuande19871015/article/details/90485929">查看Linux的系统架构</a></p>
+<h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><p>本人搭建的服务端为Centos7.X，系统架构为X86加否；客户端为Windows10，系统架构为amd64。下载解压即可，根据实际需要配置文件即可。下面给一个常用的配置模板，仅供参考。</p>
+<h3 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">bind_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set dashboard_addr and dashboard_port to view dashboard of frps</span></span><br><span class="line"><span class="comment"># dashboard_addr&#x27;s default value is same with bind_addr</span></span><br><span class="line"><span class="comment"># dashboard is available only if dashboard_port is set</span></span><br><span class="line"><span class="attr">dashboard_addr</span> = <span class="number">0.0</span>.<span class="number">0.0</span></span><br><span class="line"><span class="attr">dashboard_port</span> = <span class="number">7500</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># dashboard user and passwd for basic auth protect, if not set, both default value is admin</span></span><br><span class="line"><span class="attr">dashboard_user</span> = admin</span><br><span class="line"><span class="attr">dashboard_pwd</span> = admin</span><br></pre></td></tr></table></figure>
 
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p><code>XX.XX.XX.XX:7500</code>为FRP的监控平台网页，账号密码为<code>admin/admin</code>.<img src="/images/data/20210117191329.png" alt="image-20210117191328912"></p>
+<p><code>bind_port</code> ：为FRP 服务器用户接收客户端连接的端口：</p>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>这种方式启动的话，将会把日志打印至<code>frp.log</code>下，用户退出该进程任然存在。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nohup ./frps -c frps.ini &gt;frp.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h4 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查找端口为7000的进程</span></span><br><span class="line">netstat -nlp | grep 7000</span><br><span class="line"><span class="comment">#杀死 pid为10263的进程</span></span><br><span class="line"><span class="built_in">kill</span> -9 10263</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+<h3 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">server_addr</span> = XX.XX.XX.XX</span><br><span class="line"><span class="attr">server_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line">@Windows 远程桌面</span><br><span class="line"><span class="section">[Test Windows Server Connection]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3389</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Liunx ssh</span></span><br><span class="line"><span class="section">[Test Linux Server Connection ssh]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">22</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6002</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Mysql数据库</span></span><br><span class="line"><span class="section">[Test MySQL Sever jdbc]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3306</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6003</span></span><br></pre></td></tr></table></figure>
+
+<p><code>server_addr</code>：服务器地址</p>
+<p><code>server_port</code>：服务器端口</p>
+<p><code>local_ip</code>：本地需要暴露到公网的服务地址。客户端网络环境下的ip地址皆可。</p>
+<p><code>local_port</code>：本地需要暴露到公网的服务端口</p>
+<p><code>remote_port</code>：在 frp 服务端监听的端口，访问此端口的流量将会被转发到本地服务对应的端口。</p>
+<h4 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">frpc.exe -c frpc.ini </span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>实用工具</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>Windows</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
-    <title>剑指 Offer 03. 数组中重复的数字</title>
-    <url>/2021/01/26/ec8237ba0fb1/</url>
-    <content><![CDATA[<h1 id="剑指-Offer-03-数组中重复的数字"><a href="#剑指-Offer-03-数组中重复的数字" class="headerlink" title="剑指 Offer 03. 数组中重复的数字"></a>剑指 Offer 03. 数组中重复的数字</h1><blockquote>
-<p>题目来源：剑指Offer03</p>
-<p>题目链接：<a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/</a></p>
+    <title>Lombok常用注解</title>
+    <url>/2020/08/16/c2f37b230581/</url>
+    <content><![CDATA[<h1 id="Lombok常用注解"><a href="#Lombok常用注解" class="headerlink" title="Lombok常用注解"></a>Lombok常用注解</h1><blockquote>
+<p>Lombok通过注解的方式省掉大量代码的编写，尤其对于POJO类的set()、get()、toString()等。在源代码只需要加上相应的注解，编译过程中Lombok插件就会自行生辰相关代码。减少冗杂且重复的代码，简化开发易于修改。本文即为对Lombok常见注解的介绍及对生成的代码的展示。</p>
 </blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>找出数组中重复的数字。</p>
-<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
-<p>示例 1：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">[2, 3, 1, 0, 2, 5, 3]</span><br><span class="line">输出：2 或 3 </span><br></pre></td></tr></table></figure>
-
-
-<p>限制：</p>
-<ul>
-<li><code>2 &lt;= n &lt;= 100000</code></li>
-</ul>
 <a id="more"></a>
 
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>统计重复元素常用方法是使用哈希表，如果统计的是元素明确范围的话建议使用数组。</p>
-<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="哈希表统计"><a href="#哈希表统计" class="headerlink" title="哈希表统计"></a>哈希表统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt;nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(set.contains(nums[i]))&#123;</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               set.add(nums[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="安装Lombok"><a href="#安装Lombok" class="headerlink" title="安装Lombok"></a>安装Lombok</h2><p>&emsp;&emsp;在菜单栏依次选择<code>File</code>-&gt;<code>Settings</code>-&gt;<code>Plugins</code>，输入<code>Lombok</code>搜索该插件，得到搜索结果选择Lombok进行安装即可。安装完毕提示重启即安装成功。</p>
+<p><img src="/images/data/20200816144238.jpeg"></p>
+<p>&emsp;&emsp;Maven项目中引入Lombok依赖的编译支持，在pom文件中的<code>dependences</code>里添加即可</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.16.18<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>执行结果：</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210126002427.png" alt="image-20210126002427040"></p>
-<h3 id="数组统计"><a href="#数组统计" class="headerlink" title="数组统计"></a>数组统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[nums[i]] == <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                arr[nums[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h2><ul>
+<li>@Data</li>
+</ul>
+<ul>
+<li>@Setter</li>
+<li>@Getter</li>
+<li>@Log4j</li>
+<li>@AllArgsConstructor</li>
+<li>@NoArgsConstructor</li>
+<li>@EqualsAndHashCode</li>
+<li>@NonNull</li>
+<li>@Cleanup</li>
+<li>@ToString</li>
+<li>@RequiredArgsConstructor</li>
+<li>@Value</li>
+<li>@SneakyThrows</li>
+<li>@Synchronized</li>
+</ul>
+<h2 id="注解作用"><a href="#注解作用" class="headerlink" title="注解作用"></a>注解作用</h2><h3 id="Data"><a href="#Data" class="headerlink" title="@Data"></a>@Data</h3><p>注解在<strong>类</strong>上，提供类所有属性的get和set方法，此外还提供了equals、canEqual、toString方法以及默认构造函数</p>
+<p><img src="/images/data/20200816115230.png" alt="img"></p>
+<h3 id="Setter"><a href="#Setter" class="headerlink" title="@Setter"></a>@Setter</h3><ul>
+<li>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>set</strong>方法</li>
+<li>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>set</strong>方法</li>
+</ul>
+<p><img src="/images/data/20200816125332.png" alt="image-20200816125332552"></p>
+<h3 id="Getter"><a href="#Getter" class="headerlink" title="@Getter"></a>@Getter</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>get</strong>方法</p>
+</li>
+<li><p>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及所有属性的<strong>get</strong>方法</p>
+<p><img src="/images/data/20200816145537.png" alt="image-20200816125753543"></p>
+</li>
+</ul>
+<h3 id="Log4j"><a href="#Log4j" class="headerlink" title="@Log4j"></a>@Log4j</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及该类的日志对象</p>
+<p>如果项目中没有对应的日志依赖，建议pom文件中加入</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.15<span class="tag">&lt;/<span class="name">version</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.mail<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.jms<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jms<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.jdmk<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jmxtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.jmx<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jmxri<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">         <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span> </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>执行结果：</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210201152224.png" alt="image-20210126002415245"></p>
+
+
+</li>
+</ul>
+  <img src="images/data/20200816131455.png" style="zoom:150%;" />
+
+<h3 id="AllArgsConstructor"><a href="#AllArgsConstructor" class="headerlink" title="@AllArgsConstructor"></a>@AllArgsConstructor</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供含类全部属性的<strong>构造函数</strong></p>
+<p><img src="/images/data/20200816132129.png" alt="image-20200816132129118"></p>
+</li>
+</ul>
+<h3 id="NoArgsConstructor"><a href="#NoArgsConstructor" class="headerlink" title="@NoArgsConstructor"></a>@NoArgsConstructor</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong></p>
+<p><img src="/images/data/20200816132510.png" alt="image-20200816132510412"></p>
+</li>
+</ul>
+<h3 id="EqualsAndHashCode"><a href="#EqualsAndHashCode" class="headerlink" title="@EqualsAndHashCode"></a>@EqualsAndHashCode</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>、<strong>equals</strong>方法、<strong>canEqual</strong>方法、<strong>HashCode</strong>方法</p>
+<p><img src="/images/data/20200816132954.png" alt="image-20200816132954099"></p>
+</li>
+</ul>
+<h3 id="NonNull"><a href="#NonNull" class="headerlink" title="@NonNull"></a>@NonNull</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及如果有属性为NULL则抛<strong>NullPointException</strong></p>
+</li>
+<li><p>注解在<strong>属性</strong>上，提供类的<strong>默认构造函数</strong>以及该属性为NULL则抛<strong>NullPointException</strong></p>
+<p><img src="/images/data/20200816135351.png" alt="image-20200816133630219"></p>
+</li>
+</ul>
+<h3 id="Cleanup"><a href="#Cleanup" class="headerlink" title="@Cleanup"></a>@Cleanup</h3><ul>
+<li><p>注解在<strong>属性</strong>上，注解在那种使用完需要<code>close</code>的对象，会自动在finally里代码块中生成<code>close</code>代码</p>
+<p><img src="/images/data/20200816135523.png" alt="image-20200816135522627"></p>
+</li>
+</ul>
+<h3 id="ToString"><a href="#ToString" class="headerlink" title="@ToString"></a>@ToString</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供类的<strong>默认构造函数</strong>以及**toString()**方法</p>
+<p><img src="/images/data/20200816135750.png" alt="image-20200816135750664"></p>
+</li>
+</ul>
+<h3 id="RequiredArgsConstructor"><a href="#RequiredArgsConstructor" class="headerlink" title="@RequiredArgsConstructor"></a>@RequiredArgsConstructor</h3><ul>
+<li><p>注解在<strong>属性</strong>上，提供类中<strong>final</strong>修饰和**@NONULL<strong>注解的所有属性的</strong>构造函数**</p>
+<p><img src="/images/data/20200816140650.png" alt="image-20200816140650718"></p>
+</li>
+</ul>
+<h3 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h3><ul>
+<li><p>注解在<strong>类</strong>上，提供含类全部属性的<strong>构造函数</strong>以及<strong>get()**、</strong>equals()<strong>、</strong>hashCode()<strong>、</strong>toString()**方法</p>
+<p><img src="/images/data/20200816142559.png" alt="image-20200816142558874"></p>
+</li>
+</ul>
+<h3 id="SneakyThrows"><a href="#SneakyThrows" class="headerlink" title="@SneakyThrows"></a>@SneakyThrows</h3><ul>
+<li><p>注解在<strong>方法</strong>上，作用是将方法内的代码块用try-catch包围起来，并以<code>@SneakyThrows(Exception.class)</code>的形式指定抛出Exception的类型。同时也会生成默认构造函数。</p>
+<p><img src="/images/data/20200816142944.png" alt="image-20200816142943894"></p>
+</li>
+</ul>
+<h3 id="Synchronized"><a href="#Synchronized" class="headerlink" title="@Synchronized"></a>@Synchronized</h3><ul>
+<li><p>注解在<strong>方法</strong>上，与在方法名左边直接加<strong>synchronized</strong>关键字效果类似，对于静态方法和实例方法，synchornized关键字的锁对象分别是<strong>class</strong>对象和<strong>this</strong>对象；**@Synchronized<strong>则对应的锁对象分别是</strong>私有静态final对象<strong>lock和</strong>私有final对象** lock，同时也可以以<code>@Synchronized(&quot;属性名&quot;)</code>形式自定义锁对象。同时也会生成默认构造函数。</p>
+<p><img src="/images/data/20200816163424.png" alt="image-20200816163423807"></p>
+</li>
+</ul>
 ]]></content>
       <categories>
-        <category>Algorithm</category>
+        <category>实用工具</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
-        <tag>剑指 Offer</tag>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows小技巧</title>
+    <url>/2021/04/10/5a457db9baf9/</url>
+    <content><![CDATA[<h1 id="Windows小技巧"><a href="#Windows小技巧" class="headerlink" title="Windows小技巧"></a>Windows小技巧</h1><p>&emsp;&emsp;用于记录日常使用Windows的小技巧，后期会不断更新。勤于记录，孰能生巧。</p>
+<a id="more"></a>
+
+<h2 id="一、巧用命令行"><a href="#一、巧用命令行" class="headerlink" title="一、巧用命令行"></a>一、巧用命令行</h2><h3 id="1、窗口下载命令"><a href="#1、窗口下载命令" class="headerlink" title="1、窗口下载命令"></a>1、窗口下载命令</h3><p>&emsp;&emsp;打开powershell，输入以下命令行即可将网路文件下载至指定文件夹。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="variable">$client</span> = new-object System.Net.WebClient</span><br><span class="line">&gt; <span class="variable">$client</span>.DownloadFile(<span class="string">&#x27;../../../public/images/data/20210410215919.png&#x27;</span>, <span class="string">&#x27;D:\test.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/data/20210410215919.png" alt="image-20210410215919216"></p>
+<h2 id="二、快捷键巧用"><a href="#二、快捷键巧用" class="headerlink" title="二、快捷键巧用"></a>二、快捷键巧用</h2><h3 id="1、自带截屏功能"><a href="#1、自带截屏功能" class="headerlink" title="1、自带截屏功能"></a>1、自带截屏功能</h3><p>&emsp;&emsp;全局按钮<code>Win</code>+<code>Shift</code>+<code>S</code>即可开启Windows系统自带的截屏功能。</p>
+<p><img src="/images/data/20210410220449.png" alt="image-20210410220449531"></p>
+]]></content>
+      <categories>
+        <category>实用工具</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -1031,11 +1145,11 @@
 <h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="采用暴力循环法"><a href="#采用暴力循环法" class="headerlink" title="采用暴力循环法"></a>采用暴力循环法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numEquivDominoPairs</span><span class="params">(<span class="keyword">int</span>[][] dominoes)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;dominoes.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j&lt;dominoes.length;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(dominoes[i][<span class="number">1</span>] == dominoes[j][<span class="number">1</span>])&#123;</span><br><span class="line">                    <span class="keyword">if</span>(dominoes[i][<span class="number">0</span>] == dominoes[j][<span class="number">0</span>])&#123;</span><br><span class="line">                        ans++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(dominoes[i][<span class="number">1</span>] == dominoes[j][<span class="number">0</span>])&#123;</span><br><span class="line">                    <span class="keyword">if</span>(dominoes[i][<span class="number">0</span>] == dominoes[j][<span class="number">1</span>])&#123;</span><br><span class="line">                        ans++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>执行结果：</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210127002655.png" alt="image-20210127002655515"></p>
+<p><img src="/images/data/20210127002655.png" alt="image-20210127002655515"></p>
 <h3 id="采用统计法"><a href="#采用统计法" class="headerlink" title="采用统计法"></a>采用统计法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numEquivDominoPairs</span><span class="params">(<span class="keyword">int</span>[][] dominoes)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; dominoes.length;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> num = dominoes[i][<span class="number">0</span>] &gt; dominoes[i][<span class="number">1</span>]? (dominoes[i][<span class="number">0</span>]*<span class="number">10</span>+ dominoes[i][<span class="number">1</span>]) :  (dominoes[i][<span class="number">1</span>]*<span class="number">10</span>+ dominoes[i][<span class="number">0</span>]);<span class="comment">//组合成取值最大的十进制数字</span></span><br><span class="line">            arr[num]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; arr.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i] &lt; <span class="number">2</span>) <span class="keyword">continue</span>; </span><br><span class="line">            ans += (arr[i]-<span class="number">1</span>+<span class="number">1</span>)*(arr[i]-<span class="number">1</span>) /<span class="number">2</span>;<span class="comment">//等差数列组合</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>执行结果：</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210127002558.png" alt="image-20210127002558645"></p>
+<p><img src="/images/data/20210127002558.png" alt="image-20210127002558645"></p>
 ]]></content>
       <categories>
         <category>Algorithm</category>
@@ -1044,5 +1158,157 @@
         <tag>LeetCode</tag>
         <tag>每日一题</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>剑指 Offer 03. 数组中重复的数字</title>
+    <url>/2021/01/26/ec8237ba0fb1/</url>
+    <content><![CDATA[<h1 id="剑指-Offer-03-数组中重复的数字"><a href="#剑指-Offer-03-数组中重复的数字" class="headerlink" title="剑指 Offer 03. 数组中重复的数字"></a>剑指 Offer 03. 数组中重复的数字</h1><blockquote>
+<p>题目来源：剑指Offer03</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>找出数组中重复的数字。</p>
+<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
+<p>示例 1：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">[2, 3, 1, 0, 2, 5, 3]</span><br><span class="line">输出：2 或 3 </span><br></pre></td></tr></table></figure>
+
+
+<p>限制：</p>
+<ul>
+<li><code>2 &lt;= n &lt;= 100000</code></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>统计重复元素常用方法是使用哈希表，如果统计的是元素明确范围的话建议使用数组。</p>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="哈希表统计"><a href="#哈希表统计" class="headerlink" title="哈希表统计"></a>哈希表统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt;nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(set.contains(nums[i]))&#123;</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               set.add(nums[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210126002427.png" alt="image-20210126002427040"></p>
+<h3 id="数组统计"><a href="#数组统计" class="headerlink" title="数组统计"></a>数组统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[nums[i]] == <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                arr[nums[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210201152224.png" alt="image-20210126002415245"></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>剑指 Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/08/10/1ba2419402b9/</url>
+    <content><![CDATA[<h1 id="新装虚拟机-网络配置"><a href="#新装虚拟机-网络配置" class="headerlink" title="新装虚拟机-网络配置"></a>新装虚拟机-网络配置</h1><h2 id="1、vmware网络简介"><a href="#1、vmware网络简介" class="headerlink" title="1、vmware网络简介"></a>1、vmware网络简介</h2><h3 id="1-Host-Only（仅主机模式）"><a href="#1-Host-Only（仅主机模式）" class="headerlink" title="1.Host-Only（仅主机模式）"></a><strong>1.Host-Only（仅主机模式）</strong></h3><p>Host-Only模式其实就是NAT模式去除了虚拟NAT设备，然后使用VMware Network Adapter VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，Host-Only模式将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与主机相互通讯。其网络结构如下图所示：<img src="images/data/ewqewq.png" alt="ewqewq"></p>
+<h3 id="2-Bridged（桥接模式）"><a href="#2-Bridged（桥接模式）" class="headerlink" title="2.Bridged（桥接模式）"></a><strong>2.Bridged（桥接模式）</strong></h3><p>什么是桥接模式？桥接模式就是将主机网卡与虚拟机虚拟的网卡利用虚拟网桥进行通信。在桥接的作用下，类似于把物理主机虚拟为一个交换机，所有桥接设置的虚拟机连接到这个交换机的一个接口上，物理主机也同样插在这个交换机当中，所以所有桥接下的网卡与网卡都是交换模式的，相互可以访问而不干扰。在桥接模式下，虚拟机ip地址需要与主机在同一个网段，如果需要联网，则网关与DNS需要与主机网卡一致。其网络结构如下图所示：<img src="images/data/32232232.png" alt="32232232"></p>
+<h3 id="3-NAT（地址转换模式）"><a href="#3-NAT（地址转换模式）" class="headerlink" title="3.NAT（地址转换模式）"></a><strong>3.NAT（地址转换模式）</strong></h3><p>NAT技术应用在internet网关和路由器上，比如192.168.0.123这个地址要访问internet，它的数据包就要通过一个路由器，而路由器拥有一个能访问internet的ip地址，这样的路由器就要在收发数据包时，对数据包的IP协议层数据进行更改（即 NAT），以使私有网段的主机能够顺利访问internet。<br> 刚刚我们说到，如果你的网络ip资源紧缺，但是你又希望你的虚拟机能够联网，这时候NAT模式是最好的选择。NAT模式借助虚拟NAT设备（就是一个路由器）和虚拟DHCP服务器，使得虚拟机可以联网。其网络结构如下图所示</p>
+<p><img src="images/data/wqweqe12.png" alt="‘wqweqe12’"></p>
+<h2 id="2、具体配置"><a href="#2、具体配置" class="headerlink" title="2、具体配置"></a>2、具体配置</h2><p>我们网络选择使用nat模式</p>
+<h3 id="1-网络编辑器设置"><a href="#1-网络编辑器设置" class="headerlink" title="1. 网络编辑器设置"></a>1. 网络编辑器设置</h3><p>选择虚拟网络编辑器</p>
+<p><img src="images/data/clip_image002-16600986659924.jpg" alt="img"></p>
+<p>选择nat模式，然后点击右下角的更改设置</p>
+<p><img src="images/data/clip_image004-16600986659935.jpg" alt="img"></p>
+<p>设置子网IP：192.168.52.0</p>
+<p>子网掩码：255.255.255.0</p>
+<p><img src="images/data/clip_image006-16600986659936.jpg" alt="img"></p>
+<p>点击NAT设置</p>
+<p><img src="images/data/12313.png" alt="12313"></p>
+<p>个人电脑网络设置：找到网络连接中的VMnet8</p>
+<p><img src="images/data/clip_image010.jpg" alt="img"></p>
+<p>设置：</p>
+<p><img src="images/data/21.png" alt="21"></p>
+<h3 id="2-网卡设置"><a href="#2-网卡设置" class="headerlink" title="2. 网卡设置"></a>2. 网卡设置</h3><p>#<code>vim /etc/sysconfig/network-scripts/ifcfg-ens33</code>进入网卡设置</p>
+<p>红色是需要修改和添加的地方，按 i进入编辑模式</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">UUID=4f81f256-131f-4fdb-9365-1ae4c7882aa2</span><br><span class="line">DEVICE=ens33</span><br><span class="line">ONBOOT=yes</span><br><span class="line">IPADDR=192.168.52.100</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.52.1</span><br><span class="line">DNS1=8.8.8.8</span><br></pre></td></tr></table></figure>
+
+<p>改完后【ESC】退出，：wq保存设置退出</p>
+<p>#重启网卡 <code>service network restart</code></p>
+<p><img src="images/data/clip_image014.jpg" alt="img"></p>
+<p>测试网络是否连通外网：<code>ping www.baidu.com </code></p>
+<p><img src="images/data/image-20220810142652206.png" alt="image-20220810142652206"></p>
+<p>到此centos7.4安装完成，网络也配置成功</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/02/14/4a9fb325b43f/</url>
+    <content><![CDATA[<h3 id="第328场周赛"><a href="#第328场周赛" class="headerlink" title="第328场周赛"></a>第328场周赛</h3><h4 id="01-数组元素和与数字和的绝对差"><a href="#01-数组元素和与数字和的绝对差" class="headerlink" title="01. 数组元素和与数字和的绝对差"></a><a href="https://leetcode.cn/problems/difference-between-element-sum-and-digit-sum-of-an-array/">01. 数组元素和与数字和的绝对差</a></h4><p>简单题，暴力即可。</p>
+<p><code>num%10</code>代表获取该数的个位数字</p>
+<p><code>num/10</code>代表该数缩小10倍，原个位数字抹掉了</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">differenceOfSum</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum1 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            sum1+= nums[i];</span><br><span class="line">            <span class="keyword">while</span>(nums[i] !=<span class="number">0</span> )&#123;</span><br><span class="line">                sum2 += nums[i] % <span class="number">10</span>;</span><br><span class="line">                nums[i] = nums[i] / <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.abs(sum1-sum2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="02-子矩阵元素加-1"><a href="#02-子矩阵元素加-1" class="headerlink" title="02.子矩阵元素加 1"></a><a href="https://leetcode.cn/problems/increment-submatrices-by-one/">02.子矩阵元素加 1</a></h4><p><strong>一维前缀和</strong>：可用于一维数组任意区间快速求和，时间复杂度O(1)</p>
+<p>相关题目：<a href="https://leetcode.cn/problems/range-sum-query-immutable/">303. 区域和检索 - 数组不可变</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution02_303</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">NumArray</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] prefixSum;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">NumArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">            prefixSum = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length+<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;prefixSum.length;i++)</span><br><span class="line">                prefixSum[i] = prefixSum[i-<span class="number">1</span>]+nums[i-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sumRange</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> prefixSum[right+<span class="number">1</span>]-prefixSum[left];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>二维前缀和</strong>：可用于二维数组任意区间快速求和，时间复杂度O(1)</p>
+<p>相关题目：<a href="https://leetcode.cn/problems/range-sum-query-2d-immutable/">304. 二维区域和检索 - 矩阵不可变</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution02_304_2</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">NumMatrix</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[][] matrixSum;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">NumMatrix</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">            matrixSum = <span class="keyword">new</span> <span class="keyword">int</span>[matrix.length+<span class="number">1</span>][matrix[<span class="number">0</span>].length+<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = matrix.length-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j = matrix[<span class="number">0</span>].length-<span class="number">1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">                    matrixSum[i][j] =  matrix[i][j] + matrixSum[i+<span class="number">1</span>][j]+matrixSum[i][j+<span class="number">1</span>]-matrixSum[i+<span class="number">1</span>][j+<span class="number">1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sumRegion</span><span class="params">(<span class="keyword">int</span> row1, <span class="keyword">int</span> col1, <span class="keyword">int</span> row2, <span class="keyword">int</span> col2)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span>  matrixSum[row1][col1]-matrixSum[row2+<span class="number">1</span>][col1]-matrixSum[row1][col2+<span class="number">1</span>]+matrixSum[row2+<span class="number">1</span>][col2+<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>二维差分：</strong>可用于快速对二维数组的任意区间进行加/减操作，时间复杂度O(1)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution02</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] rangeAddQueries(<span class="keyword">int</span> n, <span class="keyword">int</span>[][] queries) &#123;</span><br><span class="line">        <span class="keyword">int</span>[][] diff = <span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>][n+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;queries.length;i++)&#123;</span><br><span class="line">            diff[queries[i][<span class="number">0</span>]][queries[i][<span class="number">1</span>]]++;</span><br><span class="line">            diff[queries[i][<span class="number">0</span>]][queries[i][<span class="number">3</span>]+<span class="number">1</span>]--;</span><br><span class="line">            diff[queries[i][<span class="number">2</span>]+<span class="number">1</span>][queries[i][<span class="number">1</span>]]--;</span><br><span class="line">            diff[queries[i][<span class="number">2</span>]+<span class="number">1</span>][queries[i][<span class="number">3</span>]+<span class="number">1</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;n;j++) diff[i][j]+=diff[i][j-<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) diff[i][j]+=diff[i-<span class="number">1</span>][j];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[][] ans = <span class="keyword">new</span> <span class="keyword">int</span>[n][n];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) ans[i][j] = diff[i][j];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="03-统计好子数组的数目"><a href="#03-统计好子数组的数目" class="headerlink" title="03.统计好子数组的数目"></a><a href="https://leetcode.cn/problems/count-the-number-of-good-subarrays/">03.统计好子数组的数目</a></h4><p>同向双指针，由Map保存窗口中的数字出现的次数，窗口中相等值的的数目为<code>pairs</code>。</p>
+<p>首先枚举子数组右端点<code>right</code>，那么<code>paris</code>增加<code>map.getOrDefault(nums[right],0)</code>；枚举至<code>paris&gt;=k</code>即代表该窗口中子数组符合好子数组；然后看左端点<code>left</code>端点最大可以到多少，如果去掉左端点，pairs没有小于k，就可以移动左端点。</p>
+<p>由于左端点及其左边的都可以是好子数组的左端点，所以每个右端点对应的答案个数为<code>left+1</code>;</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">countGood</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> pairs =<span class="number">0</span>,left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num : nums)&#123;</span><br><span class="line">            pairs += map.getOrDefault(num,<span class="number">0</span>);</span><br><span class="line">            map.merge(num,<span class="number">1</span>,Integer::sum);</span><br><span class="line">            <span class="keyword">while</span>(pairs-map.get(nums[left])+<span class="number">1</span>&gt;=k)&#123;</span><br><span class="line">                pairs -= map.merge(nums[left++],-<span class="number">1</span>,Integer::sum);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(pairs&gt;=k) ans+=left+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="04-最大价值和与最小价值和的差值"><a href="#04-最大价值和与最小价值和的差值" class="headerlink" title="04.最大价值和与最小价值和的差值"></a><a href="https://leetcode.cn/problems/difference-between-maximum-and-minimum-price-sum/">04.最大价值和与最小价值和的差值</a></h4><p>待做~</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/09/17/dec78c70fd80/</url>
+    <content><![CDATA[<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><blockquote>
+<p>将原问题拆解成若干子问题，同时保存子问题的答案，使得每个子问题只求解一次，最终获得原问题的答案。</p>
+<p>递归问题》重叠子问题》记忆化搜索（自顶向下的解决问题）/动态规划（自底向上的解决问题）</p>
+</blockquote>
+<h2 id="120-三角形最小路径和"><a href="#120-三角形最小路径和" class="headerlink" title="120. 三角形最小路径和"></a><a href="https://leetcode.cn/problems/triangle/">120. 三角形最小路径和</a></h2><p>给定一个三角形 triangle ，找出自顶向下的最小路径和。</p>
+<p>每一步只能移动到下一行中相邻的结点上。相邻的结点 在这里指的是 下标 与 上一层结点下标 相同或者等于 上一层结点下标 + 1 的两个结点。也就是说，如果正位于当前行的下标 i ，那么下一步可以移动到下一行的下标 i 或 i + 1 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：triangle &#x3D; [[2],[3,4],[6,5,7],[4,1,8,3]]</span><br><span class="line">输出：11</span><br><span class="line">解释：如下面简图所示：</span><br><span class="line">   2</span><br><span class="line">  3 4</span><br><span class="line"> 6 5 7</span><br><span class="line">4 1 8 3</span><br><span class="line">自顶向下的最小路径和为 11（即，2 + 3 + 5 + 1 &#x3D; 11）。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：triangle &#x3D; [[-10]]</span><br><span class="line">输出：-10</span><br></pre></td></tr></table></figure>
+
+
+<p>提示：</p>
+<ul>
+<li><code>1 &lt;= triangle.length &lt;= 200</code></li>
+<li><code>triangle[0].length == 1</code></li>
+<li><code>triangle[i].length == triangle[i - 1].length + 1</code></li>
+<li><code>-104 &lt;= triangle[i][j] &lt;= 104</code></li>
+</ul>
+<p>进阶：</p>
+<p>你可以只使用<code>O(n)</code>的额外空间（<code>n </code>三角形的总行数）来解决这个问题吗？</p>
+<p><strong>解法1：递归</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//递归解法(经测试，超过一百层超时)</span></span><br><span class="line">        <span class="keyword">return</span> recursiveMethod(triangle,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">recursiveMethod</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle,<span class="keyword">int</span> i,<span class="keyword">int</span> j ,<span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">        value = triangle.get(i).get(j)+value;</span><br><span class="line">        <span class="keyword">if</span>(i == triangle.size()-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> value;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.min(recursiveMethod(triangle,i+<span class="number">1</span>,j,value),recursiveMethod(triangle,i+<span class="number">1</span>,j+<span class="number">1</span>,value));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>解法2：递归+记忆化搜索</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">   Integer [][] memo = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle)</span> </span>&#123;</span><br><span class="line">        memo = <span class="keyword">new</span> Integer[triangle.size()][triangle.size()];</span><br><span class="line">        <span class="keyword">return</span> recursiveMethod(triangle,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">recursiveMethod</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle,<span class="keyword">int</span> i,<span class="keyword">int</span> j ,<span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(i == triangle.size()-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> value + triangle.get(i).get(j);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(memo[i][j] != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> memo[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">        memo[i][j] = Math.min(recursiveMethod(triangle,i+<span class="number">1</span>,j,value),recursiveMethod(triangle,i+<span class="number">1</span>,j+<span class="number">1</span>,value))+ triangle.get(i).get(j);</span><br><span class="line">        <span class="keyword">return</span> memo[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>解法3：动态规划</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//动态规划 方案</span></span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[triangle.size()][triangle.size()];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dp.length; i++) &#123;</span><br><span class="line">            dp[triangle.size()-<span class="number">1</span>][i] = triangle.get(triangle.size()-<span class="number">1</span>).get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = triangle.size()-<span class="number">2</span>; i &gt;=<span class="number">0</span> ; i--) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j =<span class="number">0</span>; j &lt;=i ; j++) &#123;</span><br><span class="line">                dp[i][j] =Math.min(dp[i+<span class="number">1</span>][j],dp[i+<span class="number">1</span>][j+<span class="number">1</span>])+triangle.get(i).get(j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>解法4：进阶：动态规划，空间复杂度O(n)</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[triangle.size()];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dp.length; i++) &#123;</span><br><span class="line">            dp[i] = triangle.get(triangle.size()-<span class="number">1</span>).get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = triangle.size()-<span class="number">2</span>; i &gt;=<span class="number">0</span> ; i--) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j =<span class="number">0</span>; j &lt;=i ; j++) &#123;</span><br><span class="line">                dp[j] =Math.min(dp[j],dp[j+<span class="number">1</span>])+triangle.get(i).get(j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
 </search>
