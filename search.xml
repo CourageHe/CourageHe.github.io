@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>GitBlit安装与使用</title>
+    <url>/2021/01/18/e4bb3bf545c5/</url>
+    <content><![CDATA[<h1 id="GitBlit安装"><a href="#GitBlit安装" class="headerlink" title="GitBlit安装"></a>GitBlit安装</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>要求Windows电脑安装JAVA环境，在<a href="http://gitblit.github.io/gitblit/">GitBlit首页</a>可根据操作系统选择不同的版本安装。</p>
+<p><img src="/images/data/20210117200211.png" alt="image-20210117200211238"></p>
+<a id="more"></a>
+
+<h2 id="2-解压"><a href="#2-解压" class="headerlink" title="2.  解压"></a>2.  解压</h2><p>文件下载后，解压至一个文件夹下即可，无需安装。下图是解压后的文件列表。</p>
+<h2 id="3-配置文件"><a href="#3-配置文件" class="headerlink" title="3. 配置文件"></a><img src="/images/data/20210117200502.png" alt="image-20210117200502037">3. 配置文件</h2><p>Gitblit目录下的data文件夹中的<code>defaults.properties</code>是默认配置文件，另外需要修改<code>gitblit.properties</code>以覆盖默认配置。</p>
+<ul>
+<li><code>server.httpPort</code>：http协议端口号</li>
+<li><code>server.httpBindInterface</code>：http服务器的ip地址</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># GITBLIT.PROPERTIES</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your custom settings in this file and/or include settings defined in</span></span><br><span class="line"><span class="comment"># other properties files.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Include Gitblit&#x27;s &#x27;defaults.properties&#x27; within your configuration.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># <span class="doctag">NOTE:</span> Gitblit will not automatically reload &quot;included&quot; properties.  Gitblit</span></span><br><span class="line"><span class="comment"># only watches the &#x27;gitblit.properties&#x27; file for modifications.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Paths may be relative to the $&#123;baseFolder&#125; or they may be absolute.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># COMMA-DELIMITED</span></span><br><span class="line"><span class="comment"># SINCE 1.7.0</span></span><br><span class="line"><span class="attr">include</span> = <span class="string">defaults.properties</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your overrides or custom settings below</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Standard http port to serve.  &lt;= 0 disables this connector.</span></span><br><span class="line"><span class="comment"># On Unix/Linux systems, ports &lt; 1024 require root permissions.</span></span><br><span class="line"><span class="comment"># Recommended value: 80 or 8080</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpPort</span> = <span class="string">9999</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify the interface for Jetty to bind the standard connector.</span></span><br><span class="line"><span class="comment"># You may specify an ip or an empty value to bind to all interfaces.</span></span><br><span class="line"><span class="comment"># Specifying localhost will result in Gitblit ONLY listening to requests to</span></span><br><span class="line"><span class="comment"># localhost.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpBindInterface</span> = <span class="string">localhost</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-服务启动"><a href="#4-服务启动" class="headerlink" title="4.  服务启动"></a>4.  服务启动</h2><p>GitBlit目录下，在<code>installService.cmd</code>中。</p>
+<ul>
+<li>修改ARCH，32位系统：<code>SET ARCH=x86</code>；64位系统：<code>SET ARCH=amd64</code>。</li>
+<li>添加CD为程序目录 <code>SET CD=D:\newsoft\gitblit-1.9.1</code>(安装目录)。</li>
+<li><code>StartParams</code>里的启动参数，置空</li>
+</ul>
+<p><img src="/images/data/20210118004401.png" alt="image-20210118004401684"></p>
+<p>服务注册表中即可查看该服务，可重启、停止。</p>
+<p><img src="/images/data/20210118004537.png" alt="image-20210118004536991"></p>
+<h2 id="5-浏览器访问"><a href="#5-浏览器访问" class="headerlink" title="5. 浏览器访问"></a>5. 浏览器访问</h2><p>账号密码默认<code>admin/admin</code></p>
+<p><img src="/images/data/20210118004801.png" alt="image-20210118004801412"></p>
+<h1 id="GitBlit简单使用"><a href="#GitBlit简单使用" class="headerlink" title="GitBlit简单使用"></a>GitBlit简单使用</h1><h2 id="1-克隆仓库"><a href="#1-克隆仓库" class="headerlink" title="1.克隆仓库"></a>1.克隆仓库</h2><p>&emsp;&emsp;进入仓库概况页面，在版本仓库地址栏选择<code>http</code>协议的<strong>git</strong>链接，复制该链接。</p>
+<p><img src="/images/data/20201029220747.png" alt="image-20201029220747735"></p>
+<p>&emsp;&emsp;选择本地合适的文件路径，打开cmd窗口克隆该仓库即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git <span class="built_in">clone</span> http://couragehe@XX.XX.XX.XX:9999/r/demo.git</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/data/20201029221614.png" alt="image-20201029221614544"></p>
+<h2 id="2-账户认证"><a href="#2-账户认证" class="headerlink" title="2.账户认证"></a>2.账户认证</h2><p>&emsp;&emsp;打开项目路径的cmd窗口，推送项目至远程<code>git</code>仓库，首次推送会弹出windows安全认证，输入密码即可保存至windows。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/images/data/20201029221556.png" alt="image-20201029221556682"></p>
+<h2 id="3-分支问题"><a href="#3-分支问题" class="headerlink" title="3.分支问题"></a>3.分支问题</h2><p><strong>gitblit</strong>中没有创建工单（分支）的按钮，但并不代表不支持分支。做法便是将git仓库拉取至本地中，新建分支然后上传至远端仓库即可。</p>
+<h3 id="3-1-显示分支列表"><a href="#3-1-显示分支列表" class="headerlink" title="3.1 显示分支列表"></a>3.1 显示分支列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch </span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-新建分支"><a href="#3-2-新建分支" class="headerlink" title="3.2 新建分支"></a>3.2 新建分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-切换分支"><a href="#3-3-切换分支" class="headerlink" title="3.3 切换分支"></a>3.3 切换分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-远程分支新建"><a href="#3-4-远程分支新建" class="headerlink" title="3.4 远程分支新建"></a>3.4 远程分支新建</h3><p>&emsp;&emsp;在本地新分支下，推送本地分支至远程仓库中的分支（非强制要求同名），使用以下命令对应即可。其中第一个分支名<code>demo</code>对应的是本地分支名，第二个分支名<code>demo</code>对应的是远程分支名。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin demo:demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-本地仓库分支关联远程分支"><a href="#3-5-本地仓库分支关联远程分支" class="headerlink" title="3.5 本地仓库分支关联远程分支"></a>3.5 本地仓库分支关联远程分支</h3><p>使用该句之前必须确保远程仓库存在该分支，否则报错。关联之后便可直接使用<code>git push</code>或者<code>git pull</code>进行推送或拉取，命令简单明了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch --<span class="built_in">set</span>-upstream-to=origin/demo</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo博客安装(一)</title>
     <url>/2020/09/14/ed31eabc1ddf/</url>
     <content><![CDATA[<p>欢迎使用 Hexo，本文档将帮助您快速上手。如果您在使用过程中遇到问题，请查看 <a href="https://hexo.io/zh-cn/docs/troubleshooting">问题解答</a> 中的解答，或者在 <a href="https://github.com/hexojs/hexo/issues">GitHub</a>、<a href="https://groups.google.com/group/hexo">Google Group</a> 上提问。</p>
@@ -190,7 +249,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2022/07/20/8875b2568660/</url>
+    <url>/2020/09/14/a07b879cfc08/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <a id="more"></a>
 
@@ -211,117 +270,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo添加分类、标签、关于页(二)</title>
-    <url>/2020/09/14/993996b2e602/</url>
-    <content><![CDATA[<blockquote>
-<p>生成的新文件夹都在source下也就是和放文章的文件夹一块 以下所有命令都是在博客文件目录下执行</p>
-</blockquote>
-<h2 id="创建“分类”选项"><a href="#创建“分类”选项" class="headerlink" title="创建“分类”选项"></a>创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行下方命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
-
-<p>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>添加type: “categories”到内容中，添加后是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>保存并关闭文件。</p>
-<p>给文章添加“categories”属性</p>
-<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>至此，成功给文章添加分类，点击首页的“分类”可以看到该分类下的所有文章。当然，只有添加了categories: xxx的文章才会被收录到首页的“分类”中。</p>
-<h2 id="创建“标签”选项"><a href="#创建“标签”选项" class="headerlink" title="创建“标签”选项"></a>创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-
-<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>保存并关闭文件。</p>
-<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo博客安装</span><br><span class="line">date: 2020-09-14 00:58:33</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建“关于”选项"><a href="#创建“关于”选项" class="headerlink" title="创建“关于”选项"></a>创建“关于”选项</h2><p>生成“关于”页并添加tpye属性</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure>
-
-<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 关于我</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">type: about</span><br><span class="line">---</span><br><span class="line"><span class="section">## 个人简介</span></span><br><span class="line">……</span><br><span class="line"><span class="section">## 其他</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
-
-<p>保存并关闭文件。</p>
-<p>点击首页的“关于”可以看到该文件所书写的内容。</p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GitBlit安装与使用</title>
-    <url>/2021/01/18/e4bb3bf545c5/</url>
-    <content><![CDATA[<h1 id="GitBlit安装"><a href="#GitBlit安装" class="headerlink" title="GitBlit安装"></a>GitBlit安装</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>要求Windows电脑安装JAVA环境，在<a href="http://gitblit.github.io/gitblit/">GitBlit首页</a>可根据操作系统选择不同的版本安装。</p>
-<p><img src="/images/data/20210117200211.png" alt="image-20210117200211238"></p>
-<a id="more"></a>
-
-<h2 id="2-解压"><a href="#2-解压" class="headerlink" title="2.  解压"></a>2.  解压</h2><p>文件下载后，解压至一个文件夹下即可，无需安装。下图是解压后的文件列表。</p>
-<h2 id="3-配置文件"><a href="#3-配置文件" class="headerlink" title="3. 配置文件"></a><img src="/images/data/20210117200502.png" alt="image-20210117200502037">3. 配置文件</h2><p>Gitblit目录下的data文件夹中的<code>defaults.properties</code>是默认配置文件，另外需要修改<code>gitblit.properties</code>以覆盖默认配置。</p>
-<ul>
-<li><code>server.httpPort</code>：http协议端口号</li>
-<li><code>server.httpBindInterface</code>：http服务器的ip地址</li>
-</ul>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># GITBLIT.PROPERTIES</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your custom settings in this file and/or include settings defined in</span></span><br><span class="line"><span class="comment"># other properties files.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Include Gitblit&#x27;s &#x27;defaults.properties&#x27; within your configuration.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># <span class="doctag">NOTE:</span> Gitblit will not automatically reload &quot;included&quot; properties.  Gitblit</span></span><br><span class="line"><span class="comment"># only watches the &#x27;gitblit.properties&#x27; file for modifications.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Paths may be relative to the $&#123;baseFolder&#125; or they may be absolute.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># COMMA-DELIMITED</span></span><br><span class="line"><span class="comment"># SINCE 1.7.0</span></span><br><span class="line"><span class="attr">include</span> = <span class="string">defaults.properties</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Define your overrides or custom settings below</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Standard http port to serve.  &lt;= 0 disables this connector.</span></span><br><span class="line"><span class="comment"># On Unix/Linux systems, ports &lt; 1024 require root permissions.</span></span><br><span class="line"><span class="comment"># Recommended value: 80 or 8080</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpPort</span> = <span class="string">9999</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify the interface for Jetty to bind the standard connector.</span></span><br><span class="line"><span class="comment"># You may specify an ip or an empty value to bind to all interfaces.</span></span><br><span class="line"><span class="comment"># Specifying localhost will result in Gitblit ONLY listening to requests to</span></span><br><span class="line"><span class="comment"># localhost.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># SINCE 0.5.0</span></span><br><span class="line"><span class="comment"># RESTART REQUIRED</span></span><br><span class="line"><span class="meta">server.httpBindInterface</span> = <span class="string">localhost</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="4-服务启动"><a href="#4-服务启动" class="headerlink" title="4.  服务启动"></a>4.  服务启动</h2><p>GitBlit目录下，在<code>installService.cmd</code>中。</p>
-<ul>
-<li>修改ARCH，32位系统：<code>SET ARCH=x86</code>；64位系统：<code>SET ARCH=amd64</code>。</li>
-<li>添加CD为程序目录 <code>SET CD=D:\newsoft\gitblit-1.9.1</code>(安装目录)。</li>
-<li><code>StartParams</code>里的启动参数，置空</li>
-</ul>
-<p><img src="/images/data/20210118004401.png" alt="image-20210118004401684"></p>
-<p>服务注册表中即可查看该服务，可重启、停止。</p>
-<p><img src="/images/data/20210118004401-16583185810044.png" alt="image-20210118004401684"></p>
-<h2 id="5-浏览器访问"><a href="#5-浏览器访问" class="headerlink" title="5. 浏览器访问"></a>5. 浏览器访问</h2><p>账号密码默认<code>admin/admin</code></p>
-<p><img src="/images/data/20210118004801.png" alt="image-20210118004801412"></p>
-<h1 id="GitBlit简单使用"><a href="#GitBlit简单使用" class="headerlink" title="GitBlit简单使用"></a>GitBlit简单使用</h1><h2 id="1-克隆仓库"><a href="#1-克隆仓库" class="headerlink" title="1.克隆仓库"></a>1.克隆仓库</h2><p>&emsp;&emsp;进入仓库概况页面，在版本仓库地址栏选择<code>http</code>协议的<strong>git</strong>链接，复制该链接。</p>
-<p><img src="/images/data/20201029220747.png" alt="image-20201029220747735"></p>
-<p>&emsp;&emsp;选择本地合适的文件路径，打开cmd窗口克隆该仓库即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git <span class="built_in">clone</span> http://couragehe@XX.XX.XX.XX:9999/r/demo.git</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/data/20201029221614.png" alt="image-20201029221614544"></p>
-<h2 id="2-账户认证"><a href="#2-账户认证" class="headerlink" title="2.账户认证"></a>2.账户认证</h2><p>&emsp;&emsp;打开项目路径的cmd窗口，推送项目至远程<code>git</code>仓库，首次推送会弹出windows安全认证，输入密码即可保存至windows。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
-
-
-
-<p><img src="/images/data/20201029221556.png" alt="image-20201029221556682"></p>
-<h2 id="3-分支问题"><a href="#3-分支问题" class="headerlink" title="3.分支问题"></a>3.分支问题</h2><p><strong>gitblit</strong>中没有创建工单（分支）的按钮，但并不代表不支持分支。做法便是将git仓库拉取至本地中，新建分支然后上传至远端仓库即可。</p>
-<h3 id="3-1-显示分支列表"><a href="#3-1-显示分支列表" class="headerlink" title="3.1 显示分支列表"></a>3.1 显示分支列表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch </span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-新建分支"><a href="#3-2-新建分支" class="headerlink" title="3.2 新建分支"></a>3.2 新建分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch demo</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-切换分支"><a href="#3-3-切换分支" class="headerlink" title="3.3 切换分支"></a>3.3 切换分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout demo</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-远程分支新建"><a href="#3-4-远程分支新建" class="headerlink" title="3.4 远程分支新建"></a>3.4 远程分支新建</h3><p>&emsp;&emsp;在本地新分支下，推送本地分支至远程仓库中的分支（非强制要求同名），使用以下命令对应即可。其中第一个分支名<code>demo</code>对应的是本地分支名，第二个分支名<code>demo</code>对应的是远程分支名。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin demo:demo</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-5-本地仓库分支关联远程分支"><a href="#3-5-本地仓库分支关联远程分支" class="headerlink" title="3.5 本地仓库分支关联远程分支"></a>3.5 本地仓库分支关联远程分支</h3><p>使用该句之前必须确保远程仓库存在该分支，否则报错。关联之后便可直接使用<code>git push</code>或者<code>git pull</code>进行推送或拉取，命令简单明了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch --<span class="built_in">set</span>-upstream-to=origin/demo</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -461,11 +409,11 @@
 </ul>
 <p>末行模式也称ex转义模式。在命令模式下，用户按“**:<strong>”键即可进入末行模式下，此时Vi会在显示窗口的最后一行(通常也是屏幕的最后一行)显示一个“</strong>:**”作为末行模式的提示符，等待用户输入命令。多数文件管理命令都是在此模式下执行的(如把编辑缓冲区的内容写到文件中等)。末行命令执行完后，Vi自动回到命令模式。</p>
 <p><strong>进入插入模式:</strong></p>
-<p>i: 插入光标前一个字符 </p>
-<p>I: 插入行首 </p>
-<p>a: 插入光标后一个字符 </p>
-<p>A: 插入行未 </p>
-<p>o: 向下新开一行,插入行首 </p>
+<p>i: 插入光标前一个字符</p>
+<p>I: 插入行首</p>
+<p>a: 插入光标后一个字符</p>
+<p>A: 插入行未</p>
+<p>o: 向下新开一行,插入行首</p>
 <p>O: 向上新开一行,插入行首</p>
 <p><strong>进入末行模式</strong></p>
 <p>在命令模式下，用户按“:”键即可进入末行模式</p>
@@ -487,57 +435,96 @@
 <p>:1, 10s/abc/123/g</p>
 <p><strong>vim</strong>里执行 <strong>shell</strong> 下命令:</p>
 <p>末行模式里输入!,后面跟命令</p>
-<p> <strong>进入命令模式:</strong></p>
+<p><strong>进入命令模式:</strong></p>
 <p>ESC:从插入模式或末行模式进入命令模式</p>
 <p><strong>移动光标:</strong></p>
-<p>h: 左移 </p>
-<p>j: 下移 </p>
-<p>k: 上移 </p>
+<p>h: 左移</p>
+<p>j: 下移</p>
+<p>k: 上移</p>
 <p>l: 右移</p>
-<p>M: 光标移动到当前屏幕的中间行 </p>
-<p>L: 光标移动到当前屏幕最后一行行首 </p>
-<p>gg: 光标移动文件开头 </p>
+<p>M: 光标移动到当前屏幕的中间行</p>
+<p>L: 光标移动到当前屏幕最后一行行首</p>
+<p>gg: 光标移动文件开头</p>
 <p>G: 光标移动到文件末尾</p>
 <p>G: 移动到指定行,行号G (扩展：打开文件时跳转指定行,vi 文件名 +行数)</p>
-<p>w: 向后一次移动一个字 </p>
+<p>w: 向后一次移动一个字</p>
 <p>b: 向前一次移动一个字</p>
-<p>{: 按段移动,上移 </p>
+<p>{: 按段移动,上移</p>
 <p>}: 按段移动,下移</p>
-<p>Ctr-d: 向下翻半屏 </p>
+<p>Ctr-d: 向下翻半屏</p>
 <p>Ctr-u: 向上翻半屏</p>
-<p>Ctr-f: 向下翻一屏 </p>
+<p>Ctr-f: 向下翻一屏</p>
 <p>Ctr-b: 向上翻一屏</p>
 <p><strong>撤销命令:</strong></p>
-<p>u: 一步一步撤销 </p>
+<p>u: 一步一步撤销</p>
 <p>Ctr-r: 反撤销</p>
 <p><strong>删除命令:</strong></p>
-<p>x: 删除光标后一个字符,相当于 Del </p>
+<p>x: 删除光标后一个字符,相当于 Del</p>
 <p>X: 删除光标前一个字符,相当于 Backspace</p>
 <p>dd: 删除光标所在行,n dd 删除指定的行数</p>
-<p>D: 删除光标后本行所有内容,包含光标所在字符 </p>
+<p>D: 删除光标后本行所有内容,包含光标所在字符</p>
 <p>d0: 删除光标前本行所有内容,不包含光标所在字符</p>
 <p>dw: 删除光标开始位置的字,包含光标所在字符</p>
 <p><strong>复制粘贴:</strong></p>
-<p>yy: 复制当前行,n yy 复制 n 行 </p>
+<p>yy: 复制当前行,n yy 复制 n 行</p>
 <p>p: 在光标所在位置向下新开辟一行,粘贴</p>
 <p><strong>替换操作:</strong></p>
-<p>r: 替换当前字符 </p>
+<p>r: 替换当前字符</p>
 <p>R: 替换当前行光标后的字符</p>
 <p><strong>文本行移动:</strong></p>
-<p>&gt;&gt;: 文本行右移 </p>
+<p>&gt;&gt;: 文本行右移</p>
 <p>&lt;&lt;: 文本行左移</p>
 <p><strong>重复命令:</strong></p>
 <p>.: 重复上一次操作的命令</p>
 <p><strong>可视模式:</strong></p>
-<p>v: 按字符移动,选中文本 </p>
+<p>v: 按字符移动,选中文本</p>
 <p>V: 按行移动,选中文本可视模式可以配合 d, y, &gt;&gt;, &lt;&lt; 实现对文本块的删除,复制,左右移动</p>
-<h2 id="进程管理命令"><a href="#进程管理命令" class="headerlink" title="进程管理命令"></a>进程管理命令</h2><p><strong>ps aux | grep xxx</strong>         <strong>查看系统中所有进程</strong></p>
-<p><strong>ps -ef | grep xxx</strong>          <strong>可以查看子父进程之间的关系</strong></p>
-<p><strong>kill -9 PID</strong>         <strong>强制杀死进程</strong></p>
-<p><strong>top</strong>            <strong>查看所有进程/cpu/内存/负载</strong></p>
-<p><strong>netstat -anp |grep</strong> <strong>进程号</strong>    <strong>查看该进程网络信息</strong></p>
-<p><strong>netstat -nlp   | grep</strong> <strong>端口号</strong>  <strong>查看网络端口号占用情况</strong></p>
+<h2 id="进程管理命令"><a href="#进程管理命令" class="headerlink" title="进程管理命令"></a>进程管理命令</h2><p><strong>ps aux | grep xxx</strong> <strong>查看系统中所有进程</strong></p>
+<p><strong>ps -ef | grep xxx</strong> <strong>可以查看子父进程之间的关系</strong></p>
+<p><strong>kill -9 PID</strong> <strong>强制杀死进程</strong></p>
+<p><strong>top</strong> <strong>查看所有进程/cpu/内存/负载</strong></p>
+<p><strong>netstat -anp |grep</strong> <strong>进程号</strong> <strong>查看该进程网络信息</strong></p>
+<p><strong>netstat -nlp | grep</strong> <strong>端口号</strong> <strong>查看网络端口号占用情况</strong></p>
 <p>（如netstat：未找到命令，运行<code>yum install net-tools -y</code>命令安装网络工具即可）</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新装虚拟机-网络配置</title>
+    <url>/2022/08/10/f459a23fb1fd/</url>
+    <content><![CDATA[<h1 id="新装虚拟机-网络配置"><a href="#新装虚拟机-网络配置" class="headerlink" title="新装虚拟机-网络配置"></a>新装虚拟机-网络配置</h1><h2 id="1、vmware网络简介"><a href="#1、vmware网络简介" class="headerlink" title="1、vmware网络简介"></a>1、vmware网络简介</h2><h3 id="1-Host-Only（仅主机模式）"><a href="#1-Host-Only（仅主机模式）" class="headerlink" title="1.Host-Only（仅主机模式）"></a><strong>1.Host-Only（仅主机模式）</strong></h3><p>Host-Only模式其实就是NAT模式去除了虚拟NAT设备，然后使用VMware Network Adapter VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，Host-Only模式将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与主机相互通讯。其网络结构如下图所示：<a id="more"></a><img src="/images/data/ewqewq.png" alt="ewqewq"></p>
+<h3 id="2-Bridged（桥接模式）"><a href="#2-Bridged（桥接模式）" class="headerlink" title="2.Bridged（桥接模式）"></a><strong>2.Bridged（桥接模式）</strong></h3><p>什么是桥接模式？桥接模式就是将主机网卡与虚拟机虚拟的网卡利用虚拟网桥进行通信。在桥接的作用下，类似于把物理主机虚拟为一个交换机，所有桥接设置的虚拟机连接到这个交换机的一个接口上，物理主机也同样插在这个交换机当中，所以所有桥接下的网卡与网卡都是交换模式的，相互可以访问而不干扰。在桥接模式下，虚拟机ip地址需要与主机在同一个网段，如果需要联网，则网关与DNS需要与主机网卡一致。其网络结构如下图所示：<img src="/images/data/32232232.png" alt="32232232"></p>
+<h3 id="3-NAT（地址转换模式）"><a href="#3-NAT（地址转换模式）" class="headerlink" title="3.NAT（地址转换模式）"></a><strong>3.NAT（地址转换模式）</strong></h3><p>NAT技术应用在internet网关和路由器上，比如192.168.0.123这个地址要访问internet，它的数据包就要通过一个路由器，而路由器拥有一个能访问internet的ip地址，这样的路由器就要在收发数据包时，对数据包的IP协议层数据进行更改（即 NAT），以使私有网段的主机能够顺利访问internet。<br>刚刚我们说到，如果你的网络ip资源紧缺，但是你又希望你的虚拟机能够联网，这时候NAT模式是最好的选择。NAT模式借助虚拟NAT设备（就是一个路由器）和虚拟DHCP服务器，使得虚拟机可以联网。其网络结构如下图所示</p>
+<p><img src="/images/data/wqweqe12.png" alt="‘wqweqe12’"></p>
+<h2 id="2、具体配置"><a href="#2、具体配置" class="headerlink" title="2、具体配置"></a>2、具体配置</h2><p>我们网络选择使用nat模式</p>
+<h3 id="1-网络编辑器设置"><a href="#1-网络编辑器设置" class="headerlink" title="1. 网络编辑器设置"></a>1. 网络编辑器设置</h3><p>选择虚拟网络编辑器</p>
+<p><img src="/images/data/clip_image002-16600986659924.jpg" alt="img"></p>
+<p>选择nat模式，然后点击右下角的更改设置</p>
+<p><img src="/images/data/clip_image004-16600986659935.jpg" alt="img"></p>
+<p>设置子网IP：192.168.52.0</p>
+<p>子网掩码：255.255.255.0</p>
+<p><img src="/images/data/clip_image006-16600986659936.jpg" alt="img"></p>
+<p>点击NAT设置</p>
+<p><img src="/images/data/12313.png" alt="12313"></p>
+<p>个人电脑网络设置：找到网络连接中的VMnet8</p>
+<p><img src="/images/data/clip_image010.jpg" alt="img"></p>
+<p>设置：</p>
+<p><img src="/images/data/21.png" alt="21"></p>
+<h3 id="2-网卡设置"><a href="#2-网卡设置" class="headerlink" title="2. 网卡设置"></a>2. 网卡设置</h3><p>#<code>vim /etc/sysconfig/network-scripts/ifcfg-ens33</code>进入网卡设置</p>
+<p>红色是需要修改和添加的地方，按 i进入编辑模式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TYPE&#x3D;Ethernet</span><br><span class="line">PROXY_METHOD&#x3D;none</span><br><span class="line">BROWSER_ONLY&#x3D;no</span><br><span class="line">BOOTPROTO&#x3D;static</span><br><span class="line">DEFROUTE&#x3D;yes</span><br><span class="line">IPV4_FAILURE_FATAL&#x3D;no</span><br><span class="line">IPV6INIT&#x3D;yes</span><br><span class="line">IPV6_AUTOCONF&#x3D;yes</span><br><span class="line">IPV6_DEFROUTE&#x3D;yes</span><br><span class="line">IPV6_FAILURE_FATAL&#x3D;no</span><br><span class="line">IPV6_ADDR_GEN_MODE&#x3D;stable-privacy</span><br><span class="line">NAME&#x3D;ens33</span><br><span class="line">UUID&#x3D;4f81f256-131f-4fdb-9365-1ae4c7882aa2</span><br><span class="line">DEVICE&#x3D;ens33</span><br><span class="line">ONBOOT&#x3D;yes</span><br><span class="line">IPADDR&#x3D;192.168.52.100</span><br><span class="line">NETMASK&#x3D;255.255.255.0</span><br><span class="line">GATEWAY&#x3D;192.168.52.1</span><br><span class="line">DNS1&#x3D;8.8.8.8</span><br></pre></td></tr></table></figure>
+
+<p>改完后【ESC】退出，：wq保存设置退出</p>
+<p>#重启网卡 <code>service network restart</code></p>
+<p><img src="/images/data/clip_image014.jpg" alt="img"></p>
+<p>测试网络是否连通外网：<code>ping www.baidu.com</code></p>
+<p><img src="/images/data/image-20220810142652206.png" alt="image-20220810142652206"></p>
+<p>到此centos7.4安装完成，网络也配置成功</p>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -553,6 +540,8 @@
 <p>Nginx(“engine x”)是一款由俄罗斯的程序设计师<code>Igor Sysoev</code>所开发高性能的<strong>Web</strong>和<strong>反向代理</strong>服务器，也是一个<strong>IMAP/POP3/SMTP</strong>代理服务器，在高连接并发的情况下，Nginx是Apache服务器不错的替代品</p>
 </blockquote>
 <p>系统平台：CentOS release 6.6-7.8（64位）</p>
+<a id="more"></a>
+
 <h2 id="一、安装编译工具及库文件"><a href="#一、安装编译工具及库文件" class="headerlink" title="一、安装编译工具及库文件"></a>一、安装编译工具及库文件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# yum -y install gcc pcre-devel zlib-devel openssl openssl-devel</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -570,7 +559,8 @@
 
 <h3 id="4-编译安装"><a href="#4-编译安装" class="headerlink" title="4.编译安装"></a>4.编译安装</h3><ul>
 <li><h3 id="prefix：指点安装目录"><a href="#prefix：指点安装目录" class="headerlink" title="--prefix：指点安装目录"></a><code>--prefix</code>：指点安装目录</h3></li>
-<li><code>--with</code>：指定安装模块</li>
+<li><p><code>--with</code>：指定安装模块</p>
+</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost pcre-8.35]# ./configure  --prefix=/usr/local/nginx --with-http_ssl_module --with-http_gzip_static_module --with-http_stub_status_module </span><br><span class="line">[root@localhost pcre-8.35]# make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 
@@ -579,7 +569,7 @@
 <p><img src="/images/data/20200821234746.png" alt="image-20200821234746176"></p>
 <h2 id="三、Nginx配置"><a href="#三、Nginx配置" class="headerlink" title="三、Nginx配置"></a>三、Nginx配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# cd /usr/local/nginx/conf/</span><br><span class="line">[root@localhost conf]# vim nginx.conf</span><br></pre></td></tr></table></figure>
 
-<h3 id="1-Nginx的默认配置文件"><a href="#1-Nginx的默认配置文件" class="headerlink" title="1.Nginx的默认配置文件"></a>1.Nginx的默认配置文件</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">    #                  &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">    #                  &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       81;</span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        #error_page  404              /404.html;</span><br><span class="line"></span><br><span class="line">        # redirect server error pages to the static page /50x.html</span><br><span class="line">        #</span><br><span class="line">        error_page   500 502 503 504  /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">            root   html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        # proxy the PHP scripts to Apache listening on 127.0.0.1:80</span><br><span class="line">        #</span><br><span class="line">        #location ~ \.php$ &#123;</span><br><span class="line">        #    proxy_pass   http://127.0.0.1;</span><br><span class="line">        #&#125;</span><br><span class="line"></span><br><span class="line">        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span><br><span class="line">        #</span><br><span class="line">        #location ~ \.php$ &#123;</span><br><span class="line">        #    root           html;</span><br><span class="line">        #    fastcgi_pass   127.0.0.1:9000;</span><br><span class="line">        #    fastcgi_index  index.php;</span><br><span class="line">        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span><br><span class="line">        #    include        fastcgi_params;</span><br><span class="line">        #&#125;</span><br><span class="line"></span><br><span class="line">        # deny access to .htaccess files, if Apache&#x27;s document root</span><br><span class="line">        # concurs with nginx&#x27;s one</span><br><span class="line">        #</span><br><span class="line">        #location ~ /\.ht &#123;</span><br><span class="line">        #    deny  all;</span><br><span class="line">        #&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       8000;</span><br><span class="line">    #    listen       somename:8080;</span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       443 ssl;</span><br><span class="line">    #    server_name  localhost;</span><br><span class="line"></span><br><span class="line">    #    ssl_certificate      cert.pem;</span><br><span class="line">    #    ssl_certificate_key  cert.key;</span><br><span class="line"></span><br><span class="line">    #    ssl_session_cache    shared:SSL:1m;</span><br><span class="line">    #    ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">    #    ssl_ciphers  HIGH:!aNULL:!MD5;</span><br><span class="line">    #    ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-Nginx的默认配置文件"><a href="#1-Nginx的默认配置文件" class="headerlink" title="1.Nginx的默认配置文件"></a>1.Nginx的默认配置文件</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">    #                  &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">    #                  &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       81;</span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        #error_page  404              /404.html;</span><br><span class="line"></span><br><span class="line">        # redirect server error pages to the static page /50x.html</span><br><span class="line">        #</span><br><span class="line">        error_page   500 502 503 504  /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">            root   html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        # proxy the PHP scripts to Apache listening on 127.0.0.1:80</span><br><span class="line">        #</span><br><span class="line">        #location ~ \.php$ &#123;</span><br><span class="line">        #    proxy_pass   http://127.0.0.1;</span><br><span class="line">        #&#125;</span><br><span class="line"></span><br><span class="line">        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span><br><span class="line">        #</span><br><span class="line">        #location ~ \.php$ &#123;</span><br><span class="line">        #    root           html;</span><br><span class="line">        #    fastcgi_pass   127.0.0.1:9000;</span><br><span class="line">        #    fastcgi_index  index.php;</span><br><span class="line">        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span><br><span class="line">        #    include        fastcgi_params;</span><br><span class="line">        #&#125;</span><br><span class="line"></span><br><span class="line">        # deny access to .htaccess files, if Apache&#x27;s document root</span><br><span class="line">        # concurs with nginx&#x27;s one</span><br><span class="line">        #</span><br><span class="line">        #location ~ /\.ht &#123;</span><br><span class="line">        #    deny  all;</span><br><span class="line">        #&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       8000;</span><br><span class="line">    #    listen       somename:8080;</span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       443 ssl;</span><br><span class="line">    #    server_name  localhost;</span><br><span class="line"></span><br><span class="line">    #    ssl_certificate      cert.pem;</span><br><span class="line">    #    ssl_certificate_key  cert.key;</span><br><span class="line"></span><br><span class="line">    #    ssl_session_cache    shared:SSL:1m;</span><br><span class="line">    #    ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">    #    ssl_ciphers  HIGH:!aNULL:!MD5;</span><br><span class="line">    #    ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-Nginx配置文件结构"><a href="#2-Nginx配置文件结构" class="headerlink" title="2.Nginx配置文件结构"></a>2.Nginx配置文件结构</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">..              #全局块</span><br><span class="line"></span><br><span class="line">events &#123;         #events块</span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http      #http块</span><br><span class="line">&#123;</span><br><span class="line">    ...   #http全局块</span><br><span class="line">    server        #server块</span><br><span class="line">    &#123; </span><br><span class="line">        ...       #server全局块</span><br><span class="line">        location [PATTERN]   #location块</span><br><span class="line">        &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">        location [PATTERN] </span><br><span class="line">        &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    server</span><br><span class="line">    &#123;</span><br><span class="line">      ...</span><br><span class="line">    &#125;</span><br><span class="line">    ...     #http全局块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -633,6 +623,8 @@
     <title>Nginx添加模块</title>
     <url>/2020/10/18/7a13413b21cc/</url>
     <content><![CDATA[<h1 id="Nginx添加模块"><a href="#Nginx添加模块" class="headerlink" title="Nginx添加模块"></a>Nginx添加模块</h1><p>&emsp;&emsp;编译安装Nginx的时候，有些模块默认不会安装，比如<code>http_ssl_module</code>。那么为了让Nginx支持HTTPS，必须添加这个模块。下面讲解如何在已经安装过后在此添加新的模块。</p>
+<a id="more"></a>
+
 <table>
 <thead>
 <tr>
@@ -691,87 +683,6 @@
         <tag>Linux</tag>
         <tag>Nginx</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>辛丑牛年新年展望（2021）</title>
-    <url>/2021/02/12/6ea85d902251/</url>
-    <content><![CDATA[<h1 id="辛丑牛年新年展望（2021）"><a href="#辛丑牛年新年展望（2021）" class="headerlink" title="辛丑牛年新年展望（2021）"></a>辛丑牛年新年展望（2021）</h1><p>&emsp;&emsp;2021年2月12日为辛丑牛年正月初一，就农历而言，今天便就是中国的农历新年。作为一个对传统佳节有浓厚感情的传统国人，辞旧迎新、展望未来便是本文的初衷。2020元旦总结虽有稍许记录，却未整理成文，今天借这个机会发表啦！</p>
-<a id="more"></a>
-
-<h2 id="2020年度总结"><a href="#2020年度总结" class="headerlink" title="2020年度总结"></a>2020年度总结</h2><p>&emsp;&emsp;兜兜转转，大学本科已经步入最后一个年头了。这一年，正经世界百年未有之大变局，时代选择我们来见证，也是由我们来建设这个时代。本文便来讲讲我这一年的见证与建设，首先就开门见山说说2020 的个人生涯关键词：<strong>迷茫</strong>、<strong>焦虑</strong>、<strong>尝试</strong>、<strong>奋斗</strong>。</p>
-<h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><ul>
-<li><strong>迷茫</strong></li>
-</ul>
-<p>&emsp;&emsp;为什么说是迷茫呢？因为疫情前期一直待在家中，本人对未来考研<strong>OR</strong>工作还未明确目标。目标未定，规划更无须再论。那段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
-<ul>
-<li><strong>焦虑</strong></li>
-</ul>
-<p>&emsp;&emsp;每个找工作的娃的焦虑，想必每个人都或多或少有过经历！希望早日结束这个状态，现在终于明白铁饭碗为什么这么香了！</p>
-<ul>
-<li><strong>尝试</strong></li>
-</ul>
-<p>&emsp;&emsp;应届生的身份，敞开了许多大门，事业单位、公务员、研究生、企业等都可以去尝试，去争取。在2020这一年，我一直都在不断尝试，海投简历、面试IT公司、尝试事业单位和备考研究生等等……</p>
-<ul>
-<li><strong>奋斗</strong></li>
-</ul>
-<p>&emsp;&emsp;机会虽然很多，但只有那些有准备的人才能抓住。这一年也是在不断奋斗的一年，同疫情做斗争、刷题背八股文、上海得帆实习、考研备考等。</p>
-<h3 id="月历表"><a href="#月历表" class="headerlink" title="月历表"></a>月历表</h3><ul>
-<li><strong>1月</strong>：大学本科生涯最后的课程正规考试，回家！！！</li>
-</ul>
-<p>&emsp;&emsp;大三上学期的期末考试在一月进行，《数据库原理及应用》，《计算机组成与系统结构》等科目进行闭卷考试，因为疫情在家上网课的原因，这便是最后一次正规的课程结课考试了。1月11号放寒假回家，归家途中经过疫情还未报道的武汉，回家不久就安排在家居家隔离，每天都有村里干部来测体温。</p>
-<ul>
-<li><strong>2月</strong>：疫情造成的蝴蝶效应！</li>
-</ul>
-<p>&emsp;&emsp;2月的头号大事便是春节啦！记忆之初，春节都是热热闹闹的，百年未有之大变局中的春节只能是远程拜年啦！隔离的春节，爱心却两不相隔，一方有难，八方来援这句话在湖北得到广泛运用。一省帮一市、村里送菜送粮、邻里互帮互助等等奉献爱心的行为都让我深受感动。相比之下，国外的某些XXX恶言恶语、不怀好意的反响就显得太过无耻卑鄙，进一步加深了我对ZF的认同并坚定自身立场。</p>
-<ul>
-<li><strong>3月</strong>：疫情期间在家赋闲，陷入焦虑</li>
-</ul>
-<p>&emsp;&emsp;这段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
-<p>疫情实时播报频道：<a href="https://t.me/nCoV2019">https://t.me/nCoV2019</a></p>
-<ul>
-<li><strong>4月</strong>：第一次接单干活，实现技术变现</li>
-</ul>
-<p>&emsp;&emsp;这段期间在家里上网课，课余时间便想找些事情做一下。机缘巧合之下加了一个做私活的群，其中接了一个安卓app的项目，主要任务是写一个类似星巴克咖啡店的APP。另外是一个Web端图书管理系统，前后端交互的形式，由于时间不太够前端草草写了一下。小项目没赚几个钱，但这是首次使用技术变现，值得纪念一下。不得不说，写的界面真丑！哈哈哈</p>
-<p><img src="/images/data/20210213010621.png" alt="image-20210213010621705"></p>
-<ul>
-<li><strong>5月</strong>：面试、准备面试相交织</li>
-</ul>
-<p>&emsp;&emsp;这是一个面试月，投的基本都是各大公司的实习岗位，有上海得帆、字节跳动、华讯网络等。有喜有忧，大公司基本都被拒了，也是自身准备不足的结果，特别是字节跳动的笔试特别考核算法，所以还需历练！所幸还是有所斩获，收获了上海得帆的实习offer。</p>
-<p><img src="/images/20210213011312.png" alt="image-20210213011312539"></p>
-<ul>
-<li><strong>6月</strong>：石油项目</li>
-</ul>
-<p>&emsp;&emsp;第一次接触实际项目,学校老师招人干的一个分父子模块的后台管理项目。这是一个从需求到项目成型的实际项目，我主要参与前期的数据库建表、项目搭建。</p>
-<ul>
-<li><strong>7月</strong>：得帆公司培训</li>
-</ul>
-<p>&emsp;&emsp;7月21日上海得帆实习，第一次独自走向远方，第一次参与这种IT规范培训。在这期间结识了不少优秀的同仁，见贤思齐焉！加油！</p>
-<ul>
-<li><strong>8-9月</strong>：上海实习</li>
-</ul>
-<p>&emsp;&emsp;上海得帆公司外派我前往中骏地产参与了ESB项目的开发，新力地产的门户项目。</p>
-<ul>
-<li><strong>10-11月</strong>：回校工作，成为公司第一个员工</li>
-</ul>
-<p>&emsp;&emsp;学校老师创建的一个初创公司，领头的一个老师是我大三参赛的一个项目的指导老师，老师认为我能力还行，便邀请我加入公司。当时我正在上海实习，待了大概两个多月也想换个新环境多多历练。话说初创公司确实很锻炼人啊，就你一个人，啥事都是你。刚开始去的那段时间都没开始写代码，都是搞什么流程讨论，原型设计等。这个决定也深深影响到我找工作的进程，一是留校读研边工作，二是出去工作。利弊难论，马上要到选择的时刻了！</p>
-<ul>
-<li><strong>12月</strong>：临阵考研，加油！！！冲！冲！冲！</li>
-</ul>
-<p>&emsp;&emsp;2020年12月26日考研，这一月脱产备考，无论是否要读都尽力一试。</p>
-<h3 id="年度总结"><a href="#年度总结" class="headerlink" title="年度总结"></a>年度总结</h3><p>&emsp;&emsp;2020许多第一次，第一次接私活，第一次做实际项目，第一次实习，第一次考研。许多第一次做得或许不够好，因此更需努力充实自己。2020，有收获，也有遗憾。这是变化最大的一年，从学校学子到接触社会工作，试错的机会更少，所作的每一个决定都影响着未来数年的路。总的来说，2020让我深刻认识到了自己的不足，见贤思齐焉！！！只思是不够的，更要付诸行动。成功的背后，都是不断的坚持与努力，优秀都是经过一次次碰壁调整出来的。不知从何时起难以专注学习/工作，自制力一直都在减弱，这种状态实在难堪。新的一年希望能够扭转这些疲敝之态，多多历练，想到就去做，一万年太久！只争朝夕！</p>
-<h3 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h3><ul>
-<li>一天至少一道算法题</li>
-</ul>
-<p>&emsp;&emsp;<a href="https://github.com/CourageHe/Algorithm-Daily-Practice">算法日常练习代码库</a></p>
-<ul>
-<li>勤写博客总结经验</li>
-<li>海投岗位，找工作</li>
-<li>看几本书（剑指Offer、JAVA8函数式编程、设计模式）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>个人有感</category>
-      </categories>
   </entry>
   <entry>
     <title>驾照考试-刷题总结</title>
@@ -903,6 +814,7 @@
 </blockquote>
 <h2 id="使用缘由"><a href="#使用缘由" class="headerlink" title="使用缘由"></a>使用缘由</h2><p>因为疫情的原因，公司提前休假，在家办公。公司的测试环境还有私服GIT都是在内网下，出于安全考虑，不考虑将GIT仓库移至GITHUB、GITEE等平台。首先想到的解决方案是使用类似花生壳这种内网穿透的服务，但是考虑到服务的收费标准与本司的使用需求相差较大。公司有六、七个端口需要转发，使用期限为一个月左右，而花生壳的套餐是按年付费，且线路数有限制，增加线路另外收费。然后想到了本人在大二时候使用的一个开源的内网穿透的代理应用，比较符合公司的解决方案。</p>
 <a id="more"></a>
+
 <h2 id="设备环境"><a href="#设备环境" class="headerlink" title="设备环境"></a>设备环境</h2><ul>
 <li><p>一台具有公网ip的服务器</p>
 </li>
@@ -954,7 +866,7 @@
 <h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><p>本人搭建的服务端为Centos7.X，系统架构为X86加否；客户端为Windows10，系统架构为amd64。下载解压即可，根据实际需要配置文件即可。下面给一个常用的配置模板，仅供参考。</p>
 <h3 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">bind_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set dashboard_addr and dashboard_port to view dashboard of frps</span></span><br><span class="line"><span class="comment"># dashboard_addr&#x27;s default value is same with bind_addr</span></span><br><span class="line"><span class="comment"># dashboard is available only if dashboard_port is set</span></span><br><span class="line"><span class="attr">dashboard_addr</span> = <span class="number">0.0</span>.<span class="number">0.0</span></span><br><span class="line"><span class="attr">dashboard_port</span> = <span class="number">7500</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># dashboard user and passwd for basic auth protect, if not set, both default value is admin</span></span><br><span class="line"><span class="attr">dashboard_user</span> = admin</span><br><span class="line"><span class="attr">dashboard_pwd</span> = admin</span><br></pre></td></tr></table></figure>
 
-<p><code>XX.XX.XX.XX:7500</code>为FRP的监控平台网页，账号密码为<code>admin/admin</code>.<img src="/images/data/20210117191329.png" alt="image-20210117191328912"></p>
+<p><code>XX.XX.XX.XX:7500</code>为FRP的监控平台网页，账号密码为<code>admin/admin</code>.<img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210117191329.png" alt="image-20210117191328912"></p>
 <p><code>bind_port</code> ：为FRP 服务器用户接收客户端连接的端口：</p>
 <h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>这种方式启动的话，将会把日志打印至<code>frp.log</code>下，用户退出该进程任然存在。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nohup ./frps -c frps.ini &gt;frp.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
@@ -1035,8 +947,7 @@
 
 </li>
 </ul>
-  <img src="images/data/20200816131455.png" style="zoom:150%;" />
-
+<p>  <img src="/images/data/20200816131455.png"></p>
 <h3 id="AllArgsConstructor"><a href="#AllArgsConstructor" class="headerlink" title="@AllArgsConstructor"></a>@AllArgsConstructor</h3><ul>
 <li><p>注解在<strong>类</strong>上，提供含类全部属性的<strong>构造函数</strong></p>
 <p><img src="/images/data/20200816132129.png" alt="image-20200816132129118"></p>
@@ -1104,7 +1015,7 @@
 <a id="more"></a>
 
 <h2 id="一、巧用命令行"><a href="#一、巧用命令行" class="headerlink" title="一、巧用命令行"></a>一、巧用命令行</h2><h3 id="1、窗口下载命令"><a href="#1、窗口下载命令" class="headerlink" title="1、窗口下载命令"></a>1、窗口下载命令</h3><p>&emsp;&emsp;打开powershell，输入以下命令行即可将网路文件下载至指定文件夹。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="variable">$client</span> = new-object System.Net.WebClient</span><br><span class="line">&gt; <span class="variable">$client</span>.DownloadFile(<span class="string">&#x27;../../../public/images/data/20210410215919.png&#x27;</span>, <span class="string">&#x27;D:\test.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="variable">$client</span> = new-object System.Net.WebClient</span><br><span class="line">&gt; <span class="variable">$client</span>.DownloadFile(<span class="string">&#x27;https://gitee.com/Courage-He/PicBed/raw/master/data/20210410215919.png&#x27;</span>, <span class="string">&#x27;D:\test.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 <p><img src="/images/data/20210410215919.png" alt="image-20210410215919216"></p>
 <h2 id="二、快捷键巧用"><a href="#二、快捷键巧用" class="headerlink" title="二、快捷键巧用"></a>二、快捷键巧用</h2><h3 id="1、自带截屏功能"><a href="#1、自带截屏功能" class="headerlink" title="1、自带截屏功能"></a>1、自带截屏功能</h3><p>&emsp;&emsp;全局按钮<code>Win</code>+<code>Shift</code>+<code>S</code>即可开启Windows系统自带的截屏功能。</p>
@@ -1115,6 +1026,186 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>辛丑牛年新年展望（2021）</title>
+    <url>/2021/02/12/6ea85d902251/</url>
+    <content><![CDATA[<h1 id="辛丑牛年新年展望（2021）"><a href="#辛丑牛年新年展望（2021）" class="headerlink" title="辛丑牛年新年展望（2021）"></a>辛丑牛年新年展望（2021）</h1><p>&emsp;&emsp;2021年2月12日为辛丑牛年正月初一，就农历而言，今天便就是中国的农历新年。作为一个对传统佳节有浓厚感情的传统国人，辞旧迎新、展望未来便是本文的初衷。2020元旦总结虽有稍许记录，却未整理成文，今天借这个机会发表啦！</p>
+<a id="more"></a>
+
+<h2 id="2020年度总结"><a href="#2020年度总结" class="headerlink" title="2020年度总结"></a>2020年度总结</h2><p>&emsp;&emsp;兜兜转转，大学本科已经步入最后一个年头了。这一年，正经世界百年未有之大变局，时代选择我们来见证，也是由我们来建设这个时代。本文便来讲讲我这一年的见证与建设，首先就开门见山说说2020 的个人生涯关键词：<strong>迷茫</strong>、<strong>焦虑</strong>、<strong>尝试</strong>、<strong>奋斗</strong>。</p>
+<h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><ul>
+<li><strong>迷茫</strong></li>
+</ul>
+<p>&emsp;&emsp;为什么说是迷茫呢？因为疫情前期一直待在家中，本人对未来考研<strong>OR</strong>工作还未明确目标。目标未定，规划更无须再论。那段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
+<ul>
+<li><strong>焦虑</strong></li>
+</ul>
+<p>&emsp;&emsp;每个找工作的娃的焦虑，想必每个人都或多或少有过经历！希望早日结束这个状态，现在终于明白铁饭碗为什么这么香了！</p>
+<ul>
+<li><strong>尝试</strong></li>
+</ul>
+<p>&emsp;&emsp;应届生的身份，敞开了许多大门，事业单位、公务员、研究生、企业等都可以去尝试，去争取。在2020这一年，我一直都在不断尝试，海投简历、面试IT公司、尝试事业单位和备考研究生等等……</p>
+<ul>
+<li><strong>奋斗</strong></li>
+</ul>
+<p>&emsp;&emsp;机会虽然很多，但只有那些有准备的人才能抓住。这一年也是在不断奋斗的一年，同疫情做斗争、刷题背八股文、上海得帆实习、考研备考等。</p>
+<h3 id="月历表"><a href="#月历表" class="headerlink" title="月历表"></a>月历表</h3><ul>
+<li><strong>1月</strong>：大学本科生涯最后的课程正规考试，回家！！！</li>
+</ul>
+<p>&emsp;&emsp;大三上学期的期末考试在一月进行，《数据库原理及应用》，《计算机组成与系统结构》等科目进行闭卷考试，因为疫情在家上网课的原因，这便是最后一次正规的课程结课考试了。1月11号放寒假回家，归家途中经过疫情还未报道的武汉，回家不久就安排在家居家隔离，每天都有村里干部来测体温。</p>
+<ul>
+<li><strong>2月</strong>：疫情造成的蝴蝶效应！</li>
+</ul>
+<p>&emsp;&emsp;2月的头号大事便是春节啦！记忆之初，春节都是热热闹闹的，百年未有之大变局中的春节只能是远程拜年啦！隔离的春节，爱心却两不相隔，一方有难，八方来援这句话在湖北得到广泛运用。一省帮一市、村里送菜送粮、邻里互帮互助等等奉献爱心的行为都让我深受感动。相比之下，国外的某些XXX恶言恶语、不怀好意的反响就显得太过无耻卑鄙，进一步加深了我对ZF的认同并坚定自身立场。</p>
+<ul>
+<li><strong>3月</strong>：疫情期间在家赋闲，陷入焦虑</li>
+</ul>
+<p>&emsp;&emsp;这段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
+<p>疫情实时播报频道：<a href="https://t.me/nCoV2019">https://t.me/nCoV2019</a></p>
+<ul>
+<li><strong>4月</strong>：第一次接单干活，实现技术变现</li>
+</ul>
+<p>&emsp;&emsp;这段期间在家里上网课，课余时间便想找些事情做一下。机缘巧合之下加了一个做私活的群，其中接了一个安卓app的项目，主要任务是写一个类似星巴克咖啡店的APP。另外是一个Web端图书管理系统，前后端交互的形式，由于时间不太够前端草草写了一下。小项目没赚几个钱，但这是首次使用技术变现，值得纪念一下。不得不说，写的界面真丑！哈哈哈</p>
+<p><img src="/images/data/20210213010621.png" alt="image-20210213010621705"></p>
+<ul>
+<li><strong>5月</strong>：面试、准备面试相交织</li>
+</ul>
+<p>&emsp;&emsp;这是一个面试月，投的基本都是各大公司的实习岗位，有上海得帆、字节跳动、华讯网络等。有喜有忧，大公司基本都被拒了，也是自身准备不足的结果，特别是字节跳动的笔试特别考核算法，所以还需历练！所幸还是有所斩获，收获了上海得帆的实习offer。</p>
+<p><img src="/images/data/20210213011312.png" alt="image-20210213011312539"></p>
+<ul>
+<li><strong>6月</strong>：石油项目</li>
+</ul>
+<p>&emsp;&emsp;第一次接触实际项目,学校老师招人干的一个分父子模块的后台管理项目。这是一个从需求到项目成型的实际项目，我主要参与前期的数据库建表、项目搭建。</p>
+<ul>
+<li><strong>7月</strong>：得帆公司培训</li>
+</ul>
+<p>&emsp;&emsp;7月21日上海得帆实习，第一次独自走向远方，第一次参与这种IT规范培训。在这期间结识了不少优秀的同仁，见贤思齐焉！加油！</p>
+<ul>
+<li><strong>8-9月</strong>：上海实习</li>
+</ul>
+<p>&emsp;&emsp;上海得帆公司外派我前往中骏地产参与了ESB项目的开发，新力地产的门户项目。</p>
+<ul>
+<li><strong>10-11月</strong>：回校工作，成为公司第一个员工</li>
+</ul>
+<p>&emsp;&emsp;学校老师创建的一个初创公司，领头的一个老师是我大三参赛的一个项目的指导老师，老师认为我能力还行，便邀请我加入公司。当时我正在上海实习，待了大概两个多月也想换个新环境多多历练。话说初创公司确实很锻炼人啊，就你一个人，啥事都是你。刚开始去的那段时间都没开始写代码，都是搞什么流程讨论，原型设计等。这个决定也深深影响到我找工作的进程，一是留校读研边工作，二是出去工作。利弊难论，马上要到选择的时刻了！</p>
+<ul>
+<li><strong>12月</strong>：临阵考研，加油！！！冲！冲！冲！</li>
+</ul>
+<p>&emsp;&emsp;2020年12月26日考研，这一月脱产备考，无论是否要读都尽力一试。</p>
+<h3 id="年度总结"><a href="#年度总结" class="headerlink" title="年度总结"></a>年度总结</h3><p>&emsp;&emsp;2020许多第一次，第一次接私活，第一次做实际项目，第一次实习，第一次考研。许多第一次做得或许不够好，因此更需努力充实自己。2020，有收获，也有遗憾。这是变化最大的一年，从学校学子到接触社会工作，试错的机会更少，所作的每一个决定都影响着未来数年的路。总的来说，2020让我深刻认识到了自己的不足，见贤思齐焉！！！只思是不够的，更要付诸行动。成功的背后，都是不断的坚持与努力，优秀都是经过一次次碰壁调整出来的。不知从何时起难以专注学习/工作，自制力一直都在减弱，这种状态实在难堪。新的一年希望能够扭转这些疲敝之态，多多历练，想到就去做，一万年太久！只争朝夕！</p>
+<h3 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h3><ul>
+<li>一天至少一道算法题</li>
+</ul>
+<p>&emsp;&emsp;<a href="https://github.com/CourageHe/Algorithm-Daily-Practice">算法日常练习代码库</a></p>
+<ul>
+<li>勤写博客总结经验</li>
+<li>海投岗位，找工作</li>
+<li>看几本书（剑指Offer、JAVA8函数式编程、设计模式）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>个人有感</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo添加分类、标签、关于页(二)</title>
+    <url>/2020/09/14/993996b2e602/</url>
+    <content><![CDATA[<blockquote>
+<p>生成的新文件夹都在source下也就是和放文章的文件夹一块 以下所有命令都是在博客文件目录下执行</p>
+</blockquote>
+<h2 id="创建“分类”选项"><a href="#创建“分类”选项" class="headerlink" title="创建“分类”选项"></a>创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行下方命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<p>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>添加type: “categories”到内容中，添加后是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>保存并关闭文件。</p>
+<p>给文章添加“categories”属性</p>
+<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>至此，成功给文章添加分类，点击首页的“分类”可以看到该分类下的所有文章。当然，只有添加了categories: xxx的文章才会被收录到首页的“分类”中。</p>
+<h2 id="创建“标签”选项"><a href="#创建“标签”选项" class="headerlink" title="创建“标签”选项"></a>创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>保存并关闭文件。</p>
+<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo博客安装</span><br><span class="line">date: 2020-09-14 00:58:33</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建“关于”选项"><a href="#创建“关于”选项" class="headerlink" title="创建“关于”选项"></a>创建“关于”选项</h2><p>生成“关于”页并添加tpye属性</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure>
+
+<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 关于我</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">type: about</span><br><span class="line">---</span><br><span class="line"><span class="section">## 个人简介</span></span><br><span class="line">……</span><br><span class="line"><span class="section">## 其他</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<p>保存并关闭文件。</p>
+<p>点击首页的“关于”可以看到该文件所书写的内容。</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动态规划</title>
+    <url>/2022/09/17/840fb5fcea0c/</url>
+    <content><![CDATA[<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><blockquote>
+<p>将原问题拆解成若干子问题，同时保存子问题的答案，使得每个子问题只求解一次，最终获得原问题的答案。</p>
+<p>递归问题》重叠子问题》记忆化搜索（自顶向下的解决问题）/动态规划（自底向上的解决问题）</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="120-三角形最小路径和"><a href="#120-三角形最小路径和" class="headerlink" title="120. 三角形最小路径和"></a><a href="https://leetcode.cn/problems/triangle/">120. 三角形最小路径和</a></h2><p>给定一个三角形 triangle ，找出自顶向下的最小路径和。</p>
+<p>每一步只能移动到下一行中相邻的结点上。相邻的结点 在这里指的是 下标 与 上一层结点下标 相同或者等于 上一层结点下标 + 1 的两个结点。也就是说，如果正位于当前行的下标 i ，那么下一步可以移动到下一行的下标 i 或 i + 1 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：triangle &#x3D; [[2],[3,4],[6,5,7],[4,1,8,3]]</span><br><span class="line">输出：11</span><br><span class="line">解释：如下面简图所示：</span><br><span class="line">   2</span><br><span class="line">  3 4</span><br><span class="line"> 6 5 7</span><br><span class="line">4 1 8 3</span><br><span class="line">自顶向下的最小路径和为 11（即，2 + 3 + 5 + 1 &#x3D; 11）。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：triangle &#x3D; [[-10]]</span><br><span class="line">输出：-10</span><br></pre></td></tr></table></figure>
+
+<p>提示：</p>
+<ul>
+<li><code>1 &lt;= triangle.length &lt;= 200</code></li>
+<li><code>triangle[0].length == 1</code></li>
+<li><code>triangle[i].length == triangle[i - 1].length + 1</code></li>
+<li><code>-104 &lt;= triangle[i][j] &lt;= 104</code></li>
+</ul>
+<p>进阶：</p>
+<p>你可以只使用<code>O(n)</code>的额外空间（<code>n </code>三角形的总行数）来解决这个问题吗？</p>
+<p><strong>解法1：递归</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//递归解法(经测试，超过一百层超时)</span></span><br><span class="line">        <span class="keyword">return</span> recursiveMethod(triangle,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">recursiveMethod</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle,<span class="keyword">int</span> i,<span class="keyword">int</span> j ,<span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">        value = triangle.get(i).get(j)+value;</span><br><span class="line">        <span class="keyword">if</span>(i == triangle.size()-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> value;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.min(recursiveMethod(triangle,i+<span class="number">1</span>,j,value),recursiveMethod(triangle,i+<span class="number">1</span>,j+<span class="number">1</span>,value));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解法2：递归+记忆化搜索</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">   Integer [][] memo = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle)</span> </span>&#123;</span><br><span class="line">        memo = <span class="keyword">new</span> Integer[triangle.size()][triangle.size()];</span><br><span class="line">        <span class="keyword">return</span> recursiveMethod(triangle,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">recursiveMethod</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle,<span class="keyword">int</span> i,<span class="keyword">int</span> j ,<span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(i == triangle.size()-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> value + triangle.get(i).get(j);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(memo[i][j] != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> memo[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">        memo[i][j] = Math.min(recursiveMethod(triangle,i+<span class="number">1</span>,j,value),recursiveMethod(triangle,i+<span class="number">1</span>,j+<span class="number">1</span>,value))+ triangle.get(i).get(j);</span><br><span class="line">        <span class="keyword">return</span> memo[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解法3：动态规划</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//动态规划 方案</span></span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[triangle.size()][triangle.size()];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dp.length; i++) &#123;</span><br><span class="line">            dp[triangle.size()-<span class="number">1</span>][i] = triangle.get(triangle.size()-<span class="number">1</span>).get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = triangle.size()-<span class="number">2</span>; i &gt;=<span class="number">0</span> ; i--) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j =<span class="number">0</span>; j &lt;=i ; j++) &#123;</span><br><span class="line">                dp[i][j] =Math.min(dp[i+<span class="number">1</span>][j],dp[i+<span class="number">1</span>][j+<span class="number">1</span>])+triangle.get(i).get(j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解法4：进阶：动态规划，空间复杂度O(n)</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[triangle.size()];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dp.length; i++) &#123;</span><br><span class="line">            dp[i] = triangle.get(triangle.size()-<span class="number">1</span>).get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = triangle.size()-<span class="number">2</span>; i &gt;=<span class="number">0</span> ; i--) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j =<span class="number">0</span>; j &lt;=i ; j++) &#123;</span><br><span class="line">                dp[j] =Math.min(dp[j],dp[j+<span class="number">1</span>])+triangle.get(i).get(j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>动态规划</tag>
       </tags>
   </entry>
   <entry>
@@ -1160,8 +1251,189 @@
       </tags>
   </entry>
   <entry>
+    <title>第328场周赛</title>
+    <url>/2023/02/14/187947d9fdf1/</url>
+    <content><![CDATA[<h3 id="第328场周赛"><a href="#第328场周赛" class="headerlink" title="第328场周赛"></a>第328场周赛</h3><h4 id="01-数组元素和与数字和的绝对差"><a href="#01-数组元素和与数字和的绝对差" class="headerlink" title="01. 数组元素和与数字和的绝对差"></a><a href="https://leetcode.cn/problems/difference-between-element-sum-and-digit-sum-of-an-array/">01. 数组元素和与数字和的绝对差</a></h4><p>简单题，暴力即可。</p>
+<p><code>num%10</code>代表获取该数的个位数字</p>
+<p><code>num/10</code>代表该数缩小10倍，原个位数字抹掉了</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">differenceOfSum</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum1 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            sum1+= nums[i];</span><br><span class="line">            <span class="keyword">while</span>(nums[i] !=<span class="number">0</span> )&#123;</span><br><span class="line">                sum2 += nums[i] % <span class="number">10</span>;</span><br><span class="line">                nums[i] = nums[i] / <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.abs(sum1-sum2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h4 id="02-子矩阵元素加-1"><a href="#02-子矩阵元素加-1" class="headerlink" title="02.子矩阵元素加 1"></a><a href="https://leetcode.cn/problems/increment-submatrices-by-one/">02.子矩阵元素加 1</a></h4><p><strong>一维前缀和</strong>：<code>int[] prefixSum</code>用于用于存储前缀和数组，<code>prefixSum[i]</code>代表<code>nums[0,i-1]</code>之和；任意区间<code>nums[l,r]</code>之和为<code>prefixSum[r+1]-prefixSum[l]</code>。可用于一维数组任意区间快速求和，时间复杂度O(1)</p>
+<p>相关题目：<a href="https://leetcode.cn/problems/range-sum-query-immutable/">303. 区域和检索 - 数组不可变</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution02_303</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">NumArray</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] prefixSum;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">NumArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">            prefixSum = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length+<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;prefixSum.length;i++)</span><br><span class="line">                prefixSum[i] = prefixSum[i-<span class="number">1</span>]+nums[i-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sumRange</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> prefixSum[right+<span class="number">1</span>]-prefixSum[left];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>一维差分</strong>：结合一维前缀和的公式，如果需要对任意区间<code>nums[l,r]</code>进行加操作，只需对<code>prefixSum[r+1]</code>加操作且<code>prefixSum[l]</code>进行减操作，反之亦然。可用于快速对一维数组的任意区间进行加/减操作，时间复杂度O(1)</p>
+<p><strong>二维前缀和</strong>：可用于二维数组任意区间快速求和，时间复杂度O(1)</p>
+<p><img src="/images/data/1641658840-YrICJa-image-16763875836859.png" alt="1641658840-YrICJa-image"></p>
+<p>相关题目：<a href="https://leetcode.cn/problems/range-sum-query-2d-immutable/">304. 二维区域和检索 - 矩阵不可变</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution02_304_2</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">NumMatrix</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[][] matrixSum;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">NumMatrix</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">            matrixSum = <span class="keyword">new</span> <span class="keyword">int</span>[matrix.length+<span class="number">1</span>][matrix[<span class="number">0</span>].length+<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = matrix.length-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j = matrix[<span class="number">0</span>].length-<span class="number">1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">                    matrixSum[i][j] =  matrix[i][j] + matrixSum[i+<span class="number">1</span>][j]+matrixSum[i][j+<span class="number">1</span>]-matrixSum[i+<span class="number">1</span>][j+<span class="number">1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sumRegion</span><span class="params">(<span class="keyword">int</span> row1, <span class="keyword">int</span> col1, <span class="keyword">int</span> row2, <span class="keyword">int</span> col2)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span>  matrixSum[row1][col1]-matrixSum[row2+<span class="number">1</span>][col1]-matrixSum[row1][col2+<span class="number">1</span>]+matrixSum[row2+<span class="number">1</span>][col2+<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>二维差分</strong>：可用于快速对二维数组的任意区间进行加/减操作，时间复杂度O(1)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution02</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] rangeAddQueries(<span class="keyword">int</span> n, <span class="keyword">int</span>[][] queries) &#123;</span><br><span class="line">        <span class="keyword">int</span>[][] diff = <span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>][n+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;queries.length;i++)&#123;</span><br><span class="line">            diff[queries[i][<span class="number">0</span>]][queries[i][<span class="number">1</span>]]++;</span><br><span class="line">            diff[queries[i][<span class="number">0</span>]][queries[i][<span class="number">3</span>]+<span class="number">1</span>]--;</span><br><span class="line">            diff[queries[i][<span class="number">2</span>]+<span class="number">1</span>][queries[i][<span class="number">1</span>]]--;</span><br><span class="line">            diff[queries[i][<span class="number">2</span>]+<span class="number">1</span>][queries[i][<span class="number">3</span>]+<span class="number">1</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;n;j++) diff[i][j]+=diff[i][j-<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) diff[i][j]+=diff[i-<span class="number">1</span>][j];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[][] ans = <span class="keyword">new</span> <span class="keyword">int</span>[n][n];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) ans[i][j] = diff[i][j];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="03-统计好子数组的数目"><a href="#03-统计好子数组的数目" class="headerlink" title="03.统计好子数组的数目"></a><a href="https://leetcode.cn/problems/count-the-number-of-good-subarrays/">03.统计好子数组的数目</a></h4><p>同向双指针，由Map保存窗口中的数字出现的次数，窗口中相等值的的数目为<code>pairs</code>。</p>
+<p>首先枚举子数组右端点<code>right</code>，那么<code>paris</code>增加<code>map.getOrDefault(nums[right],0)</code>；枚举至<code>paris&gt;=k</code>即代表该窗口中子数组符合好子数组；然后看左端点<code>left</code>端点最大可以到多少，如果去掉左端点，pairs没有小于k，就可以移动左端点。</p>
+<p>由于左端点及其左边的都可以是好子数组的左端点，所以每个右端点对应的答案个数为<code>left+1</code>;</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">countGood</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> pairs =<span class="number">0</span>,left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num : nums)&#123;</span><br><span class="line">            pairs += map.getOrDefault(num,<span class="number">0</span>);</span><br><span class="line">            map.merge(num,<span class="number">1</span>,Integer::sum);</span><br><span class="line">            <span class="keyword">while</span>(pairs-map.get(nums[left])+<span class="number">1</span>&gt;=k)&#123;</span><br><span class="line">                pairs -= map.merge(nums[left++],-<span class="number">1</span>,Integer::sum);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(pairs&gt;=k) ans+=left+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="04-最大价值和与最小价值和的差值"><a href="#04-最大价值和与最小价值和的差值" class="headerlink" title="04.最大价值和与最小价值和的差值"></a><a href="https://leetcode.cn/problems/difference-between-maximum-and-minimum-price-sum/">04.最大价值和与最小价值和的差值</a></h4><p>待做~</p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指 Offer 04. 二维数组中的查找</title>
+    <url>/2021/02/07/9bedcabf0de2/</url>
+    <content><![CDATA[<h1 id="剑指-Offer-04-二维数组中的查找"><a href="#剑指-Offer-04-二维数组中的查找" class="headerlink" title="剑指 Offer 04. 二维数组中的查找"></a>剑指 Offer 04. 二维数组中的查找</h1><blockquote>
+<p>题目来源：剑指Offer04</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/">https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在一个 <code>n * m </code>的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+<p><strong>示例:</strong></p>
+<p>现有矩阵 matrix 如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  [1,   4,  7, 11, 15],</span><br><span class="line">  [2,   5,  8, 12, 19],</span><br><span class="line">  [3,   6,  9, 16, 22],</span><br><span class="line">  [10, 13, 14, 17, 24],</span><br><span class="line">  [18, 21, 23, 26, 30]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+
+<p>给定 <code>target</code> = 5，返回 <code>true</code>。</p>
+<p>给定 <code>target</code> = 20，返回 <code>false</code>。</p>
+<p><strong>限制：</strong></p>
+<p><code>0 &lt;= n &lt;= 1000</code></p>
+<p><code>0 &lt;= m &lt;= 1000</code></p>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">findNumberIn2DArray</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(matrix.length ==<span class="number">0</span> || matrix[<span class="number">0</span>].length == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;<span class="comment">//矩阵为空则直接返回false</span></span><br><span class="line">    <span class="keyword">int</span> n = matrix.length;<span class="comment">//计算n</span></span><br><span class="line">    <span class="keyword">int</span> m  = matrix[<span class="number">0</span>].length;<span class="comment">//计算m</span></span><br><span class="line">    <span class="keyword">int</span> i =<span class="number">0</span>,j = m-<span class="number">1</span>;<span class="comment">//从矩阵右上角开始排查</span></span><br><span class="line">    <span class="keyword">for</span>(;i&lt;n&amp;&amp;j&gt;=<span class="number">0</span>;)&#123;</span><br><span class="line">        <span class="keyword">if</span>(matrix[i][j] == target)<span class="comment">//等于则返回为true</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(matrix[i][j] &gt; target)<span class="comment">//大于则比较元素为同行前一个</span></span><br><span class="line">            j--;</span><br><span class="line">        <span class="keyword">else</span><span class="comment">//小于则比较元素为同列下一个</span></span><br><span class="line">            i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210207204443.png" alt="image-20210207204442425"></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>剑指 Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指 Offer 05. 替换空格</title>
+    <url>/2021/02/07/c56758abfe9d/</url>
+    <content><![CDATA[<h1 id="剑指-Offer-05-替换空格"><a href="#剑指-Offer-05-替换空格" class="headerlink" title="剑指 Offer 05. 替换空格"></a>剑指 Offer 05. 替换空格</h1><blockquote>
+<p>题目来源：剑指 Offer 05</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/">https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>请实现一个函数，把字符串 <code>s </code>中的每个空格替换成”<code>%20</code>“。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s &#x3D; &quot;We are happy.&quot;</span><br><span class="line">输出：&quot;We%20are%20happy.&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>限制：</strong></p>
+<p><code>0 &lt;= s 的长度 &lt;= 10000</code></p>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replaceSpace</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> s.replaceAll(<span class="string">&quot;\\s&quot;</span>,<span class="string">&quot;%20&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210207214401.png" alt="image-20210207214401593"></p>
+<h3 id="JAVAAPI"><a href="#JAVAAPI" class="headerlink" title="JAVAAPI"></a>JAVAAPI</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replaceSpace</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       StringBuilder builder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">           <span class="keyword">char</span> ch = s.charAt(i);</span><br><span class="line">           <span class="keyword">if</span>(String.valueOf(ch).equals(<span class="string">&quot; &quot;</span>))&#123;</span><br><span class="line">               builder.append(<span class="string">&quot;%20&quot;</span>);</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               builder.append(ch);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> builder.toString();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210207214339.png" alt="image-20210207214339679"></p>
+<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replaceSpace</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) <span class="keyword">return</span> s;</span><br><span class="line">    <span class="keyword">char</span> [] arr = s.toCharArray();<span class="comment">//数组化</span></span><br><span class="line">    <span class="keyword">int</span> numOfBlank = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c : arr)</span><br><span class="line">        <span class="keyword">if</span>(c == <span class="string">&#x27; &#x27;</span>) numOfBlank++;</span><br><span class="line">    <span class="comment">//数组扩容</span></span><br><span class="line">    <span class="keyword">char</span>[] arrNew = <span class="keyword">new</span> <span class="keyword">char</span>[arr.length+numOfBlank*<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;arr.length;i++)</span><br><span class="line">        arrNew[i] = arr[i];</span><br><span class="line">    <span class="keyword">int</span> p1 = arr.length-<span class="number">1</span>;<span class="comment">//指向原始字符串的末尾</span></span><br><span class="line">    <span class="keyword">int</span> p2 = arrNew.length-<span class="number">1</span>;<span class="comment">//指向替换之后的字符串的末尾</span></span><br><span class="line">    <span class="keyword">for</span>(;p1!=p2;)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arrNew[p1] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            arrNew[p2--] = arrNew[p1--];<span class="comment">//</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            p1--;</span><br><span class="line">            arrNew[p2--] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            arrNew[p2--] = <span class="string">&#x27;2&#x27;</span>;</span><br><span class="line">            arrNew[p2--] = <span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> String.valueOf(arrNew);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210207214316.png" alt="image-20210207214316139"></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>剑指 Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指 Offer 07. 重建二叉树</title>
+    <url>/2021/02/10/c0d1481126c5/</url>
+    <content><![CDATA[<h1 id="剑指-Offer-07-重建二叉树"><a href="#剑指-Offer-07-重建二叉树" class="headerlink" title="剑指 Offer 07. 重建二叉树"></a>剑指 Offer 07. 重建二叉树</h1><blockquote>
+<p>题目来源：剑指 Offer 07.</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/">https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。</p>
+<p>例如，给出</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">前序遍历 preorder &#x3D; [3,9,20,15,7]</span><br><span class="line">中序遍历 inorder &#x3D; [9,3,15,20,7]</span><br></pre></td></tr></table></figure>
+
+<p>返回如下的二叉树：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  3</span><br><span class="line"> &#x2F; \</span><br><span class="line">9  20</span><br><span class="line">  &#x2F;  \</span><br><span class="line"> 15   7</span><br></pre></td></tr></table></figure>
+
+
+<p>限制：</p>
+<p><code>0 &lt;= 节点个数 &lt;= 5000</code></p>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildTree</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(preorder.length ==<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">null</span>; </span><br><span class="line">    <span class="keyword">return</span> buildRecursion(preorder, inorder, <span class="number">0</span>, <span class="number">0</span>, preorder.length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildRecursion</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder, <span class="keyword">int</span> index, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> rootVal = preorder[index];<span class="comment">//根节点值</span></span><br><span class="line">    <span class="keyword">int</span> index2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (; rootVal != inorder[index2]; index2++) ;</span><br><span class="line">    TreeNode root = <span class="keyword">new</span> TreeNode(inorder[index2]);</span><br><span class="line">    TreeNode left = <span class="keyword">null</span>, right = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (index2 &gt; l)</span><br><span class="line">        left = buildRecursion(preorder, inorder, index + <span class="number">1</span>, l, index2 - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (index2 &lt; r)</span><br><span class="line">        right = buildRecursion(preorder, inorder, index + (index2 - l) + <span class="number">1</span>, index2 + <span class="number">1</span>, r);</span><br><span class="line">    root.left = left;</span><br><span class="line">    root.right = right;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210210213410.png" alt="image-20210210213354271"></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>剑指 Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指 Offer 06. 从尾到头打印链表</title>
+    <url>/2021/02/07/6ac5d91209ed/</url>
+    <content><![CDATA[<h1 id="剑指-Offer-06-从尾到头打印链表"><a href="#剑指-Offer-06-从尾到头打印链表" class="headerlink" title="剑指 Offer 06. 从尾到头打印链表"></a>剑指 Offer 06. 从尾到头打印链表</h1><blockquote>
+<p>题目来源：剑指 Offer 06.</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/">https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：head &#x3D; [1,3,2]</span><br><span class="line">输出：[2,3,1]</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>限制：</strong></p>
+<p><code>0 &lt;= 链表长度 &lt;= 10000</code></p>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] reversePrint(ListNode head) &#123;</span><br><span class="line">      <span class="comment">//使用栈完成反转</span></span><br><span class="line">      Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">      ListNode pNode = head;</span><br><span class="line">      <span class="keyword">while</span>(pNode !=<span class="keyword">null</span>)&#123;</span><br><span class="line">          stack.push(pNode.val);</span><br><span class="line">          pNode = pNode.next;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">int</span>[]ans = <span class="keyword">new</span> <span class="keyword">int</span>[stack.size()];</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;ans.length;i++)</span><br><span class="line">          ans[i]=stack.pop();</span><br><span class="line">      <span class="keyword">return</span> ans;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210207220941.png" alt="image-20210207220941087"></p>
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Integer&gt; list= <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] reversePrint(ListNode head) &#123;</span><br><span class="line">    <span class="comment">//使用递归完成反转</span></span><br><span class="line">    ListNode pNode = head;</span><br><span class="line">    reverseRecursion(pNode);</span><br><span class="line">    <span class="keyword">int</span>[]ans = <span class="keyword">new</span> <span class="keyword">int</span>[list.size()];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;ans.length;i++)</span><br><span class="line">        ans[i]=list.get(i);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">reverseRecursion</span><span class="params">(ListNode pNode)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pNode == <span class="keyword">null</span>) </span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    reverseRecursion(pNode.next);</span><br><span class="line">    list.add(pNode.val);</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210207224552.png" alt="image-20210207224552623"></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>剑指 Offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>剑指 Offer 03. 数组中重复的数字</title>
-    <url>/2021/01/26/ec8237ba0fb1/</url>
+    <url>/2021/01/26/3000b056946c/</url>
     <content><![CDATA[<h1 id="剑指-Offer-03-数组中重复的数字"><a href="#剑指-Offer-03-数组中重复的数字" class="headerlink" title="剑指 Offer 03. 数组中重复的数字"></a>剑指 Offer 03. 数组中重复的数字</h1><blockquote>
 <p>题目来源：剑指Offer03</p>
 <p>题目链接：<a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/</a></p>
@@ -1197,118 +1469,83 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2022/08/10/1ba2419402b9/</url>
-    <content><![CDATA[<h1 id="新装虚拟机-网络配置"><a href="#新装虚拟机-网络配置" class="headerlink" title="新装虚拟机-网络配置"></a>新装虚拟机-网络配置</h1><h2 id="1、vmware网络简介"><a href="#1、vmware网络简介" class="headerlink" title="1、vmware网络简介"></a>1、vmware网络简介</h2><h3 id="1-Host-Only（仅主机模式）"><a href="#1-Host-Only（仅主机模式）" class="headerlink" title="1.Host-Only（仅主机模式）"></a><strong>1.Host-Only（仅主机模式）</strong></h3><p>Host-Only模式其实就是NAT模式去除了虚拟NAT设备，然后使用VMware Network Adapter VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，Host-Only模式将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与主机相互通讯。其网络结构如下图所示：<img src="images/data/ewqewq.png" alt="ewqewq"></p>
-<h3 id="2-Bridged（桥接模式）"><a href="#2-Bridged（桥接模式）" class="headerlink" title="2.Bridged（桥接模式）"></a><strong>2.Bridged（桥接模式）</strong></h3><p>什么是桥接模式？桥接模式就是将主机网卡与虚拟机虚拟的网卡利用虚拟网桥进行通信。在桥接的作用下，类似于把物理主机虚拟为一个交换机，所有桥接设置的虚拟机连接到这个交换机的一个接口上，物理主机也同样插在这个交换机当中，所以所有桥接下的网卡与网卡都是交换模式的，相互可以访问而不干扰。在桥接模式下，虚拟机ip地址需要与主机在同一个网段，如果需要联网，则网关与DNS需要与主机网卡一致。其网络结构如下图所示：<img src="images/data/32232232.png" alt="32232232"></p>
-<h3 id="3-NAT（地址转换模式）"><a href="#3-NAT（地址转换模式）" class="headerlink" title="3.NAT（地址转换模式）"></a><strong>3.NAT（地址转换模式）</strong></h3><p>NAT技术应用在internet网关和路由器上，比如192.168.0.123这个地址要访问internet，它的数据包就要通过一个路由器，而路由器拥有一个能访问internet的ip地址，这样的路由器就要在收发数据包时，对数据包的IP协议层数据进行更改（即 NAT），以使私有网段的主机能够顺利访问internet。<br> 刚刚我们说到，如果你的网络ip资源紧缺，但是你又希望你的虚拟机能够联网，这时候NAT模式是最好的选择。NAT模式借助虚拟NAT设备（就是一个路由器）和虚拟DHCP服务器，使得虚拟机可以联网。其网络结构如下图所示</p>
-<p><img src="images/data/wqweqe12.png" alt="‘wqweqe12’"></p>
-<h2 id="2、具体配置"><a href="#2、具体配置" class="headerlink" title="2、具体配置"></a>2、具体配置</h2><p>我们网络选择使用nat模式</p>
-<h3 id="1-网络编辑器设置"><a href="#1-网络编辑器设置" class="headerlink" title="1. 网络编辑器设置"></a>1. 网络编辑器设置</h3><p>选择虚拟网络编辑器</p>
-<p><img src="images/data/clip_image002-16600986659924.jpg" alt="img"></p>
-<p>选择nat模式，然后点击右下角的更改设置</p>
-<p><img src="images/data/clip_image004-16600986659935.jpg" alt="img"></p>
-<p>设置子网IP：192.168.52.0</p>
-<p>子网掩码：255.255.255.0</p>
-<p><img src="images/data/clip_image006-16600986659936.jpg" alt="img"></p>
-<p>点击NAT设置</p>
-<p><img src="images/data/12313.png" alt="12313"></p>
-<p>个人电脑网络设置：找到网络连接中的VMnet8</p>
-<p><img src="images/data/clip_image010.jpg" alt="img"></p>
-<p>设置：</p>
-<p><img src="images/data/21.png" alt="21"></p>
-<h3 id="2-网卡设置"><a href="#2-网卡设置" class="headerlink" title="2. 网卡设置"></a>2. 网卡设置</h3><p>#<code>vim /etc/sysconfig/network-scripts/ifcfg-ens33</code>进入网卡设置</p>
-<p>红色是需要修改和添加的地方，按 i进入编辑模式</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">UUID=4f81f256-131f-4fdb-9365-1ae4c7882aa2</span><br><span class="line">DEVICE=ens33</span><br><span class="line">ONBOOT=yes</span><br><span class="line">IPADDR=192.168.52.100</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.52.1</span><br><span class="line">DNS1=8.8.8.8</span><br></pre></td></tr></table></figure>
-
-<p>改完后【ESC】退出，：wq保存设置退出</p>
-<p>#重启网卡 <code>service network restart</code></p>
-<p><img src="images/data/clip_image014.jpg" alt="img"></p>
-<p>测试网络是否连通外网：<code>ping www.baidu.com </code></p>
-<p><img src="images/data/image-20220810142652206.png" alt="image-20220810142652206"></p>
-<p>到此centos7.4安装完成，网络也配置成功</p>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/02/14/4a9fb325b43f/</url>
-    <content><![CDATA[<h3 id="第328场周赛"><a href="#第328场周赛" class="headerlink" title="第328场周赛"></a>第328场周赛</h3><h4 id="01-数组元素和与数字和的绝对差"><a href="#01-数组元素和与数字和的绝对差" class="headerlink" title="01. 数组元素和与数字和的绝对差"></a><a href="https://leetcode.cn/problems/difference-between-element-sum-and-digit-sum-of-an-array/">01. 数组元素和与数字和的绝对差</a></h4><p>简单题，暴力即可。</p>
-<p><code>num%10</code>代表获取该数的个位数字</p>
-<p><code>num/10</code>代表该数缩小10倍，原个位数字抹掉了</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">differenceOfSum</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum1 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            sum1+= nums[i];</span><br><span class="line">            <span class="keyword">while</span>(nums[i] !=<span class="number">0</span> )&#123;</span><br><span class="line">                sum2 += nums[i] % <span class="number">10</span>;</span><br><span class="line">                nums[i] = nums[i] / <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.abs(sum1-sum2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="02-子矩阵元素加-1"><a href="#02-子矩阵元素加-1" class="headerlink" title="02.子矩阵元素加 1"></a><a href="https://leetcode.cn/problems/increment-submatrices-by-one/">02.子矩阵元素加 1</a></h4><p><strong>一维前缀和</strong>：可用于一维数组任意区间快速求和，时间复杂度O(1)</p>
-<p>相关题目：<a href="https://leetcode.cn/problems/range-sum-query-immutable/">303. 区域和检索 - 数组不可变</a></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution02_303</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">NumArray</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] prefixSum;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">NumArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">            prefixSum = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length+<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;prefixSum.length;i++)</span><br><span class="line">                prefixSum[i] = prefixSum[i-<span class="number">1</span>]+nums[i-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sumRange</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> prefixSum[right+<span class="number">1</span>]-prefixSum[left];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>二维前缀和</strong>：可用于二维数组任意区间快速求和，时间复杂度O(1)</p>
-<p>相关题目：<a href="https://leetcode.cn/problems/range-sum-query-2d-immutable/">304. 二维区域和检索 - 矩阵不可变</a></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution02_304_2</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">NumMatrix</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[][] matrixSum;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">NumMatrix</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">            matrixSum = <span class="keyword">new</span> <span class="keyword">int</span>[matrix.length+<span class="number">1</span>][matrix[<span class="number">0</span>].length+<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = matrix.length-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j = matrix[<span class="number">0</span>].length-<span class="number">1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">                    matrixSum[i][j] =  matrix[i][j] + matrixSum[i+<span class="number">1</span>][j]+matrixSum[i][j+<span class="number">1</span>]-matrixSum[i+<span class="number">1</span>][j+<span class="number">1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sumRegion</span><span class="params">(<span class="keyword">int</span> row1, <span class="keyword">int</span> col1, <span class="keyword">int</span> row2, <span class="keyword">int</span> col2)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span>  matrixSum[row1][col1]-matrixSum[row2+<span class="number">1</span>][col1]-matrixSum[row1][col2+<span class="number">1</span>]+matrixSum[row2+<span class="number">1</span>][col2+<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>二维差分：</strong>可用于快速对二维数组的任意区间进行加/减操作，时间复杂度O(1)</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution02</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] rangeAddQueries(<span class="keyword">int</span> n, <span class="keyword">int</span>[][] queries) &#123;</span><br><span class="line">        <span class="keyword">int</span>[][] diff = <span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>][n+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;queries.length;i++)&#123;</span><br><span class="line">            diff[queries[i][<span class="number">0</span>]][queries[i][<span class="number">1</span>]]++;</span><br><span class="line">            diff[queries[i][<span class="number">0</span>]][queries[i][<span class="number">3</span>]+<span class="number">1</span>]--;</span><br><span class="line">            diff[queries[i][<span class="number">2</span>]+<span class="number">1</span>][queries[i][<span class="number">1</span>]]--;</span><br><span class="line">            diff[queries[i][<span class="number">2</span>]+<span class="number">1</span>][queries[i][<span class="number">3</span>]+<span class="number">1</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;n;j++) diff[i][j]+=diff[i][j-<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) diff[i][j]+=diff[i-<span class="number">1</span>][j];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[][] ans = <span class="keyword">new</span> <span class="keyword">int</span>[n][n];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) ans[i][j] = diff[i][j];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="03-统计好子数组的数目"><a href="#03-统计好子数组的数目" class="headerlink" title="03.统计好子数组的数目"></a><a href="https://leetcode.cn/problems/count-the-number-of-good-subarrays/">03.统计好子数组的数目</a></h4><p>同向双指针，由Map保存窗口中的数字出现的次数，窗口中相等值的的数目为<code>pairs</code>。</p>
-<p>首先枚举子数组右端点<code>right</code>，那么<code>paris</code>增加<code>map.getOrDefault(nums[right],0)</code>；枚举至<code>paris&gt;=k</code>即代表该窗口中子数组符合好子数组；然后看左端点<code>left</code>端点最大可以到多少，如果去掉左端点，pairs没有小于k，就可以移动左端点。</p>
-<p>由于左端点及其左边的都可以是好子数组的左端点，所以每个右端点对应的答案个数为<code>left+1</code>;</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">countGood</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> pairs =<span class="number">0</span>,left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num : nums)&#123;</span><br><span class="line">            pairs += map.getOrDefault(num,<span class="number">0</span>);</span><br><span class="line">            map.merge(num,<span class="number">1</span>,Integer::sum);</span><br><span class="line">            <span class="keyword">while</span>(pairs-map.get(nums[left])+<span class="number">1</span>&gt;=k)&#123;</span><br><span class="line">                pairs -= map.merge(nums[left++],-<span class="number">1</span>,Integer::sum);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(pairs&gt;=k) ans+=left+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="04-最大价值和与最小价值和的差值"><a href="#04-最大价值和与最小价值和的差值" class="headerlink" title="04.最大价值和与最小价值和的差值"></a><a href="https://leetcode.cn/problems/difference-between-maximum-and-minimum-price-sum/">04.最大价值和与最小价值和的差值</a></h4><p>待做~</p>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2022/09/17/dec78c70fd80/</url>
-    <content><![CDATA[<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><blockquote>
-<p>将原问题拆解成若干子问题，同时保存子问题的答案，使得每个子问题只求解一次，最终获得原问题的答案。</p>
-<p>递归问题》重叠子问题》记忆化搜索（自顶向下的解决问题）/动态规划（自底向上的解决问题）</p>
+    <title>实现SingleTton模式</title>
+    <url>/2020/12/30/7959745d4768/</url>
+    <content><![CDATA[<h2 id="实现SingleTton模式"><a href="#实现SingleTton模式" class="headerlink" title="实现SingleTton模式"></a>实现SingleTton模式</h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><blockquote>
+<p>设计一个类，我们只能生成该类的一个示例。</p>
 </blockquote>
-<h2 id="120-三角形最小路径和"><a href="#120-三角形最小路径和" class="headerlink" title="120. 三角形最小路径和"></a><a href="https://leetcode.cn/problems/triangle/">120. 三角形最小路径和</a></h2><p>给定一个三角形 triangle ，找出自顶向下的最小路径和。</p>
-<p>每一步只能移动到下一行中相邻的结点上。相邻的结点 在这里指的是 下标 与 上一层结点下标 相同或者等于 上一层结点下标 + 1 的两个结点。也就是说，如果正位于当前行的下标 i ，那么下一步可以移动到下一行的下标 i 或 i + 1 。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：triangle &#x3D; [[2],[3,4],[6,5,7],[4,1,8,3]]</span><br><span class="line">输出：11</span><br><span class="line">解释：如下面简图所示：</span><br><span class="line">   2</span><br><span class="line">  3 4</span><br><span class="line"> 6 5 7</span><br><span class="line">4 1 8 3</span><br><span class="line">自顶向下的最小路径和为 11（即，2 + 3 + 5 + 1 &#x3D; 11）。</span><br></pre></td></tr></table></figure>
+<p>只能生成一个实例的是为了实现<code>Singleton</code>(单例)模式的类型，设计模式在面向对象程序设计中起着举足轻重的作用，在面试过程中公司都喜欢问一些与设计模式相关的问题。在常用的设计模式中，<code>Singleton</code>是唯一一个能够用几十行代码完整实现的模式。因此，写一个<code>Singleton</code>的类型是一个很常见的面试题。</p>
+<a id="more"></a>
 
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：triangle &#x3D; [[-10]]</span><br><span class="line">输出：-10</span><br></pre></td></tr></table></figure>
+<h3 id="二、参考解法"><a href="#二、参考解法" class="headerlink" title="二、参考解法"></a>二、参考解法</h3><h4 id="1、仅适用于单线程环境"><a href="#1、仅适用于单线程环境" class="headerlink" title="1、仅适用于单线程环境"></a>1、仅适用于单线程环境</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> class <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Singeleton</span> <span class="title">instance</span> </span>= <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)<span class="comment">//仅当instance 为null时才创建一个实例，以避免重复创建。</span></span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        <span class="keyword">return</span> instance </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>该解法在单线程的时候共工作正常，但在多线程的情况下不适用。设想如果两个线程同时运行到判断instance是否为null的if语句，并且instance的确没有创建时，那么两个线程都会创建一个实例，此时就不满足单例模式的要求。</p>
+<h4 id="2、适用于多线程环境但效率低"><a href="#2、适用于多线程环境但效率低" class="headerlink" title="2、适用于多线程环境但效率低"></a>2、适用于多线程环境但效率低</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object = <span class="keyword">new</span> Object();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span>(object)&#123;<span class="comment">//每次只允许一个线程进入代码块，因此不会出现多线程下创建同一个实例的情况</span></span><br><span class="line">            <span class="keyword">if</span>(instance == <span class="keyword">null</span>)</span><br><span class="line">                instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>提示：</p>
-<ul>
-<li><code>1 &lt;= triangle.length &lt;= 200</code></li>
-<li><code>triangle[0].length == 1</code></li>
-<li><code>triangle[i].length == triangle[i - 1].length + 1</code></li>
-<li><code>-104 &lt;= triangle[i][j] &lt;= 104</code></li>
-</ul>
-<p>进阶：</p>
-<p>你可以只使用<code>O(n)</code>的额外空间（<code>n </code>三角形的总行数）来解决这个问题吗？</p>
-<p><strong>解法1：递归</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//递归解法(经测试，超过一百层超时)</span></span><br><span class="line">        <span class="keyword">return</span> recursiveMethod(triangle,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">recursiveMethod</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle,<span class="keyword">int</span> i,<span class="keyword">int</span> j ,<span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">        value = triangle.get(i).get(j)+value;</span><br><span class="line">        <span class="keyword">if</span>(i == triangle.size()-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> value;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.min(recursiveMethod(triangle,i+<span class="number">1</span>,j,value),recursiveMethod(triangle,i+<span class="number">1</span>,j+<span class="number">1</span>,value));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该解法在多线程环境下使用正常，但是并不完美。在执行过程中，每次都需通过<code>getInstance()</code>得到Singleton实例，并且在此方法中都会加上同步锁，而加锁是一个非常耗时的操作，在没有必要的时候应尽量避免</p>
+<h4 id="3、加锁前判断实例是否存在"><a href="#3、加锁前判断实例是否存在" class="headerlink" title="3、加锁前判断实例是否存在"></a>3、加锁前判断实例是否存在</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object = <span class="keyword">new</span> Object();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span>(object)&#123;<span class="comment">//每次只允许一个线程进入代码块，因此不会出现多线程下创建同一个实例的情况</span></span><br><span class="line">            	<span class="keyword">if</span>(instance == <span class="keyword">null</span>)</span><br><span class="line">                	instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        	&#125; </span><br><span class="line">        &#125;</span><br><span class="line">     </span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>该解法只有当<code>instance</code>为<code>null</code>即没有创建时，需要加锁操作。当<code>instance</code>已经创建出来之后，则无需加锁。相比于解法二大大提高了效率，但是代码实现起来比较复杂，容易出错。</p>
+<h4 id="4、利用静态构造函数"><a href="#4、利用静态构造函数" class="headerlink" title="4、利用静态构造函数"></a>4、利用静态构造函数</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();<span class="comment">//静态构造函数。</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-<p><strong>解法2：递归+记忆化搜索</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">   Integer [][] memo = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle)</span> </span>&#123;</span><br><span class="line">        memo = <span class="keyword">new</span> Integer[triangle.size()][triangle.size()];</span><br><span class="line">        <span class="keyword">return</span> recursiveMethod(triangle,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">recursiveMethod</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle,<span class="keyword">int</span> i,<span class="keyword">int</span> j ,<span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(i == triangle.size()-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> value + triangle.get(i).get(j);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(memo[i][j] != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> memo[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">        memo[i][j] = Math.min(recursiveMethod(triangle,i+<span class="number">1</span>,j,value),recursiveMethod(triangle,i+<span class="number">1</span>,j+<span class="number">1</span>,value))+ triangle.get(i).get(j);</span><br><span class="line">        <span class="keyword">return</span> memo[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>解法3：动态规划</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//动态规划 方案</span></span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[triangle.size()][triangle.size()];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dp.length; i++) &#123;</span><br><span class="line">            dp[triangle.size()-<span class="number">1</span>][i] = triangle.get(triangle.size()-<span class="number">1</span>).get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = triangle.size()-<span class="number">2</span>; i &gt;=<span class="number">0</span> ; i--) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j =<span class="number">0</span>; j &lt;=i ; j++) &#123;</span><br><span class="line">                dp[i][j] =Math.min(dp[i+<span class="number">1</span>][j],dp[i+<span class="number">1</span>][j+<span class="number">1</span>])+triangle.get(i).get(j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>解法4：进阶：动态规划，空间复杂度O(n)</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[triangle.size()];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dp.length; i++) &#123;</span><br><span class="line">            dp[i] = triangle.get(triangle.size()-<span class="number">1</span>).get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = triangle.size()-<span class="number">2</span>; i &gt;=<span class="number">0</span> ; i--) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j =<span class="number">0</span>; j &lt;=i ; j++) &#123;</span><br><span class="line">                dp[j] =Math.min(dp[j],dp[j+<span class="number">1</span>])+triangle.get(i).get(j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>利用静态属性、静态代码块的性质，确保只在加载时调用一次。该段代码非常简洁地实现了功能，但是调用静态构造函数地时机并不是由程序员掌控，而是由JVM运行时发现第一次使用一个类型的时候自动调用该类型的静态构造函数。即实例<code>instance</code>并不是第一次调用属性<code>Singleton.getInstance</code>时创建，而是在第一次用到<code>Singleton</code>时创建。（降低内存的使用效率）</p>
+<h4 id="5、实现按需创建实例"><a href="#5、实现按需创建实例" class="headerlink" title="5、实现按需创建实例"></a>5、实现按需创建实例</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Nested.instance;</span><br><span class="line">    &#125;</span><br><span class="line">    stattic <span class="class"><span class="keyword">class</span> <span class="title">Nested</span></span>&#123;<span class="comment">//外部类加载时，静态内部类不会同时加载，而是在调用静态内部类（静态域、静态方法、构造函数）时加载。</span></span><br><span class="line">		<span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>专题练习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序算法展示</title>
+    <url>/2022/01/09/3770499952d7/</url>
+    <content><![CDATA[<h1 id="排序算法展示"><a href="#排序算法展示" class="headerlink" title="排序算法展示"></a>排序算法展示</h1><h2 id="排序定义及其性质"><a href="#排序定义及其性质" class="headerlink" title="排序定义及其性质"></a>排序定义及其性质</h2><h3 id="一、冒泡排序"><a href="#一、冒泡排序" class="headerlink" title="一、冒泡排序"></a><a href="https://baike.baidu.com/item/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F">一、冒泡排序</a></h3><p>&emsp;&emsp;冒泡排序（Bubble Sort），是一种<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6">计算机科学</a>领域的较简单的<a href="https://baike.baidu.com/item/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5399605">排序算法</a>。</p>
+<p>&emsp;&emsp;它重复地走访过要排序的元素列，依次比较两个相邻的元素，如果顺序（如从大到小、首字母从Z到A）错误就把他们交换过来。走访元素的工作是重复地进行直到没有相邻元素需要交换，也就是说该元素列已经排序完成。</p>
+<p>&emsp;&emsp;这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名“冒泡排序”。<a id="more"></a></p>
+<h3 id="二、选择排序"><a href="#二、选择排序" class="headerlink" title="二、选择排序"></a><a href="https://baike.baidu.com/item/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F">二、选择排序</a></h3><p>&emsp;&emsp;选择排序（Selection sort）是一种简单直观的<a href="https://baike.baidu.com/item/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5399605">排序算法</a>。它的工作原理是：第一次从待排序的<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0/715313">数据元素</a>中选出最小（或最大）的一个元素，存放在序列的起始位置，然后再从剩余的未排序元素中寻找到最小（大）元素，然后放到已排序的序列的末尾。以此类推，直到全部待排序的数据元素的个数为零。选择排序是不稳定的排序方法。</p>
+<h3 id="三、插入排序"><a href="#三、插入排序" class="headerlink" title="三、插入排序"></a><a href="https://baike.baidu.com/item/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F">三、插入排序</a></h3><p>&emsp;&emsp;插入排序（Insertion sort）是一种简单直观且稳定的<a href="https://baike.baidu.com/item/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5399605">排序算法</a>。如果有一个已经有序的数据序列，要求在这个已经排好的数据序列中插入一个数，但要求插入后此数据序列仍然有序，这个时候就要用到一种新的排序方法——<a href="https://baike.baidu.com/item/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E6%B3%95/612261">插入排序法</a>,算法适用于少量数据的排序，<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/1894057">时间复杂度</a>O(n^2)。是稳定的排序方法。插入算法把要排序的<a href="https://baike.baidu.com/item/%E6%95%B0%E7%BB%84/3794097">数组</a>分成两部分：第一部分包含了这个数组的所有元素，但将最后一个元素除外（让数组多一个空间才有插入的位置），而第二部分就只包含这一个元素（即待插入元素）。在第一部分排序完成后，再将这个最后元素插入到已排好序的第一部分中。</p>
+<h3 id="四、希尔排序"><a href="#四、希尔排序" class="headerlink" title="四、希尔排序"></a><a href="%5Bhttps://baike.baidu.com/item/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F%5D(https://baike.baidu.com/item/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F)">四、希尔排序</a></h3><p>&emsp;&emsp;希尔排序(Shell&#39;s Sort)是<a href="https://baike.baidu.com/item/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/7214992">插入排序</a>的一种又称“缩小增量排序”（Diminishing Increment Sort），是直接插入<a href="https://baike.baidu.com/item/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5399605">排序算法</a>的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。</p>
+<p>&emsp;&emsp;希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，<a href="https://baike.baidu.com/item/%E7%AE%97%E6%B3%95/209025">算法</a>便终止。 </p>
+<h3 id="四、归并排序"><a href="#四、归并排序" class="headerlink" title="四、归并排序"></a><a href="https://baike.baidu.com/item/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F">四、归并排序</a></h3><p>&emsp;&emsp;归并排序（MERGE-SORT）是建立在归并操作上的一种有效的排序算法,该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为**二路<a href="https://baike.baidu.com/item/%E5%BD%92%E5%B9%B6/253741">归并</a>**。归并排序是一种稳定的排序方法。</p>
+<h3 id="五、快速排序"><a href="#五、快速排序" class="headerlink" title="五、快速排序"></a><a href="https://baike.baidu.com/item/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95">五、快速排序</a></h3><p>快速排序（Quicksort）是对冒泡排序的一种改进。 </p>
+<p>&emsp;&emsp;快速排序由C. A. R. Hoare在1960年提出。它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以<a href="https://baike.baidu.com/item/%E9%80%92%E5%BD%92/1740695">递归</a>进行，以此达到整个数据变成有序<a href="https://baike.baidu.com/item/%E5%BA%8F%E5%88%97/1302588">序列</a></p>
+<h2 id="排序算法题目示例："><a href="#排序算法题目示例：" class="headerlink" title="排序算法题目示例："></a>排序算法题目示例：</h2><h3 id="75-颜色分类"><a href="#75-颜色分类" class="headerlink" title="75. 颜色分类"></a><a href="https://leetcode-cn.com/problems/sort-colors/">75. 颜色分类</a></h3><h4 id="1、冒泡排序"><a href="#1、冒泡排序" class="headerlink" title="1、冒泡排序"></a>1、冒泡排序</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>()<span class="number">-1</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.<span class="built_in">size</span>()-i<span class="number">-1</span>; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (nums[j] &gt; nums[j+<span class="number">1</span>]) &#123;</span><br><span class="line">				<span class="keyword">int</span> temp = nums[j];</span><br><span class="line">				nums[j] = nums[j+<span class="number">1</span>];</span><br><span class="line">				nums[j+<span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2、选择排序"><a href="#2、选择排序" class="headerlink" title="2、选择排序"></a>2、选择排序</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> <span class="built_in">min</span> = i;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; nums.<span class="built_in">size</span>(); j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (nums[<span class="built_in">min</span>] &gt; nums[j]) &#123;</span><br><span class="line">				<span class="built_in">min</span> = j;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">min</span> != i) &#123;</span><br><span class="line">			<span class="keyword">int</span> temp = nums[i];</span><br><span class="line">			nums[i] = nums[<span class="built_in">min</span>];</span><br><span class="line">			nums[<span class="built_in">min</span>] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、三路插入排序"><a href="#3、三路插入排序" class="headerlink" title="3、三路插入排序"></a>3、三路插入排序</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> zero = -<span class="number">1</span>; <span class="comment">//nums[0……zero] =0</span></span><br><span class="line">        <span class="keyword">int</span> two = nums.length; <span class="comment">//nums[two……n) =2</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; two;)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == <span class="number">1</span>)&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[i] == <span class="number">2</span>)&#123;</span><br><span class="line">                swap(nums,i,--two);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                swap(nums,i++,++zero);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> nums[],<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = nums[a];</span><br><span class="line">        nums[a] = nums[b];</span><br><span class="line">        nums[b] = temp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="88-合并两个有序数组"><a href="#88-合并两个有序数组" class="headerlink" title="88. 合并两个有序数组"></a><a href="https://leetcode-cn.com/problems/merge-sorted-array/">88. 合并两个有序数组</a></h3><h4 id="1、二路归并法"><a href="#1、二路归并法" class="headerlink" title="1、二路归并法"></a>1、二路归并法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span>[] newNums = <span class="keyword">new</span> <span class="keyword">int</span>[m+n];</span><br><span class="line">       <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>,k=<span class="number">0</span>;</span><br><span class="line">       <span class="keyword">while</span> (i&lt;m&amp;&amp;j&lt;n) &#123;</span><br><span class="line">           newNums[k++] = nums1[i] &lt; nums2[j] ? nums1[i++] : nums2[j++];</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">while</span> (i &lt; m)&#123;</span><br><span class="line">           newNums[k++] = nums1[i++];</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">while</span> (j &lt; n) &#123;</span><br><span class="line">           newNums[k++] = nums2[j++];</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> l =<span class="number">0</span>;l&lt; newNums.length;l++)&#123;</span><br><span class="line">           nums1[l] = newNums[l];</span><br><span class="line">           System.out.print(nums1[l]+<span class="string">&quot; &quot;</span>);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="215-数组中的第K个最大元素"><a href="#215-数组中的第K个最大元素" class="headerlink" title="215. 数组中的第K个最大元素"></a><a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">215. 数组中的第K个最大元素</a></h3><h4 id="1、冒泡法优化版"><a href="#1、冒泡法优化版" class="headerlink" title="1、冒泡法优化版"></a>1、冒泡法优化版</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> n = nums.length;</span><br><span class="line">       <span class="keyword">int</span> kk = nums.length - k;</span><br><span class="line">       <span class="keyword">do</span>&#123;</span><br><span class="line">           <span class="keyword">int</span> index = <span class="number">0</span>;<span class="comment">//排序辅助坐标点 在nums(index……n)中是有序的</span></span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">               <span class="keyword">if</span> (nums[i] &gt; nums[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                   <span class="keyword">int</span> temp = nums[i];</span><br><span class="line">                   nums[i] = nums[i + <span class="number">1</span>];</span><br><span class="line">                   nums[i + <span class="number">1</span>] = temp;</span><br><span class="line"></span><br><span class="line">                   index = i;<span class="comment">//记录最后一次交换的坐标</span></span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           n = index;</span><br><span class="line">           <span class="keyword">if</span> (index &lt; kk) <span class="keyword">return</span> nums[kk];</span><br><span class="line">       &#125;<span class="keyword">while</span>(n &gt; <span class="number">0</span>);</span><br><span class="line">       <span class="keyword">return</span> nums[kk];</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、快速排序法"><a href="#2、快速排序法" class="headerlink" title="2、快速排序法"></a>2、快速排序法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">       quickSort(nums,<span class="number">0</span>,nums.length-<span class="number">1</span>,k);</span><br><span class="line">       <span class="keyword">return</span> nums[nums.length-k];</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] nums ,<span class="keyword">int</span> start,<span class="keyword">int</span> end,<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> l = start ,r = end;</span><br><span class="line">       <span class="keyword">int</span> pivort = nums[l];</span><br><span class="line">       <span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">           <span class="keyword">while</span>((l&lt;r)&amp;&amp;nums[l]&lt;pivort)</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">while</span>((l&lt;r)&amp;&amp;nums[r]&gt;pivort)</span><br><span class="line">               r--;</span><br><span class="line">           <span class="keyword">if</span>((l&lt;r)&amp;&amp;nums[l]==nums[r])</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">else</span> &#123;                </span><br><span class="line">               <span class="keyword">int</span> temp = nums[l];                </span><br><span class="line">               nums[l] = nums[r];                </span><br><span class="line">               nums[r] = temp;            </span><br><span class="line">           &#125; </span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span>((l-<span class="number">1</span>)&gt;start)quickSort(nums,start,l-<span class="number">1</span>,k);</span><br><span class="line">       <span class="keyword">if</span>((r+<span class="number">1</span>)&lt;end)quickSort(nums,r+<span class="number">1</span>,end,k);</span><br><span class="line">      </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="912-排序数组"><a href="#912-排序数组" class="headerlink" title="912. 排序数组"></a><a href="https://leetcode-cn.com/problems/sort-an-array/">912. 排序数组</a></h3><h4 id="1、插入排序法"><a href="#1、插入排序法" class="headerlink" title="1、插入排序法"></a>1、插入排序法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArray(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">       <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>)<span class="keyword">return</span> nums;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> current = nums[i];</span><br><span class="line">            <span class="keyword">int</span> j =i-<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(j&gt;=<span class="number">0</span>&amp;&amp;nums[j]&gt;current)</span><br><span class="line">                    nums[j+<span class="number">1</span>] = nums[j--];</span><br><span class="line">             nums[j+<span class="number">1</span>] =current; </span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、希尔排序"><a href="#2、希尔排序" class="headerlink" title="2、希尔排序"></a>2、希尔排序</h4><p>&emsp;&emsp;1959年Shell发明，第一个突破O(n2)的排序算法，是简单插入排序的改进版。它与插入排序的不同之处在于，它会优先比较距离较远的元素。希尔排序又叫<strong>缩小增量排序</strong>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArray(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">       <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>)<span class="keyword">return</span> nums;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> gap =nums.length/<span class="number">2</span>;gap&gt;<span class="number">0</span>;gap =gap/<span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i =gap;i&lt;nums.length;i+=gap)&#123;</span><br><span class="line">                    <span class="keyword">int</span> current = nums[i];</span><br><span class="line">                    <span class="keyword">int</span> j =i-gap;</span><br><span class="line">                    <span class="keyword">while</span>(j&gt;=<span class="number">0</span>&amp;&amp;nums[j]&gt;current)&#123;</span><br><span class="line">                            nums[j+gap] = nums[j];</span><br><span class="line">                            j-=gap;</span><br><span class="line">                    &#125;</span><br><span class="line">                    nums[j+gap] =current; </span><br><span class="line">            &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、归并排序"><a href="#3、归并排序" class="headerlink" title="3、归并排序"></a>3、归并排序</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArray(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>)<span class="keyword">return</span> nums;</span><br><span class="line">        <span class="keyword">return</span> mergeSort(nums,<span class="number">0</span>,nums.length-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] mergeSort(<span class="keyword">int</span>[] nums,<span class="keyword">int</span> l,<span class="keyword">int</span> r) &#123;</span><br><span class="line">        <span class="keyword">if</span>(l==r)<span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;nums[l]&#125;;</span><br><span class="line">        <span class="keyword">int</span> mid = l+(r-l)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span>[]numsLeft = mergeSort(nums,l,mid);<span class="comment">//左有序数组</span></span><br><span class="line">        <span class="keyword">int</span>[]numsRight = mergeSort(nums,mid+<span class="number">1</span>,r);<span class="comment">//右有序数组</span></span><br><span class="line">        <span class="keyword">int</span> []newNums = <span class="keyword">new</span> <span class="keyword">int</span>[numsLeft.length+numsRight.length];<span class="comment">//开辟新有序数组空间</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>,j=<span class="number">0</span>,k=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;numsLeft.length&amp;&amp;j&lt;numsRight.length)</span><br><span class="line">            newNums[k++] = numsLeft[i]&lt;numsRight[j]?numsLeft[i++]:numsRight[j++];</span><br><span class="line">        <span class="keyword">while</span>(i&lt;numsLeft.length)</span><br><span class="line">          newNums[k++] = numsLeft[i++];</span><br><span class="line">        <span class="keyword">while</span>(j&lt;numsRight.length)</span><br><span class="line">          newNums[k++] = numsRight[j++];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> newNums;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>参考：<a href="https://www.cnblogs.com/onepixel/articles/7674659.html"><a href="https://www.cnblogs.com/onepixel/p/7674659.html">十大经典排序算法（动图演示）</a></a></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>专题练习</tag>
+      </tags>
   </entry>
 </search>

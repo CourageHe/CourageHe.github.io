@@ -22,32 +22,23 @@
     var CONFIG = {"hostname":"couragehe.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="新装虚拟机-网络配置1、vmware网络简介1.Host-Only（仅主机模式）Host-Only模式其实就是NAT模式去除了虚拟NAT设备，然后使用VMware Network Adapter VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，Host-Only模式将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与主机相互通讯。其网络结构如下图所示： 2.Bridged（桥接模">
+  <meta name="description" content="剑指 Offer 07. 重建二叉树 题目来源：剑指 Offer 07. 题目链接：https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;zhong-jian-er-cha-shu-lcof&#x2F;  题目描述输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。 例如，给出 12前序遍历 preorder &#x3D; [3,9,20">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CourageHe&#39;s Blog">
-<meta property="og:url" content="https://couragehe.github.io/2022/08/10/1ba2419402b9/index.html">
+<meta property="og:title" content="剑指 Offer 07. 重建二叉树">
+<meta property="og:url" content="https://couragehe.github.io/2021/02/10/c0d1481126c5/index.html">
 <meta property="og:site_name" content="CourageHe&#39;s Blog">
-<meta property="og:description" content="新装虚拟机-网络配置1、vmware网络简介1.Host-Only（仅主机模式）Host-Only模式其实就是NAT模式去除了虚拟NAT设备，然后使用VMware Network Adapter VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，Host-Only模式将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与主机相互通讯。其网络结构如下图所示： 2.Bridged（桥接模">
+<meta property="og:description" content="剑指 Offer 07. 重建二叉树 题目来源：剑指 Offer 07. 题目链接：https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;zhong-jian-er-cha-shu-lcof&#x2F;  题目描述输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。 例如，给出 12前序遍历 preorder &#x3D; [3,9,20">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://couragehe.github.io/2022/08/10/1ba2419402b9/images/data/ewqewq.png">
-<meta property="og:image" content="https://couragehe.github.io/2022/08/10/1ba2419402b9/images/data/32232232.png">
-<meta property="og:image" content="https://couragehe.github.io/2022/08/10/1ba2419402b9/images/data/wqweqe12.png">
-<meta property="og:image" content="https://couragehe.github.io/2022/08/10/1ba2419402b9/images/data/clip_image002-16600986659924.jpg">
-<meta property="og:image" content="https://couragehe.github.io/2022/08/10/1ba2419402b9/images/data/clip_image004-16600986659935.jpg">
-<meta property="og:image" content="https://couragehe.github.io/2022/08/10/1ba2419402b9/images/data/clip_image006-16600986659936.jpg">
-<meta property="og:image" content="https://couragehe.github.io/2022/08/10/1ba2419402b9/images/data/12313.png">
-<meta property="og:image" content="https://couragehe.github.io/2022/08/10/1ba2419402b9/images/data/clip_image010.jpg">
-<meta property="og:image" content="https://couragehe.github.io/2022/08/10/1ba2419402b9/images/data/21.png">
-<meta property="og:image" content="https://couragehe.github.io/2022/08/10/1ba2419402b9/images/data/clip_image014.jpg">
-<meta property="og:image" content="https://couragehe.github.io/2022/08/10/1ba2419402b9/images/data/image-20220810142652206.png">
-<meta property="article:published_time" content="2022-08-10T02:15:54.564Z">
-<meta property="article:modified_time" content="2022-08-10T06:27:14.296Z">
+<meta property="og:image" content="https://couragehe.github.io/images/data/20210210213410.png">
+<meta property="article:published_time" content="2021-02-10T13:07:23.000Z">
+<meta property="article:modified_time" content="2023-02-15T06:54:06.882Z">
 <meta property="article:author" content="Courage He">
-<meta property="article:tag" content="CourageHe,有勇须知方,博客">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="剑指 Offer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://couragehe.github.io/2022/08/10/1ba2419402b9/images/data/ewqewq.png">
+<meta name="twitter:image" content="https://couragehe.github.io/images/data/20210210213410.png">
 
-<link rel="canonical" href="https://couragehe.github.io/2022/08/10/1ba2419402b9/">
+<link rel="canonical" href="https://couragehe.github.io/2021/02/10/c0d1481126c5/">
 
 
 <script id="page-configurations">
@@ -60,7 +51,7 @@
   };
 </script>
 
-  <title> | CourageHe's Blog</title>
+  <title>剑指 Offer 07. 重建二叉树 | CourageHe's Blog</title>
   
 
 
@@ -137,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -147,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">18</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">24</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -213,7 +204,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2022/08/10/1ba2419402b9/">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/02/10/c0d1481126c5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -226,7 +217,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          剑指 Offer 07. 重建二叉树
         </h1>
 
         <div class="post-meta">
@@ -235,9 +226,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-08-10 10:15:54 / 修改时间：14:27:14" itemprop="dateCreated datePublished" datetime="2022-08-10T10:15:54+08:00">2022-08-10</time>
+              <time title="创建时间：2021-02-10 21:07:23" itemprop="dateCreated datePublished" datetime="2021-02-10T21:07:23+08:00">2021-02-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-02-15 14:54:06" itemprop="dateModified" datetime="2023-02-15T14:54:06+08:00">2023-02-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+                </span>
             </span>
 
           
@@ -253,7 +259,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>920</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -272,34 +278,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="新装虚拟机-网络配置"><a href="#新装虚拟机-网络配置" class="headerlink" title="新装虚拟机-网络配置"></a>新装虚拟机-网络配置</h1><h2 id="1、vmware网络简介"><a href="#1、vmware网络简介" class="headerlink" title="1、vmware网络简介"></a>1、vmware网络简介</h2><h3 id="1-Host-Only（仅主机模式）"><a href="#1-Host-Only（仅主机模式）" class="headerlink" title="1.Host-Only（仅主机模式）"></a><strong>1.Host-Only（仅主机模式）</strong></h3><p>Host-Only模式其实就是NAT模式去除了虚拟NAT设备，然后使用VMware Network Adapter VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，Host-Only模式将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与主机相互通讯。其网络结构如下图所示：<img src="images/data/ewqewq.png" alt="ewqewq"></p>
-<h3 id="2-Bridged（桥接模式）"><a href="#2-Bridged（桥接模式）" class="headerlink" title="2.Bridged（桥接模式）"></a><strong>2.Bridged（桥接模式）</strong></h3><p>什么是桥接模式？桥接模式就是将主机网卡与虚拟机虚拟的网卡利用虚拟网桥进行通信。在桥接的作用下，类似于把物理主机虚拟为一个交换机，所有桥接设置的虚拟机连接到这个交换机的一个接口上，物理主机也同样插在这个交换机当中，所以所有桥接下的网卡与网卡都是交换模式的，相互可以访问而不干扰。在桥接模式下，虚拟机ip地址需要与主机在同一个网段，如果需要联网，则网关与DNS需要与主机网卡一致。其网络结构如下图所示：<img src="images/data/32232232.png" alt="32232232"></p>
-<h3 id="3-NAT（地址转换模式）"><a href="#3-NAT（地址转换模式）" class="headerlink" title="3.NAT（地址转换模式）"></a><strong>3.NAT（地址转换模式）</strong></h3><p>NAT技术应用在internet网关和路由器上，比如192.168.0.123这个地址要访问internet，它的数据包就要通过一个路由器，而路由器拥有一个能访问internet的ip地址，这样的路由器就要在收发数据包时，对数据包的IP协议层数据进行更改（即 NAT），以使私有网段的主机能够顺利访问internet。<br> 刚刚我们说到，如果你的网络ip资源紧缺，但是你又希望你的虚拟机能够联网，这时候NAT模式是最好的选择。NAT模式借助虚拟NAT设备（就是一个路由器）和虚拟DHCP服务器，使得虚拟机可以联网。其网络结构如下图所示</p>
-<p><img src="images/data/wqweqe12.png" alt="‘wqweqe12’"></p>
-<h2 id="2、具体配置"><a href="#2、具体配置" class="headerlink" title="2、具体配置"></a>2、具体配置</h2><p>我们网络选择使用nat模式</p>
-<h3 id="1-网络编辑器设置"><a href="#1-网络编辑器设置" class="headerlink" title="1. 网络编辑器设置"></a>1. 网络编辑器设置</h3><p>选择虚拟网络编辑器</p>
-<p><img src="images/data/clip_image002-16600986659924.jpg" alt="img"></p>
-<p>选择nat模式，然后点击右下角的更改设置</p>
-<p><img src="images/data/clip_image004-16600986659935.jpg" alt="img"></p>
-<p>设置子网IP：192.168.52.0</p>
-<p>子网掩码：255.255.255.0</p>
-<p><img src="images/data/clip_image006-16600986659936.jpg" alt="img"></p>
-<p>点击NAT设置</p>
-<p><img src="images/data/12313.png" alt="12313"></p>
-<p>个人电脑网络设置：找到网络连接中的VMnet8</p>
-<p><img src="images/data/clip_image010.jpg" alt="img"></p>
-<p>设置：</p>
-<p><img src="images/data/21.png" alt="21"></p>
-<h3 id="2-网卡设置"><a href="#2-网卡设置" class="headerlink" title="2. 网卡设置"></a>2. 网卡设置</h3><p>#<code>vim /etc/sysconfig/network-scripts/ifcfg-ens33</code>进入网卡设置</p>
-<p>红色是需要修改和添加的地方，按 i进入编辑模式</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">UUID=4f81f256-131f-4fdb-9365-1ae4c7882aa2</span><br><span class="line">DEVICE=ens33</span><br><span class="line">ONBOOT=yes</span><br><span class="line">IPADDR=192.168.52.100</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.52.1</span><br><span class="line">DNS1=8.8.8.8</span><br></pre></td></tr></table></figure>
+        <h1 id="剑指-Offer-07-重建二叉树"><a href="#剑指-Offer-07-重建二叉树" class="headerlink" title="剑指 Offer 07. 重建二叉树"></a>剑指 Offer 07. 重建二叉树</h1><blockquote>
+<p>题目来源：剑指 Offer 07.</p>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/">https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。</p>
+<p>例如，给出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">前序遍历 preorder &#x3D; [3,9,20,15,7]</span><br><span class="line">中序遍历 inorder &#x3D; [9,3,15,20,7]</span><br></pre></td></tr></table></figure>
 
-<p>改完后【ESC】退出，：wq保存设置退出</p>
-<p>#重启网卡 <code>service network restart</code></p>
-<p><img src="images/data/clip_image014.jpg" alt="img"></p>
-<p>测试网络是否连通外网：<code>ping www.baidu.com </code></p>
-<p><img src="images/data/image-20220810142652206.png" alt="image-20220810142652206"></p>
-<p>到此centos7.4安装完成，网络也配置成功</p>
+<p>返回如下的二叉树：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  3</span><br><span class="line"> &#x2F; \</span><br><span class="line">9  20</span><br><span class="line">  &#x2F;  \</span><br><span class="line"> 15   7</span><br></pre></td></tr></table></figure>
+
+
+<p>限制：</p>
+<p><code>0 &lt;= 节点个数 &lt;= 5000</code></p>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildTree</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(preorder.length ==<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">null</span>; </span><br><span class="line">    <span class="keyword">return</span> buildRecursion(preorder, inorder, <span class="number">0</span>, <span class="number">0</span>, preorder.length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildRecursion</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder, <span class="keyword">int</span> index, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> rootVal = preorder[index];<span class="comment">//根节点值</span></span><br><span class="line">    <span class="keyword">int</span> index2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (; rootVal != inorder[index2]; index2++) ;</span><br><span class="line">    TreeNode root = <span class="keyword">new</span> TreeNode(inorder[index2]);</span><br><span class="line">    TreeNode left = <span class="keyword">null</span>, right = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (index2 &gt; l)</span><br><span class="line">        left = buildRecursion(preorder, inorder, index + <span class="number">1</span>, l, index2 - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (index2 &lt; r)</span><br><span class="line">        right = buildRecursion(preorder, inorder, index + (index2 - l) + <span class="number">1</span>, index2 + <span class="number">1</span>, r);</span><br><span class="line">    root.left = left;</span><br><span class="line">    root.right = right;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210210213410.png" alt="image-20210210213354271"></p>
 
     </div>
      <div>
@@ -343,7 +341,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://couragehe.github.io/2022/08/10/1ba2419402b9/" title="">https://couragehe.github.io/2022/08/10/1ba2419402b9/</a>
+    <a href="https://couragehe.github.io/2021/02/10/c0d1481126c5/" title="剑指 Offer 07. 重建二叉树">https://couragehe.github.io/2021/02/10/c0d1481126c5/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -372,6 +370,11 @@
 
 
       <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
+              <a href="/tags/%E5%89%91%E6%8C%87-Offer/" rel="tag"><i class="fa fa-tag"></i> 剑指 Offer</a>
+          </div>
 
         
 
@@ -379,12 +382,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/07/20/8875b2568660/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
+    <a href="/2021/02/07/6ac5d91209ed/" rel="prev" title="剑指 Offer 06. 从尾到头打印链表">
+      <i class="fa fa-chevron-left"></i> 剑指 Offer 06. 从尾到头打印链表
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/09/17/dec78c70fd80/" rel="next" title="">
-       <i class="fa fa-chevron-right"></i>
+    <a href="/2021/02/12/6ea85d902251/" rel="next" title="辛丑牛年新年展望（2021）">
+      辛丑牛年新年展望（2021） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -445,7 +448,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="nav-text">新装虚拟机-网络配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81vmware%E7%BD%91%E7%BB%9C%E7%AE%80%E4%BB%8B"><span class="nav-text">1、vmware网络简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Host-Only%EF%BC%88%E4%BB%85%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="nav-text">1.Host-Only（仅主机模式）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Bridged%EF%BC%88%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="nav-text">2.Bridged（桥接模式）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-NAT%EF%BC%88%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="nav-text">3.NAT（地址转换模式）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%85%B7%E4%BD%93%E9%85%8D%E7%BD%AE"><span class="nav-text">2、具体配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%BE%E7%BD%AE"><span class="nav-text">1. 网络编辑器设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%BD%91%E5%8D%A1%E8%AE%BE%E7%BD%AE"><span class="nav-text">2. 网卡设置</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%91%E6%8C%87-Offer-07-%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">剑指 Offer 07. 重建二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="nav-text">示例代码</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -461,7 +464,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -474,7 +477,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -525,13 +528,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">37k</span>
+    <span title="站点总字数">48k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">33 分钟</span>
+    <span title="站点阅读时长">44 分钟</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -642,7 +645,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'CourageHe.github.io',
       owner       : 'CourageHe',
       admin       : ['CourageHe'],
-      id          : '17b4b606d7fd2bfd6b708ed31950c219',
+      id          : '930a5780b5a811a0ddaa61c8b882faea',
         language: 'zh-CN',
       distractionFreeMode: true
     });
@@ -652,7 +655,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 </script>
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1676379255558')
+  navigator.serviceWorker.register('/sw.js?t=1676444098334')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
