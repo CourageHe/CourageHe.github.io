@@ -60,219 +60,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo博客安装(一)</title>
-    <url>/2020/09/14/ed31eabc1ddf/</url>
-    <content><![CDATA[<p>欢迎使用 Hexo，本文档将帮助您快速上手。如果您在使用过程中遇到问题，请查看 <a href="https://hexo.io/zh-cn/docs/troubleshooting">问题解答</a> 中的解答，或者在 <a href="https://github.com/hexojs/hexo/issues">GitHub</a>、<a href="https://groups.google.com/group/hexo">Google Group</a> 上提问。</p>
-<h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<a id="more"></a>
-<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><table>
-<thead>
-<tr>
-<th align="center">软件/工具</th>
-<th align="center">版本说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Node</td>
-<td align="center">不低于10.13</td>
-</tr>
-<tr>
-<td align="center">Git</td>
-<td align="center">无要求</td>
-</tr>
-</tbody></table>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init hexo-demo</span><br><span class="line">$ <span class="built_in">cd</span> hexo-demo</span><br><span class="line">$ cnpm install</span><br></pre></td></tr></table></figure>
-
-<p>新建完成后，指定文件夹的目录如下：</p>
-<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>网站的 <a href="https://hexo.io/zh-cn/docs/configuration">配置</a> 信息，您可以在此配置大部分的参数。</p>
-<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>应用程序的信息。<a href="https://ejs.co/">EJS</a>, <a href="http://learnboost.github.io/stylus/">Stylus</a> 和 <a href="http://daringfireball.net/projects/markdown/">Markdown</a> renderer 已默认安装，您可以自由移除。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;hexo-site&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.0.0&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;private&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;build&quot;</span>: <span class="string">&quot;hexo generate&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;clean&quot;</span>: <span class="string">&quot;hexo clean&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;deploy&quot;</span>: <span class="string">&quot;hexo deploy&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;server&quot;</span>: <span class="string">&quot;hexo server&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;hexo&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;hexo&quot;</span>: <span class="string">&quot;^5.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-archive&quot;</span>: <span class="string">&quot;^1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-category&quot;</span>: <span class="string">&quot;^1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-index&quot;</span>: <span class="string">&quot;^2.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-tag&quot;</span>: <span class="string">&quot;^1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-renderer-ejs&quot;</span>: <span class="string">&quot;^1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-renderer-marked&quot;</span>: <span class="string">&quot;^3.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-renderer-stylus&quot;</span>: <span class="string">&quot;^2.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-server&quot;</span>: <span class="string">&quot;^2.0.0&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h3><p><a href="https://hexo.io/zh-cn/docs/writing">模版</a> 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。</p>
-<p>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p>
-<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>资源文件夹是存放用户资源的地方。除 <code>_posts</code> 文件夹之外，开头命名为 <code>_</code> (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 <code>public</code> 文件夹，而其他文件会被拷贝过去。</p>
-<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p><a href="https://hexo.io/zh-cn/docs/themes">主题</a> 文件夹。Hexo 会根据主题来生成静态页面。</p>
-<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="init"><a href="#init" class="headerlink" title="init"></a><code>init</code></h3><p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo init [folder]</span><br></pre></td></tr></table></figure>
-
-<h3 id="new"><a href="#new" class="headerlink" title="new"></a><code>new</code></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p>新建一篇文章。如果没有设置 <code>layout</code> 的话，默认使用 <a href="https://hexo.io/zh-cn/docs/configuration">_config.yml</a> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new &quot;post title with whitespace&quot;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>-p</code>, <code>--path</code></td>
-<td align="left">自定义新文章的路径</td>
-</tr>
-<tr>
-<td align="left"><code>-r</code>, <code>--replace</code></td>
-<td align="left">如果存在同名文章，将其替换</td>
-</tr>
-<tr>
-<td align="left"><code>-s</code>, <code>--slug</code></td>
-<td align="left">文章的 Slug，作为新文章的文件名和发布后的 URL</td>
-</tr>
-</tbody></table>
-<p>默认情况下，Hexo 会使用文章的标题来决定文章文件的路径。对于独立页面来说，Hexo 会创建一个以标题为名字的目录，并在目录中放置一个 <code>index.md</code> 文件。你可以使用 <code>--path</code> 参数来覆盖上述行为、自行决定文件的目录：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page --path about&#x2F;me &quot;About me&quot;</span><br></pre></td></tr></table></figure>
-
-<p>以上命令会创建一个 <code>source/about/me.md</code> 文件，同时 Front Matter 中的 title 为 <code>&quot;About me&quot;</code></p>
-<p>注意！title 是必须指定的！如果你这么做并不能达到你的目的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page --path about&#x2F;me</span><br></pre></td></tr></table></figure>
-
-<p>此时 Hexo 会创建 <code>source/_posts/about/me.md</code>，同时 <code>me.md</code> 的 Front Matter 中的 title 为 <code>&quot;page&quot;</code>。这是因为在上述命令中，hexo-cli 将 <code>page</code> 视为指定文章的标题、并采用默认的 <code>layout</code>。</p>
-<h3 id="generate"><a href="#generate" class="headerlink" title="generate"></a><code>generate</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>生成静态文件。</p>
-<table>
-<thead>
-<tr>
-<th align="left">选项</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>-d</code>, <code>--deploy</code></td>
-<td align="left">文件生成后立即部署网站</td>
-</tr>
-<tr>
-<td align="left"><code>-w</code>, <code>--watch</code></td>
-<td align="left">监视文件变动</td>
-</tr>
-<tr>
-<td align="left"><code>-b</code>, <code>--bail</code></td>
-<td align="left">生成过程中如果发生任何未处理的异常则抛出异常</td>
-</tr>
-<tr>
-<td align="left"><code>-f</code>, <code>--force</code></td>
-<td align="left">强制重新生成文件 Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。 使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
-</tr>
-<tr>
-<td align="left"><code>-c</code>, <code>--concurrency</code></td>
-<td align="left">最大同时生成文件的数量，默认无限制</td>
-</tr>
-</tbody></table>
-<p>该命令可以简写为</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-
-<h3 id="publish"><a href="#publish" class="headerlink" title="publish"></a><code>publish</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-
-<p>发表草稿。</p>
-<h3 id="server"><a href="#server" class="headerlink" title="server"></a><code>server</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p>
-<table>
-<thead>
-<tr>
-<th align="left">选项</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>-p</code>, <code>--port</code></td>
-<td align="left">重设端口</td>
-</tr>
-<tr>
-<td align="left"><code>-s</code>, <code>--static</code></td>
-<td align="left">只使用静态文件</td>
-</tr>
-<tr>
-<td align="left"><code>-l</code>, <code>--log</code></td>
-<td align="left">启动日记记录，使用覆盖记录格式</td>
-</tr>
-</tbody></table>
-<h3 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a><code>deploy</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>部署网站。</p>
-<table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>-g</code>, <code>--generate</code></td>
-<td align="left">部署之前预先生成静态文件</td>
-</tr>
-</tbody></table>
-<p>该命令可以简写为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
-<h3 id="render"><a href="#render" class="headerlink" title="render"></a><code>render</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo render &lt;file1&gt; [file2] ...</span><br></pre></td></tr></table></figure>
-
-<p>渲染文件。</p>
-<table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>-o</code>, <code>--output</code></td>
-<td align="left">设置输出路径</td>
-</tr>
-</tbody></table>
-<h3 id="migrate"><a href="#migrate" class="headerlink" title="migrate"></a><code>migrate</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo migrate &lt;type&gt;</span><br></pre></td></tr></table></figure>
-
-<p>从其他博客系统 <a href="https://hexo.io/zh-cn/docs/migration">迁移内容</a>。</p>
-<h3 id="clean"><a href="#clean" class="headerlink" title="clean"></a><code>clean</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
-
-<p>清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)。</p>
-<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
-<h3 id="list"><a href="#list" class="headerlink" title="list"></a><code>list</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo list &lt;type&gt;</span><br></pre></td></tr></table></figure>
-
-<p>列出网站资料。</p>
-<h3 id="version"><a href="#version" class="headerlink" title="version"></a><code>version</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo version</span><br></pre></td></tr></table></figure>
-
-<p>显示 Hexo 版本。</p>
-<p>参考：<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/09/14/a07b879cfc08/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用rz和sz命令传输文件</title>
     <url>/2021/01/07/818b6f02a79d/</url>
     <content><![CDATA[<h1 id="新鲜出炉的Centos"><a href="#新鲜出炉的Centos" class="headerlink" title="新鲜出炉的Centos"></a>新鲜出炉的Centos</h1><h2 id="一、配置yum国内镜像源"><a href="#一、配置yum国内镜像源" class="headerlink" title="一、配置yum国内镜像源"></a>一、配置yum国内镜像源</h2><h3 id="1、备份"><a href="#1、备份" class="headerlink" title="1、备份"></a>1、备份</h3><p>如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。</p>
@@ -531,6 +318,272 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo博客安装(一)</title>
+    <url>/2020/09/14/ed31eabc1ddf/</url>
+    <content><![CDATA[<p>欢迎使用 Hexo，本文档将帮助您快速上手。如果您在使用过程中遇到问题，请查看 <a href="https://hexo.io/zh-cn/docs/troubleshooting">问题解答</a> 中的解答，或者在 <a href="https://github.com/hexojs/hexo/issues">GitHub</a>、<a href="https://groups.google.com/group/hexo">Google Group</a> 上提问。</p>
+<h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<a id="more"></a>
+<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><table>
+<thead>
+<tr>
+<th align="center">软件/工具</th>
+<th align="center">版本说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Node</td>
+<td align="center">不低于10.13</td>
+</tr>
+<tr>
+<td align="center">Git</td>
+<td align="center">无要求</td>
+</tr>
+</tbody></table>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init hexo-demo</span><br><span class="line">$ <span class="built_in">cd</span> hexo-demo</span><br><span class="line">$ cnpm install</span><br></pre></td></tr></table></figure>
+
+<p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>网站的 <a href="https://hexo.io/zh-cn/docs/configuration">配置</a> 信息，您可以在此配置大部分的参数。</p>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>应用程序的信息。<a href="https://ejs.co/">EJS</a>, <a href="http://learnboost.github.io/stylus/">Stylus</a> 和 <a href="http://daringfireball.net/projects/markdown/">Markdown</a> renderer 已默认安装，您可以自由移除。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;hexo-site&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.0.0&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;private&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;build&quot;</span>: <span class="string">&quot;hexo generate&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;clean&quot;</span>: <span class="string">&quot;hexo clean&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;deploy&quot;</span>: <span class="string">&quot;hexo deploy&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;server&quot;</span>: <span class="string">&quot;hexo server&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;hexo&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;hexo&quot;</span>: <span class="string">&quot;^5.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-archive&quot;</span>: <span class="string">&quot;^1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-category&quot;</span>: <span class="string">&quot;^1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-index&quot;</span>: <span class="string">&quot;^2.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-tag&quot;</span>: <span class="string">&quot;^1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-renderer-ejs&quot;</span>: <span class="string">&quot;^1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-renderer-marked&quot;</span>: <span class="string">&quot;^3.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-renderer-stylus&quot;</span>: <span class="string">&quot;^2.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-server&quot;</span>: <span class="string">&quot;^2.0.0&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h3><p><a href="https://hexo.io/zh-cn/docs/writing">模版</a> 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。</p>
+<p>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p>
+<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>资源文件夹是存放用户资源的地方。除 <code>_posts</code> 文件夹之外，开头命名为 <code>_</code> (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 <code>public</code> 文件夹，而其他文件会被拷贝过去。</p>
+<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p><a href="https://hexo.io/zh-cn/docs/themes">主题</a> 文件夹。Hexo 会根据主题来生成静态页面。</p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="init"><a href="#init" class="headerlink" title="init"></a><code>init</code></h3><p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo init [folder]</span><br></pre></td></tr></table></figure>
+
+<h3 id="new"><a href="#new" class="headerlink" title="new"></a><code>new</code></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>新建一篇文章。如果没有设置 <code>layout</code> 的话，默认使用 <a href="https://hexo.io/zh-cn/docs/configuration">_config.yml</a> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new &quot;post title with whitespace&quot;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-p</code>, <code>--path</code></td>
+<td align="left">自定义新文章的路径</td>
+</tr>
+<tr>
+<td align="left"><code>-r</code>, <code>--replace</code></td>
+<td align="left">如果存在同名文章，将其替换</td>
+</tr>
+<tr>
+<td align="left"><code>-s</code>, <code>--slug</code></td>
+<td align="left">文章的 Slug，作为新文章的文件名和发布后的 URL</td>
+</tr>
+</tbody></table>
+<p>默认情况下，Hexo 会使用文章的标题来决定文章文件的路径。对于独立页面来说，Hexo 会创建一个以标题为名字的目录，并在目录中放置一个 <code>index.md</code> 文件。你可以使用 <code>--path</code> 参数来覆盖上述行为、自行决定文件的目录：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page --path about&#x2F;me &quot;About me&quot;</span><br></pre></td></tr></table></figure>
+
+<p>以上命令会创建一个 <code>source/about/me.md</code> 文件，同时 Front Matter 中的 title 为 <code>&quot;About me&quot;</code></p>
+<p>注意！title 是必须指定的！如果你这么做并不能达到你的目的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page --path about&#x2F;me</span><br></pre></td></tr></table></figure>
+
+<p>此时 Hexo 会创建 <code>source/_posts/about/me.md</code>，同时 <code>me.md</code> 的 Front Matter 中的 title 为 <code>&quot;page&quot;</code>。这是因为在上述命令中，hexo-cli 将 <code>page</code> 视为指定文章的标题、并采用默认的 <code>layout</code>。</p>
+<h3 id="generate"><a href="#generate" class="headerlink" title="generate"></a><code>generate</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>生成静态文件。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-d</code>, <code>--deploy</code></td>
+<td align="left">文件生成后立即部署网站</td>
+</tr>
+<tr>
+<td align="left"><code>-w</code>, <code>--watch</code></td>
+<td align="left">监视文件变动</td>
+</tr>
+<tr>
+<td align="left"><code>-b</code>, <code>--bail</code></td>
+<td align="left">生成过程中如果发生任何未处理的异常则抛出异常</td>
+</tr>
+<tr>
+<td align="left"><code>-f</code>, <code>--force</code></td>
+<td align="left">强制重新生成文件 Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。 使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
+</tr>
+<tr>
+<td align="left"><code>-c</code>, <code>--concurrency</code></td>
+<td align="left">最大同时生成文件的数量，默认无限制</td>
+</tr>
+</tbody></table>
+<p>该命令可以简写为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+<h3 id="publish"><a href="#publish" class="headerlink" title="publish"></a><code>publish</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+<p>发表草稿。</p>
+<h3 id="server"><a href="#server" class="headerlink" title="server"></a><code>server</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-p</code>, <code>--port</code></td>
+<td align="left">重设端口</td>
+</tr>
+<tr>
+<td align="left"><code>-s</code>, <code>--static</code></td>
+<td align="left">只使用静态文件</td>
+</tr>
+<tr>
+<td align="left"><code>-l</code>, <code>--log</code></td>
+<td align="left">启动日记记录，使用覆盖记录格式</td>
+</tr>
+</tbody></table>
+<h3 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a><code>deploy</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>部署网站。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-g</code>, <code>--generate</code></td>
+<td align="left">部署之前预先生成静态文件</td>
+</tr>
+</tbody></table>
+<p>该命令可以简写为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<h3 id="render"><a href="#render" class="headerlink" title="render"></a><code>render</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo render &lt;file1&gt; [file2] ...</span><br></pre></td></tr></table></figure>
+
+<p>渲染文件。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-o</code>, <code>--output</code></td>
+<td align="left">设置输出路径</td>
+</tr>
+</tbody></table>
+<h3 id="migrate"><a href="#migrate" class="headerlink" title="migrate"></a><code>migrate</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo migrate &lt;type&gt;</span><br></pre></td></tr></table></figure>
+
+<p>从其他博客系统 <a href="https://hexo.io/zh-cn/docs/migration">迁移内容</a>。</p>
+<h3 id="clean"><a href="#clean" class="headerlink" title="clean"></a><code>clean</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)。</p>
+<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+<h3 id="list"><a href="#list" class="headerlink" title="list"></a><code>list</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo list &lt;type&gt;</span><br></pre></td></tr></table></figure>
+
+<p>列出网站资料。</p>
+<h3 id="version"><a href="#version" class="headerlink" title="version"></a><code>version</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo version</span><br></pre></td></tr></table></figure>
+
+<p>显示 Hexo 版本。</p>
+<p>参考：<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo添加分类、标签、关于页(二)</title>
+    <url>/2020/09/14/993996b2e602/</url>
+    <content><![CDATA[<blockquote>
+<p>生成的新文件夹都在source下也就是和放文章的文件夹一块 以下所有命令都是在博客文件目录下执行</p>
+</blockquote>
+<h2 id="创建“分类”选项"><a href="#创建“分类”选项" class="headerlink" title="创建“分类”选项"></a>创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行下方命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<p>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>添加type: “categories”到内容中，添加后是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>保存并关闭文件。</p>
+<p>给文章添加“categories”属性</p>
+<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>至此，成功给文章添加分类，点击首页的“分类”可以看到该分类下的所有文章。当然，只有添加了categories: xxx的文章才会被收录到首页的“分类”中。</p>
+<h2 id="创建“标签”选项"><a href="#创建“标签”选项" class="headerlink" title="创建“标签”选项"></a>创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>保存并关闭文件。</p>
+<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo博客安装</span><br><span class="line">date: 2020-09-14 00:58:33</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建“关于”选项"><a href="#创建“关于”选项" class="headerlink" title="创建“关于”选项"></a>创建“关于”选项</h2><p>生成“关于”页并添加tpye属性</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure>
+
+<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 关于我</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">type: about</span><br><span class="line">---</span><br><span class="line"><span class="section">## 个人简介</span></span><br><span class="line">……</span><br><span class="line"><span class="section">## 其他</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<p>保存并关闭文件。</p>
+<p>点击首页的“关于”可以看到该文件所书写的内容。</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/09/14/a07b879cfc08/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -807,6 +860,87 @@
       </categories>
   </entry>
   <entry>
+    <title>辛丑牛年新年展望（2021）</title>
+    <url>/2021/02/12/6ea85d902251/</url>
+    <content><![CDATA[<h1 id="辛丑牛年新年展望（2021）"><a href="#辛丑牛年新年展望（2021）" class="headerlink" title="辛丑牛年新年展望（2021）"></a>辛丑牛年新年展望（2021）</h1><p>&emsp;&emsp;2021年2月12日为辛丑牛年正月初一，就农历而言，今天便就是中国的农历新年。作为一个对传统佳节有浓厚感情的传统国人，辞旧迎新、展望未来便是本文的初衷。2020元旦总结虽有稍许记录，却未整理成文，今天借这个机会发表啦！</p>
+<a id="more"></a>
+
+<h2 id="2020年度总结"><a href="#2020年度总结" class="headerlink" title="2020年度总结"></a>2020年度总结</h2><p>&emsp;&emsp;兜兜转转，大学本科已经步入最后一个年头了。这一年，正经世界百年未有之大变局，时代选择我们来见证，也是由我们来建设这个时代。本文便来讲讲我这一年的见证与建设，首先就开门见山说说2020 的个人生涯关键词：<strong>迷茫</strong>、<strong>焦虑</strong>、<strong>尝试</strong>、<strong>奋斗</strong>。</p>
+<h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><ul>
+<li><strong>迷茫</strong></li>
+</ul>
+<p>&emsp;&emsp;为什么说是迷茫呢？因为疫情前期一直待在家中，本人对未来考研<strong>OR</strong>工作还未明确目标。目标未定，规划更无须再论。那段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
+<ul>
+<li><strong>焦虑</strong></li>
+</ul>
+<p>&emsp;&emsp;每个找工作的娃的焦虑，想必每个人都或多或少有过经历！希望早日结束这个状态，现在终于明白铁饭碗为什么这么香了！</p>
+<ul>
+<li><strong>尝试</strong></li>
+</ul>
+<p>&emsp;&emsp;应届生的身份，敞开了许多大门，事业单位、公务员、研究生、企业等都可以去尝试，去争取。在2020这一年，我一直都在不断尝试，海投简历、面试IT公司、尝试事业单位和备考研究生等等……</p>
+<ul>
+<li><strong>奋斗</strong></li>
+</ul>
+<p>&emsp;&emsp;机会虽然很多，但只有那些有准备的人才能抓住。这一年也是在不断奋斗的一年，同疫情做斗争、刷题背八股文、上海得帆实习、考研备考等。</p>
+<h3 id="月历表"><a href="#月历表" class="headerlink" title="月历表"></a>月历表</h3><ul>
+<li><strong>1月</strong>：大学本科生涯最后的课程正规考试，回家！！！</li>
+</ul>
+<p>&emsp;&emsp;大三上学期的期末考试在一月进行，《数据库原理及应用》，《计算机组成与系统结构》等科目进行闭卷考试，因为疫情在家上网课的原因，这便是最后一次正规的课程结课考试了。1月11号放寒假回家，归家途中经过疫情还未报道的武汉，回家不久就安排在家居家隔离，每天都有村里干部来测体温。</p>
+<ul>
+<li><strong>2月</strong>：疫情造成的蝴蝶效应！</li>
+</ul>
+<p>&emsp;&emsp;2月的头号大事便是春节啦！记忆之初，春节都是热热闹闹的，百年未有之大变局中的春节只能是远程拜年啦！隔离的春节，爱心却两不相隔，一方有难，八方来援这句话在湖北得到广泛运用。一省帮一市、村里送菜送粮、邻里互帮互助等等奉献爱心的行为都让我深受感动。相比之下，国外的某些XXX恶言恶语、不怀好意的反响就显得太过无耻卑鄙，进一步加深了我对ZF的认同并坚定自身立场。</p>
+<ul>
+<li><strong>3月</strong>：疫情期间在家赋闲，陷入焦虑</li>
+</ul>
+<p>&emsp;&emsp;这段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
+<p>疫情实时播报频道：<a href="https://t.me/nCoV2019">https://t.me/nCoV2019</a></p>
+<ul>
+<li><strong>4月</strong>：第一次接单干活，实现技术变现</li>
+</ul>
+<p>&emsp;&emsp;这段期间在家里上网课，课余时间便想找些事情做一下。机缘巧合之下加了一个做私活的群，其中接了一个安卓app的项目，主要任务是写一个类似星巴克咖啡店的APP。另外是一个Web端图书管理系统，前后端交互的形式，由于时间不太够前端草草写了一下。小项目没赚几个钱，但这是首次使用技术变现，值得纪念一下。不得不说，写的界面真丑！哈哈哈</p>
+<p><img src="/images/data/20210213010621.png" alt="image-20210213010621705"></p>
+<ul>
+<li><strong>5月</strong>：面试、准备面试相交织</li>
+</ul>
+<p>&emsp;&emsp;这是一个面试月，投的基本都是各大公司的实习岗位，有上海得帆、字节跳动、华讯网络等。有喜有忧，大公司基本都被拒了，也是自身准备不足的结果，特别是字节跳动的笔试特别考核算法，所以还需历练！所幸还是有所斩获，收获了上海得帆的实习offer。</p>
+<p><img src="/images/data/20210213011312.png" alt="image-20210213011312539"></p>
+<ul>
+<li><strong>6月</strong>：石油项目</li>
+</ul>
+<p>&emsp;&emsp;第一次接触实际项目,学校老师招人干的一个分父子模块的后台管理项目。这是一个从需求到项目成型的实际项目，我主要参与前期的数据库建表、项目搭建。</p>
+<ul>
+<li><strong>7月</strong>：得帆公司培训</li>
+</ul>
+<p>&emsp;&emsp;7月21日上海得帆实习，第一次独自走向远方，第一次参与这种IT规范培训。在这期间结识了不少优秀的同仁，见贤思齐焉！加油！</p>
+<ul>
+<li><strong>8-9月</strong>：上海实习</li>
+</ul>
+<p>&emsp;&emsp;上海得帆公司外派我前往中骏地产参与了ESB项目的开发，新力地产的门户项目。</p>
+<ul>
+<li><strong>10-11月</strong>：回校工作，成为公司第一个员工</li>
+</ul>
+<p>&emsp;&emsp;学校老师创建的一个初创公司，领头的一个老师是我大三参赛的一个项目的指导老师，老师认为我能力还行，便邀请我加入公司。当时我正在上海实习，待了大概两个多月也想换个新环境多多历练。话说初创公司确实很锻炼人啊，就你一个人，啥事都是你。刚开始去的那段时间都没开始写代码，都是搞什么流程讨论，原型设计等。这个决定也深深影响到我找工作的进程，一是留校读研边工作，二是出去工作。利弊难论，马上要到选择的时刻了！</p>
+<ul>
+<li><strong>12月</strong>：临阵考研，加油！！！冲！冲！冲！</li>
+</ul>
+<p>&emsp;&emsp;2020年12月26日考研，这一月脱产备考，无论是否要读都尽力一试。</p>
+<h3 id="年度总结"><a href="#年度总结" class="headerlink" title="年度总结"></a>年度总结</h3><p>&emsp;&emsp;2020许多第一次，第一次接私活，第一次做实际项目，第一次实习，第一次考研。许多第一次做得或许不够好，因此更需努力充实自己。2020，有收获，也有遗憾。这是变化最大的一年，从学校学子到接触社会工作，试错的机会更少，所作的每一个决定都影响着未来数年的路。总的来说，2020让我深刻认识到了自己的不足，见贤思齐焉！！！只思是不够的，更要付诸行动。成功的背后，都是不断的坚持与努力，优秀都是经过一次次碰壁调整出来的。不知从何时起难以专注学习/工作，自制力一直都在减弱，这种状态实在难堪。新的一年希望能够扭转这些疲敝之态，多多历练，想到就去做，一万年太久！只争朝夕！</p>
+<h3 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h3><ul>
+<li>一天至少一道算法题</li>
+</ul>
+<p>&emsp;&emsp;<a href="https://github.com/CourageHe/Algorithm-Daily-Practice">算法日常练习代码库</a></p>
+<ul>
+<li>勤写博客总结经验</li>
+<li>海投岗位，找工作</li>
+<li>看几本书（剑指Offer、JAVA8函数式编程、设计模式）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>个人有感</category>
+      </categories>
+  </entry>
+  <entry>
     <title>FRP内网穿透</title>
     <url>/2021/01/17/dd7e0bbf808e/</url>
     <content><![CDATA[<h1 id="FRP内网穿透"><a href="#FRP内网穿透" class="headerlink" title="FRP内网穿透"></a>FRP内网穿透</h1><blockquote>
@@ -1029,140 +1163,6 @@
       </tags>
   </entry>
   <entry>
-    <title>辛丑牛年新年展望（2021）</title>
-    <url>/2021/02/12/6ea85d902251/</url>
-    <content><![CDATA[<h1 id="辛丑牛年新年展望（2021）"><a href="#辛丑牛年新年展望（2021）" class="headerlink" title="辛丑牛年新年展望（2021）"></a>辛丑牛年新年展望（2021）</h1><p>&emsp;&emsp;2021年2月12日为辛丑牛年正月初一，就农历而言，今天便就是中国的农历新年。作为一个对传统佳节有浓厚感情的传统国人，辞旧迎新、展望未来便是本文的初衷。2020元旦总结虽有稍许记录，却未整理成文，今天借这个机会发表啦！</p>
-<a id="more"></a>
-
-<h2 id="2020年度总结"><a href="#2020年度总结" class="headerlink" title="2020年度总结"></a>2020年度总结</h2><p>&emsp;&emsp;兜兜转转，大学本科已经步入最后一个年头了。这一年，正经世界百年未有之大变局，时代选择我们来见证，也是由我们来建设这个时代。本文便来讲讲我这一年的见证与建设，首先就开门见山说说2020 的个人生涯关键词：<strong>迷茫</strong>、<strong>焦虑</strong>、<strong>尝试</strong>、<strong>奋斗</strong>。</p>
-<h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><ul>
-<li><strong>迷茫</strong></li>
-</ul>
-<p>&emsp;&emsp;为什么说是迷茫呢？因为疫情前期一直待在家中，本人对未来考研<strong>OR</strong>工作还未明确目标。目标未定，规划更无须再论。那段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
-<ul>
-<li><strong>焦虑</strong></li>
-</ul>
-<p>&emsp;&emsp;每个找工作的娃的焦虑，想必每个人都或多或少有过经历！希望早日结束这个状态，现在终于明白铁饭碗为什么这么香了！</p>
-<ul>
-<li><strong>尝试</strong></li>
-</ul>
-<p>&emsp;&emsp;应届生的身份，敞开了许多大门，事业单位、公务员、研究生、企业等都可以去尝试，去争取。在2020这一年，我一直都在不断尝试，海投简历、面试IT公司、尝试事业单位和备考研究生等等……</p>
-<ul>
-<li><strong>奋斗</strong></li>
-</ul>
-<p>&emsp;&emsp;机会虽然很多，但只有那些有准备的人才能抓住。这一年也是在不断奋斗的一年，同疫情做斗争、刷题背八股文、上海得帆实习、考研备考等。</p>
-<h3 id="月历表"><a href="#月历表" class="headerlink" title="月历表"></a>月历表</h3><ul>
-<li><strong>1月</strong>：大学本科生涯最后的课程正规考试，回家！！！</li>
-</ul>
-<p>&emsp;&emsp;大三上学期的期末考试在一月进行，《数据库原理及应用》，《计算机组成与系统结构》等科目进行闭卷考试，因为疫情在家上网课的原因，这便是最后一次正规的课程结课考试了。1月11号放寒假回家，归家途中经过疫情还未报道的武汉，回家不久就安排在家居家隔离，每天都有村里干部来测体温。</p>
-<ul>
-<li><strong>2月</strong>：疫情造成的蝴蝶效应！</li>
-</ul>
-<p>&emsp;&emsp;2月的头号大事便是春节啦！记忆之初，春节都是热热闹闹的，百年未有之大变局中的春节只能是远程拜年啦！隔离的春节，爱心却两不相隔，一方有难，八方来援这句话在湖北得到广泛运用。一省帮一市、村里送菜送粮、邻里互帮互助等等奉献爱心的行为都让我深受感动。相比之下，国外的某些XXX恶言恶语、不怀好意的反响就显得太过无耻卑鄙，进一步加深了我对ZF的认同并坚定自身立场。</p>
-<ul>
-<li><strong>3月</strong>：疫情期间在家赋闲，陷入焦虑</li>
-</ul>
-<p>&emsp;&emsp;这段时间每天就是看看疫情的最新消息，在Telegram上的疫情信息频道一直关注。可能是没见过大世面的原因吧，一有最新消息推送就想深入了解，造成时间都这样白白蹉跎。</p>
-<p>疫情实时播报频道：<a href="https://t.me/nCoV2019">https://t.me/nCoV2019</a></p>
-<ul>
-<li><strong>4月</strong>：第一次接单干活，实现技术变现</li>
-</ul>
-<p>&emsp;&emsp;这段期间在家里上网课，课余时间便想找些事情做一下。机缘巧合之下加了一个做私活的群，其中接了一个安卓app的项目，主要任务是写一个类似星巴克咖啡店的APP。另外是一个Web端图书管理系统，前后端交互的形式，由于时间不太够前端草草写了一下。小项目没赚几个钱，但这是首次使用技术变现，值得纪念一下。不得不说，写的界面真丑！哈哈哈</p>
-<p><img src="/images/data/20210213010621.png" alt="image-20210213010621705"></p>
-<ul>
-<li><strong>5月</strong>：面试、准备面试相交织</li>
-</ul>
-<p>&emsp;&emsp;这是一个面试月，投的基本都是各大公司的实习岗位，有上海得帆、字节跳动、华讯网络等。有喜有忧，大公司基本都被拒了，也是自身准备不足的结果，特别是字节跳动的笔试特别考核算法，所以还需历练！所幸还是有所斩获，收获了上海得帆的实习offer。</p>
-<p><img src="/images/data/20210213011312.png" alt="image-20210213011312539"></p>
-<ul>
-<li><strong>6月</strong>：石油项目</li>
-</ul>
-<p>&emsp;&emsp;第一次接触实际项目,学校老师招人干的一个分父子模块的后台管理项目。这是一个从需求到项目成型的实际项目，我主要参与前期的数据库建表、项目搭建。</p>
-<ul>
-<li><strong>7月</strong>：得帆公司培训</li>
-</ul>
-<p>&emsp;&emsp;7月21日上海得帆实习，第一次独自走向远方，第一次参与这种IT规范培训。在这期间结识了不少优秀的同仁，见贤思齐焉！加油！</p>
-<ul>
-<li><strong>8-9月</strong>：上海实习</li>
-</ul>
-<p>&emsp;&emsp;上海得帆公司外派我前往中骏地产参与了ESB项目的开发，新力地产的门户项目。</p>
-<ul>
-<li><strong>10-11月</strong>：回校工作，成为公司第一个员工</li>
-</ul>
-<p>&emsp;&emsp;学校老师创建的一个初创公司，领头的一个老师是我大三参赛的一个项目的指导老师，老师认为我能力还行，便邀请我加入公司。当时我正在上海实习，待了大概两个多月也想换个新环境多多历练。话说初创公司确实很锻炼人啊，就你一个人，啥事都是你。刚开始去的那段时间都没开始写代码，都是搞什么流程讨论，原型设计等。这个决定也深深影响到我找工作的进程，一是留校读研边工作，二是出去工作。利弊难论，马上要到选择的时刻了！</p>
-<ul>
-<li><strong>12月</strong>：临阵考研，加油！！！冲！冲！冲！</li>
-</ul>
-<p>&emsp;&emsp;2020年12月26日考研，这一月脱产备考，无论是否要读都尽力一试。</p>
-<h3 id="年度总结"><a href="#年度总结" class="headerlink" title="年度总结"></a>年度总结</h3><p>&emsp;&emsp;2020许多第一次，第一次接私活，第一次做实际项目，第一次实习，第一次考研。许多第一次做得或许不够好，因此更需努力充实自己。2020，有收获，也有遗憾。这是变化最大的一年，从学校学子到接触社会工作，试错的机会更少，所作的每一个决定都影响着未来数年的路。总的来说，2020让我深刻认识到了自己的不足，见贤思齐焉！！！只思是不够的，更要付诸行动。成功的背后，都是不断的坚持与努力，优秀都是经过一次次碰壁调整出来的。不知从何时起难以专注学习/工作，自制力一直都在减弱，这种状态实在难堪。新的一年希望能够扭转这些疲敝之态，多多历练，想到就去做，一万年太久！只争朝夕！</p>
-<h3 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h3><ul>
-<li>一天至少一道算法题</li>
-</ul>
-<p>&emsp;&emsp;<a href="https://github.com/CourageHe/Algorithm-Daily-Practice">算法日常练习代码库</a></p>
-<ul>
-<li>勤写博客总结经验</li>
-<li>海投岗位，找工作</li>
-<li>看几本书（剑指Offer、JAVA8函数式编程、设计模式）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>个人有感</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hexo添加分类、标签、关于页(二)</title>
-    <url>/2020/09/14/993996b2e602/</url>
-    <content><![CDATA[<blockquote>
-<p>生成的新文件夹都在source下也就是和放文章的文件夹一块 以下所有命令都是在博客文件目录下执行</p>
-</blockquote>
-<h2 id="创建“分类”选项"><a href="#创建“分类”选项" class="headerlink" title="创建“分类”选项"></a>创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行下方命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
-
-<p>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>添加type: “categories”到内容中，添加后是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>保存并关闭文件。</p>
-<p>给文章添加“categories”属性</p>
-<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-09-14 01:14:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>至此，成功给文章添加分类，点击首页的“分类”可以看到该分类下的所有文章。当然，只有添加了categories: xxx的文章才会被收录到首页的“分类”中。</p>
-<h2 id="创建“标签”选项"><a href="#创建“标签”选项" class="headerlink" title="创建“标签”选项"></a>创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-
-<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2020-09-14 01:16:40</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>保存并关闭文件。</p>
-<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo博客安装</span><br><span class="line">date: 2020-09-14 00:58:33</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建“关于”选项"><a href="#创建“关于”选项" class="headerlink" title="创建“关于”选项"></a>创建“关于”选项</h2><p>生成“关于”页并添加tpye属性</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure>
-
-<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 关于我</span><br><span class="line">date: 2020-09-14 01:31:57</span><br><span class="line">type: about</span><br><span class="line">---</span><br><span class="line"><span class="section">## 个人简介</span></span><br><span class="line">……</span><br><span class="line"><span class="section">## 其他</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
-
-<p>保存并关闭文件。</p>
-<p>点击首页的“关于”可以看到该文件所书写的内容。</p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>动态规划</title>
     <url>/2022/09/17/840fb5fcea0c/</url>
     <content><![CDATA[<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><blockquote>
@@ -1206,6 +1206,260 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实现SingleTton模式</title>
+    <url>/2020/12/30/7959745d4768/</url>
+    <content><![CDATA[<h2 id="实现SingleTton模式"><a href="#实现SingleTton模式" class="headerlink" title="实现SingleTton模式"></a>实现SingleTton模式</h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><blockquote>
+<p>设计一个类，我们只能生成该类的一个示例。</p>
+</blockquote>
+<p>只能生成一个实例的是为了实现<code>Singleton</code>(单例)模式的类型，设计模式在面向对象程序设计中起着举足轻重的作用，在面试过程中公司都喜欢问一些与设计模式相关的问题。在常用的设计模式中，<code>Singleton</code>是唯一一个能够用几十行代码完整实现的模式。因此，写一个<code>Singleton</code>的类型是一个很常见的面试题。</p>
+<a id="more"></a>
+
+<h3 id="二、参考解法"><a href="#二、参考解法" class="headerlink" title="二、参考解法"></a>二、参考解法</h3><h4 id="1、仅适用于单线程环境"><a href="#1、仅适用于单线程环境" class="headerlink" title="1、仅适用于单线程环境"></a>1、仅适用于单线程环境</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> class <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Singeleton</span> <span class="title">instance</span> </span>= <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)<span class="comment">//仅当instance 为null时才创建一个实例，以避免重复创建。</span></span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        <span class="keyword">return</span> instance </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该解法在单线程的时候共工作正常，但在多线程的情况下不适用。设想如果两个线程同时运行到判断instance是否为null的if语句，并且instance的确没有创建时，那么两个线程都会创建一个实例，此时就不满足单例模式的要求。</p>
+<h4 id="2、适用于多线程环境但效率低"><a href="#2、适用于多线程环境但效率低" class="headerlink" title="2、适用于多线程环境但效率低"></a>2、适用于多线程环境但效率低</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object = <span class="keyword">new</span> Object();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span>(object)&#123;<span class="comment">//每次只允许一个线程进入代码块，因此不会出现多线程下创建同一个实例的情况</span></span><br><span class="line">            <span class="keyword">if</span>(instance == <span class="keyword">null</span>)</span><br><span class="line">                instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该解法在多线程环境下使用正常，但是并不完美。在执行过程中，每次都需通过<code>getInstance()</code>得到Singleton实例，并且在此方法中都会加上同步锁，而加锁是一个非常耗时的操作，在没有必要的时候应尽量避免</p>
+<h4 id="3、加锁前判断实例是否存在"><a href="#3、加锁前判断实例是否存在" class="headerlink" title="3、加锁前判断实例是否存在"></a>3、加锁前判断实例是否存在</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object = <span class="keyword">new</span> Object();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span>(object)&#123;<span class="comment">//每次只允许一个线程进入代码块，因此不会出现多线程下创建同一个实例的情况</span></span><br><span class="line">            	<span class="keyword">if</span>(instance == <span class="keyword">null</span>)</span><br><span class="line">                	instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        	&#125; </span><br><span class="line">        &#125;</span><br><span class="line">     </span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该解法只有当<code>instance</code>为<code>null</code>即没有创建时，需要加锁操作。当<code>instance</code>已经创建出来之后，则无需加锁。相比于解法二大大提高了效率，但是代码实现起来比较复杂，容易出错。</p>
+<h4 id="4、利用静态构造函数"><a href="#4、利用静态构造函数" class="headerlink" title="4、利用静态构造函数"></a>4、利用静态构造函数</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();<span class="comment">//静态构造函数。</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>利用静态属性、静态代码块的性质，确保只在加载时调用一次。该段代码非常简洁地实现了功能，但是调用静态构造函数地时机并不是由程序员掌控，而是由JVM运行时发现第一次使用一个类型的时候自动调用该类型的静态构造函数。即实例<code>instance</code>并不是第一次调用属性<code>Singleton.getInstance</code>时创建，而是在第一次用到<code>Singleton</code>时创建。（降低内存的使用效率）</p>
+<h4 id="5、实现按需创建实例"><a href="#5、实现按需创建实例" class="headerlink" title="5、实现按需创建实例"></a>5、实现按需创建实例</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Nested.instance;</span><br><span class="line">    &#125;</span><br><span class="line">    stattic <span class="class"><span class="keyword">class</span> <span class="title">Nested</span></span>&#123;<span class="comment">//外部类加载时，静态内部类不会同时加载，而是在调用静态内部类（静态域、静态方法、构造函数）时加载。</span></span><br><span class="line">		<span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>专题练习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序算法展示</title>
+    <url>/2022/01/09/3770499952d7/</url>
+    <content><![CDATA[<h1 id="排序算法展示"><a href="#排序算法展示" class="headerlink" title="排序算法展示"></a>排序算法展示</h1><h2 id="排序定义及其性质"><a href="#排序定义及其性质" class="headerlink" title="排序定义及其性质"></a>排序定义及其性质</h2><h3 id="一、冒泡排序"><a href="#一、冒泡排序" class="headerlink" title="一、冒泡排序"></a><a href="https://baike.baidu.com/item/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F">一、冒泡排序</a></h3><p>&emsp;&emsp;冒泡排序（Bubble Sort），是一种<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6">计算机科学</a>领域的较简单的<a href="https://baike.baidu.com/item/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5399605">排序算法</a>。</p>
+<p>&emsp;&emsp;它重复地走访过要排序的元素列，依次比较两个相邻的元素，如果顺序（如从大到小、首字母从Z到A）错误就把他们交换过来。走访元素的工作是重复地进行直到没有相邻元素需要交换，也就是说该元素列已经排序完成。</p>
+<p>&emsp;&emsp;这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名“冒泡排序”。<a id="more"></a></p>
+<h3 id="二、选择排序"><a href="#二、选择排序" class="headerlink" title="二、选择排序"></a><a href="https://baike.baidu.com/item/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F">二、选择排序</a></h3><p>&emsp;&emsp;选择排序（Selection sort）是一种简单直观的<a href="https://baike.baidu.com/item/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5399605">排序算法</a>。它的工作原理是：第一次从待排序的<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0/715313">数据元素</a>中选出最小（或最大）的一个元素，存放在序列的起始位置，然后再从剩余的未排序元素中寻找到最小（大）元素，然后放到已排序的序列的末尾。以此类推，直到全部待排序的数据元素的个数为零。选择排序是不稳定的排序方法。</p>
+<h3 id="三、插入排序"><a href="#三、插入排序" class="headerlink" title="三、插入排序"></a><a href="https://baike.baidu.com/item/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F">三、插入排序</a></h3><p>&emsp;&emsp;插入排序（Insertion sort）是一种简单直观且稳定的<a href="https://baike.baidu.com/item/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5399605">排序算法</a>。如果有一个已经有序的数据序列，要求在这个已经排好的数据序列中插入一个数，但要求插入后此数据序列仍然有序，这个时候就要用到一种新的排序方法——<a href="https://baike.baidu.com/item/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E6%B3%95/612261">插入排序法</a>,算法适用于少量数据的排序，<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/1894057">时间复杂度</a>O(n^2)。是稳定的排序方法。插入算法把要排序的<a href="https://baike.baidu.com/item/%E6%95%B0%E7%BB%84/3794097">数组</a>分成两部分：第一部分包含了这个数组的所有元素，但将最后一个元素除外（让数组多一个空间才有插入的位置），而第二部分就只包含这一个元素（即待插入元素）。在第一部分排序完成后，再将这个最后元素插入到已排好序的第一部分中。</p>
+<h3 id="四、希尔排序"><a href="#四、希尔排序" class="headerlink" title="四、希尔排序"></a><a href="%5Bhttps://baike.baidu.com/item/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F%5D(https://baike.baidu.com/item/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F)">四、希尔排序</a></h3><p>&emsp;&emsp;希尔排序(Shell&#39;s Sort)是<a href="https://baike.baidu.com/item/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/7214992">插入排序</a>的一种又称“缩小增量排序”（Diminishing Increment Sort），是直接插入<a href="https://baike.baidu.com/item/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5399605">排序算法</a>的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。</p>
+<p>&emsp;&emsp;希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，<a href="https://baike.baidu.com/item/%E7%AE%97%E6%B3%95/209025">算法</a>便终止。 </p>
+<h3 id="四、归并排序"><a href="#四、归并排序" class="headerlink" title="四、归并排序"></a><a href="https://baike.baidu.com/item/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F">四、归并排序</a></h3><p>&emsp;&emsp;归并排序（MERGE-SORT）是建立在归并操作上的一种有效的排序算法,该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为**二路<a href="https://baike.baidu.com/item/%E5%BD%92%E5%B9%B6/253741">归并</a>**。归并排序是一种稳定的排序方法。</p>
+<h3 id="五、快速排序"><a href="#五、快速排序" class="headerlink" title="五、快速排序"></a><a href="https://baike.baidu.com/item/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95">五、快速排序</a></h3><p>快速排序（Quicksort）是对冒泡排序的一种改进。 </p>
+<p>&emsp;&emsp;快速排序由C. A. R. Hoare在1960年提出。它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以<a href="https://baike.baidu.com/item/%E9%80%92%E5%BD%92/1740695">递归</a>进行，以此达到整个数据变成有序<a href="https://baike.baidu.com/item/%E5%BA%8F%E5%88%97/1302588">序列</a></p>
+<h2 id="排序算法题目示例："><a href="#排序算法题目示例：" class="headerlink" title="排序算法题目示例："></a>排序算法题目示例：</h2><h3 id="75-颜色分类"><a href="#75-颜色分类" class="headerlink" title="75. 颜色分类"></a><a href="https://leetcode-cn.com/problems/sort-colors/">75. 颜色分类</a></h3><h4 id="1、冒泡排序"><a href="#1、冒泡排序" class="headerlink" title="1、冒泡排序"></a>1、冒泡排序</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>()<span class="number">-1</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.<span class="built_in">size</span>()-i<span class="number">-1</span>; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (nums[j] &gt; nums[j+<span class="number">1</span>]) &#123;</span><br><span class="line">				<span class="keyword">int</span> temp = nums[j];</span><br><span class="line">				nums[j] = nums[j+<span class="number">1</span>];</span><br><span class="line">				nums[j+<span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2、选择排序"><a href="#2、选择排序" class="headerlink" title="2、选择排序"></a>2、选择排序</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> <span class="built_in">min</span> = i;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; nums.<span class="built_in">size</span>(); j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (nums[<span class="built_in">min</span>] &gt; nums[j]) &#123;</span><br><span class="line">				<span class="built_in">min</span> = j;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">min</span> != i) &#123;</span><br><span class="line">			<span class="keyword">int</span> temp = nums[i];</span><br><span class="line">			nums[i] = nums[<span class="built_in">min</span>];</span><br><span class="line">			nums[<span class="built_in">min</span>] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、三路插入排序"><a href="#3、三路插入排序" class="headerlink" title="3、三路插入排序"></a>3、三路插入排序</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> zero = -<span class="number">1</span>; <span class="comment">//nums[0……zero] =0</span></span><br><span class="line">        <span class="keyword">int</span> two = nums.length; <span class="comment">//nums[two……n) =2</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; two;)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == <span class="number">1</span>)&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[i] == <span class="number">2</span>)&#123;</span><br><span class="line">                swap(nums,i,--two);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                swap(nums,i++,++zero);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> nums[],<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = nums[a];</span><br><span class="line">        nums[a] = nums[b];</span><br><span class="line">        nums[b] = temp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="88-合并两个有序数组"><a href="#88-合并两个有序数组" class="headerlink" title="88. 合并两个有序数组"></a><a href="https://leetcode-cn.com/problems/merge-sorted-array/">88. 合并两个有序数组</a></h3><h4 id="1、二路归并法"><a href="#1、二路归并法" class="headerlink" title="1、二路归并法"></a>1、二路归并法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span>[] newNums = <span class="keyword">new</span> <span class="keyword">int</span>[m+n];</span><br><span class="line">       <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>,k=<span class="number">0</span>;</span><br><span class="line">       <span class="keyword">while</span> (i&lt;m&amp;&amp;j&lt;n) &#123;</span><br><span class="line">           newNums[k++] = nums1[i] &lt; nums2[j] ? nums1[i++] : nums2[j++];</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">while</span> (i &lt; m)&#123;</span><br><span class="line">           newNums[k++] = nums1[i++];</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">while</span> (j &lt; n) &#123;</span><br><span class="line">           newNums[k++] = nums2[j++];</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> l =<span class="number">0</span>;l&lt; newNums.length;l++)&#123;</span><br><span class="line">           nums1[l] = newNums[l];</span><br><span class="line">           System.out.print(nums1[l]+<span class="string">&quot; &quot;</span>);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="215-数组中的第K个最大元素"><a href="#215-数组中的第K个最大元素" class="headerlink" title="215. 数组中的第K个最大元素"></a><a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">215. 数组中的第K个最大元素</a></h3><h4 id="1、冒泡法优化版"><a href="#1、冒泡法优化版" class="headerlink" title="1、冒泡法优化版"></a>1、冒泡法优化版</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> n = nums.length;</span><br><span class="line">       <span class="keyword">int</span> kk = nums.length - k;</span><br><span class="line">       <span class="keyword">do</span>&#123;</span><br><span class="line">           <span class="keyword">int</span> index = <span class="number">0</span>;<span class="comment">//排序辅助坐标点 在nums(index……n)中是有序的</span></span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">               <span class="keyword">if</span> (nums[i] &gt; nums[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                   <span class="keyword">int</span> temp = nums[i];</span><br><span class="line">                   nums[i] = nums[i + <span class="number">1</span>];</span><br><span class="line">                   nums[i + <span class="number">1</span>] = temp;</span><br><span class="line"></span><br><span class="line">                   index = i;<span class="comment">//记录最后一次交换的坐标</span></span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           n = index;</span><br><span class="line">           <span class="keyword">if</span> (index &lt; kk) <span class="keyword">return</span> nums[kk];</span><br><span class="line">       &#125;<span class="keyword">while</span>(n &gt; <span class="number">0</span>);</span><br><span class="line">       <span class="keyword">return</span> nums[kk];</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、快速排序法"><a href="#2、快速排序法" class="headerlink" title="2、快速排序法"></a>2、快速排序法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">       quickSort(nums,<span class="number">0</span>,nums.length-<span class="number">1</span>,k);</span><br><span class="line">       <span class="keyword">return</span> nums[nums.length-k];</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] nums ,<span class="keyword">int</span> start,<span class="keyword">int</span> end,<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> l = start ,r = end;</span><br><span class="line">       <span class="keyword">int</span> pivort = nums[l];</span><br><span class="line">       <span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">           <span class="keyword">while</span>((l&lt;r)&amp;&amp;nums[l]&lt;pivort)</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">while</span>((l&lt;r)&amp;&amp;nums[r]&gt;pivort)</span><br><span class="line">               r--;</span><br><span class="line">           <span class="keyword">if</span>((l&lt;r)&amp;&amp;nums[l]==nums[r])</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">else</span> &#123;                </span><br><span class="line">               <span class="keyword">int</span> temp = nums[l];                </span><br><span class="line">               nums[l] = nums[r];                </span><br><span class="line">               nums[r] = temp;            </span><br><span class="line">           &#125; </span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span>((l-<span class="number">1</span>)&gt;start)quickSort(nums,start,l-<span class="number">1</span>,k);</span><br><span class="line">       <span class="keyword">if</span>((r+<span class="number">1</span>)&lt;end)quickSort(nums,r+<span class="number">1</span>,end,k);</span><br><span class="line">      </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="912-排序数组"><a href="#912-排序数组" class="headerlink" title="912. 排序数组"></a><a href="https://leetcode-cn.com/problems/sort-an-array/">912. 排序数组</a></h3><h4 id="1、插入排序法"><a href="#1、插入排序法" class="headerlink" title="1、插入排序法"></a>1、插入排序法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArray(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">       <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>)<span class="keyword">return</span> nums;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> current = nums[i];</span><br><span class="line">            <span class="keyword">int</span> j =i-<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(j&gt;=<span class="number">0</span>&amp;&amp;nums[j]&gt;current)</span><br><span class="line">                    nums[j+<span class="number">1</span>] = nums[j--];</span><br><span class="line">             nums[j+<span class="number">1</span>] =current; </span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、希尔排序"><a href="#2、希尔排序" class="headerlink" title="2、希尔排序"></a>2、希尔排序</h4><p>&emsp;&emsp;1959年Shell发明，第一个突破O(n2)的排序算法，是简单插入排序的改进版。它与插入排序的不同之处在于，它会优先比较距离较远的元素。希尔排序又叫<strong>缩小增量排序</strong>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArray(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">       <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>)<span class="keyword">return</span> nums;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> gap =nums.length/<span class="number">2</span>;gap&gt;<span class="number">0</span>;gap =gap/<span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i =gap;i&lt;nums.length;i+=gap)&#123;</span><br><span class="line">                    <span class="keyword">int</span> current = nums[i];</span><br><span class="line">                    <span class="keyword">int</span> j =i-gap;</span><br><span class="line">                    <span class="keyword">while</span>(j&gt;=<span class="number">0</span>&amp;&amp;nums[j]&gt;current)&#123;</span><br><span class="line">                            nums[j+gap] = nums[j];</span><br><span class="line">                            j-=gap;</span><br><span class="line">                    &#125;</span><br><span class="line">                    nums[j+gap] =current; </span><br><span class="line">            &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、归并排序"><a href="#3、归并排序" class="headerlink" title="3、归并排序"></a>3、归并排序</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArray(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>)<span class="keyword">return</span> nums;</span><br><span class="line">        <span class="keyword">return</span> mergeSort(nums,<span class="number">0</span>,nums.length-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] mergeSort(<span class="keyword">int</span>[] nums,<span class="keyword">int</span> l,<span class="keyword">int</span> r) &#123;</span><br><span class="line">        <span class="keyword">if</span>(l==r)<span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;nums[l]&#125;;</span><br><span class="line">        <span class="keyword">int</span> mid = l+(r-l)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span>[]numsLeft = mergeSort(nums,l,mid);<span class="comment">//左有序数组</span></span><br><span class="line">        <span class="keyword">int</span>[]numsRight = mergeSort(nums,mid+<span class="number">1</span>,r);<span class="comment">//右有序数组</span></span><br><span class="line">        <span class="keyword">int</span> []newNums = <span class="keyword">new</span> <span class="keyword">int</span>[numsLeft.length+numsRight.length];<span class="comment">//开辟新有序数组空间</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>,j=<span class="number">0</span>,k=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;numsLeft.length&amp;&amp;j&lt;numsRight.length)</span><br><span class="line">            newNums[k++] = numsLeft[i]&lt;numsRight[j]?numsLeft[i++]:numsRight[j++];</span><br><span class="line">        <span class="keyword">while</span>(i&lt;numsLeft.length)</span><br><span class="line">          newNums[k++] = numsLeft[i++];</span><br><span class="line">        <span class="keyword">while</span>(j&lt;numsRight.length)</span><br><span class="line">          newNums[k++] = numsRight[j++];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> newNums;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>参考：<a href="https://www.cnblogs.com/onepixel/articles/7674659.html"><a href="https://www.cnblogs.com/onepixel/p/7674659.html">十大经典排序算法（动图演示）</a></a></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>专题练习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指 Offer 03. 数组中重复的数字</title>
+    <url>/2021/01/26/3000b056946c/</url>
+    <content><![CDATA[<h1 id="剑指-Offer-03-数组中重复的数字"><a href="#剑指-Offer-03-数组中重复的数字" class="headerlink" title="剑指 Offer 03. 数组中重复的数字"></a>剑指 Offer 03. 数组中重复的数字</h1><blockquote>
+<p>题目来源：剑指Offer03</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>找出数组中重复的数字。</p>
+<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
+<p>示例 1：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">[2, 3, 1, 0, 2, 5, 3]</span><br><span class="line">输出：2 或 3 </span><br></pre></td></tr></table></figure>
+
+
+<p>限制：</p>
+<ul>
+<li><code>2 &lt;= n &lt;= 100000</code></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>统计重复元素常用方法是使用哈希表，如果统计的是元素明确范围的话建议使用数组。</p>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="哈希表统计"><a href="#哈希表统计" class="headerlink" title="哈希表统计"></a>哈希表统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt;nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(set.contains(nums[i]))&#123;</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               set.add(nums[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210126002427.png" alt="image-20210126002427040"></p>
+<h3 id="数组统计"><a href="#数组统计" class="headerlink" title="数组统计"></a>数组统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[nums[i]] == <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                arr[nums[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210201152224.png" alt="image-20210126002415245"></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>剑指 Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指 Offer 04. 二维数组中的查找</title>
+    <url>/2021/02/07/9bedcabf0de2/</url>
+    <content><![CDATA[<h1 id="剑指-Offer-04-二维数组中的查找"><a href="#剑指-Offer-04-二维数组中的查找" class="headerlink" title="剑指 Offer 04. 二维数组中的查找"></a>剑指 Offer 04. 二维数组中的查找</h1><blockquote>
+<p>题目来源：剑指Offer04</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/">https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在一个 <code>n * m </code>的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+<p><strong>示例:</strong></p>
+<p>现有矩阵 matrix 如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  [1,   4,  7, 11, 15],</span><br><span class="line">  [2,   5,  8, 12, 19],</span><br><span class="line">  [3,   6,  9, 16, 22],</span><br><span class="line">  [10, 13, 14, 17, 24],</span><br><span class="line">  [18, 21, 23, 26, 30]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+
+<p>给定 <code>target</code> = 5，返回 <code>true</code>。</p>
+<p>给定 <code>target</code> = 20，返回 <code>false</code>。</p>
+<p><strong>限制：</strong></p>
+<p><code>0 &lt;= n &lt;= 1000</code></p>
+<p><code>0 &lt;= m &lt;= 1000</code></p>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">findNumberIn2DArray</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(matrix.length ==<span class="number">0</span> || matrix[<span class="number">0</span>].length == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;<span class="comment">//矩阵为空则直接返回false</span></span><br><span class="line">    <span class="keyword">int</span> n = matrix.length;<span class="comment">//计算n</span></span><br><span class="line">    <span class="keyword">int</span> m  = matrix[<span class="number">0</span>].length;<span class="comment">//计算m</span></span><br><span class="line">    <span class="keyword">int</span> i =<span class="number">0</span>,j = m-<span class="number">1</span>;<span class="comment">//从矩阵右上角开始排查</span></span><br><span class="line">    <span class="keyword">for</span>(;i&lt;n&amp;&amp;j&gt;=<span class="number">0</span>;)&#123;</span><br><span class="line">        <span class="keyword">if</span>(matrix[i][j] == target)<span class="comment">//等于则返回为true</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(matrix[i][j] &gt; target)<span class="comment">//大于则比较元素为同行前一个</span></span><br><span class="line">            j--;</span><br><span class="line">        <span class="keyword">else</span><span class="comment">//小于则比较元素为同列下一个</span></span><br><span class="line">            i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210207204443.png" alt="image-20210207204442425"></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>剑指 Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指 Offer 06. 从尾到头打印链表</title>
+    <url>/2021/02/07/6ac5d91209ed/</url>
+    <content><![CDATA[<h1 id="剑指-Offer-06-从尾到头打印链表"><a href="#剑指-Offer-06-从尾到头打印链表" class="headerlink" title="剑指 Offer 06. 从尾到头打印链表"></a>剑指 Offer 06. 从尾到头打印链表</h1><blockquote>
+<p>题目来源：剑指 Offer 06.</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/">https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：head &#x3D; [1,3,2]</span><br><span class="line">输出：[2,3,1]</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>限制：</strong></p>
+<p><code>0 &lt;= 链表长度 &lt;= 10000</code></p>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] reversePrint(ListNode head) &#123;</span><br><span class="line">      <span class="comment">//使用栈完成反转</span></span><br><span class="line">      Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">      ListNode pNode = head;</span><br><span class="line">      <span class="keyword">while</span>(pNode !=<span class="keyword">null</span>)&#123;</span><br><span class="line">          stack.push(pNode.val);</span><br><span class="line">          pNode = pNode.next;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">int</span>[]ans = <span class="keyword">new</span> <span class="keyword">int</span>[stack.size()];</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;ans.length;i++)</span><br><span class="line">          ans[i]=stack.pop();</span><br><span class="line">      <span class="keyword">return</span> ans;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210207220941.png" alt="image-20210207220941087"></p>
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Integer&gt; list= <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] reversePrint(ListNode head) &#123;</span><br><span class="line">    <span class="comment">//使用递归完成反转</span></span><br><span class="line">    ListNode pNode = head;</span><br><span class="line">    reverseRecursion(pNode);</span><br><span class="line">    <span class="keyword">int</span>[]ans = <span class="keyword">new</span> <span class="keyword">int</span>[list.size()];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;ans.length;i++)</span><br><span class="line">        ans[i]=list.get(i);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">reverseRecursion</span><span class="params">(ListNode pNode)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pNode == <span class="keyword">null</span>) </span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    reverseRecursion(pNode.next);</span><br><span class="line">    list.add(pNode.val);</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210207224552.png" alt="image-20210207224552623"></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>剑指 Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指 Offer 05. 替换空格</title>
+    <url>/2021/02/07/c56758abfe9d/</url>
+    <content><![CDATA[<h1 id="剑指-Offer-05-替换空格"><a href="#剑指-Offer-05-替换空格" class="headerlink" title="剑指 Offer 05. 替换空格"></a>剑指 Offer 05. 替换空格</h1><blockquote>
+<p>题目来源：剑指 Offer 05</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/">https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>请实现一个函数，把字符串 <code>s </code>中的每个空格替换成”<code>%20</code>“。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s &#x3D; &quot;We are happy.&quot;</span><br><span class="line">输出：&quot;We%20are%20happy.&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>限制：</strong></p>
+<p><code>0 &lt;= s 的长度 &lt;= 10000</code></p>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replaceSpace</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> s.replaceAll(<span class="string">&quot;\\s&quot;</span>,<span class="string">&quot;%20&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210207214401.png" alt="image-20210207214401593"></p>
+<h3 id="JAVAAPI"><a href="#JAVAAPI" class="headerlink" title="JAVAAPI"></a>JAVAAPI</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replaceSpace</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       StringBuilder builder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">           <span class="keyword">char</span> ch = s.charAt(i);</span><br><span class="line">           <span class="keyword">if</span>(String.valueOf(ch).equals(<span class="string">&quot; &quot;</span>))&#123;</span><br><span class="line">               builder.append(<span class="string">&quot;%20&quot;</span>);</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               builder.append(ch);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> builder.toString();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210207214339.png" alt="image-20210207214339679"></p>
+<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replaceSpace</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) <span class="keyword">return</span> s;</span><br><span class="line">    <span class="keyword">char</span> [] arr = s.toCharArray();<span class="comment">//数组化</span></span><br><span class="line">    <span class="keyword">int</span> numOfBlank = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c : arr)</span><br><span class="line">        <span class="keyword">if</span>(c == <span class="string">&#x27; &#x27;</span>) numOfBlank++;</span><br><span class="line">    <span class="comment">//数组扩容</span></span><br><span class="line">    <span class="keyword">char</span>[] arrNew = <span class="keyword">new</span> <span class="keyword">char</span>[arr.length+numOfBlank*<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;arr.length;i++)</span><br><span class="line">        arrNew[i] = arr[i];</span><br><span class="line">    <span class="keyword">int</span> p1 = arr.length-<span class="number">1</span>;<span class="comment">//指向原始字符串的末尾</span></span><br><span class="line">    <span class="keyword">int</span> p2 = arrNew.length-<span class="number">1</span>;<span class="comment">//指向替换之后的字符串的末尾</span></span><br><span class="line">    <span class="keyword">for</span>(;p1!=p2;)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arrNew[p1] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            arrNew[p2--] = arrNew[p1--];<span class="comment">//</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            p1--;</span><br><span class="line">            arrNew[p2--] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            arrNew[p2--] = <span class="string">&#x27;2&#x27;</span>;</span><br><span class="line">            arrNew[p2--] = <span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> String.valueOf(arrNew);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210207214316.png" alt="image-20210207214316139"></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>剑指 Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指 Offer 07. 重建二叉树</title>
+    <url>/2021/02/10/c0d1481126c5/</url>
+    <content><![CDATA[<h1 id="剑指-Offer-07-重建二叉树"><a href="#剑指-Offer-07-重建二叉树" class="headerlink" title="剑指 Offer 07. 重建二叉树"></a>剑指 Offer 07. 重建二叉树</h1><blockquote>
+<p>题目来源：剑指 Offer 07.</p>
+<p>题目链接：<a href="https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/">https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。</p>
+<p>例如，给出</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">前序遍历 preorder &#x3D; [3,9,20,15,7]</span><br><span class="line">中序遍历 inorder &#x3D; [9,3,15,20,7]</span><br></pre></td></tr></table></figure>
+
+<p>返回如下的二叉树：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  3</span><br><span class="line"> &#x2F; \</span><br><span class="line">9  20</span><br><span class="line">  &#x2F;  \</span><br><span class="line"> 15   7</span><br></pre></td></tr></table></figure>
+
+
+<p>限制：</p>
+<p><code>0 &lt;= 节点个数 &lt;= 5000</code></p>
+<a id="more"></a>
+
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildTree</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(preorder.length ==<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">null</span>; </span><br><span class="line">    <span class="keyword">return</span> buildRecursion(preorder, inorder, <span class="number">0</span>, <span class="number">0</span>, preorder.length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildRecursion</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder, <span class="keyword">int</span> index, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> rootVal = preorder[index];<span class="comment">//根节点值</span></span><br><span class="line">    <span class="keyword">int</span> index2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (; rootVal != inorder[index2]; index2++) ;</span><br><span class="line">    TreeNode root = <span class="keyword">new</span> TreeNode(inorder[index2]);</span><br><span class="line">    TreeNode left = <span class="keyword">null</span>, right = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (index2 &gt; l)</span><br><span class="line">        left = buildRecursion(preorder, inorder, index + <span class="number">1</span>, l, index2 - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (index2 &lt; r)</span><br><span class="line">        right = buildRecursion(preorder, inorder, index + (index2 - l) + <span class="number">1</span>, index2 + <span class="number">1</span>, r);</span><br><span class="line">    root.left = left;</span><br><span class="line">    root.right = right;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="/images/data/20210210213410.png" alt="image-20210210213354271"></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>剑指 Offer</tag>
       </tags>
   </entry>
   <entry>
@@ -1292,260 +1546,6 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>竞赛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>剑指 Offer 04. 二维数组中的查找</title>
-    <url>/2021/02/07/9bedcabf0de2/</url>
-    <content><![CDATA[<h1 id="剑指-Offer-04-二维数组中的查找"><a href="#剑指-Offer-04-二维数组中的查找" class="headerlink" title="剑指 Offer 04. 二维数组中的查找"></a>剑指 Offer 04. 二维数组中的查找</h1><blockquote>
-<p>题目来源：剑指Offer04</p>
-<p>题目链接：<a href="https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/">https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/</a></p>
-</blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在一个 <code>n * m </code>的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
-<p><strong>示例:</strong></p>
-<p>现有矩阵 matrix 如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  [1,   4,  7, 11, 15],</span><br><span class="line">  [2,   5,  8, 12, 19],</span><br><span class="line">  [3,   6,  9, 16, 22],</span><br><span class="line">  [10, 13, 14, 17, 24],</span><br><span class="line">  [18, 21, 23, 26, 30]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-
-<p>给定 <code>target</code> = 5，返回 <code>true</code>。</p>
-<p>给定 <code>target</code> = 20，返回 <code>false</code>。</p>
-<p><strong>限制：</strong></p>
-<p><code>0 &lt;= n &lt;= 1000</code></p>
-<p><code>0 &lt;= m &lt;= 1000</code></p>
-<a id="more"></a>
-
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">findNumberIn2DArray</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(matrix.length ==<span class="number">0</span> || matrix[<span class="number">0</span>].length == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;<span class="comment">//矩阵为空则直接返回false</span></span><br><span class="line">    <span class="keyword">int</span> n = matrix.length;<span class="comment">//计算n</span></span><br><span class="line">    <span class="keyword">int</span> m  = matrix[<span class="number">0</span>].length;<span class="comment">//计算m</span></span><br><span class="line">    <span class="keyword">int</span> i =<span class="number">0</span>,j = m-<span class="number">1</span>;<span class="comment">//从矩阵右上角开始排查</span></span><br><span class="line">    <span class="keyword">for</span>(;i&lt;n&amp;&amp;j&gt;=<span class="number">0</span>;)&#123;</span><br><span class="line">        <span class="keyword">if</span>(matrix[i][j] == target)<span class="comment">//等于则返回为true</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(matrix[i][j] &gt; target)<span class="comment">//大于则比较元素为同行前一个</span></span><br><span class="line">            j--;</span><br><span class="line">        <span class="keyword">else</span><span class="comment">//小于则比较元素为同列下一个</span></span><br><span class="line">            i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="https://gitee.com/Courage-He/PicBed/raw/master/data/20210207204443.png" alt="image-20210207204442425"></p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>剑指 Offer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>剑指 Offer 05. 替换空格</title>
-    <url>/2021/02/07/c56758abfe9d/</url>
-    <content><![CDATA[<h1 id="剑指-Offer-05-替换空格"><a href="#剑指-Offer-05-替换空格" class="headerlink" title="剑指 Offer 05. 替换空格"></a>剑指 Offer 05. 替换空格</h1><blockquote>
-<p>题目来源：剑指 Offer 05</p>
-<p>题目链接：<a href="https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/">https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/</a></p>
-</blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>请实现一个函数，把字符串 <code>s </code>中的每个空格替换成”<code>%20</code>“。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s &#x3D; &quot;We are happy.&quot;</span><br><span class="line">输出：&quot;We%20are%20happy.&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>限制：</strong></p>
-<p><code>0 &lt;= s 的长度 &lt;= 10000</code></p>
-<a id="more"></a>
-
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replaceSpace</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> s.replaceAll(<span class="string">&quot;\\s&quot;</span>,<span class="string">&quot;%20&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="/images/data/20210207214401.png" alt="image-20210207214401593"></p>
-<h3 id="JAVAAPI"><a href="#JAVAAPI" class="headerlink" title="JAVAAPI"></a>JAVAAPI</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replaceSpace</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       StringBuilder builder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">           <span class="keyword">char</span> ch = s.charAt(i);</span><br><span class="line">           <span class="keyword">if</span>(String.valueOf(ch).equals(<span class="string">&quot; &quot;</span>))&#123;</span><br><span class="line">               builder.append(<span class="string">&quot;%20&quot;</span>);</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               builder.append(ch);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> builder.toString();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="/images/data/20210207214339.png" alt="image-20210207214339679"></p>
-<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replaceSpace</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) <span class="keyword">return</span> s;</span><br><span class="line">    <span class="keyword">char</span> [] arr = s.toCharArray();<span class="comment">//数组化</span></span><br><span class="line">    <span class="keyword">int</span> numOfBlank = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c : arr)</span><br><span class="line">        <span class="keyword">if</span>(c == <span class="string">&#x27; &#x27;</span>) numOfBlank++;</span><br><span class="line">    <span class="comment">//数组扩容</span></span><br><span class="line">    <span class="keyword">char</span>[] arrNew = <span class="keyword">new</span> <span class="keyword">char</span>[arr.length+numOfBlank*<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;arr.length;i++)</span><br><span class="line">        arrNew[i] = arr[i];</span><br><span class="line">    <span class="keyword">int</span> p1 = arr.length-<span class="number">1</span>;<span class="comment">//指向原始字符串的末尾</span></span><br><span class="line">    <span class="keyword">int</span> p2 = arrNew.length-<span class="number">1</span>;<span class="comment">//指向替换之后的字符串的末尾</span></span><br><span class="line">    <span class="keyword">for</span>(;p1!=p2;)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arrNew[p1] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            arrNew[p2--] = arrNew[p1--];<span class="comment">//</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            p1--;</span><br><span class="line">            arrNew[p2--] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            arrNew[p2--] = <span class="string">&#x27;2&#x27;</span>;</span><br><span class="line">            arrNew[p2--] = <span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> String.valueOf(arrNew);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="/images/data/20210207214316.png" alt="image-20210207214316139"></p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>剑指 Offer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>剑指 Offer 07. 重建二叉树</title>
-    <url>/2021/02/10/c0d1481126c5/</url>
-    <content><![CDATA[<h1 id="剑指-Offer-07-重建二叉树"><a href="#剑指-Offer-07-重建二叉树" class="headerlink" title="剑指 Offer 07. 重建二叉树"></a>剑指 Offer 07. 重建二叉树</h1><blockquote>
-<p>题目来源：剑指 Offer 07.</p>
-<p>题目链接：<a href="https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/">https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/</a></p>
-</blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。</p>
-<p>例如，给出</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">前序遍历 preorder &#x3D; [3,9,20,15,7]</span><br><span class="line">中序遍历 inorder &#x3D; [9,3,15,20,7]</span><br></pre></td></tr></table></figure>
-
-<p>返回如下的二叉树：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  3</span><br><span class="line"> &#x2F; \</span><br><span class="line">9  20</span><br><span class="line">  &#x2F;  \</span><br><span class="line"> 15   7</span><br></pre></td></tr></table></figure>
-
-
-<p>限制：</p>
-<p><code>0 &lt;= 节点个数 &lt;= 5000</code></p>
-<a id="more"></a>
-
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildTree</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(preorder.length ==<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">null</span>; </span><br><span class="line">    <span class="keyword">return</span> buildRecursion(preorder, inorder, <span class="number">0</span>, <span class="number">0</span>, preorder.length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildRecursion</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder, <span class="keyword">int</span> index, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> rootVal = preorder[index];<span class="comment">//根节点值</span></span><br><span class="line">    <span class="keyword">int</span> index2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (; rootVal != inorder[index2]; index2++) ;</span><br><span class="line">    TreeNode root = <span class="keyword">new</span> TreeNode(inorder[index2]);</span><br><span class="line">    TreeNode left = <span class="keyword">null</span>, right = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (index2 &gt; l)</span><br><span class="line">        left = buildRecursion(preorder, inorder, index + <span class="number">1</span>, l, index2 - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (index2 &lt; r)</span><br><span class="line">        right = buildRecursion(preorder, inorder, index + (index2 - l) + <span class="number">1</span>, index2 + <span class="number">1</span>, r);</span><br><span class="line">    root.left = left;</span><br><span class="line">    root.right = right;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="/images/data/20210210213410.png" alt="image-20210210213354271"></p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>剑指 Offer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>剑指 Offer 06. 从尾到头打印链表</title>
-    <url>/2021/02/07/6ac5d91209ed/</url>
-    <content><![CDATA[<h1 id="剑指-Offer-06-从尾到头打印链表"><a href="#剑指-Offer-06-从尾到头打印链表" class="headerlink" title="剑指 Offer 06. 从尾到头打印链表"></a>剑指 Offer 06. 从尾到头打印链表</h1><blockquote>
-<p>题目来源：剑指 Offer 06.</p>
-<p>题目链接：<a href="https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/">https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/</a></p>
-</blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：head &#x3D; [1,3,2]</span><br><span class="line">输出：[2,3,1]</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>限制：</strong></p>
-<p><code>0 &lt;= 链表长度 &lt;= 10000</code></p>
-<a id="more"></a>
-
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] reversePrint(ListNode head) &#123;</span><br><span class="line">      <span class="comment">//使用栈完成反转</span></span><br><span class="line">      Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">      ListNode pNode = head;</span><br><span class="line">      <span class="keyword">while</span>(pNode !=<span class="keyword">null</span>)&#123;</span><br><span class="line">          stack.push(pNode.val);</span><br><span class="line">          pNode = pNode.next;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">int</span>[]ans = <span class="keyword">new</span> <span class="keyword">int</span>[stack.size()];</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;ans.length;i++)</span><br><span class="line">          ans[i]=stack.pop();</span><br><span class="line">      <span class="keyword">return</span> ans;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="/images/data/20210207220941.png" alt="image-20210207220941087"></p>
-<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Integer&gt; list= <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] reversePrint(ListNode head) &#123;</span><br><span class="line">    <span class="comment">//使用递归完成反转</span></span><br><span class="line">    ListNode pNode = head;</span><br><span class="line">    reverseRecursion(pNode);</span><br><span class="line">    <span class="keyword">int</span>[]ans = <span class="keyword">new</span> <span class="keyword">int</span>[list.size()];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;ans.length;i++)</span><br><span class="line">        ans[i]=list.get(i);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">reverseRecursion</span><span class="params">(ListNode pNode)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pNode == <span class="keyword">null</span>) </span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    reverseRecursion(pNode.next);</span><br><span class="line">    list.add(pNode.val);</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="/images/data/20210207224552.png" alt="image-20210207224552623"></p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>剑指 Offer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>剑指 Offer 03. 数组中重复的数字</title>
-    <url>/2021/01/26/3000b056946c/</url>
-    <content><![CDATA[<h1 id="剑指-Offer-03-数组中重复的数字"><a href="#剑指-Offer-03-数组中重复的数字" class="headerlink" title="剑指 Offer 03. 数组中重复的数字"></a>剑指 Offer 03. 数组中重复的数字</h1><blockquote>
-<p>题目来源：剑指Offer03</p>
-<p>题目链接：<a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/</a></p>
-</blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>找出数组中重复的数字。</p>
-<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
-<p>示例 1：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">[2, 3, 1, 0, 2, 5, 3]</span><br><span class="line">输出：2 或 3 </span><br></pre></td></tr></table></figure>
-
-
-<p>限制：</p>
-<ul>
-<li><code>2 &lt;= n &lt;= 100000</code></li>
-</ul>
-<a id="more"></a>
-
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>统计重复元素常用方法是使用哈希表，如果统计的是元素明确范围的话建议使用数组。</p>
-<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="哈希表统计"><a href="#哈希表统计" class="headerlink" title="哈希表统计"></a>哈希表统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt;nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(set.contains(nums[i]))&#123;</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               set.add(nums[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="/images/data/20210126002427.png" alt="image-20210126002427040"></p>
-<h3 id="数组统计"><a href="#数组统计" class="headerlink" title="数组统计"></a>数组统计</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[nums[i]] == <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                arr[nums[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="/images/data/20210201152224.png" alt="image-20210126002415245"></p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>剑指 Offer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>实现SingleTton模式</title>
-    <url>/2020/12/30/7959745d4768/</url>
-    <content><![CDATA[<h2 id="实现SingleTton模式"><a href="#实现SingleTton模式" class="headerlink" title="实现SingleTton模式"></a>实现SingleTton模式</h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><blockquote>
-<p>设计一个类，我们只能生成该类的一个示例。</p>
-</blockquote>
-<p>只能生成一个实例的是为了实现<code>Singleton</code>(单例)模式的类型，设计模式在面向对象程序设计中起着举足轻重的作用，在面试过程中公司都喜欢问一些与设计模式相关的问题。在常用的设计模式中，<code>Singleton</code>是唯一一个能够用几十行代码完整实现的模式。因此，写一个<code>Singleton</code>的类型是一个很常见的面试题。</p>
-<a id="more"></a>
-
-<h3 id="二、参考解法"><a href="#二、参考解法" class="headerlink" title="二、参考解法"></a>二、参考解法</h3><h4 id="1、仅适用于单线程环境"><a href="#1、仅适用于单线程环境" class="headerlink" title="1、仅适用于单线程环境"></a>1、仅适用于单线程环境</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> class <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Singeleton</span> <span class="title">instance</span> </span>= <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)<span class="comment">//仅当instance 为null时才创建一个实例，以避免重复创建。</span></span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        <span class="keyword">return</span> instance </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>该解法在单线程的时候共工作正常，但在多线程的情况下不适用。设想如果两个线程同时运行到判断instance是否为null的if语句，并且instance的确没有创建时，那么两个线程都会创建一个实例，此时就不满足单例模式的要求。</p>
-<h4 id="2、适用于多线程环境但效率低"><a href="#2、适用于多线程环境但效率低" class="headerlink" title="2、适用于多线程环境但效率低"></a>2、适用于多线程环境但效率低</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object = <span class="keyword">new</span> Object();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span>(object)&#123;<span class="comment">//每次只允许一个线程进入代码块，因此不会出现多线程下创建同一个实例的情况</span></span><br><span class="line">            <span class="keyword">if</span>(instance == <span class="keyword">null</span>)</span><br><span class="line">                instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>该解法在多线程环境下使用正常，但是并不完美。在执行过程中，每次都需通过<code>getInstance()</code>得到Singleton实例，并且在此方法中都会加上同步锁，而加锁是一个非常耗时的操作，在没有必要的时候应尽量避免</p>
-<h4 id="3、加锁前判断实例是否存在"><a href="#3、加锁前判断实例是否存在" class="headerlink" title="3、加锁前判断实例是否存在"></a>3、加锁前判断实例是否存在</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object = <span class="keyword">new</span> Object();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span>(object)&#123;<span class="comment">//每次只允许一个线程进入代码块，因此不会出现多线程下创建同一个实例的情况</span></span><br><span class="line">            	<span class="keyword">if</span>(instance == <span class="keyword">null</span>)</span><br><span class="line">                	instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        	&#125; </span><br><span class="line">        &#125;</span><br><span class="line">     </span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>该解法只有当<code>instance</code>为<code>null</code>即没有创建时，需要加锁操作。当<code>instance</code>已经创建出来之后，则无需加锁。相比于解法二大大提高了效率，但是代码实现起来比较复杂，容易出错。</p>
-<h4 id="4、利用静态构造函数"><a href="#4、利用静态构造函数" class="headerlink" title="4、利用静态构造函数"></a>4、利用静态构造函数</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();<span class="comment">//静态构造函数。</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>利用静态属性、静态代码块的性质，确保只在加载时调用一次。该段代码非常简洁地实现了功能，但是调用静态构造函数地时机并不是由程序员掌控，而是由JVM运行时发现第一次使用一个类型的时候自动调用该类型的静态构造函数。即实例<code>instance</code>并不是第一次调用属性<code>Singleton.getInstance</code>时创建，而是在第一次用到<code>Singleton</code>时创建。（降低内存的使用效率）</p>
-<h4 id="5、实现按需创建实例"><a href="#5、实现按需创建实例" class="headerlink" title="5、实现按需创建实例"></a>5、实现按需创建实例</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Nested.instance;</span><br><span class="line">    &#125;</span><br><span class="line">    stattic <span class="class"><span class="keyword">class</span> <span class="title">Nested</span></span>&#123;<span class="comment">//外部类加载时，静态内部类不会同时加载，而是在调用静态内部类（静态域、静态方法、构造函数）时加载。</span></span><br><span class="line">		<span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>专题练习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>排序算法展示</title>
-    <url>/2022/01/09/3770499952d7/</url>
-    <content><![CDATA[<h1 id="排序算法展示"><a href="#排序算法展示" class="headerlink" title="排序算法展示"></a>排序算法展示</h1><h2 id="排序定义及其性质"><a href="#排序定义及其性质" class="headerlink" title="排序定义及其性质"></a>排序定义及其性质</h2><h3 id="一、冒泡排序"><a href="#一、冒泡排序" class="headerlink" title="一、冒泡排序"></a><a href="https://baike.baidu.com/item/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F">一、冒泡排序</a></h3><p>&emsp;&emsp;冒泡排序（Bubble Sort），是一种<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6">计算机科学</a>领域的较简单的<a href="https://baike.baidu.com/item/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5399605">排序算法</a>。</p>
-<p>&emsp;&emsp;它重复地走访过要排序的元素列，依次比较两个相邻的元素，如果顺序（如从大到小、首字母从Z到A）错误就把他们交换过来。走访元素的工作是重复地进行直到没有相邻元素需要交换，也就是说该元素列已经排序完成。</p>
-<p>&emsp;&emsp;这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名“冒泡排序”。<a id="more"></a></p>
-<h3 id="二、选择排序"><a href="#二、选择排序" class="headerlink" title="二、选择排序"></a><a href="https://baike.baidu.com/item/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F">二、选择排序</a></h3><p>&emsp;&emsp;选择排序（Selection sort）是一种简单直观的<a href="https://baike.baidu.com/item/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5399605">排序算法</a>。它的工作原理是：第一次从待排序的<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0/715313">数据元素</a>中选出最小（或最大）的一个元素，存放在序列的起始位置，然后再从剩余的未排序元素中寻找到最小（大）元素，然后放到已排序的序列的末尾。以此类推，直到全部待排序的数据元素的个数为零。选择排序是不稳定的排序方法。</p>
-<h3 id="三、插入排序"><a href="#三、插入排序" class="headerlink" title="三、插入排序"></a><a href="https://baike.baidu.com/item/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F">三、插入排序</a></h3><p>&emsp;&emsp;插入排序（Insertion sort）是一种简单直观且稳定的<a href="https://baike.baidu.com/item/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5399605">排序算法</a>。如果有一个已经有序的数据序列，要求在这个已经排好的数据序列中插入一个数，但要求插入后此数据序列仍然有序，这个时候就要用到一种新的排序方法——<a href="https://baike.baidu.com/item/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E6%B3%95/612261">插入排序法</a>,算法适用于少量数据的排序，<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/1894057">时间复杂度</a>O(n^2)。是稳定的排序方法。插入算法把要排序的<a href="https://baike.baidu.com/item/%E6%95%B0%E7%BB%84/3794097">数组</a>分成两部分：第一部分包含了这个数组的所有元素，但将最后一个元素除外（让数组多一个空间才有插入的位置），而第二部分就只包含这一个元素（即待插入元素）。在第一部分排序完成后，再将这个最后元素插入到已排好序的第一部分中。</p>
-<h3 id="四、希尔排序"><a href="#四、希尔排序" class="headerlink" title="四、希尔排序"></a><a href="%5Bhttps://baike.baidu.com/item/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F%5D(https://baike.baidu.com/item/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F)">四、希尔排序</a></h3><p>&emsp;&emsp;希尔排序(Shell&#39;s Sort)是<a href="https://baike.baidu.com/item/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/7214992">插入排序</a>的一种又称“缩小增量排序”（Diminishing Increment Sort），是直接插入<a href="https://baike.baidu.com/item/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5399605">排序算法</a>的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。</p>
-<p>&emsp;&emsp;希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，<a href="https://baike.baidu.com/item/%E7%AE%97%E6%B3%95/209025">算法</a>便终止。 </p>
-<h3 id="四、归并排序"><a href="#四、归并排序" class="headerlink" title="四、归并排序"></a><a href="https://baike.baidu.com/item/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F">四、归并排序</a></h3><p>&emsp;&emsp;归并排序（MERGE-SORT）是建立在归并操作上的一种有效的排序算法,该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为**二路<a href="https://baike.baidu.com/item/%E5%BD%92%E5%B9%B6/253741">归并</a>**。归并排序是一种稳定的排序方法。</p>
-<h3 id="五、快速排序"><a href="#五、快速排序" class="headerlink" title="五、快速排序"></a><a href="https://baike.baidu.com/item/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95">五、快速排序</a></h3><p>快速排序（Quicksort）是对冒泡排序的一种改进。 </p>
-<p>&emsp;&emsp;快速排序由C. A. R. Hoare在1960年提出。它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以<a href="https://baike.baidu.com/item/%E9%80%92%E5%BD%92/1740695">递归</a>进行，以此达到整个数据变成有序<a href="https://baike.baidu.com/item/%E5%BA%8F%E5%88%97/1302588">序列</a></p>
-<h2 id="排序算法题目示例："><a href="#排序算法题目示例：" class="headerlink" title="排序算法题目示例："></a>排序算法题目示例：</h2><h3 id="75-颜色分类"><a href="#75-颜色分类" class="headerlink" title="75. 颜色分类"></a><a href="https://leetcode-cn.com/problems/sort-colors/">75. 颜色分类</a></h3><h4 id="1、冒泡排序"><a href="#1、冒泡排序" class="headerlink" title="1、冒泡排序"></a>1、冒泡排序</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>()<span class="number">-1</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.<span class="built_in">size</span>()-i<span class="number">-1</span>; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (nums[j] &gt; nums[j+<span class="number">1</span>]) &#123;</span><br><span class="line">				<span class="keyword">int</span> temp = nums[j];</span><br><span class="line">				nums[j] = nums[j+<span class="number">1</span>];</span><br><span class="line">				nums[j+<span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="2、选择排序"><a href="#2、选择排序" class="headerlink" title="2、选择排序"></a>2、选择排序</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> <span class="built_in">min</span> = i;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; nums.<span class="built_in">size</span>(); j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (nums[<span class="built_in">min</span>] &gt; nums[j]) &#123;</span><br><span class="line">				<span class="built_in">min</span> = j;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">min</span> != i) &#123;</span><br><span class="line">			<span class="keyword">int</span> temp = nums[i];</span><br><span class="line">			nums[i] = nums[<span class="built_in">min</span>];</span><br><span class="line">			nums[<span class="built_in">min</span>] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3、三路插入排序"><a href="#3、三路插入排序" class="headerlink" title="3、三路插入排序"></a>3、三路插入排序</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> zero = -<span class="number">1</span>; <span class="comment">//nums[0……zero] =0</span></span><br><span class="line">        <span class="keyword">int</span> two = nums.length; <span class="comment">//nums[two……n) =2</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; two;)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == <span class="number">1</span>)&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[i] == <span class="number">2</span>)&#123;</span><br><span class="line">                swap(nums,i,--two);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                swap(nums,i++,++zero);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> nums[],<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = nums[a];</span><br><span class="line">        nums[a] = nums[b];</span><br><span class="line">        nums[b] = temp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="88-合并两个有序数组"><a href="#88-合并两个有序数组" class="headerlink" title="88. 合并两个有序数组"></a><a href="https://leetcode-cn.com/problems/merge-sorted-array/">88. 合并两个有序数组</a></h3><h4 id="1、二路归并法"><a href="#1、二路归并法" class="headerlink" title="1、二路归并法"></a>1、二路归并法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span>[] newNums = <span class="keyword">new</span> <span class="keyword">int</span>[m+n];</span><br><span class="line">       <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>,k=<span class="number">0</span>;</span><br><span class="line">       <span class="keyword">while</span> (i&lt;m&amp;&amp;j&lt;n) &#123;</span><br><span class="line">           newNums[k++] = nums1[i] &lt; nums2[j] ? nums1[i++] : nums2[j++];</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">while</span> (i &lt; m)&#123;</span><br><span class="line">           newNums[k++] = nums1[i++];</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">while</span> (j &lt; n) &#123;</span><br><span class="line">           newNums[k++] = nums2[j++];</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> l =<span class="number">0</span>;l&lt; newNums.length;l++)&#123;</span><br><span class="line">           nums1[l] = newNums[l];</span><br><span class="line">           System.out.print(nums1[l]+<span class="string">&quot; &quot;</span>);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="215-数组中的第K个最大元素"><a href="#215-数组中的第K个最大元素" class="headerlink" title="215. 数组中的第K个最大元素"></a><a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">215. 数组中的第K个最大元素</a></h3><h4 id="1、冒泡法优化版"><a href="#1、冒泡法优化版" class="headerlink" title="1、冒泡法优化版"></a>1、冒泡法优化版</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> n = nums.length;</span><br><span class="line">       <span class="keyword">int</span> kk = nums.length - k;</span><br><span class="line">       <span class="keyword">do</span>&#123;</span><br><span class="line">           <span class="keyword">int</span> index = <span class="number">0</span>;<span class="comment">//排序辅助坐标点 在nums(index……n)中是有序的</span></span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">               <span class="keyword">if</span> (nums[i] &gt; nums[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                   <span class="keyword">int</span> temp = nums[i];</span><br><span class="line">                   nums[i] = nums[i + <span class="number">1</span>];</span><br><span class="line">                   nums[i + <span class="number">1</span>] = temp;</span><br><span class="line"></span><br><span class="line">                   index = i;<span class="comment">//记录最后一次交换的坐标</span></span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           n = index;</span><br><span class="line">           <span class="keyword">if</span> (index &lt; kk) <span class="keyword">return</span> nums[kk];</span><br><span class="line">       &#125;<span class="keyword">while</span>(n &gt; <span class="number">0</span>);</span><br><span class="line">       <span class="keyword">return</span> nums[kk];</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2、快速排序法"><a href="#2、快速排序法" class="headerlink" title="2、快速排序法"></a>2、快速排序法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">       quickSort(nums,<span class="number">0</span>,nums.length-<span class="number">1</span>,k);</span><br><span class="line">       <span class="keyword">return</span> nums[nums.length-k];</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] nums ,<span class="keyword">int</span> start,<span class="keyword">int</span> end,<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> l = start ,r = end;</span><br><span class="line">       <span class="keyword">int</span> pivort = nums[l];</span><br><span class="line">       <span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">           <span class="keyword">while</span>((l&lt;r)&amp;&amp;nums[l]&lt;pivort)</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">while</span>((l&lt;r)&amp;&amp;nums[r]&gt;pivort)</span><br><span class="line">               r--;</span><br><span class="line">           <span class="keyword">if</span>((l&lt;r)&amp;&amp;nums[l]==nums[r])</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">else</span> &#123;                </span><br><span class="line">               <span class="keyword">int</span> temp = nums[l];                </span><br><span class="line">               nums[l] = nums[r];                </span><br><span class="line">               nums[r] = temp;            </span><br><span class="line">           &#125; </span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span>((l-<span class="number">1</span>)&gt;start)quickSort(nums,start,l-<span class="number">1</span>,k);</span><br><span class="line">       <span class="keyword">if</span>((r+<span class="number">1</span>)&lt;end)quickSort(nums,r+<span class="number">1</span>,end,k);</span><br><span class="line">      </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="912-排序数组"><a href="#912-排序数组" class="headerlink" title="912. 排序数组"></a><a href="https://leetcode-cn.com/problems/sort-an-array/">912. 排序数组</a></h3><h4 id="1、插入排序法"><a href="#1、插入排序法" class="headerlink" title="1、插入排序法"></a>1、插入排序法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArray(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">       <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>)<span class="keyword">return</span> nums;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> current = nums[i];</span><br><span class="line">            <span class="keyword">int</span> j =i-<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(j&gt;=<span class="number">0</span>&amp;&amp;nums[j]&gt;current)</span><br><span class="line">                    nums[j+<span class="number">1</span>] = nums[j--];</span><br><span class="line">             nums[j+<span class="number">1</span>] =current; </span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2、希尔排序"><a href="#2、希尔排序" class="headerlink" title="2、希尔排序"></a>2、希尔排序</h4><p>&emsp;&emsp;1959年Shell发明，第一个突破O(n2)的排序算法，是简单插入排序的改进版。它与插入排序的不同之处在于，它会优先比较距离较远的元素。希尔排序又叫<strong>缩小增量排序</strong>。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArray(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">       <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>)<span class="keyword">return</span> nums;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> gap =nums.length/<span class="number">2</span>;gap&gt;<span class="number">0</span>;gap =gap/<span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i =gap;i&lt;nums.length;i+=gap)&#123;</span><br><span class="line">                    <span class="keyword">int</span> current = nums[i];</span><br><span class="line">                    <span class="keyword">int</span> j =i-gap;</span><br><span class="line">                    <span class="keyword">while</span>(j&gt;=<span class="number">0</span>&amp;&amp;nums[j]&gt;current)&#123;</span><br><span class="line">                            nums[j+gap] = nums[j];</span><br><span class="line">                            j-=gap;</span><br><span class="line">                    &#125;</span><br><span class="line">                    nums[j+gap] =current; </span><br><span class="line">            &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3、归并排序"><a href="#3、归并排序" class="headerlink" title="3、归并排序"></a>3、归并排序</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArray(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>)<span class="keyword">return</span> nums;</span><br><span class="line">        <span class="keyword">return</span> mergeSort(nums,<span class="number">0</span>,nums.length-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] mergeSort(<span class="keyword">int</span>[] nums,<span class="keyword">int</span> l,<span class="keyword">int</span> r) &#123;</span><br><span class="line">        <span class="keyword">if</span>(l==r)<span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;nums[l]&#125;;</span><br><span class="line">        <span class="keyword">int</span> mid = l+(r-l)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span>[]numsLeft = mergeSort(nums,l,mid);<span class="comment">//左有序数组</span></span><br><span class="line">        <span class="keyword">int</span>[]numsRight = mergeSort(nums,mid+<span class="number">1</span>,r);<span class="comment">//右有序数组</span></span><br><span class="line">        <span class="keyword">int</span> []newNums = <span class="keyword">new</span> <span class="keyword">int</span>[numsLeft.length+numsRight.length];<span class="comment">//开辟新有序数组空间</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>,j=<span class="number">0</span>,k=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;numsLeft.length&amp;&amp;j&lt;numsRight.length)</span><br><span class="line">            newNums[k++] = numsLeft[i]&lt;numsRight[j]?numsLeft[i++]:numsRight[j++];</span><br><span class="line">        <span class="keyword">while</span>(i&lt;numsLeft.length)</span><br><span class="line">          newNums[k++] = numsLeft[i++];</span><br><span class="line">        <span class="keyword">while</span>(j&lt;numsRight.length)</span><br><span class="line">          newNums[k++] = numsRight[j++];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> newNums;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>参考：<a href="https://www.cnblogs.com/onepixel/articles/7674659.html"><a href="https://www.cnblogs.com/onepixel/p/7674659.html">十大经典排序算法（动图演示）</a></a></p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>专题练习</tag>
       </tags>
   </entry>
 </search>
