@@ -1506,7 +1506,7 @@
   </entry>
   <entry>
     <title>第328场周赛</title>
-    <url>/2023/02/14/187947d9fdf1/</url>
+    <url>/2023/01/20/3140beef8a39/</url>
     <content><![CDATA[<h3 id="第328场周赛"><a href="#第328场周赛" class="headerlink" title="第328场周赛"></a>第328场周赛</h3><h4 id="01-数组元素和与数字和的绝对差"><a href="#01-数组元素和与数字和的绝对差" class="headerlink" title="01. 数组元素和与数字和的绝对差"></a><a href="https://leetcode.cn/problems/difference-between-element-sum-and-digit-sum-of-an-array/">01. 数组元素和与数字和的绝对差</a></h4><p>简单题，暴力即可。</p>
 <p><code>num%10</code>代表获取该数的个位数字</p>
 <p><code>num/10</code>代表该数缩小10倍，原个位数字抹掉了</p>

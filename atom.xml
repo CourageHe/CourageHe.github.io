@@ -6,7 +6,7 @@
   <link href="https://couragehe.github.io/atom.xml" rel="self"/>
   
   <link href="https://couragehe.github.io/"/>
-  <updated>2023-02-15T06:57:49.422Z</updated>
+  <updated>2023-02-15T07:34:10.828Z</updated>
   <id>https://couragehe.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>第328场周赛</title>
-    <link href="https://couragehe.github.io/2023/02/14/187947d9fdf1/"/>
-    <id>https://couragehe.github.io/2023/02/14/187947d9fdf1/</id>
-    <published>2023-02-14T14:23:26.000Z</published>
-    <updated>2023-02-15T06:57:49.422Z</updated>
+    <link href="https://couragehe.github.io/2023/01/20/3140beef8a39/"/>
+    <id>https://couragehe.github.io/2023/01/20/3140beef8a39/</id>
+    <published>2023-01-20T14:23:26.000Z</published>
+    <updated>2023-02-15T07:34:10.828Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;第328场周赛&quot;&gt;&lt;a href=&quot;#第328场周赛&quot; class=&quot;headerlink&quot; title=&quot;第328场周赛&quot;&gt;&lt;/a&gt;第328场周赛&lt;/h3&gt;&lt;h4 id=&quot;01-数组元素和与数字和的绝对差&quot;&gt;&lt;a href=&quot;#01-数组元素和与数字和的绝对差&quot; class=&quot;headerlink&quot; title=&quot;01. 数组元素和与数字和的绝对差&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/problems/difference-between-element-sum-and-digit-sum-of-an-array/&quot;&gt;01. 数组元素和与数字和的绝对差&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;简单题，暴力即可。&lt;/p&gt;
