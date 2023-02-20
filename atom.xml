@@ -6,7 +6,7 @@
   <link href="https://couragehe.github.io/atom.xml" rel="self"/>
   
   <link href="https://couragehe.github.io/"/>
-  <updated>2023-02-15T07:34:10.828Z</updated>
+  <updated>2023-02-20T08:16:29.397Z</updated>
   <id>https://couragehe.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第 98 双周赛，第333场周赛 | 归并排序、动态规划</title>
+    <link href="https://couragehe.github.io/2023/02/19/f91a1cafe11e/"/>
+    <id>https://couragehe.github.io/2023/02/19/f91a1cafe11e/</id>
+    <published>2023-02-19T14:30:26.000Z</published>
+    <updated>2023-02-20T08:16:29.397Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;第-98-场双周赛&quot;&gt;&lt;a href=&quot;#第-98-场双周赛&quot; class=&quot;headerlink&quot; title=&quot;第 98 场双周赛&quot;&gt;&lt;/a&gt;第 98 场双周赛&lt;/h3&gt;&lt;p&gt;本周同时参加了第98场双周赛和第333场双周赛，因此本文将两场比赛的题目一起整理如下！&lt;/p&gt;
+&lt;h4 id=&quot;01-替换一个数字后的最大差值&quot;&gt;&lt;a href=&quot;#01-替换一个数字后的最大差值&quot; class=&quot;headerlink&quot; title=&quot;01.替换一个数字后的最大差值&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/problems/maximum-difference-by-remapping-a-digit/&quot;&gt;01.替换一个数字后的最大差值&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;暴力枚举，找出所有可能的最大值、最小值即可得到答案。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Solution01&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//暴力枚举&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;minMaxDifference&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; num)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        String s = String.valueOf(num);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; max = Integer.MIN_VALUE;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; min = Integer.MAX_VALUE;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;;i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;//获取最大值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; digitMax = Integer.parseInt(s.replace((&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt;)i,&lt;span class=&quot;string&quot;&gt;&amp;#x27;9&amp;#x27;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            max = max&amp;gt;digitMax?max:digitMax;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;//获取最小值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; digitMin = Integer.parseInt(s.replace((&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt;)i,&lt;span class=&quot;string&quot;&gt;&amp;#x27;0&amp;#x27;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            min = min&amp;lt;digitMin?min:digitMin;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; max-min;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Algorithm" scheme="https://couragehe.github.io/categories/Algorithm/"/>
+    
+    
+    <category term="LeetCode" scheme="https://couragehe.github.io/tags/LeetCode/"/>
+    
+    <category term="竞赛" scheme="https://couragehe.github.io/tags/%E7%AB%9E%E8%B5%9B/"/>
+    
+  </entry>
   
   <entry>
     <title>第328场周赛</title>
@@ -45,7 +68,7 @@
     <link href="https://couragehe.github.io/2022/09/17/840fb5fcea0c/"/>
     <id>https://couragehe.github.io/2022/09/17/840fb5fcea0c/</id>
     <published>2022-09-17T10:54:26.000Z</published>
-    <updated>2023-02-15T06:30:15.474Z</updated>
+    <updated>2023-02-16T07:21:11.110Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;动态规划&quot;&gt;&lt;a href=&quot;#动态规划&quot; class=&quot;headerlink&quot; title=&quot;动态规划&quot;&gt;&lt;/a&gt;动态规划&lt;/h1&gt;&lt;blockquote&gt;
@@ -60,7 +83,7 @@
     
     <category term="LeetCode" scheme="https://couragehe.github.io/tags/LeetCode/"/>
     
-    <category term="动态规划" scheme="https://couragehe.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    <category term="专题练习" scheme="https://couragehe.github.io/tags/%E4%B8%93%E9%A2%98%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   
@@ -134,6 +157,29 @@
     <summary type="html">&lt;h1 id=&quot;驾照考试-刷题总结&quot;&gt;&lt;a href=&quot;#驾照考试-刷题总结&quot; class=&quot;headerlink&quot; title=&quot;驾照考试-刷题总结&quot;&gt;&lt;/a&gt;驾照考试-刷题总结&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;本文主要用于记录，在准备驾照考试中总结的日常经验。在&lt;a href=&quot;https://couragehe.github.io/&quot;&gt;CourageHe’s Blog&lt;/a&gt;不间断更新，欢迎各位看官指教。&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="学海无涯" scheme="https://couragehe.github.io/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络</title>
+    <link href="https://couragehe.github.io/2021/02/18/aa8c7af18e5b/"/>
+    <id>https://couragehe.github.io/2021/02/18/aa8c7af18e5b/</id>
+    <published>2021-02-18T06:56:44.000Z</published>
+    <updated>2023-02-18T07:01:22.557Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;计算机网络&quot;&gt;&lt;a href=&quot;#计算机网络&quot; class=&quot;headerlink&quot; title=&quot;计算机网络&quot;&gt;&lt;/a&gt;计算机网络&lt;/h1&gt;&lt;h2 id=&quot;常用协议&quot;&gt;&lt;a href=&quot;#常用协议&quot; class=&quot;headerlink&quot;</summary>
+        
+      
     
     
     
@@ -471,51 +517,6 @@
     
     
     <category term="专题练习" scheme="https://couragehe.github.io/tags/%E4%B8%93%E9%A2%98%E7%BB%83%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Nginx添加模块</title>
-    <link href="https://couragehe.github.io/2020/10/18/7a13413b21cc/"/>
-    <id>https://couragehe.github.io/2020/10/18/7a13413b21cc/</id>
-    <published>2020-10-18T11:19:44.000Z</published>
-    <updated>2023-02-15T06:54:06.761Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;Nginx添加模块&quot;&gt;&lt;a href=&quot;#Nginx添加模块&quot; class=&quot;headerlink&quot; title=&quot;Nginx添加模块&quot;&gt;&lt;/a&gt;Nginx添加模块&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;编译安装Nginx的时候，有些模块默认不会安装，比如&lt;code&gt;http_ssl_module&lt;/code&gt;。那么为了让Nginx支持HTTPS，必须添加这个模块。下面讲解如何在已经安装过后在此添加新的模块。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Nginx" scheme="https://couragehe.github.io/categories/Nginx/"/>
-    
-    
-    <category term="Linux" scheme="https://couragehe.github.io/tags/Linux/"/>
-    
-    <category term="Nginx" scheme="https://couragehe.github.io/tags/Nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Nginx安装及常用命令</title>
-    <link href="https://couragehe.github.io/2020/10/15/4a9e23212be1/"/>
-    <id>https://couragehe.github.io/2020/10/15/4a9e23212be1/</id>
-    <published>2020-10-15T05:19:44.000Z</published>
-    <updated>2023-02-15T06:54:06.779Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;Nginx安装及常用命令&quot;&gt;&lt;a href=&quot;#Nginx安装及常用命令&quot; class=&quot;headerlink&quot; title=&quot;Nginx安装及常用命令&quot;&gt;&lt;/a&gt;Nginx安装及常用命令&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;Nginx(“engine x”)是一款由俄罗斯的程序设计师&lt;code&gt;Igor Sysoev&lt;/code&gt;所开发高性能的&lt;strong&gt;Web&lt;/strong&gt;和&lt;strong&gt;反向代理&lt;/strong&gt;服务器，也是一个&lt;strong&gt;IMAP/POP3/SMTP&lt;/strong&gt;代理服务器，在高连接并发的情况下，Nginx是Apache服务器不错的替代品&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;系统平台：CentOS release 6.6-7.8（64位）&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Nginx" scheme="https://couragehe.github.io/categories/Nginx/"/>
-    
-    
-    <category term="Linux" scheme="https://couragehe.github.io/tags/Linux/"/>
-    
-    <category term="Nginx" scheme="https://couragehe.github.io/tags/Nginx/"/>
     
   </entry>
   

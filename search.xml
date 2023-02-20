@@ -1205,7 +1205,7 @@
       </categories>
       <tags>
         <tag>LeetCode</tag>
-        <tag>动态规划</tag>
+        <tag>专题练习</tag>
       </tags>
   </entry>
   <entry>
@@ -1539,6 +1539,154 @@
 
 
 <h4 id="04-最大价值和与最小价值和的差值"><a href="#04-最大价值和与最小价值和的差值" class="headerlink" title="04.最大价值和与最小价值和的差值"></a><a href="https://leetcode.cn/problems/difference-between-maximum-and-minimum-price-sum/">04.最大价值和与最小价值和的差值</a></h4><p>待做~</p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络</title>
+    <url>/2021/02/18/aa8c7af18e5b/</url>
+    <content><![CDATA[<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><h2 id="常用协议"><a href="#常用协议" class="headerlink" title="常用协议"></a>常用协议</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>端口号码</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FTP(文件传输协议)</td>
+<td>20</td>
+<td>数据传输端口</td>
+</tr>
+<tr>
+<td>FTP(文件传输协议)</td>
+<td>21</td>
+<td>控制端口</td>
+</tr>
+<tr>
+<td>SSH(Secure Shell)</td>
+<td>22</td>
+<td></td>
+</tr>
+<tr>
+<td>Telnet(远程登陆协议)</td>
+<td>23</td>
+<td>被SSH所取代</td>
+</tr>
+<tr>
+<td>SMTP(简单邮件传输协议)</td>
+<td>25</td>
+<td>用来发送电子邮件</td>
+</tr>
+<tr>
+<td>DNS( 域名系统)</td>
+<td>53</td>
+<td>域名转换为的 IP 地址(UDP)</td>
+</tr>
+<tr>
+<td>TFTP(小文件传输协议)</td>
+<td>69</td>
+<td>(UDP)</td>
+</tr>
+<tr>
+<td>HTTP(超文本传输协议)</td>
+<td>80</td>
+<td></td>
+</tr>
+<tr>
+<td>pop2(邮局协议版本2)</td>
+<td>109</td>
+<td>负责邮件接收的协议</td>
+</tr>
+<tr>
+<td>pop3(邮局协议版本3)</td>
+<td>110</td>
+<td>负责邮件接收的协议</td>
+</tr>
+<tr>
+<td>SFTP(安全文件传输协议)</td>
+<td>115</td>
+<td></td>
+</tr>
+<tr>
+<td>IMAP(互联网消息存取协议)</td>
+<td>143</td>
+<td>可用于邮件接收</td>
+</tr>
+<tr>
+<td>SNMP(简单网络管理协议)</td>
+<td>161</td>
+<td>(UDP)</td>
+</tr>
+<tr>
+<td>HTTPS</td>
+<td>443</td>
+<td>HTTP+SSL</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>学海无涯</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>第 98 双周赛，第333场周赛 | 归并排序、动态规划</title>
+    <url>/2023/02/19/f91a1cafe11e/</url>
+    <content><![CDATA[<h3 id="第-98-场双周赛"><a href="#第-98-场双周赛" class="headerlink" title="第 98 场双周赛"></a>第 98 场双周赛</h3><p>本周同时参加了第98场双周赛和第333场双周赛，因此本文将两场比赛的题目一起整理如下！</p>
+<h4 id="01-替换一个数字后的最大差值"><a href="#01-替换一个数字后的最大差值" class="headerlink" title="01.替换一个数字后的最大差值"></a><a href="https://leetcode.cn/problems/maximum-difference-by-remapping-a-digit/">01.替换一个数字后的最大差值</a></h4><p>暴力枚举，找出所有可能的最大值、最小值即可得到答案。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution01</span> </span>&#123;</span><br><span class="line">	<span class="comment">//暴力枚举</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minMaxDifference</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        String s = String.valueOf(num);</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">int</span> min = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">            <span class="comment">//获取最大值</span></span><br><span class="line">            <span class="keyword">int</span> digitMax = Integer.parseInt(s.replace((<span class="keyword">char</span>)i,<span class="string">&#x27;9&#x27;</span>));</span><br><span class="line">            max = max&gt;digitMax?max:digitMax;</span><br><span class="line">            <span class="comment">//获取最小值</span></span><br><span class="line">            <span class="keyword">int</span> digitMin = Integer.parseInt(s.replace((<span class="keyword">char</span>)i,<span class="string">&#x27;0&#x27;</span>));</span><br><span class="line">            min = min&lt;digitMin?min:digitMin;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max-min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h4 id="02-修改两个元素的最小分数"><a href="#02-修改两个元素的最小分数" class="headerlink" title="02.修改两个元素的最小分数"></a><a href="https://leetcode.cn/problems/minimum-score-by-changing-two-elements/">02.修改两个元素的最小分数</a></h4><p>脑筋急转弯</p>
+<p>首先将<code>nums[0,len]</code>进行排序，最大得分为<code>max(nums[i])-max(nums[0])</code>；当有两个数相等时，则最小得分为0。因为可以修改两个元素，只需要修改后的数字存在<code>nums</code>中，最小得分必然为0，因此答案取决于最大得分。要么减小数组中的最大值，要么增大数组中的最小值。</p>
+<p>其中有三种修改方案：</p>
+<p><code>nums[0],nums[1]</code>赋值为<code>nums[2]</code>，最大值为：<code>nums[len-1]-nums[2]</code>;</p>
+<p><code>nums[len-1],nums[len-2]</code>赋值为<code>nums[len-3]</code>，最大值为：<code>nums[len-3]-nums[1]</code>;</p>
+<p><code>nums[len-1]</code>赋值为<code>nums[len-2]</code>,<code>nums[0]</code>赋值为<code>nums[1]</code>，最大值为：<code>nums[len-2]-nums[1]</code>;</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution02</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimizeSum</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.length == <span class="number">3</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">int</span> max1 =nums[len-<span class="number">2</span>] - nums[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> max2= nums[len-<span class="number">1</span>]-nums[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> max3= nums[len-<span class="number">3</span>]-nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> max = Math.min(Math.min(max1,max2),max3);</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="03-最小无法得到的或值"><a href="#03-最小无法得到的或值" class="headerlink" title="03.最小无法得到的或值"></a><a href="https://leetcode.cn/problems/minimum-impossible-or/">03.最小无法得到的或值</a></h4><p>题目描述中提到使用或运算，因此要多向二进制想想！</p>
+<p>1-&gt;1,2-&gt;10,3-&gt;11,4-&gt;100,5-&gt;101,6-&gt;110,7-&gt;111,8-&gt;1000。</p>
+<p>通过规律容易发现， 2^i^  无法由比它小的数字通过或运算得到，因此只需要从小到大判断2^i^  是否存在即可得到答案。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minImpossibleOR</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//hash表，数组去重，快速定位，</span></span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            set.add(nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;Integer.MAX_VALUE;i &lt;&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!set.contains(i)) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="04-更新数组后处理求和查询"><a href="#04-更新数组后处理求和查询" class="headerlink" title="04.更新数组后处理求和查询"></a><a href="https://leetcode.cn/problems/handling-sum-queries-after-update/">04.更新数组后处理求和查询</a></h4><p>待做~</p>
+<h3 id="第333场周赛"><a href="#第333场周赛" class="headerlink" title="第333场周赛"></a>第333场周赛</h3><h4 id="01-合并两个二维数组-求和法"><a href="#01-合并两个二维数组-求和法" class="headerlink" title="01.合并两个二维数组 - 求和法"></a><a href="https://leetcode.cn/problems/merge-two-2d-arrays-by-summing-values/">01.合并两个二维数组 - 求和法</a></h4><p><strong>解法1：归并排序</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution01</span> </span>&#123;</span><br><span class="line"> 	<span class="comment">//归并排序</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][]  mergeArrays(<span class="keyword">int</span>[][] nums1, <span class="keyword">int</span>[][] nums2) &#123;</span><br><span class="line">        List&lt;<span class="keyword">int</span>[]&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;nums1.length &amp;&amp; j&lt;nums2.length)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums1[i][<span class="number">0</span>] == nums2[j][<span class="number">0</span>])&#123;</span><br><span class="line">                list.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;nums1[i][<span class="number">0</span>],nums1[i][<span class="number">1</span>]+ nums2[j][<span class="number">1</span>]&#125;);</span><br><span class="line">                i++;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (nums1[i][<span class="number">0</span>] &lt; nums2[j][<span class="number">0</span>])&#123;</span><br><span class="line">                list.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;nums1[i][<span class="number">0</span>],nums1[i][<span class="number">1</span>]&#125;);</span><br><span class="line">                i++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                list.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;nums2[j][<span class="number">0</span>],nums2[j][<span class="number">1</span>]&#125;);</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;nums1.length)&#123;</span><br><span class="line">            list.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;nums1[i][<span class="number">0</span>],nums1[i][<span class="number">1</span>]&#125;);</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(j&lt;nums2.length)&#123;</span><br><span class="line">            list.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;nums2[j][<span class="number">0</span>],nums2[j][<span class="number">1</span>]&#125;);</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list.toArray(<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>][]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解法2：Map集合</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution01</span> </span>&#123;</span><br><span class="line">    <span class="comment">//map 集合</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][]  mergeArrays(<span class="keyword">int</span>[][] nums1, <span class="keyword">int</span>[][] nums2) &#123;</span><br><span class="line">        Map&lt;Integer,Integer&gt; map = <span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">        Arrays.asList(nums1).forEach(item -&gt; map.put(item[<span class="number">0</span>],item[<span class="number">1</span>]));</span><br><span class="line">        Arrays.asList(nums2).forEach(item -&gt; &#123;map.put(item[<span class="number">0</span>],item[<span class="number">1</span>]+map.getOrDefault(item[<span class="number">0</span>],<span class="number">0</span>));&#125;);</span><br><span class="line">        <span class="keyword">int</span> ans[][] = <span class="keyword">new</span> <span class="keyword">int</span>[map.size()][<span class="number">2</span>],i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Integer,Integer&gt; entry:map.entrySet()) &#123;</span><br><span class="line">            ans[i++] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;entry.getKey(),entry.getValue()&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="02-将整数减少到零需要的最少操作数"><a href="#02-将整数减少到零需要的最少操作数" class="headerlink" title="02.将整数减少到零需要的最少操作数"></a><a href="https://leetcode.cn/problems/minimum-operations-to-reduce-an-integer-to-0/">02.将整数减少到零需要的最少操作数</a></h4><p>解法1：贪心法</p>
+<p>将整数转换为二进制字符串，从右往左数连续1的子串，如字串只有1个1则改为0，多个1则将子串全部改为0，子串前1位则改为1。  </p>
+<p>39：100111 -&gt; 101000 -&gt; 100000 -&gt; 0</p>
+<p>54：110110 -&gt; 111000 -&gt; 1000000 -&gt; 0</p>
+<p>27：11011 -&gt; 11111 -&gt;100000 -&gt; 0</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution02</span> </span>&#123;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minOperations</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        String binary = Integer.toBinaryString(n);</span><br><span class="line">        StringBuilder builder = <span class="keyword">new</span> StringBuilder(binary);</span><br><span class="line">        <span class="keyword">int</span> len = binary.length();</span><br><span class="line">        <span class="keyword">int</span> i =len-<span class="number">1</span>,j=len-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(builder.charAt(i) == <span class="string">&#x27;0&#x27;</span> &amp;&amp; i==j)&#123;</span><br><span class="line">                i--;</span><br><span class="line">                j--;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(builder.charAt(i) == <span class="string">&#x27;1&#x27;</span>)&#123;</span><br><span class="line">                i--;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(builder.charAt(i) == <span class="string">&#x27;0&#x27;</span> &amp;&amp; i&lt;j)&#123;</span><br><span class="line">                <span class="keyword">if</span>(j-i&gt;<span class="number">1</span>)&#123;</span><br><span class="line">                    builder.replace(i,i,<span class="string">&quot;1&quot;</span>);;</span><br><span class="line">                    ans++;</span><br><span class="line">                    j=i;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(j-i == <span class="number">1</span>)&#123;</span><br><span class="line">                    ans++;</span><br><span class="line">                    j=i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                i--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(j-i&gt;<span class="number">1</span>)&#123;</span><br><span class="line">            ans+=<span class="number">2</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(j-i&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            ans+=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>解法2：枚举，记忆化搜索</strong></p>
+<p><code>(n &amp; n-1) == 0</code>判断n是否为2的幂</p>
+<p><code>n &amp; -n</code> 得到<code>lowbit</code>(二进制中最小的1)</p>
+<p>如39：100111 &amp; (11001) = 1</p>
+<p>问题转换为要么<code>+lowbit</code>要么<code>-lowbit</code>的选择问题，因此可通过记忆化搜索寻找最大值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution02</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100000</span>];</span><br><span class="line">    <span class="comment">//记忆化搜索</span></span><br><span class="line">    <span class="comment">//回溯，枚举是+2^k,还是-2^k</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">dfs</span> <span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>((n &amp; n-<span class="number">1</span>) == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;<span class="comment">//2的幂次方</span></span><br><span class="line">        <span class="keyword">int</span> lowbit = n &amp; -n;</span><br><span class="line">        <span class="keyword">if</span>(arr[lowbit] == <span class="number">0</span>)&#123;</span><br><span class="line">            arr[lowbit] = Math.min(dfs(n+lowbit),dfs(n-lowbit))+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr[lowbit];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minOperations</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dfs(n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="03-无平方子集计数"><a href="#03-无平方子集计数" class="headerlink" title="03.无平方子集计数"></a><a href="https://leetcode.cn/problems/count-the-number-of-square-free-subsets/">03.无平方子集计数</a></h4><p>待做~</p>
+<p>思路：01背包</p>
+<h4 id="04-找出对应-LCP-矩阵的字符串"><a href="#04-找出对应-LCP-矩阵的字符串" class="headerlink" title="04.找出对应 LCP 矩阵的字符串"></a><a href="https://leetcode.cn/problems/find-the-string-with-lcp/">04.找出对应 LCP 矩阵的字符串</a></h4><p>待做~</p>
 ]]></content>
       <categories>
         <category>Algorithm</category>
