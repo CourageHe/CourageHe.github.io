@@ -1550,7 +1550,7 @@
   </entry>
   <entry>
     <title>计算机网络</title>
-    <url>/2021/02/18/aa8c7af18e5b/</url>
+    <url>/2023/02/18/55b1ea89765a/</url>
     <content><![CDATA[<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><h2 id="常用协议"><a href="#常用协议" class="headerlink" title="常用协议"></a>常用协议</h2><table>
 <thead>
 <tr>
@@ -1636,7 +1636,7 @@
       </categories>
   </entry>
   <entry>
-    <title>第 98 双周赛，第333场周赛 | 归并排序、动态规划</title>
+    <title>第 98 双周赛&amp;第333场周赛 | 归并排序、动态规划</title>
     <url>/2023/02/19/f91a1cafe11e/</url>
     <content><![CDATA[<h3 id="第-98-场双周赛"><a href="#第-98-场双周赛" class="headerlink" title="第 98 场双周赛"></a>第 98 场双周赛</h3><p>本周同时参加了第98场双周赛和第333场双周赛，因此本文将两场比赛的题目一起整理如下！</p>
 <h4 id="01-替换一个数字后的最大差值"><a href="#01-替换一个数字后的最大差值" class="headerlink" title="01.替换一个数字后的最大差值"></a><a href="https://leetcode.cn/problems/maximum-difference-by-remapping-a-digit/">01.替换一个数字后的最大差值</a></h4><p>暴力枚举，找出所有可能的最大值、最小值即可得到答案。</p>
