@@ -6,7 +6,7 @@
   <link href="https://couragehe.github.io/atom.xml" rel="self"/>
   
   <link href="https://couragehe.github.io/"/>
-  <updated>2023-02-20T08:19:52.217Z</updated>
+  <updated>2023-02-27T14:22:39.342Z</updated>
   <id>https://couragehe.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)</title>
+    <link href="https://couragehe.github.io/2023/02/27/e5ee594c5418/"/>
+    <id>https://couragehe.github.io/2023/02/27/e5ee594c5418/</id>
+    <published>2023-02-27T14:22:44.000Z</published>
+    <updated>2023-02-27T14:22:39.342Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;数据结构之各种树-二叉树、AVL树、红黑树、B、B-树&quot;&gt;&lt;a href=&quot;#数据结构之各种树-二叉树、AVL树、红黑树、B、B-树&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学海无涯" scheme="https://couragehe.github.io/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>第 98 双周赛&amp;第333场周赛 | 归并排序、动态规划</title>
@@ -482,7 +505,7 @@
     <link href="https://couragehe.github.io/2021/01/07/75eb06482a73/"/>
     <id>https://couragehe.github.io/2021/01/07/75eb06482a73/</id>
     <published>2021-01-07T05:19:44.000Z</published>
-    <updated>2023-02-15T06:54:06.814Z</updated>
+    <updated>2023-02-24T14:02:19.302Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;Linux常用命令&quot;&gt;&lt;a href=&quot;#Linux常用命令&quot; class=&quot;headerlink&quot; title=&quot;Linux常用命令&quot;&gt;&lt;/a&gt;Linux常用命令&lt;/h1&gt;&lt;blockquote&gt;
@@ -495,28 +518,6 @@
     
     
     <category term="Linux" scheme="https://couragehe.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实现SingleTton模式</title>
-    <link href="https://couragehe.github.io/2020/12/30/7959745d4768/"/>
-    <id>https://couragehe.github.io/2020/12/30/7959745d4768/</id>
-    <published>2020-12-30T14:48:23.000Z</published>
-    <updated>2023-02-15T06:30:23.445Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;实现SingleTton模式&quot;&gt;&lt;a href=&quot;#实现SingleTton模式&quot; class=&quot;headerlink&quot; title=&quot;实现SingleTton模式&quot;&gt;&lt;/a&gt;实现SingleTton模式&lt;/h2&gt;&lt;h3 id=&quot;一、题目&quot;&gt;&lt;a href=&quot;#一、题目&quot; class=&quot;headerlink&quot; title=&quot;一、题目&quot;&gt;&lt;/a&gt;一、题目&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;设计一个类，我们只能生成该类的一个示例。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;只能生成一个实例的是为了实现&lt;code&gt;Singleton&lt;/code&gt;(单例)模式的类型，设计模式在面向对象程序设计中起着举足轻重的作用，在面试过程中公司都喜欢问一些与设计模式相关的问题。在常用的设计模式中，&lt;code&gt;Singleton&lt;/code&gt;是唯一一个能够用几十行代码完整实现的模式。因此，写一个&lt;code&gt;Singleton&lt;/code&gt;的类型是一个很常见的面试题。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Algorithm" scheme="https://couragehe.github.io/categories/Algorithm/"/>
-    
-    
-    <category term="专题练习" scheme="https://couragehe.github.io/tags/%E4%B8%93%E9%A2%98%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   

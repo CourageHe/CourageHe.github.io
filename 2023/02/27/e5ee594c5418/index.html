@@ -22,25 +22,27 @@
     var CONFIG = {"hostname":"couragehe.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Nginx添加模块&amp;emsp;&amp;emsp;编译安装Nginx的时候，有些模块默认不会安装，比如http_ssl_module。那么为了让Nginx支持HTTPS，必须添加这个模块。下面讲解如何在已经安装过后在此添加新的模块。">
+  <meta name="description" content="数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)二叉查找树树性质： 1、任意节点左子树不为空，则左子树的值均小于根节点的值；2、任意节点右子树不为空，则右子树的值均大于于根节点的值；3、任意节点的左右子树也分别是二叉查找树；4、没有键值相等的节点； 图示： 二叉查找树按照中序遍历即从小到大分布：1，3，4，6，7，8，10，13，14  局限： 极端情况如下，会退化成为一个N个急待你的线性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx添加模块">
-<meta property="og:url" content="https://couragehe.github.io/2020/10/18/7a13413b21cc/index.html">
+<meta property="og:title" content="数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)">
+<meta property="og:url" content="https://couragehe.github.io/2023/02/27/e5ee594c5418/index.html">
 <meta property="og:site_name" content="CourageHe&#39;s Blog">
-<meta property="og:description" content="Nginx添加模块&amp;emsp;&amp;emsp;编译安装Nginx的时候，有些模块默认不会安装，比如http_ssl_module。那么为了让Nginx支持HTTPS，必须添加这个模块。下面讲解如何在已经安装过后在此添加新的模块。">
+<meta property="og:description" content="数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)二叉查找树树性质： 1、任意节点左子树不为空，则左子树的值均小于根节点的值；2、任意节点右子树不为空，则右子树的值均大于于根节点的值；3、任意节点的左右子树也分别是二叉查找树；4、没有键值相等的节点； 图示： 二叉查找树按照中序遍历即从小到大分布：1，3，4，6，7，8，10，13，14  局限： 极端情况如下，会退化成为一个N个急待你的线性">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://couragehe.github.io/images/data/20200823120359.png">
-<meta property="og:image" content="https://couragehe.github.io/images/data/20200823121719.png">
-<meta property="og:image" content="https://couragehe.github.io/images/data/20200824001843.png">
-<meta property="article:published_time" content="2020-10-18T11:19:44.000Z">
-<meta property="article:modified_time" content="2023-02-15T06:54:06.761Z">
+<meta property="og:image" content="https://couragehe.github.io/2023/02/27/e5ee594c5418/images/data/%E4%B8%8B%E8%BD%BD.png">
+<meta property="og:image" content="https://couragehe.github.io/2023/02/27/e5ee594c5418/images/data/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.png">
+<meta property="og:image" content="https://couragehe.github.io/2023/02/27/e5ee594c5418/images/data/%E4%BA%8C%E5%8F%89%E5%B9%B3%E8%A1%A1%E6%A0%91.png">
+<meta property="og:image" content="https://couragehe.github.io/2023/02/27/e5ee594c5418/images/data/%E4%B8%8B%E8%BD%BD-16775008946984.png">
+<meta property="og:image" content="https://couragehe.github.io/2023/02/27/e5ee594c5418/images/data/B%E6%A0%91.jpg">
+<meta property="og:image" content="https://couragehe.github.io/2023/02/27/e5ee594c5418/images/data/B+%E6%A0%91.jpg">
+<meta property="article:published_time" content="2023-02-27T14:22:44.000Z">
+<meta property="article:modified_time" content="2023-02-27T14:22:39.342Z">
 <meta property="article:author" content="Courage He">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Nginx">
+<meta property="article:tag" content="CourageHe,有勇须知方,博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://couragehe.github.io/images/data/20200823120359.png">
+<meta name="twitter:image" content="https://couragehe.github.io/2023/02/27/e5ee594c5418/images/data/%E4%B8%8B%E8%BD%BD.png">
 
-<link rel="canonical" href="https://couragehe.github.io/2020/10/18/7a13413b21cc/">
+<link rel="canonical" href="https://couragehe.github.io/2023/02/27/e5ee594c5418/">
 
 
 <script id="page-configurations">
@@ -53,7 +55,7 @@
   };
 </script>
 
-  <title>Nginx添加模块 | CourageHe's Blog</title>
+  <title>数据结构之各种树(二叉树、AVL树、红黑树、B、B+树) | CourageHe's Blog</title>
   
 
 
@@ -206,7 +208,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2020/10/18/7a13413b21cc/">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2023/02/27/e5ee594c5418/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -219,7 +221,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Nginx添加模块
+          数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)
         </h1>
 
         <div class="post-meta">
@@ -228,23 +230,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-10-18 19:19:44" itemprop="dateCreated datePublished" datetime="2020-10-18T19:19:44+08:00">2020-10-18</time>
+              <time title="创建时间：2023-02-27 22:22:44 / 修改时间：22:22:39" itemprop="dateCreated datePublished" datetime="2023-02-27T22:22:44+08:00">2023-02-27</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-15 14:54:06" itemprop="dateModified" datetime="2023-02-15T14:54:06+08:00">2023-02-15</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Nginx/" itemprop="url" rel="index"><span itemprop="name">Nginx</span></a>
+                  <a href="/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/" itemprop="url" rel="index"><span itemprop="name">学海无涯</span></a>
                 </span>
             </span>
 
@@ -261,7 +257,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -280,59 +276,51 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Nginx添加模块"><a href="#Nginx添加模块" class="headerlink" title="Nginx添加模块"></a>Nginx添加模块</h1><p>&emsp;&emsp;编译安装Nginx的时候，有些模块默认不会安装，比如<code>http_ssl_module</code>。那么为了让Nginx支持HTTPS，必须添加这个模块。下面讲解如何在已经安装过后在此添加新的模块。</p>
-<a id="more"></a>
-
-<table>
-<thead>
-<tr>
-<th>支持功能</th>
-<th>所需模块</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>https</td>
-<td>http_ssl_module</td>
-</tr>
-<tr>
-<td>fastdfs</td>
-<td>ngx_fastdfs_module</td>
-</tr>
-<tr>
-<td>gzip</td>
-<td><strong>http_gzip_static_module</strong></td>
-</tr>
-<tr>
-<td>监控</td>
-<td>http_stub_status_module</td>
-</tr>
-</tbody></table>
-<h2 id="1-进入Nginx源码根目录"><a href="#1-进入Nginx源码根目录" class="headerlink" title="1. 进入Nginx源码根目录"></a>1. 进入Nginx源码根目录</h2><p>即最初的安装包目录，如果没有的话，下载新的源码并解压即可。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cd /data/portal/nginx</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-查看nginx版本及其编译参数"><a href="#2-查看nginx版本及其编译参数" class="headerlink" title="2. 查看nginx版本及其编译参数"></a>2. 查看nginx版本及其编译参数</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# /usr/local/nginx/sbin/nginx -V</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-重新编译代码和模块"><a href="#3-重新编译代码和模块" class="headerlink" title="3. 重新编译代码和模块"></a>3. 重新编译代码和模块</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost nginx]# ./configure --prefix=/usr/local/nginx --with-http_ssl_module</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-执行make"><a href="#4-执行make" class="headerlink" title="4. 执行make"></a>4. 执行make</h2><p>（注意：千万别 make install ，否则就覆盖安装了）， make完之后在<code>/data/portal/nginx/nginx-1.6.2/objs/</code>目录下就多了个nginx，这个就是新版本的程序了。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost nginx]# make</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/data/20200823120359.png" alt="image-20200823120359688"></p>
-<h2 id="5-备份旧的nginx程序"><a href="#5-备份旧的nginx程序" class="headerlink" title="5. 备份旧的nginx程序"></a>5. 备份旧的nginx程序</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cd /usr/local/nginx/sbin</span><br><span class="line">[root@localhost sbin]#mv nginx nginx_bak</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-把新的nginx程序复制至-usr-local-nginx-sbin"><a href="#6-把新的nginx程序复制至-usr-local-nginx-sbin" class="headerlink" title="6. 把新的nginx程序复制至/usr/local/nginx/sbin"></a>6. 把新的nginx程序复制至<code>/usr/local/nginx/sbin</code></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cp /data/portal/nginx/nginx-1.6.2/objs/nginx /usr/local/nginx/sbin/</span><br></pre></td></tr></table></figure>
-
-<h2 id="7-检测程序是否正确"><a href="#7-检测程序是否正确" class="headerlink" title="7. 检测程序是否正确"></a>7. 检测程序是否正确</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#/usr/local/nginx/sbin/nginx -t</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/data/20200823121719.png" alt="image-20200822182926429"></p>
-<h2 id="8-平滑启动服务"><a href="#8-平滑启动服务" class="headerlink" title="8. 平滑启动服务"></a>8. 平滑启动服务</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#/usr/local/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure>
-
-<h2 id="9-查看模块是否安装"><a href="#9-查看模块是否安装" class="headerlink" title="9. 查看模块是否安装"></a>9. 查看模块是否安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# /usr/local/nginx/sbin/nginx -V</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/data/20200824001843.png" alt="image-20200824001842900"></p>
-<h2 id="10-重启nginx"><a href="#10-重启nginx" class="headerlink" title="10. 重启nginx"></a>10. 重启nginx</h2><p>Nginx重新安装模块后，必须先退出，然后再次启动，该模块才会生效。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# /usr/local/nginx/sbin/nginx -s quit</span><br><span class="line">[root@localhost ~]# /usr/local/nginx/sbin/nginx</span><br></pre></td></tr></table></figure>
-
+        <h1 id="数据结构之各种树-二叉树、AVL树、红黑树、B、B-树"><a href="#数据结构之各种树-二叉树、AVL树、红黑树、B、B-树" class="headerlink" title="数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)"></a>数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)</h1><h2 id="二叉查找树树"><a href="#二叉查找树树" class="headerlink" title="二叉查找树树"></a>二叉查找树树</h2><p><strong>性质：</strong></p>
+<p>1、任意节点左子树不为空，则左子树的值均小于根节点的值；<br>2、任意节点右子树不为空，则右子树的值均大于于根节点的值；<br>3、任意节点的左右子树也分别是二叉查找树；<br>4、没有键值相等的节点；</p>
+<p><strong>图示：</strong></p>
+<p><strong>二叉查找树</strong>按照<strong>中序遍历</strong>即从小到大分布：1，3，4，6，7，8，10，13，14</p>
+<p><img src="images/data/%E4%B8%8B%E8%BD%BD.png" alt="下载"></p>
+<p><strong>局限：</strong></p>
+<p>极端情况如下，会退化成为一个N个急待你的线性链表</p>
+<p><img src="images/data/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.png" alt="二叉搜索树"></p>
+<h2 id="AVL树-二叉平衡树"><a href="#AVL树-二叉平衡树" class="headerlink" title="AVL树(二叉平衡树)"></a>AVL树(二叉平衡树)</h2><p><strong>性质：</strong></p>
+<p>1、满足二叉查找树的性质<br>2、平衡条件必须满足（所有节点的左右子树高度差不超过 1）。</p>
+<p>不管我们是执行插入还是删除操作，只要不满足上面的条件，就要通过旋转来保持平衡，而旋转是非常耗时的，由此我们可以知道 AVL 树适合用于插入删除次数比较少，但查找多的情况。</p>
+<p><strong>图示：</strong></p>
+<p><img src="images/data/%E4%BA%8C%E5%8F%89%E5%B9%B3%E8%A1%A1%E6%A0%91.png" alt="二叉平衡树"></p>
+<p><strong>局限性：</strong></p>
+<p>由于维护这种高度平衡所付出的代价比从中获得的效率收益还大，故而实际的应用不多，更多的地方是用追求局部而不是非常严格整体平衡的红黑树。当然，如果应用场景中对插入删除不频繁，只是对查找要求较高，那么 AVL 还是较优于红黑树。</p>
+<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><p><strong>性质：</strong></p>
+<ol>
+<li>每个节点非红即黑；</li>
+<li>根节点总是黑色的；</li>
+<li>每个叶子节点都是黑色的空节点（NIL节点）；</li>
+<li>如果节点是红色的，则它的子节点必须是黑色的（反之不一定）；</li>
+<li>从根节点到叶节点或空子节点的每条路径，必须包含相同数目的黑色节点（即相同的黑色高度）。</li>
+</ol>
+<p><strong>图示：</strong></p>
+<p><img src="images/data/%E4%B8%8B%E8%BD%BD-16775008946984.png" alt="下载"></p>
+<p><strong>应用：</strong></p>
+<p>TreeMap,TreeSet以及JDK1.8的HashMap底层</p>
+<h2 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h2><p><strong>性质：</strong></p>
+<p>1、定义任意非叶子结点最多只有 M 个儿子，且 M&gt;2；<br>2、根结点的儿子数为 [2, M]；<br>3、除根结点以外的非叶子结点的儿子数为 [M/2, M]；<br>4、每个结点存放至少 M/2-1（取上整）和至多 M-1 个关键字；（至少 2 个关键字）<br>5、非叶子结点的关键字个数 = 指向儿子的指针个数 - 1；<br>6、非叶子结点的关键字：K [1], K [2], …, K [M-1]；且 K [i] &lt; K [i+1]；<br>7、非叶子结点的指针：P [1], P [2], …, P [M]；其中 P [1] 指向关键字小于 K [1] 的子树，P [M] 指向关键字大于 K [M-1] 的子树，其它 P [i] 指向关键字属于 (K [i-1], K [i]) 的子树；<br>8、所有叶子结点位于同一层；</p>
+<p><strong>图示：</strong></p>
+<p><img src="images/data/B%E6%A0%91.jpg" alt="B树"></p>
+<h2 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h2><p><strong>性质：</strong></p>
+<p>1、非叶子节点的子树指针与关键字个数相同；<br>2、非叶子节点的子树指针 p [i], 指向关键字值属于 [k [i],k [i+1]] 的子树.(B 树是开区间，也就是说 B 树不允许关键字重复，B + 树允许重复)；<br>3、为所有叶子节点增加一个链指针；<br>4、所有关键字都在叶子节点出现 (稠密索引). (且链表中的关键字恰好是有序的)；<br>5、非叶子节点相当于是叶子节点的索引 (稀疏索引), 叶子节点相当于是存储 (关键字) 数据的数据层；<br>6、更适合于文件系统；</p>
+<p><strong>图示：</strong></p>
+<p><img src="images/data/B+%E6%A0%91.jpg" alt="B+树"></p>
+<p><strong>应用：</strong></p>
+<p>B和B+树主要用作文件系统以及数据库做索引</p>
+<h2 id="B-树-amp-B-树区别"><a href="#B-树-amp-B-树区别" class="headerlink" title="B 树&amp; B+树区别"></a>B 树&amp; B+树区别</h2><ul>
+<li>B 树的所有节点既存放键(key) 也存放 数据(data)，而 B+树只有叶子节点存放 key 和 data，其他内节点只存放 key。</li>
+<li>B 树的叶子节点都是独立的;B+树的叶子节点有一条引用链指向与它相邻的叶子节点。</li>
+<li>B 树的检索的过程相当于对范围内的每个节点的关键字做二分查找，可能还没有到达叶子节点，检索就结束了。而 B+树的检索效率就很稳定了，任何查找都是从根节点到叶子节点的过程，叶子节点的顺序检索很明显。</li>
+</ul>
+<p>参考：<a target="_blank" rel="noopener" href="https://learnku.com/articles/52909">https://learnku.com/articles/52909</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://javaguide.cn/database/mysql/mysql-index.html">https://javaguide.cn/database/mysql/mysql-index.html</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.tianxiaobo.com/2018/01/11/%E7%BA%A2%E9%BB%91%E6%A0%91%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90/">https://www.tianxiaobo.com/2018/01/11/%E7%BA%A2%E9%BB%91%E6%A0%91%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90/</a></p>
 
     </div>
      <div>
@@ -376,7 +364,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://couragehe.github.io/2020/10/18/7a13413b21cc/" title="Nginx添加模块">https://couragehe.github.io/2020/10/18/7a13413b21cc/</a>
+    <a href="https://couragehe.github.io/2023/02/27/e5ee594c5418/" title="数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)">https://couragehe.github.io/2023/02/27/e5ee594c5418/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -405,11 +393,6 @@
 
 
       <footer class="post-footer">
-          
-          <div class="post-tags">
-              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
-              <a href="/tags/Nginx/" rel="tag"><i class="fa fa-tag"></i> Nginx</a>
-          </div>
 
         
 
@@ -417,13 +400,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/10/15/4a9e23212be1/" rel="prev" title="Nginx安装及常用命令">
-      <i class="fa fa-chevron-left"></i> Nginx安装及常用命令
+    <a href="/2023/02/19/f91a1cafe11e/" rel="prev" title="第 98 双周赛&第333场周赛 | 归并排序、动态规划">
+      <i class="fa fa-chevron-left"></i> 第 98 双周赛&第333场周赛 | 归并排序、动态规划
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/12/30/7959745d4768/" rel="next" title="实现SingleTton模式">
-      实现SingleTton模式 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -483,7 +463,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97"><span class="nav-text">Nginx添加模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%BF%9B%E5%85%A5Nginx%E6%BA%90%E7%A0%81%E6%A0%B9%E7%9B%AE%E5%BD%95"><span class="nav-text">1. 进入Nginx源码根目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%9F%A5%E7%9C%8Bnginx%E7%89%88%E6%9C%AC%E5%8F%8A%E5%85%B6%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0"><span class="nav-text">2. 查看nginx版本及其编译参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E9%87%8D%E6%96%B0%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81%E5%92%8C%E6%A8%A1%E5%9D%97"><span class="nav-text">3. 重新编译代码和模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%89%A7%E8%A1%8Cmake"><span class="nav-text">4. 执行make</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%A4%87%E4%BB%BD%E6%97%A7%E7%9A%84nginx%E7%A8%8B%E5%BA%8F"><span class="nav-text">5. 备份旧的nginx程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%8A%8A%E6%96%B0%E7%9A%84nginx%E7%A8%8B%E5%BA%8F%E5%A4%8D%E5%88%B6%E8%87%B3-usr-local-nginx-sbin"><span class="nav-text">6. 把新的nginx程序复制至&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E6%A3%80%E6%B5%8B%E7%A8%8B%E5%BA%8F%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE"><span class="nav-text">7. 检测程序是否正确</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E5%B9%B3%E6%BB%91%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="nav-text">8. 平滑启动服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E6%9F%A5%E7%9C%8B%E6%A8%A1%E5%9D%97%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85"><span class="nav-text">9. 查看模块是否安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E9%87%8D%E5%90%AFnginx"><span class="nav-text">10. 重启nginx</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%90%84%E7%A7%8D%E6%A0%91-%E4%BA%8C%E5%8F%89%E6%A0%91%E3%80%81AVL%E6%A0%91%E3%80%81%E7%BA%A2%E9%BB%91%E6%A0%91%E3%80%81B%E3%80%81B-%E6%A0%91"><span class="nav-text">数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E6%A0%91"><span class="nav-text">二叉查找树树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AVL%E6%A0%91-%E4%BA%8C%E5%8F%89%E5%B9%B3%E8%A1%A1%E6%A0%91"><span class="nav-text">AVL树(二叉平衡树)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="nav-text">红黑树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B%E6%A0%91"><span class="nav-text">B树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E6%A0%91"><span class="nav-text">B+树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E6%A0%91-amp-B-%E6%A0%91%E5%8C%BA%E5%88%AB"><span class="nav-text">B 树&amp; B+树区别</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -680,7 +660,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'CourageHe.github.io',
       owner       : 'CourageHe',
       admin       : ['CourageHe'],
-      id          : '614c1446816e62f4db23ef9ccb759ad7',
+      id          : '257c44ac17c0964f9dd8fb577420976b',
         language: 'zh-CN',
       distractionFreeMode: true
     });
