@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"couragehe.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)二叉查找树树性质： 1、任意节点左子树不为空，则左子树的值均小于根节点的值；2、任意节点右子树不为空，则右子树的值均大于于根节点的值；3、任意节点的左右子树也分别是二叉查找树；4、没有键值相等的节点； 图示： 二叉查找树按照中序遍历即从小到大分布：1，3，4，6，7，8，10，13，14  局限： 极端情况如下，会退化成为一个N个急待你的线性">
+  <meta name="description" content="数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)二叉查找树性质： 1、任意节点左子树不为空，则左子树的值均小于根节点的值；2、任意节点右子树不为空，则右子树的值均大于于根节点的值；3、任意节点的左右子树也分别是二叉查找树；4、没有键值相等的节点； 图示： 二叉查找树按照中序遍历即从小到大分布：1，3，4，6，7，8，10，13，14 ‘">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)">
 <meta property="og:url" content="https://couragehe.github.io/2023/02/27/e5ee594c5418/index.html">
 <meta property="og:site_name" content="CourageHe&#39;s Blog">
-<meta property="og:description" content="数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)二叉查找树树性质： 1、任意节点左子树不为空，则左子树的值均小于根节点的值；2、任意节点右子树不为空，则右子树的值均大于于根节点的值；3、任意节点的左右子树也分别是二叉查找树；4、没有键值相等的节点； 图示： 二叉查找树按照中序遍历即从小到大分布：1，3，4，6，7，8，10，13，14  局限： 极端情况如下，会退化成为一个N个急待你的线性">
+<meta property="og:description" content="数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)二叉查找树性质： 1、任意节点左子树不为空，则左子树的值均小于根节点的值；2、任意节点右子树不为空，则右子树的值均大于于根节点的值；3、任意节点的左右子树也分别是二叉查找树；4、没有键值相等的节点； 图示： 二叉查找树按照中序遍历即从小到大分布：1，3，4，6，7，8，10，13，14 ‘">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://couragehe.github.io/2023/02/27/e5ee594c5418/images/data/%E4%B8%8B%E8%BD%BD.png">
 <meta property="og:image" content="https://couragehe.github.io/2023/02/27/e5ee594c5418/images/data/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.png">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://couragehe.github.io/2023/02/27/e5ee594c5418/images/data/B%E6%A0%91.jpg">
 <meta property="og:image" content="https://couragehe.github.io/2023/02/27/e5ee594c5418/images/data/B+%E6%A0%91.jpg">
 <meta property="article:published_time" content="2023-02-27T14:22:44.000Z">
-<meta property="article:modified_time" content="2023-02-27T14:22:39.342Z">
+<meta property="article:modified_time" content="2023-02-27T14:31:54.637Z">
 <meta property="article:author" content="Courage He">
 <meta property="article:tag" content="CourageHe,有勇须知方,博客">
 <meta name="twitter:card" content="summary">
@@ -232,7 +232,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-02-27 22:22:44 / 修改时间：22:22:39" itemprop="dateCreated datePublished" datetime="2023-02-27T22:22:44+08:00">2023-02-27</time>
+              <time title="创建时间：2023-02-27 22:22:44 / 修改时间：22:31:54" itemprop="dateCreated datePublished" datetime="2023-02-27T22:22:44+08:00">2023-02-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,11 +276,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="数据结构之各种树-二叉树、AVL树、红黑树、B、B-树"><a href="#数据结构之各种树-二叉树、AVL树、红黑树、B、B-树" class="headerlink" title="数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)"></a>数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)</h1><h2 id="二叉查找树树"><a href="#二叉查找树树" class="headerlink" title="二叉查找树树"></a>二叉查找树树</h2><p><strong>性质：</strong></p>
+        <h1 id="数据结构之各种树-二叉树、AVL树、红黑树、B、B-树"><a href="#数据结构之各种树-二叉树、AVL树、红黑树、B、B-树" class="headerlink" title="数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)"></a>数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)</h1><h2 id="二叉查找树"><a href="#二叉查找树" class="headerlink" title="二叉查找树"></a>二叉查找树</h2><p><strong>性质：</strong></p>
 <p>1、任意节点左子树不为空，则左子树的值均小于根节点的值；<br>2、任意节点右子树不为空，则右子树的值均大于于根节点的值；<br>3、任意节点的左右子树也分别是二叉查找树；<br>4、没有键值相等的节点；</p>
 <p><strong>图示：</strong></p>
 <p><strong>二叉查找树</strong>按照<strong>中序遍历</strong>即从小到大分布：1，3，4，6，7，8，10，13，14</p>
-<p><img src="images/data/%E4%B8%8B%E8%BD%BD.png" alt="下载"></p>
+<p><img src="images/data/%E4%B8%8B%E8%BD%BD.png" alt="下载">‘</p>
+<a id="more"></a>
+
 <p><strong>局限：</strong></p>
 <p>极端情况如下，会退化成为一个N个急待你的线性链表</p>
 <p><img src="images/data/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.png" alt="二叉搜索树"></p>
@@ -463,7 +465,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%90%84%E7%A7%8D%E6%A0%91-%E4%BA%8C%E5%8F%89%E6%A0%91%E3%80%81AVL%E6%A0%91%E3%80%81%E7%BA%A2%E9%BB%91%E6%A0%91%E3%80%81B%E3%80%81B-%E6%A0%91"><span class="nav-text">数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E6%A0%91"><span class="nav-text">二叉查找树树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AVL%E6%A0%91-%E4%BA%8C%E5%8F%89%E5%B9%B3%E8%A1%A1%E6%A0%91"><span class="nav-text">AVL树(二叉平衡树)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="nav-text">红黑树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B%E6%A0%91"><span class="nav-text">B树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E6%A0%91"><span class="nav-text">B+树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E6%A0%91-amp-B-%E6%A0%91%E5%8C%BA%E5%88%AB"><span class="nav-text">B 树&amp; B+树区别</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%90%84%E7%A7%8D%E6%A0%91-%E4%BA%8C%E5%8F%89%E6%A0%91%E3%80%81AVL%E6%A0%91%E3%80%81%E7%BA%A2%E9%BB%91%E6%A0%91%E3%80%81B%E3%80%81B-%E6%A0%91"><span class="nav-text">数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91"><span class="nav-text">二叉查找树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AVL%E6%A0%91-%E4%BA%8C%E5%8F%89%E5%B9%B3%E8%A1%A1%E6%A0%91"><span class="nav-text">AVL树(二叉平衡树)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="nav-text">红黑树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B%E6%A0%91"><span class="nav-text">B树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E6%A0%91"><span class="nav-text">B+树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E6%A0%91-amp-B-%E6%A0%91%E5%8C%BA%E5%88%AB"><span class="nav-text">B 树&amp; B+树区别</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -670,7 +672,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 </script>
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1677507979395')
+  navigator.serviceWorker.register('/sw.js?t=1677508320642')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
