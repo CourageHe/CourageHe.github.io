@@ -123,7 +123,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">11</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -133,7 +133,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">27</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">29</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -194,6 +194,224 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2023/03/05/2cbe1aa30f9c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courage He">
+      <meta itemprop="description" content="一万年太久，只争朝夕！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CourageHe's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/05/2cbe1aa30f9c/" class="post-title-link" itemprop="url">第 99 双周赛&第335场周赛</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-03-05 20:00:26 / 修改时间：22:10:35" itemprop="dateCreated datePublished" datetime="2023-03-05T20:00:26+08:00">2023-03-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="第-99-双周赛-amp-第335场周赛"><a href="#第-99-双周赛-amp-第335场周赛" class="headerlink" title="第 99 双周赛&amp;第335场周赛"></a>第 99 双周赛&amp;第335场周赛</h2><p>本周同时参加了第99场双周赛和第335场周赛，因此本文将两场比赛的题目一起整理如下！这次竞赛</p>
+<h3 id="第-99-场双周赛"><a href="#第-99-场双周赛" class="headerlink" title="第 99 场双周赛"></a>第 99 场双周赛</h3><p>双周赛解决了1，2题，第三题超时一直没解决。下次努力！</p>
+<h4 id="01-最小和分割"><a href="#01-最小和分割" class="headerlink" title="01.最小和分割"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/contest/biweekly-contest-99/problems/split-with-minimum-sum/">01.最小和分割</a></h4><p>这是参赛时想出来的思路：</p>
+<ol>
+<li><code>num</code>由<code>0-9</code>组合，用长度为<code>10</code>的数组存储数字数量，数组索引代表存储的数，值代表个数</li>
+<li>将数组中存储的的的数字从0-9依次分配至<code>builder1</code>和<code>builder2</code>，</li>
+<li>将两数字串解析为数字相加，即为答案！</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">splitNum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//统计各数字数量</span></span><br><span class="line">        <span class="keyword">int</span>[] nums = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">        <span class="keyword">int</span> helper = num;</span><br><span class="line">        <span class="keyword">while</span> (helper &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">            nums[helper % <span class="number">10</span>]++;</span><br><span class="line">            helper = helper / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        nums[helper % <span class="number">10</span>]++;</span><br><span class="line">        <span class="comment">//这里初始化0，以防Integer.valueOf传参为空字符串报错。</span></span><br><span class="line">        StringBuilder builder1 = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">        StringBuilder builder2 = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length;) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">//i 对应的数量为0，分配下一个是数字</span></span><br><span class="line">                i++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (builder1.length() &lt; builder2.length()) &#123;</span><br><span class="line">                builder1.append(i);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                builder2.append(i);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//数量减-1</span></span><br><span class="line">            nums[i]--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Integer.valueOf(builder1.toString())+Integer.valueOf(builder2.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/03/05/2cbe1aa30f9c/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+     <div>
+    
+  </div>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2023/03/01/691bbc5b3562/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courage He">
+      <meta itemprop="description" content="一万年太久，只争朝夕！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CourageHe's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/01/691bbc5b3562/" class="post-title-link" itemprop="url">MySQL知识小结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-03-01 14:52:44 / 修改时间：19:56:57" itemprop="dateCreated datePublished" datetime="2023-03-01T14:52:44+08:00">2023-03-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/" itemprop="url" rel="index"><span itemprop="name">学海无涯</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="SQL知识小结"><a href="#SQL知识小结" class="headerlink" title="SQL知识小结"></a>SQL知识小结</h1><h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><p>不同数据库的函数往往各不相同，因此不可移植。本节主要以 MySQL 的函数为例。</p>
+<h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>LEFT()</code>、<code>RIGHT()</code></td>
+<td>左边或者右边的字符</td>
+</tr>
+<tr>
+<td><code>LOWER()</code>、<code>UPPER()</code></td>
+<td>转换为小写或者大写</td>
+</tr>
+<tr>
+<td><code>LTRIM()</code>、<code>RTIM()</code></td>
+<td>去除左边或者右边的空格</td>
+</tr>
+<tr>
+<td><code>LENGTH()</code></td>
+<td>长度</td>
+</tr>
+<tr>
+<td><code>SOUNDEX()</code></td>
+<td>转换为语音值</td>
+</tr>
+</tbody></table>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/03/01/691bbc5b3562/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+     <div>
+    
+  </div>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -324,7 +542,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-20 16:19:52" itemprop="dateModified" datetime="2023-02-20T16:19:52+08:00">2023-02-20</time>
+                <time title="修改时间：2023-03-05 19:54:51" itemprop="dateModified" datetime="2023-03-05T19:54:51+08:00">2023-03-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -361,8 +579,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="第-98-场双周赛"><a href="#第-98-场双周赛" class="headerlink" title="第 98 场双周赛"></a>第 98 场双周赛</h3><p>本周同时参加了第98场双周赛和第333场双周赛，因此本文将两场比赛的题目一起整理如下！</p>
-<h4 id="01-替换一个数字后的最大差值"><a href="#01-替换一个数字后的最大差值" class="headerlink" title="01.替换一个数字后的最大差值"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-difference-by-remapping-a-digit/">01.替换一个数字后的最大差值</a></h4><p>暴力枚举，找出所有可能的最大值、最小值即可得到答案。</p>
+          <h2 id="第-98-双周赛-amp-第333场周赛-归并排序、动态规划"><a href="#第-98-双周赛-amp-第333场周赛-归并排序、动态规划" class="headerlink" title="第 98 双周赛&amp;第333场周赛 | 归并排序、动态规划"></a>第 98 双周赛&amp;第333场周赛 | 归并排序、动态规划</h2><p>本周同时参加了第98场双周赛和第333场周赛，因此本文将两场比赛的题目一起整理如下！</p>
+<h3 id="第-98-场双周赛"><a href="#第-98-场双周赛" class="headerlink" title="第 98 场双周赛"></a>第 98 场双周赛</h3><h4 id="01-替换一个数字后的最大差值"><a href="#01-替换一个数字后的最大差值" class="headerlink" title="01.替换一个数字后的最大差值"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-difference-by-remapping-a-digit/">01.替换一个数字后的最大差值</a></h4><p>暴力枚举，找出所有可能的最大值、最小值即可得到答案。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution01</span> </span>&#123;</span><br><span class="line">	<span class="comment">//暴力枚举</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minMaxDifference</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        String s = String.valueOf(num);</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">int</span> min = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">            <span class="comment">//获取最大值</span></span><br><span class="line">            <span class="keyword">int</span> digitMax = Integer.parseInt(s.replace((<span class="keyword">char</span>)i,<span class="string">&#x27;9&#x27;</span>));</span><br><span class="line">            max = max&gt;digitMax?max:digitMax;</span><br><span class="line">            <span class="comment">//获取最小值</span></span><br><span class="line">            <span class="keyword">int</span> digitMin = Integer.parseInt(s.replace((<span class="keyword">char</span>)i,<span class="string">&#x27;0&#x27;</span>));</span><br><span class="line">            min = min&lt;digitMin?min:digitMin;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max-min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
@@ -1049,202 +1267,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/03/04/e831abc0a85c/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Courage He">
-      <meta itemprop="description" content="一万年太久，只争朝夕！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CourageHe's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/04/e831abc0a85c/" class="post-title-link" itemprop="url">驾照考试-刷题总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-04 20:45:44" itemprop="dateCreated datePublished" datetime="2021-03-04T20:45:44+08:00">2021-03-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-27 22:40:37" itemprop="dateModified" datetime="2023-02-27T22:40:37+08:00">2023-02-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/" itemprop="url" rel="index"><span itemprop="name">学海无涯</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="驾照考试-刷题总结"><a href="#驾照考试-刷题总结" class="headerlink" title="驾照考试-刷题总结"></a>驾照考试-刷题总结</h1><blockquote>
-<p>本文主要用于记录，在准备驾照考试中总结的日常经验。在<a href="https://couragehe.github.io/">CourageHe’s Blog</a>不间断更新，欢迎各位看官指教。</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/04/e831abc0a85c/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-     <div>
-    
-  </div>
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2021/02/12/6ea85d902251/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Courage He">
-      <meta itemprop="description" content="一万年太久，只争朝夕！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CourageHe's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/12/6ea85d902251/" class="post-title-link" itemprop="url">辛丑牛年新年展望（2021）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-02-12 21:21:21" itemprop="dateCreated datePublished" datetime="2021-02-12T21:21:21+08:00">2021-02-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-15 14:54:06" itemprop="dateModified" datetime="2023-02-15T14:54:06+08:00">2023-02-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AA%E4%BA%BA%E6%9C%89%E6%84%9F/" itemprop="url" rel="index"><span itemprop="name">个人有感</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="辛丑牛年新年展望（2021）"><a href="#辛丑牛年新年展望（2021）" class="headerlink" title="辛丑牛年新年展望（2021）"></a>辛丑牛年新年展望（2021）</h1><p>&emsp;&emsp;2021年2月12日为辛丑牛年正月初一，就农历而言，今天便就是中国的农历新年。作为一个对传统佳节有浓厚感情的传统国人，辞旧迎新、展望未来便是本文的初衷。2020元旦总结虽有稍许记录，却未整理成文，今天借这个机会发表啦！</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/02/12/6ea85d902251/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-     <div>
-    
-  </div>
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1316,7 +1338,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1329,7 +1351,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1380,13 +1402,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">55k</span>
+    <span title="站点总字数">63k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">50 分钟</span>
+    <span title="站点阅读时长">57 分钟</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -1488,7 +1510,7 @@
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1677508879823')
+  navigator.serviceWorker.register('/sw.js?t=1678025452870')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

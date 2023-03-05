@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><link rel=manifest href=/manifest.json>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"couragehe.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="第 99 双周赛&amp;第335场周赛本周同时参加了第99场双周赛和第335场周赛，因此本文将两场比赛的题目一起整理如下！这次竞赛 第 99 场双周赛双周赛解决了1，2题，第三题超时一直没解决。下次努力！ 01.最小和分割这是参赛时想出来的思路：  num由0-9组合，用长度为10的数组存储数字数量，数组索引代表存储的数，值代表个数 将数组中存储的的的数字从0-9依次分配至builder1和bu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第 99 双周赛&amp;第335场周赛">
+<meta property="og:url" content="https://couragehe.github.io/2023/03/05/2cbe1aa30f9c/index.html">
+<meta property="og:site_name" content="CourageHe&#39;s Blog">
+<meta property="og:description" content="第 99 双周赛&amp;第335场周赛本周同时参加了第99场双周赛和第335场周赛，因此本文将两场比赛的题目一起整理如下！这次竞赛 第 99 场双周赛双周赛解决了1，2题，第三题超时一直没解决。下次努力！ 01.最小和分割这是参赛时想出来的思路：  num由0-9组合，用长度为10的数组存储数字数量，数组索引代表存储的数，值代表个数 将数组中存储的的的数字从0-9依次分配至builder1和bu">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-05T12:00:26.000Z">
+<meta property="article:modified_time" content="2023-03-05T14:10:35.760Z">
+<meta property="article:author" content="Courage He">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="竞赛">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://couragehe.github.io/2023/03/05/2cbe1aa30f9c/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>第 99 双周赛&第335场周赛 | CourageHe's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="CourageHe's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+    <a target="_blank" rel="noopener" href="https://github.com/CourageHe"></a>     
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">CourageHe's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">有勇须知方</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">29</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/CourageHe" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://couragehe.github.io/2023/03/05/2cbe1aa30f9c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courage He">
+      <meta itemprop="description" content="一万年太久，只争朝夕！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CourageHe's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          第 99 双周赛&第335场周赛
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-03-05 20:00:26 / 修改时间：22:10:35" itemprop="dateCreated datePublished" datetime="2023-03-05T20:00:26+08:00">2023-03-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="第-99-双周赛-amp-第335场周赛"><a href="#第-99-双周赛-amp-第335场周赛" class="headerlink" title="第 99 双周赛&amp;第335场周赛"></a>第 99 双周赛&amp;第335场周赛</h2><p>本周同时参加了第99场双周赛和第335场周赛，因此本文将两场比赛的题目一起整理如下！这次竞赛</p>
+<h3 id="第-99-场双周赛"><a href="#第-99-场双周赛" class="headerlink" title="第 99 场双周赛"></a>第 99 场双周赛</h3><p>双周赛解决了1，2题，第三题超时一直没解决。下次努力！</p>
+<h4 id="01-最小和分割"><a href="#01-最小和分割" class="headerlink" title="01.最小和分割"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/contest/biweekly-contest-99/problems/split-with-minimum-sum/">01.最小和分割</a></h4><p>这是参赛时想出来的思路：</p>
+<ol>
+<li><code>num</code>由<code>0-9</code>组合，用长度为<code>10</code>的数组存储数字数量，数组索引代表存储的数，值代表个数</li>
+<li>将数组中存储的的的数字从0-9依次分配至<code>builder1</code>和<code>builder2</code>，</li>
+<li>将两数字串解析为数字相加，即为答案！</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">splitNum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//统计各数字数量</span></span><br><span class="line">        <span class="keyword">int</span>[] nums = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">        <span class="keyword">int</span> helper = num;</span><br><span class="line">        <span class="keyword">while</span> (helper &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">            nums[helper % <span class="number">10</span>]++;</span><br><span class="line">            helper = helper / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        nums[helper % <span class="number">10</span>]++;</span><br><span class="line">        <span class="comment">//这里初始化0，以防Integer.valueOf传参为空字符串报错。</span></span><br><span class="line">        StringBuilder builder1 = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">        StringBuilder builder2 = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length;) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">//i 对应的数量为0，分配下一个是数字</span></span><br><span class="line">                i++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (builder1.length() &lt; builder2.length()) &#123;</span><br><span class="line">                builder1.append(i);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                builder2.append(i);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//数量减-1</span></span><br><span class="line">            nums[i]--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Integer.valueOf(builder1.toString())+Integer.valueOf(builder2.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>这是赛后参考大佬的解答：</p>
+<p>佬似乎都喜欢使用<code>lambda</code>表达式，看起来非常简洁。</p>
+<ol>
+<li>将<code>nums</code>转换为字符数组，并从小到大排序</li>
+<li>将字符数组数字从前往后依次分配至<code>num1</code>和<code>num2</code></li>
+<li>将两数字相加，即为答案！</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution01_2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">splitNum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] nums = String.valueOf(num).chars().sorted().toArray();</span><br><span class="line">        <span class="keyword">int</span> num1 = <span class="number">0</span>,num2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(i%<span class="number">2</span>== <span class="number">0</span>) num1 = num1*<span class="number">10</span>+nums[i]-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="keyword">else</span> num2 = num2*<span class="number">10</span>+nums[i]-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num1+num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="02-统计染色格子数"><a href="#02-统计染色格子数" class="headerlink" title="02.统计染色格子数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/contest/biweekly-contest-99/problems/count-total-number-of-colored-cells/">02.统计染色格子数</a></h4><p>找规律咯！</p>
+<p>1 &lt;= n &lt;= 10^5^，题目中已经给了取值范围，最大到100000，因此不可能采用建二维数组模拟的办法进行统计染色格子数。因此试试研究这个格子分钟数和格子数的关系，画出第4分钟的网格图，可数出25个格子。</p>
+<table>
+<thead>
+<tr>
+<th>分钟</th>
+<th>染色格子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>13</td>
+</tr>
+<tr>
+<td>4</td>
+<td>25</td>
+</tr>
+</tbody></table>
+<p>数字关系可以得到公式为：<strong>（n-1）^2^+n^2^</strong>  ==&gt; <strong>2n^2^+-2n+1</strong></p>
+<p>由于n是int类型，公式所求的值默认为int类型，需要强转为long类型。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution02</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">coloredCells</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">long</span>) <span class="number">2</span>*n*n - <span class="number">2</span>*n + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="03-统计将重叠区间合并成组的方案数"><a href="#03-统计将重叠区间合并成组的方案数" class="headerlink" title="03.统计将重叠区间合并成组的方案数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/contest/biweekly-contest-99/problems/count-ways-to-group-overlapping-ranges/">03.统计将重叠区间合并成组的方案数</a></h4><p>这是参赛时想出来的思路：</p>
+<p>这种算法一直超时，采用BigInteger来模拟的想法时彻底错误的，BigInteger虽然可以存储超长的整数（超过long的长度），但是随着数值越大，运算也会变慢！像这种需要累乘的题目，一般都不能采用模拟的方式进行解答，而应该从乘数的因子入手。</p>
+<p>思路：</p>
+<ul>
+<li>将ranges数组根据第一位的值从小到大排序</li>
+<li>统计ranges不属于一个组的数量<code>count</code>，<code>ranges[i][1] &lt; ranges[i+1][0]</code>则代表两者之间为不同组</li>
+<li>统计完组的数量，根据题目描述的方式进行统计总方案数，实际上为<code>count</code>抓取[0,count]的排列组合</li>
+</ul>
+<p>由于计算这个排列组合的值太大太繁琐了，无论如何优化都会超时。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution03</span> </span>&#123;</span><br><span class="line">  	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;<span class="comment">//模数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">countWays</span><span class="params">(<span class="keyword">int</span>[][] ranges)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//根据第一位的值从小到大排序</span></span><br><span class="line">        Arrays.sort(ranges, (a, b) -&gt; a[<span class="number">0</span>] - b[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">       	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = -<span class="number">1</span>; i &lt; ranges.length; j = Math.max(j, ranges[i++][<span class="number">1</span>])) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j &lt; ranges[i][<span class="number">0</span>]) count++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        BigInteger ans = BigInteger.ZERO;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= count / <span class="number">2</span>; i++) &#123;</span><br><span class="line">            BigInteger temp = BigInteger.ONE;</span><br><span class="line">            <span class="keyword">int</span> num = count;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++, num--) &#123;</span><br><span class="line">                temp = temp.multiply(BigInteger.valueOf(num)).divide(BigInteger.valueOf(j));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i == count / <span class="number">2</span> &amp;&amp; count % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                ans = (ans.add(temp)).divideAndRemainder(BigInteger.valueOf(mod))[<span class="number">1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ans = (ans.add(temp.multiply(BigInteger.valueOf(<span class="number">2</span>)))).divideAndRemainder(BigInteger.valueOf(mod))[<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans.intValue();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这是赛后参考大佬的解答：</p>
+<p>和上述解答思路类似，首先给<code>ranges</code>数组排序，然后统计组别数量，每新统计一个组别，原方案数量*2。</p>
+<p>这个乘2倍怎来的呢？？？在超时难以解决的情况下，另辟蹊径，手动计算前几个数字的排列组合，统计得来。也有可能是一个数字公理！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution03</span> </span>&#123;</span><br><span class="line">  	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;<span class="comment">//模数</span></span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">countWays</span><span class="params">(<span class="keyword">int</span>[][] ranges)</span> </span>&#123;</span><br><span class="line">        Arrays.sort(ranges, (a, b) -&gt; a[<span class="number">0</span>] - b[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = -<span class="number">1</span>; i &lt; ranges.length; j = Math.max(j, ranges[i++][<span class="number">1</span>])) &#123;</span><br><span class="line">            count = j &lt; ranges[i][<span class="number">0</span>] ? count * <span class="number">2</span> % mod : count;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="04-统计可能的树根数目"><a href="#04-统计可能的树根数目" class="headerlink" title="04.统计可能的树根数目"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/contest/biweekly-contest-99/problems/count-number-of-possible-root-nodes/">04.统计可能的树根数目</a></h4><p>待做~</p>
+<h3 id="第335场周赛"><a href="#第335场周赛" class="headerlink" title="第335场周赛"></a>第335场周赛</h3><p>周赛解决了1，2题，第三题超时也一直没解决。下次努力！！！</p>
+<h4 id="01-递枕头"><a href="#01-递枕头" class="headerlink" title="01.递枕头"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/pass-the-pillow/">01.递枕头</a></h4><p>找规律，根据题意容易得知，经过<code>2(n-1)</code>秒正投回到原点。因此首先将<code>time</code>取余得到<code>num</code>，这是决定关键走向的几秒。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">passThePillow</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> time)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num =time % (<span class="number">2</span>*(n-<span class="number">1</span>));</span><br><span class="line">        <span class="keyword">return</span> (num &lt; n ? num : (<span class="number">2</span>*(n-<span class="number">1</span>)-num)) +<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="02-二叉树中的第-K-大层和"><a href="#02-二叉树中的第-K-大层和" class="headerlink" title="02.二叉树中的第 K 大层和"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/kth-largest-sum-in-a-binary-tree/">02.二叉树中的第 K 大层和</a></h4><p>层序遍历，优先队列</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution02</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">kthLargestLevelSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        PriorityQueue&lt;Long&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;Long&gt;();</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        queue.add(root);</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> size = queue.size();</span><br><span class="line">            Long sum = <span class="number">0l</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">                TreeNode node = queue.poll();</span><br><span class="line">                sum = sum + (<span class="keyword">long</span>) node.val;</span><br><span class="line">                <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) queue.add(node.left);</span><br><span class="line">                <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) queue.add(node.right);</span><br><span class="line">            &#125;</span><br><span class="line">            pq.add(sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (pq.size() &lt; k) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0l</span>;</span><br><span class="line">        <span class="keyword">int</span> size = pq.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= size - k; i++) &#123;</span><br><span class="line">            ans = pq.poll();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="03-分割数组使乘积互质"><a href="#03-分割数组使乘积互质" class="headerlink" title="03.分割数组使乘积互质"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/split-the-array-to-make-coprime-products/">03.分割数组使乘积互质</a></h4><p>模拟！结果超时！如果所想的思路会导致long范围不够的话，一般都会超时，及时更改思路。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findValidSplit</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        BigInteger[] mul = getMultipy(nums, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span> (gcd(mul[<span class="number">0</span>], mul[<span class="number">1</span>])) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            mul[<span class="number">0</span>] = mul[<span class="number">0</span>].multiply(BigInteger.valueOf(nums[i]));</span><br><span class="line">            mul[<span class="number">1</span>] = mul[<span class="number">1</span>].divide(BigInteger.valueOf(nums[i]));</span><br><span class="line">            <span class="keyword">if</span> (gcd(mul[<span class="number">0</span>], mul[<span class="number">1</span>])) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> BigInteger[] getMultipy(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        BigInteger[] ans = &#123;BigInteger.valueOf(<span class="number">1</span>), BigInteger.valueOf(<span class="number">1</span>)&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &lt;= k) ans[<span class="number">0</span>] = ans[<span class="number">0</span>].multiply(BigInteger.valueOf(nums[i]));</span><br><span class="line">            <span class="keyword">else</span> ans[<span class="number">1</span>] = ans[<span class="number">1</span>].multiply(BigInteger.valueOf(nums[i]));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">gcd</span><span class="params">(BigInteger num1, BigInteger num2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num1.equals(<span class="number">1</span>) || num2.equals(<span class="number">1</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            BigInteger t = num1.divideAndRemainder(num2)[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (t.equals(BigInteger.valueOf(<span class="number">0</span>))) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                num1 = num2;</span><br><span class="line">                num2 = t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (num2.compareTo(BigInteger.valueOf(<span class="number">1</span>)) &gt; <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>竞赛结束后尝试的思路：</p>
+<p>从乘数的因子出发，找出互质数的最小范围即可得到答案。</p>
+<p>[0,max]之间的值不与后面的值存在公约数，那么两个范围的乘机就会互质！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findValidSplit</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.length == <span class="number">1</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//存在公约数的标志</span></span><br><span class="line">        <span class="keyword">boolean</span>[] arr = <span class="keyword">new</span> <span class="keyword">boolean</span>[nums.length];</span><br><span class="line">        <span class="keyword">int</span> max = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; max; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = arr[max] ? max + <span class="number">1</span> : i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!gcd(nums[i], nums[j])) &#123;</span><br><span class="line">                    arr[j] = <span class="keyword">true</span>;</span><br><span class="line">                    max = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr[nums.length - <span class="number">1</span>] ? -<span class="number">1</span> : max;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 用于判断num1 和 num2 是否互质，num2&gt;1时num2为最小公约数，返回false；否则互质返回false;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> num1</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> num2</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num1 == <span class="number">1</span> || num2 == <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> t = num1 % num2;</span><br><span class="line">            <span class="keyword">if</span> (t == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                num1 = num2;</span><br><span class="line">                num2 = t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (num2 &gt; <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="04-获得分数的方法数"><a href="#04-获得分数的方法数" class="headerlink" title="04.获得分数的方法数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-ways-to-earn-points/">04.获得分数的方法数</a></h4><p>待做~</p>
+
+    </div>
+     <div>
+    
+        <div>
+      
+          <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+      
+  </div>
+    
+  </div>
+    
+    
+    
+        <div class="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Courage He 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Courage He 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Courage He
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://couragehe.github.io/2023/03/05/2cbe1aa30f9c/" title="第 99 双周赛&amp;第335场周赛">https://couragehe.github.io/2023/03/05/2cbe1aa30f9c/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
+              <a href="/tags/%E7%AB%9E%E8%B5%9B/" rel="tag"><i class="fa fa-tag"></i> 竞赛</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/01/691bbc5b3562/" rel="prev" title="MySQL知识小结">
+      <i class="fa fa-chevron-left"></i> MySQL知识小结
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-99-%E5%8F%8C%E5%91%A8%E8%B5%9B-amp-%E7%AC%AC335%E5%9C%BA%E5%91%A8%E8%B5%9B"><span class="nav-text">第 99 双周赛&amp;第335场周赛</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC-99-%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B"><span class="nav-text">第 99 场双周赛</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#01-%E6%9C%80%E5%B0%8F%E5%92%8C%E5%88%86%E5%89%B2"><span class="nav-text">01.最小和分割</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#02-%E7%BB%9F%E8%AE%A1%E6%9F%93%E8%89%B2%E6%A0%BC%E5%AD%90%E6%95%B0"><span class="nav-text">02.统计染色格子数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#03-%E7%BB%9F%E8%AE%A1%E5%B0%86%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6%E6%88%90%E7%BB%84%E7%9A%84%E6%96%B9%E6%A1%88%E6%95%B0"><span class="nav-text">03.统计将重叠区间合并成组的方案数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#04-%E7%BB%9F%E8%AE%A1%E5%8F%AF%E8%83%BD%E7%9A%84%E6%A0%91%E6%A0%B9%E6%95%B0%E7%9B%AE"><span class="nav-text">04.统计可能的树根数目</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC335%E5%9C%BA%E5%91%A8%E8%B5%9B"><span class="nav-text">第335场周赛</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#01-%E9%80%92%E6%9E%95%E5%A4%B4"><span class="nav-text">01.递枕头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#02-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E7%AC%AC-K-%E5%A4%A7%E5%B1%82%E5%92%8C"><span class="nav-text">02.二叉树中的第 K 大层和</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#03-%E5%88%86%E5%89%B2%E6%95%B0%E7%BB%84%E4%BD%BF%E4%B9%98%E7%A7%AF%E4%BA%92%E8%B4%A8"><span class="nav-text">03.分割数组使乘积互质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#04-%E8%8E%B7%E5%BE%97%E5%88%86%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95%E6%95%B0"><span class="nav-text">04.获得分数的方法数</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Courage He"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Courage He</p>
+  <div class="site-description" itemprop="description">一万年太久，只争朝夕！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/CourageHe" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;CourageHe" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:courage.he@gmail.com" title="E-Mail → mailto:courage.he@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+</script>
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Courage He</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">63k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">57 分钟</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("09/12/2020 00:00:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+  setInterval("createtime()",250);
+</script>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '28d7fc7ce73567f9384d',
+      clientSecret: 'e9fe559f9756ad0207de22b34cf552a2a8a7d0ac',
+      repo        : 'CourageHe.github.io',
+      owner       : 'CourageHe',
+      admin       : ['CourageHe'],
+      id          : '7a4b7c6bb76b07b77f08df0b9ed4b7f5',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1678025452870')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
+  <!-- 页面点击小桃心-->
+  <script type="text/javascript" src="/js/click-love.js"></script>
+</html>

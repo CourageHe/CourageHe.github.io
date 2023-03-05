@@ -1660,8 +1660,8 @@
   <entry>
     <title>第 98 双周赛&amp;第333场周赛 | 归并排序、动态规划</title>
     <url>/2023/02/19/f91a1cafe11e/</url>
-    <content><![CDATA[<h3 id="第-98-场双周赛"><a href="#第-98-场双周赛" class="headerlink" title="第 98 场双周赛"></a>第 98 场双周赛</h3><p>本周同时参加了第98场双周赛和第333场双周赛，因此本文将两场比赛的题目一起整理如下！</p>
-<h4 id="01-替换一个数字后的最大差值"><a href="#01-替换一个数字后的最大差值" class="headerlink" title="01.替换一个数字后的最大差值"></a><a href="https://leetcode.cn/problems/maximum-difference-by-remapping-a-digit/">01.替换一个数字后的最大差值</a></h4><p>暴力枚举，找出所有可能的最大值、最小值即可得到答案。</p>
+    <content><![CDATA[<h2 id="第-98-双周赛-amp-第333场周赛-归并排序、动态规划"><a href="#第-98-双周赛-amp-第333场周赛-归并排序、动态规划" class="headerlink" title="第 98 双周赛&amp;第333场周赛 | 归并排序、动态规划"></a>第 98 双周赛&amp;第333场周赛 | 归并排序、动态规划</h2><p>本周同时参加了第98场双周赛和第333场周赛，因此本文将两场比赛的题目一起整理如下！</p>
+<h3 id="第-98-场双周赛"><a href="#第-98-场双周赛" class="headerlink" title="第 98 场双周赛"></a>第 98 场双周赛</h3><h4 id="01-替换一个数字后的最大差值"><a href="#01-替换一个数字后的最大差值" class="headerlink" title="01.替换一个数字后的最大差值"></a><a href="https://leetcode.cn/problems/maximum-difference-by-remapping-a-digit/">01.替换一个数字后的最大差值</a></h4><p>暴力枚举，找出所有可能的最大值、最小值即可得到答案。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution01</span> </span>&#123;</span><br><span class="line">	<span class="comment">//暴力枚举</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minMaxDifference</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        String s = String.valueOf(num);</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">int</span> min = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">            <span class="comment">//获取最大值</span></span><br><span class="line">            <span class="keyword">int</span> digitMax = Integer.parseInt(s.replace((<span class="keyword">char</span>)i,<span class="string">&#x27;9&#x27;</span>));</span><br><span class="line">            max = max&gt;digitMax?max:digitMax;</span><br><span class="line">            <span class="comment">//获取最小值</span></span><br><span class="line">            <span class="keyword">int</span> digitMin = Integer.parseInt(s.replace((<span class="keyword">char</span>)i,<span class="string">&#x27;0&#x27;</span>));</span><br><span class="line">            min = min&lt;digitMin?min:digitMin;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max-min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
@@ -1772,5 +1772,326 @@
       <categories>
         <category>学海无涯</category>
       </categories>
+  </entry>
+  <entry>
+    <title>MySQL知识小结</title>
+    <url>/2023/03/01/691bbc5b3562/</url>
+    <content><![CDATA[<h1 id="SQL知识小结"><a href="#SQL知识小结" class="headerlink" title="SQL知识小结"></a>SQL知识小结</h1><h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><p>不同数据库的函数往往各不相同，因此不可移植。本节主要以 MySQL 的函数为例。</p>
+<h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>LEFT()</code>、<code>RIGHT()</code></td>
+<td>左边或者右边的字符</td>
+</tr>
+<tr>
+<td><code>LOWER()</code>、<code>UPPER()</code></td>
+<td>转换为小写或者大写</td>
+</tr>
+<tr>
+<td><code>LTRIM()</code>、<code>RTIM()</code></td>
+<td>去除左边或者右边的空格</td>
+</tr>
+<tr>
+<td><code>LENGTH()</code></td>
+<td>长度</td>
+</tr>
+<tr>
+<td><code>SOUNDEX()</code></td>
+<td>转换为语音值</td>
+</tr>
+</tbody></table>
+<a id="more"></a>
+
+<p>其中， <strong><code>SOUNDEX()</code></strong> 可以将一个字符串转换为描述其语音表示的字母数字模式。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">SELECT</span> *</span><br><span class="line">FROM mytable</span><br><span class="line">WHERE SOUNDEX(col1) = SOUNDEX(&#x27;apple&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="日期和时间处理"><a href="#日期和时间处理" class="headerlink" title="日期和时间处理"></a>日期和时间处理</h3><ul>
+<li>日期格式：<code>YYYY-MM-DD</code></li>
+<li>时间格式：<code>HH:MM:SS</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函 数</th>
+<th>说 明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>AddDate()</code></td>
+<td>增加一个日期（天、周等）</td>
+</tr>
+<tr>
+<td><code>AddTime()</code></td>
+<td>增加一个时间（时、分等）</td>
+</tr>
+<tr>
+<td><code>CurDate()</code></td>
+<td>返回当前日期</td>
+</tr>
+<tr>
+<td><code>CurTime()</code></td>
+<td>返回当前时间</td>
+</tr>
+<tr>
+<td><code>Date()</code></td>
+<td>返回日期时间的日期部分</td>
+</tr>
+<tr>
+<td><code>DateDiff()</code></td>
+<td>计算两个日期之差</td>
+</tr>
+<tr>
+<td><code>Date_Add()</code></td>
+<td>高度灵活的日期运算函数</td>
+</tr>
+<tr>
+<td><code>Date_Format()</code></td>
+<td>返回一个格式化的日期或时间串</td>
+</tr>
+<tr>
+<td><code>Day()</code></td>
+<td>返回一个日期的天数部分</td>
+</tr>
+<tr>
+<td><code>DayOfWeek()</code></td>
+<td>对于一个日期，返回对应的星期几</td>
+</tr>
+<tr>
+<td><code>Hour()</code></td>
+<td>返回一个时间的小时部分</td>
+</tr>
+<tr>
+<td><code>Minute()</code></td>
+<td>返回一个时间的分钟部分</td>
+</tr>
+<tr>
+<td><code>Month()</code></td>
+<td>返回一个日期的月份部分</td>
+</tr>
+<tr>
+<td><code>Now()</code></td>
+<td>返回当前日期和时间</td>
+</tr>
+<tr>
+<td><code>Second()</code></td>
+<td>返回一个时间的秒部分</td>
+</tr>
+<tr>
+<td><code>Time()</code></td>
+<td>返回一个日期时间的时间部分</td>
+</tr>
+<tr>
+<td><code>Year()</code></td>
+<td>返回一个日期的年份部分</td>
+</tr>
+</tbody></table>
+<h3 id="数值处理"><a href="#数值处理" class="headerlink" title="数值处理"></a>数值处理</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SIN()</td>
+<td>正弦</td>
+</tr>
+<tr>
+<td>COS()</td>
+<td>余弦</td>
+</tr>
+<tr>
+<td>TAN()</td>
+<td>正切</td>
+</tr>
+<tr>
+<td>ABS()</td>
+<td>绝对值</td>
+</tr>
+<tr>
+<td>SQRT()</td>
+<td>平方根</td>
+</tr>
+<tr>
+<td>MOD()</td>
+<td>余数</td>
+</tr>
+<tr>
+<td>EXP()</td>
+<td>指数</td>
+</tr>
+<tr>
+<td>PI()</td>
+<td>圆周率</td>
+</tr>
+<tr>
+<td>RAND()</td>
+<td>随机数</td>
+</tr>
+</tbody></table>
+<h3 id="汇总"><a href="#汇总" class="headerlink" title="汇总"></a>汇总</h3><table>
+<thead>
+<tr>
+<th>函 数</th>
+<th>说 明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>AVG()</code></td>
+<td>返回某列的平均值</td>
+</tr>
+<tr>
+<td><code>COUNT()</code></td>
+<td>返回某列的行数</td>
+</tr>
+<tr>
+<td><code>MAX()</code></td>
+<td>返回某列的最大值</td>
+</tr>
+<tr>
+<td><code>MIN()</code></td>
+<td>返回某列的最小值</td>
+</tr>
+<tr>
+<td><code>SUM()</code></td>
+<td>返回某列值之和</td>
+</tr>
+</tbody></table>
+<p><code>AVG()</code> 会忽略 NULL 行。</p>
+<p>使用 <code>DISTINCT</code> 可以让汇总函数值汇总不同的值。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(<span class="keyword">DISTINCT</span> col1) <span class="keyword">AS</span> avg_col</span><br><span class="line"><span class="keyword">FROM</span> mytable</span><br></pre></td></tr></table></figure>
+
+<h3 id="IP转换"><a href="#IP转换" class="headerlink" title="IP转换"></a>IP转换</h3><ul>
+<li><code>INET_ATON()</code> ： 把 ip 转为无符号整型 (4-8 位)</li>
+<li><code>INET_NTOA()</code> :把整型的 ip 转为地址</li>
+</ul>
+<h2 id="数据库容量大小"><a href="#数据库容量大小" class="headerlink" title="数据库容量大小"></a>数据库容量大小</h2><p>不同数据库查询方式不同，以下查询语句以MySQL为例。</p>
+<h3 id="查看是所有数据容量大小"><a href="#查看是所有数据容量大小" class="headerlink" title="查看是所有数据容量大小"></a><strong>查看是所有数据容量大小</strong></h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">table_schema <span class="keyword">as</span> <span class="string">&#x27;数据库&#x27;</span>,</span><br><span class="line"><span class="keyword">sum</span>(table_rows) <span class="keyword">as</span> <span class="string">&#x27;记录数&#x27;</span>,</span><br><span class="line"><span class="keyword">sum</span>(<span class="keyword">truncate</span>(data_length/<span class="number">1024</span>/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>)) <span class="keyword">as</span> <span class="string">&#x27;数据容量(GB)&#x27;</span>,</span><br><span class="line"><span class="keyword">sum</span>(<span class="keyword">truncate</span>(index_length/<span class="number">1024</span>/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>)) <span class="keyword">as</span> <span class="string">&#x27;索引容量(GB)&#x27;</span></span><br><span class="line"><span class="keyword">from</span> information_schema.tables</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> table_schema</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">sum</span>(data_length) <span class="keyword">desc</span>, <span class="keyword">sum</span>(index_length) <span class="keyword">desc</span>; </span><br></pre></td></tr></table></figure>
+
+<h3 id="查看所有数据库各表容量大小"><a href="#查看所有数据库各表容量大小" class="headerlink" title="查看所有数据库各表容量大小"></a><strong>查看所有数据库各表容量大小</strong></h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">table_schema <span class="keyword">as</span> <span class="string">&#x27;数据库&#x27;</span>, </span><br><span class="line">table_name <span class="keyword">as</span> <span class="string">&#x27;表名&#x27;</span>,</span><br><span class="line">table_rows <span class="keyword">as</span> <span class="string">&#x27;记录数&#x27;</span>,</span><br><span class="line"><span class="keyword">truncate</span>(data_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>) <span class="keyword">as</span> <span class="string">&#x27;数据容量(MB)&#x27;</span>,</span><br><span class="line"><span class="keyword">truncate</span>(index_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>) <span class="keyword">as</span> <span class="string">&#x27;索引容量(MB)&#x27;</span></span><br><span class="line"><span class="keyword">from</span> information_schema.tables</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> data_length <span class="keyword">desc</span>, index_length <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>参考：<a href="https://javaguide.cn/database/sql/sql-syntax-summary.html">https://javaguide.cn/database/sql/sql-syntax-summary.html</a></p>
+]]></content>
+      <categories>
+        <category>学海无涯</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第 99 双周赛&amp;第335场周赛</title>
+    <url>/2023/03/05/2cbe1aa30f9c/</url>
+    <content><![CDATA[<h2 id="第-99-双周赛-amp-第335场周赛"><a href="#第-99-双周赛-amp-第335场周赛" class="headerlink" title="第 99 双周赛&amp;第335场周赛"></a>第 99 双周赛&amp;第335场周赛</h2><p>本周同时参加了第99场双周赛和第335场周赛，因此本文将两场比赛的题目一起整理如下！这次竞赛</p>
+<h3 id="第-99-场双周赛"><a href="#第-99-场双周赛" class="headerlink" title="第 99 场双周赛"></a>第 99 场双周赛</h3><p>双周赛解决了1，2题，第三题超时一直没解决。下次努力！</p>
+<h4 id="01-最小和分割"><a href="#01-最小和分割" class="headerlink" title="01.最小和分割"></a><a href="https://leetcode.cn/contest/biweekly-contest-99/problems/split-with-minimum-sum/">01.最小和分割</a></h4><p>这是参赛时想出来的思路：</p>
+<ol>
+<li><code>num</code>由<code>0-9</code>组合，用长度为<code>10</code>的数组存储数字数量，数组索引代表存储的数，值代表个数</li>
+<li>将数组中存储的的的数字从0-9依次分配至<code>builder1</code>和<code>builder2</code>，</li>
+<li>将两数字串解析为数字相加，即为答案！</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">splitNum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//统计各数字数量</span></span><br><span class="line">        <span class="keyword">int</span>[] nums = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">        <span class="keyword">int</span> helper = num;</span><br><span class="line">        <span class="keyword">while</span> (helper &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">            nums[helper % <span class="number">10</span>]++;</span><br><span class="line">            helper = helper / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        nums[helper % <span class="number">10</span>]++;</span><br><span class="line">        <span class="comment">//这里初始化0，以防Integer.valueOf传参为空字符串报错。</span></span><br><span class="line">        StringBuilder builder1 = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">        StringBuilder builder2 = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length;) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">//i 对应的数量为0，分配下一个是数字</span></span><br><span class="line">                i++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (builder1.length() &lt; builder2.length()) &#123;</span><br><span class="line">                builder1.append(i);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                builder2.append(i);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//数量减-1</span></span><br><span class="line">            nums[i]--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Integer.valueOf(builder1.toString())+Integer.valueOf(builder2.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>这是赛后参考大佬的解答：</p>
+<p>佬似乎都喜欢使用<code>lambda</code>表达式，看起来非常简洁。</p>
+<ol>
+<li>将<code>nums</code>转换为字符数组，并从小到大排序</li>
+<li>将字符数组数字从前往后依次分配至<code>num1</code>和<code>num2</code></li>
+<li>将两数字相加，即为答案！</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution01_2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">splitNum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] nums = String.valueOf(num).chars().sorted().toArray();</span><br><span class="line">        <span class="keyword">int</span> num1 = <span class="number">0</span>,num2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(i%<span class="number">2</span>== <span class="number">0</span>) num1 = num1*<span class="number">10</span>+nums[i]-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="keyword">else</span> num2 = num2*<span class="number">10</span>+nums[i]-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num1+num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="02-统计染色格子数"><a href="#02-统计染色格子数" class="headerlink" title="02.统计染色格子数"></a><a href="https://leetcode.cn/contest/biweekly-contest-99/problems/count-total-number-of-colored-cells/">02.统计染色格子数</a></h4><p>找规律咯！</p>
+<p>1 &lt;= n &lt;= 10^5^，题目中已经给了取值范围，最大到100000，因此不可能采用建二维数组模拟的办法进行统计染色格子数。因此试试研究这个格子分钟数和格子数的关系，画出第4分钟的网格图，可数出25个格子。</p>
+<table>
+<thead>
+<tr>
+<th>分钟</th>
+<th>染色格子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>13</td>
+</tr>
+<tr>
+<td>4</td>
+<td>25</td>
+</tr>
+</tbody></table>
+<p>数字关系可以得到公式为：<strong>（n-1）^2^+n^2^</strong>  ==&gt; <strong>2n^2^+-2n+1</strong></p>
+<p>由于n是int类型，公式所求的值默认为int类型，需要强转为long类型。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution02</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">coloredCells</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">long</span>) <span class="number">2</span>*n*n - <span class="number">2</span>*n + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="03-统计将重叠区间合并成组的方案数"><a href="#03-统计将重叠区间合并成组的方案数" class="headerlink" title="03.统计将重叠区间合并成组的方案数"></a><a href="https://leetcode.cn/contest/biweekly-contest-99/problems/count-ways-to-group-overlapping-ranges/">03.统计将重叠区间合并成组的方案数</a></h4><p>这是参赛时想出来的思路：</p>
+<p>这种算法一直超时，采用BigInteger来模拟的想法时彻底错误的，BigInteger虽然可以存储超长的整数（超过long的长度），但是随着数值越大，运算也会变慢！像这种需要累乘的题目，一般都不能采用模拟的方式进行解答，而应该从乘数的因子入手。</p>
+<p>思路：</p>
+<ul>
+<li>将ranges数组根据第一位的值从小到大排序</li>
+<li>统计ranges不属于一个组的数量<code>count</code>，<code>ranges[i][1] &lt; ranges[i+1][0]</code>则代表两者之间为不同组</li>
+<li>统计完组的数量，根据题目描述的方式进行统计总方案数，实际上为<code>count</code>抓取[0,count]的排列组合</li>
+</ul>
+<p>由于计算这个排列组合的值太大太繁琐了，无论如何优化都会超时。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution03</span> </span>&#123;</span><br><span class="line">  	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;<span class="comment">//模数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">countWays</span><span class="params">(<span class="keyword">int</span>[][] ranges)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//根据第一位的值从小到大排序</span></span><br><span class="line">        Arrays.sort(ranges, (a, b) -&gt; a[<span class="number">0</span>] - b[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">       	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = -<span class="number">1</span>; i &lt; ranges.length; j = Math.max(j, ranges[i++][<span class="number">1</span>])) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j &lt; ranges[i][<span class="number">0</span>]) count++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        BigInteger ans = BigInteger.ZERO;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= count / <span class="number">2</span>; i++) &#123;</span><br><span class="line">            BigInteger temp = BigInteger.ONE;</span><br><span class="line">            <span class="keyword">int</span> num = count;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++, num--) &#123;</span><br><span class="line">                temp = temp.multiply(BigInteger.valueOf(num)).divide(BigInteger.valueOf(j));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i == count / <span class="number">2</span> &amp;&amp; count % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                ans = (ans.add(temp)).divideAndRemainder(BigInteger.valueOf(mod))[<span class="number">1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ans = (ans.add(temp.multiply(BigInteger.valueOf(<span class="number">2</span>)))).divideAndRemainder(BigInteger.valueOf(mod))[<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans.intValue();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这是赛后参考大佬的解答：</p>
+<p>和上述解答思路类似，首先给<code>ranges</code>数组排序，然后统计组别数量，每新统计一个组别，原方案数量*2。</p>
+<p>这个乘2倍怎来的呢？？？在超时难以解决的情况下，另辟蹊径，手动计算前几个数字的排列组合，统计得来。也有可能是一个数字公理！</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution03</span> </span>&#123;</span><br><span class="line">  	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;<span class="comment">//模数</span></span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">countWays</span><span class="params">(<span class="keyword">int</span>[][] ranges)</span> </span>&#123;</span><br><span class="line">        Arrays.sort(ranges, (a, b) -&gt; a[<span class="number">0</span>] - b[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = -<span class="number">1</span>; i &lt; ranges.length; j = Math.max(j, ranges[i++][<span class="number">1</span>])) &#123;</span><br><span class="line">            count = j &lt; ranges[i][<span class="number">0</span>] ? count * <span class="number">2</span> % mod : count;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="04-统计可能的树根数目"><a href="#04-统计可能的树根数目" class="headerlink" title="04.统计可能的树根数目"></a><a href="https://leetcode.cn/contest/biweekly-contest-99/problems/count-number-of-possible-root-nodes/">04.统计可能的树根数目</a></h4><p>待做~</p>
+<h3 id="第335场周赛"><a href="#第335场周赛" class="headerlink" title="第335场周赛"></a>第335场周赛</h3><p>周赛解决了1，2题，第三题超时也一直没解决。下次努力！！！</p>
+<h4 id="01-递枕头"><a href="#01-递枕头" class="headerlink" title="01.递枕头"></a><a href="https://leetcode.cn/problems/pass-the-pillow/">01.递枕头</a></h4><p>找规律，根据题意容易得知，经过<code>2(n-1)</code>秒正投回到原点。因此首先将<code>time</code>取余得到<code>num</code>，这是决定关键走向的几秒。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">passThePillow</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> time)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num =time % (<span class="number">2</span>*(n-<span class="number">1</span>));</span><br><span class="line">        <span class="keyword">return</span> (num &lt; n ? num : (<span class="number">2</span>*(n-<span class="number">1</span>)-num)) +<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="02-二叉树中的第-K-大层和"><a href="#02-二叉树中的第-K-大层和" class="headerlink" title="02.二叉树中的第 K 大层和"></a><a href="https://leetcode.cn/problems/kth-largest-sum-in-a-binary-tree/">02.二叉树中的第 K 大层和</a></h4><p>层序遍历，优先队列</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution02</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">kthLargestLevelSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        PriorityQueue&lt;Long&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;Long&gt;();</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        queue.add(root);</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> size = queue.size();</span><br><span class="line">            Long sum = <span class="number">0l</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">                TreeNode node = queue.poll();</span><br><span class="line">                sum = sum + (<span class="keyword">long</span>) node.val;</span><br><span class="line">                <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) queue.add(node.left);</span><br><span class="line">                <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) queue.add(node.right);</span><br><span class="line">            &#125;</span><br><span class="line">            pq.add(sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (pq.size() &lt; k) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0l</span>;</span><br><span class="line">        <span class="keyword">int</span> size = pq.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= size - k; i++) &#123;</span><br><span class="line">            ans = pq.poll();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="03-分割数组使乘积互质"><a href="#03-分割数组使乘积互质" class="headerlink" title="03.分割数组使乘积互质"></a><a href="https://leetcode.cn/problems/split-the-array-to-make-coprime-products/">03.分割数组使乘积互质</a></h4><p>模拟！结果超时！如果所想的思路会导致long范围不够的话，一般都会超时，及时更改思路。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findValidSplit</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        BigInteger[] mul = getMultipy(nums, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span> (gcd(mul[<span class="number">0</span>], mul[<span class="number">1</span>])) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            mul[<span class="number">0</span>] = mul[<span class="number">0</span>].multiply(BigInteger.valueOf(nums[i]));</span><br><span class="line">            mul[<span class="number">1</span>] = mul[<span class="number">1</span>].divide(BigInteger.valueOf(nums[i]));</span><br><span class="line">            <span class="keyword">if</span> (gcd(mul[<span class="number">0</span>], mul[<span class="number">1</span>])) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> BigInteger[] getMultipy(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        BigInteger[] ans = &#123;BigInteger.valueOf(<span class="number">1</span>), BigInteger.valueOf(<span class="number">1</span>)&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &lt;= k) ans[<span class="number">0</span>] = ans[<span class="number">0</span>].multiply(BigInteger.valueOf(nums[i]));</span><br><span class="line">            <span class="keyword">else</span> ans[<span class="number">1</span>] = ans[<span class="number">1</span>].multiply(BigInteger.valueOf(nums[i]));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">gcd</span><span class="params">(BigInteger num1, BigInteger num2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num1.equals(<span class="number">1</span>) || num2.equals(<span class="number">1</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            BigInteger t = num1.divideAndRemainder(num2)[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (t.equals(BigInteger.valueOf(<span class="number">0</span>))) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                num1 = num2;</span><br><span class="line">                num2 = t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (num2.compareTo(BigInteger.valueOf(<span class="number">1</span>)) &gt; <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>竞赛结束后尝试的思路：</p>
+<p>从乘数的因子出发，找出互质数的最小范围即可得到答案。</p>
+<p>[0,max]之间的值不与后面的值存在公约数，那么两个范围的乘机就会互质！</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findValidSplit</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.length == <span class="number">1</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//存在公约数的标志</span></span><br><span class="line">        <span class="keyword">boolean</span>[] arr = <span class="keyword">new</span> <span class="keyword">boolean</span>[nums.length];</span><br><span class="line">        <span class="keyword">int</span> max = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; max; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = arr[max] ? max + <span class="number">1</span> : i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!gcd(nums[i], nums[j])) &#123;</span><br><span class="line">                    arr[j] = <span class="keyword">true</span>;</span><br><span class="line">                    max = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr[nums.length - <span class="number">1</span>] ? -<span class="number">1</span> : max;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 用于判断num1 和 num2 是否互质，num2&gt;1时num2为最小公约数，返回false；否则互质返回false;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> num1</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> num2</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num1 == <span class="number">1</span> || num2 == <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> t = num1 % num2;</span><br><span class="line">            <span class="keyword">if</span> (t == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                num1 = num2;</span><br><span class="line">                num2 = t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (num2 &gt; <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="04-获得分数的方法数"><a href="#04-获得分数的方法数" class="headerlink" title="04.获得分数的方法数"></a><a href="https://leetcode.cn/problems/number-of-ways-to-earn-points/">04.获得分数的方法数</a></h4><p>待做~</p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>竞赛</tag>
+      </tags>
   </entry>
 </search>

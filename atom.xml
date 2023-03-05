@@ -6,7 +6,7 @@
   <link href="https://couragehe.github.io/atom.xml" rel="self"/>
   
   <link href="https://couragehe.github.io/"/>
-  <updated>2023-02-27T14:41:05.574Z</updated>
+  <updated>2023-03-05T14:10:35.760Z</updated>
   <id>https://couragehe.github.io/</id>
   
   <author>
@@ -15,6 +15,82 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第 99 双周赛&amp;第335场周赛</title>
+    <link href="https://couragehe.github.io/2023/03/05/2cbe1aa30f9c/"/>
+    <id>https://couragehe.github.io/2023/03/05/2cbe1aa30f9c/</id>
+    <published>2023-03-05T12:00:26.000Z</published>
+    <updated>2023-03-05T14:10:35.760Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;第-99-双周赛-amp-第335场周赛&quot;&gt;&lt;a href=&quot;#第-99-双周赛-amp-第335场周赛&quot; class=&quot;headerlink&quot; title=&quot;第 99 双周赛&amp;amp;第335场周赛&quot;&gt;&lt;/a&gt;第 99 双周赛&amp;amp;第335场周赛&lt;/h2&gt;&lt;p&gt;本周同时参加了第99场双周赛和第335场周赛，因此本文将两场比赛的题目一起整理如下！这次竞赛&lt;/p&gt;
+&lt;h3 id=&quot;第-99-场双周赛&quot;&gt;&lt;a href=&quot;#第-99-场双周赛&quot; class=&quot;headerlink&quot; title=&quot;第 99 场双周赛&quot;&gt;&lt;/a&gt;第 99 场双周赛&lt;/h3&gt;&lt;p&gt;双周赛解决了1，2题，第三题超时一直没解决。下次努力！&lt;/p&gt;
+&lt;h4 id=&quot;01-最小和分割&quot;&gt;&lt;a href=&quot;#01-最小和分割&quot; class=&quot;headerlink&quot; title=&quot;01.最小和分割&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/contest/biweekly-contest-99/problems/split-with-minimum-sum/&quot;&gt;01.最小和分割&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;这是参赛时想出来的思路：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;num&lt;/code&gt;由&lt;code&gt;0-9&lt;/code&gt;组合，用长度为&lt;code&gt;10&lt;/code&gt;的数组存储数字数量，数组索引代表存储的数，值代表个数&lt;/li&gt;
+&lt;li&gt;将数组中存储的的的数字从0-9依次分配至&lt;code&gt;builder1&lt;/code&gt;和&lt;code&gt;builder2&lt;/code&gt;，&lt;/li&gt;
+&lt;li&gt;将两数字串解析为数字相加，即为答案！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Solution01&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;splitNum&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; num)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//统计各数字数量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] nums = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; helper = num;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (helper &amp;gt;= &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            nums[helper % &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;]++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            helper = helper / &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        nums[helper % &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;]++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//这里初始化0，以防Integer.valueOf传参为空字符串报错。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        StringBuilder builder1 = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; StringBuilder(&lt;span class=&quot;string&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        StringBuilder builder2 = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; StringBuilder(&lt;span class=&quot;string&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; i &amp;lt; nums.length;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (nums[i] == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//i 对应的数量为0，分配下一个是数字&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                i++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;continue&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (builder1.length() &amp;lt; builder2.length()) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                builder1.append(i);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                builder2.append(i);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;//数量减-1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            nums[i]--;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; Integer.valueOf(builder1.toString())+Integer.valueOf(builder2.toString());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Algorithm" scheme="https://couragehe.github.io/categories/Algorithm/"/>
+    
+    
+    <category term="LeetCode" scheme="https://couragehe.github.io/tags/LeetCode/"/>
+    
+    <category term="竞赛" scheme="https://couragehe.github.io/tags/%E7%AB%9E%E8%B5%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL知识小结</title>
+    <link href="https://couragehe.github.io/2023/03/01/691bbc5b3562/"/>
+    <id>https://couragehe.github.io/2023/03/01/691bbc5b3562/</id>
+    <published>2023-03-01T06:52:44.000Z</published>
+    <updated>2023-03-01T11:56:57.453Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;SQL知识小结&quot;&gt;&lt;a href=&quot;#SQL知识小结&quot; class=&quot;headerlink&quot; title=&quot;SQL知识小结&quot;&gt;&lt;/a&gt;SQL知识小结&lt;/h1&gt;&lt;h2 id=&quot;常用函数&quot;&gt;&lt;a href=&quot;#常用函数&quot; class=&quot;headerlink&quot; title=&quot;常用函数&quot;&gt;&lt;/a&gt;常用函数&lt;/h2&gt;&lt;p&gt;不同数据库的函数往往各不相同，因此不可移植。本节主要以 MySQL 的函数为例。&lt;/p&gt;
+&lt;h3 id=&quot;文本处理&quot;&gt;&lt;a href=&quot;#文本处理&quot; class=&quot;headerlink&quot; title=&quot;文本处理&quot;&gt;&lt;/a&gt;文本处理&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;函数&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LEFT()&lt;/code&gt;、&lt;code&gt;RIGHT()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;左边或者右边的字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LOWER()&lt;/code&gt;、&lt;code&gt;UPPER()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;转换为小写或者大写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LTRIM()&lt;/code&gt;、&lt;code&gt;RTIM()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;去除左边或者右边的空格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LENGTH()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;长度&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SOUNDEX()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;转换为语音值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</summary>
+    
+    
+    
+    <category term="学海无涯" scheme="https://couragehe.github.io/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
+    
+    
+    <category term="SQL" scheme="https://couragehe.github.io/tags/SQL/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构之各种树(二叉树、AVL树、红黑树、B、B+树)</title>
@@ -42,11 +118,11 @@
     <link href="https://couragehe.github.io/2023/02/19/f91a1cafe11e/"/>
     <id>https://couragehe.github.io/2023/02/19/f91a1cafe11e/</id>
     <published>2023-02-19T14:30:26.000Z</published>
-    <updated>2023-02-20T08:19:52.217Z</updated>
+    <updated>2023-03-05T11:54:51.814Z</updated>
     
     
-    <summary type="html">&lt;h3 id=&quot;第-98-场双周赛&quot;&gt;&lt;a href=&quot;#第-98-场双周赛&quot; class=&quot;headerlink&quot; title=&quot;第 98 场双周赛&quot;&gt;&lt;/a&gt;第 98 场双周赛&lt;/h3&gt;&lt;p&gt;本周同时参加了第98场双周赛和第333场双周赛，因此本文将两场比赛的题目一起整理如下！&lt;/p&gt;
-&lt;h4 id=&quot;01-替换一个数字后的最大差值&quot;&gt;&lt;a href=&quot;#01-替换一个数字后的最大差值&quot; class=&quot;headerlink&quot; title=&quot;01.替换一个数字后的最大差值&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/problems/maximum-difference-by-remapping-a-digit/&quot;&gt;01.替换一个数字后的最大差值&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;暴力枚举，找出所有可能的最大值、最小值即可得到答案。&lt;/p&gt;
+    <summary type="html">&lt;h2 id=&quot;第-98-双周赛-amp-第333场周赛-归并排序、动态规划&quot;&gt;&lt;a href=&quot;#第-98-双周赛-amp-第333场周赛-归并排序、动态规划&quot; class=&quot;headerlink&quot; title=&quot;第 98 双周赛&amp;amp;第333场周赛 | 归并排序、动态规划&quot;&gt;&lt;/a&gt;第 98 双周赛&amp;amp;第333场周赛 | 归并排序、动态规划&lt;/h2&gt;&lt;p&gt;本周同时参加了第98场双周赛和第333场周赛，因此本文将两场比赛的题目一起整理如下！&lt;/p&gt;
+&lt;h3 id=&quot;第-98-场双周赛&quot;&gt;&lt;a href=&quot;#第-98-场双周赛&quot; class=&quot;headerlink&quot; title=&quot;第 98 场双周赛&quot;&gt;&lt;/a&gt;第 98 场双周赛&lt;/h3&gt;&lt;h4 id=&quot;01-替换一个数字后的最大差值&quot;&gt;&lt;a href=&quot;#01-替换一个数字后的最大差值&quot; class=&quot;headerlink&quot; title=&quot;01.替换一个数字后的最大差值&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/problems/maximum-difference-by-remapping-a-digit/&quot;&gt;01.替换一个数字后的最大差值&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;暴力枚举，找出所有可能的最大值、最小值即可得到答案。&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Solution01&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//暴力枚举&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;minMaxDifference&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; num)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        String s = String.valueOf(num);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; max = Integer.MIN_VALUE;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; min = Integer.MAX_VALUE;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;;i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;//获取最大值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; digitMax = Integer.parseInt(s.replace((&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt;)i,&lt;span class=&quot;string&quot;&gt;&amp;#x27;9&amp;#x27;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            max = max&amp;gt;digitMax?max:digitMax;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;//获取最小值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; digitMin = Integer.parseInt(s.replace((&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt;)i,&lt;span class=&quot;string&quot;&gt;&amp;#x27;0&amp;#x27;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            min = min&amp;lt;digitMin?min:digitMin;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; max-min;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
@@ -471,49 +547,6 @@
     
     
     <category term="Windows" scheme="https://couragehe.github.io/tags/Windows/"/>
-    
-    <category term="Linux" scheme="https://couragehe.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用rz和sz命令传输文件</title>
-    <link href="https://couragehe.github.io/2021/01/07/818b6f02a79d/"/>
-    <id>https://couragehe.github.io/2021/01/07/818b6f02a79d/</id>
-    <published>2021-01-07T05:19:44.000Z</published>
-    <updated>2023-02-15T06:54:06.818Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;新鲜出炉的Centos&quot;&gt;&lt;a href=&quot;#新鲜出炉的Centos&quot; class=&quot;headerlink&quot; title=&quot;新鲜出炉的Centos&quot;&gt;&lt;/a&gt;新鲜出炉的Centos&lt;/h1&gt;&lt;h2 id=&quot;一、配置yum国内镜像源&quot;&gt;&lt;a href=&quot;#一、配置yum国内镜像源&quot; class=&quot;headerlink&quot; title=&quot;一、配置yum国内镜像源&quot;&gt;&lt;/a&gt;一、配置yum国内镜像源&lt;/h2&gt;&lt;h3 id=&quot;1、备份&quot;&gt;&lt;a href=&quot;#1、备份&quot; class=&quot;headerlink&quot; title=&quot;1、备份&quot;&gt;&lt;/a&gt;1、备份&lt;/h3&gt;&lt;p&gt;如果要对重要文件进行修改的话，建议做好备份，养成一个好习惯。&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;该文件是Centos的镜像文件配置，一般国内都会配置成阿里云、网易、清华大学。我这里选择的式清华大学的镜像源，编辑 &lt;code&gt;/etc/yum.repos.d/CentOS-Base.repo &lt;/code&gt;文件，在 &lt;code&gt;mirrorlist=&lt;/code&gt; 开头行前面加 &lt;code&gt;#&lt;/code&gt; 注释掉；并将 &lt;code&gt;baseurl=&lt;/code&gt; 开头行取消注释（如果被注释的话），把该行内的域名（例如&lt;code&gt;mirror.centos.org&lt;/code&gt;）替换为 &lt;code&gt;mirrors.tuna.tsinghua.edu.cn&lt;/code&gt;。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="https://couragehe.github.io/categories/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://couragehe.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux常用命令</title>
-    <link href="https://couragehe.github.io/2021/01/07/75eb06482a73/"/>
-    <id>https://couragehe.github.io/2021/01/07/75eb06482a73/</id>
-    <published>2021-01-07T05:19:44.000Z</published>
-    <updated>2023-02-24T14:02:19.302Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;Linux常用命令&quot;&gt;&lt;a href=&quot;#Linux常用命令&quot; class=&quot;headerlink&quot; title=&quot;Linux常用命令&quot;&gt;&lt;/a&gt;Linux常用命令&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;本文主要用于记录，在工作学习中经常需要使用的常见Linux命令。在&lt;a href=&quot;https://couragehe.github.io/&quot;&gt;CourageHe’s Blog&lt;/a&gt;不间断更新，欢迎各位看官指教。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="https://couragehe.github.io/categories/Linux/"/>
-    
     
     <category term="Linux" scheme="https://couragehe.github.io/tags/Linux/"/>
     
