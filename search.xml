@@ -1239,23 +1239,32 @@
 <p>只能生成一个实例的是为了实现<code>Singleton</code>(单例)模式的类型，设计模式在面向对象程序设计中起着举足轻重的作用，在面试过程中公司都喜欢问一些与设计模式相关的问题。在常用的设计模式中，<code>Singleton</code>是唯一一个能够用几十行代码完整实现的模式。因此，写一个<code>Singleton</code>的类型是一个很常见的面试题。</p>
 <a id="more"></a>
 
-<h3 id="二、参考解法"><a href="#二、参考解法" class="headerlink" title="二、参考解法"></a>二、参考解法</h3><h4 id="1、仅适用于单线程环境"><a href="#1、仅适用于单线程环境" class="headerlink" title="1、仅适用于单线程环境"></a>1、仅适用于单线程环境</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> class <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Singeleton</span> <span class="title">instance</span> </span>= <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)<span class="comment">//仅当instance 为null时才创建一个实例，以避免重复创建。</span></span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        <span class="keyword">return</span> instance </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二、参考解法"><a href="#二、参考解法" class="headerlink" title="二、参考解法"></a>二、参考解法</h3><h4 id="1、懒汉式——线程安全"><a href="#1、懒汉式——线程安全" class="headerlink" title="1、懒汉式——线程安全"></a>1、懒汉式——线程安全</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> class <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Singeleton</span> <span class="title">instance</span> </span>= <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)<span class="comment">//仅当instance 为null时才创建一个实例，以避免重复创建。</span></span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        <span class="keyword">return</span> instance </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>该解法在单线程的时候共工作正常，但在多线程的情况下不适用。设想如果两个线程同时运行到判断instance是否为null的if语句，并且instance的确没有创建时，那么两个线程都会创建一个实例，此时就不满足单例模式的要求。</p>
-<h4 id="2、适用于多线程环境但效率低"><a href="#2、适用于多线程环境但效率低" class="headerlink" title="2、适用于多线程环境但效率低"></a>2、适用于多线程环境但效率低</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object = <span class="keyword">new</span> Object();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span>(object)&#123;<span class="comment">//每次只允许一个线程进入代码块，因此不会出现多线程下创建同一个实例的情况</span></span><br><span class="line">            <span class="keyword">if</span>(instance == <span class="keyword">null</span>)</span><br><span class="line">                instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2、懒汉式——线程安全"><a href="#2、懒汉式——线程安全" class="headerlink" title="2、懒汉式——线程安全"></a>2、懒汉式——线程安全</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object = <span class="keyword">new</span> Object();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span>(object)&#123;<span class="comment">//每次只允许一个线程进入代码块，因此不会出现多线程下创建同一个实例的情况</span></span><br><span class="line">            <span class="keyword">if</span>(instance == <span class="keyword">null</span>)</span><br><span class="line">                instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>该解法在多线程环境下使用正常，但是并不完美。在执行过程中，每次都需通过<code>getInstance()</code>得到Singleton实例，并且在此方法中都会加上同步锁，而加锁是一个非常耗时的操作，在没有必要的时候应尽量避免</p>
-<h4 id="3、加锁前判断实例是否存在"><a href="#3、加锁前判断实例是否存在" class="headerlink" title="3、加锁前判断实例是否存在"></a>3、加锁前判断实例是否存在</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object = <span class="keyword">new</span> Object();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span>(object)&#123;<span class="comment">//每次只允许一个线程进入代码块，因此不会出现多线程下创建同一个实例的情况</span></span><br><span class="line">            	<span class="keyword">if</span>(instance == <span class="keyword">null</span>)</span><br><span class="line">                	instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        	&#125; </span><br><span class="line">        &#125;</span><br><span class="line">     </span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3、双重校验锁——线程安全"><a href="#3、双重校验锁——线程安全" class="headerlink" title="3、双重校验锁——线程安全"></a>3、双重校验锁——线程安全</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span>  Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object = <span class="keyword">new</span> Object();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span>(object)&#123;<span class="comment">//每次只允许一个线程进入代码块，因此不会出现多线程下创建同一个实例的情况</span></span><br><span class="line">            	<span class="keyword">if</span>(instance == <span class="keyword">null</span>)</span><br><span class="line">                	instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        	&#125; </span><br><span class="line">        &#125;</span><br><span class="line">     </span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>该解法只有当<code>instance</code>为<code>null</code>即没有创建时，需要加锁操作。当<code>instance</code>已经创建出来之后，则无需加锁。相比于解法二大大提高了效率，但是代码实现起来比较复杂，容易出错。</p>
-<h4 id="4、利用静态构造函数"><a href="#4、利用静态构造函数" class="headerlink" title="4、利用静态构造函数"></a>4、利用静态构造函数</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();<span class="comment">//静态构造函数。</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>instance</strong> 采用 <strong>volatile</strong> 关键字修饰也是很有必要的。<code>instance = new Singleton();</code> 这段代码其实是分为三步执行。volatile禁止指令重排。</p>
+<ol>
+<li>分配内存空间</li>
+<li>初始化对象</li>
+<li>将 uniqueInstance 指向分配的内存地址</li>
+</ol>
+<h4 id="4、饿汉式——线程安全"><a href="#4、饿汉式——线程安全" class="headerlink" title="4、饿汉式——线程安全"></a>4、饿汉式——线程安全</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>利用静态属性、静态代码块的性质，确保只在加载时调用一次。该段代码非常简洁地实现了功能，但是调用静态构造函数地时机并不是由程序员掌控，而是由JVM运行时发现第一次使用一个类型的时候自动调用该类型的静态构造函数。即实例<code>instance</code>并不是第一次调用属性<code>Singleton.getInstance</code>时创建，而是在第一次用到<code>Singleton</code>时创建。（降低内存的使用效率）</p>
-<h4 id="5、实现按需创建实例"><a href="#5、实现按需创建实例" class="headerlink" title="5、实现按需创建实例"></a>5、实现按需创建实例</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Nested.instance;</span><br><span class="line">    &#125;</span><br><span class="line">    stattic <span class="class"><span class="keyword">class</span> <span class="title">Nested</span></span>&#123;<span class="comment">//外部类加载时，静态内部类不会同时加载，而是在调用静态内部类（静态域、静态方法、构造函数）时加载。</span></span><br><span class="line">		<span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5、静态内部类——按需创建"><a href="#5、静态内部类——按需创建" class="headerlink" title="5、静态内部类——按需创建"></a>5、静态内部类——按需创建</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//私有构造函数，即对外隐藏构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Nested.instance;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Nested</span></span>&#123;<span class="comment">//外部类加载时，静态内部类不会同时加载，而是在调用静态内部类（静态域、静态方法、构造函数）时加载。</span></span><br><span class="line">		<span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h4 id="6、枚举"><a href="#6、枚举" class="headerlink" title="6、枚举"></a>6、枚举</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Singleton &#123;</span><br><span class="line">    uniqueInstance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>单例模式的最佳实践，它实现简单，并且在面对复杂的序列化或者反射攻击的时候，能够防止实例化多次。</p>
 ]]></content>
       <categories>
-        <category>Algorithm</category>
+        <category>Algorithm,设计模式</category>
       </categories>
       <tags>
         <tag>专题练习</tag>
@@ -1966,18 +1975,58 @@
 <p>使用 <code>DISTINCT</code> 可以让汇总函数值汇总不同的值。</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(<span class="keyword">DISTINCT</span> col1) <span class="keyword">AS</span> avg_col</span><br><span class="line"><span class="keyword">FROM</span> mytable</span><br></pre></td></tr></table></figure>
 
-<h3 id="IP转换"><a href="#IP转换" class="headerlink" title="IP转换"></a>IP转换</h3><ul>
-<li><code>INET_ATON()</code> ： 把 ip 转为无符号整型 (4-8 位)</li>
-<li><code>INET_NTOA()</code> :把整型的 ip 转为地址</li>
-</ul>
 <h2 id="数据库容量大小"><a href="#数据库容量大小" class="headerlink" title="数据库容量大小"></a>数据库容量大小</h2><p>不同数据库查询方式不同，以下查询语句以MySQL为例。</p>
 <h3 id="查看是所有数据容量大小"><a href="#查看是所有数据容量大小" class="headerlink" title="查看是所有数据容量大小"></a><strong>查看是所有数据容量大小</strong></h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">table_schema <span class="keyword">as</span> <span class="string">&#x27;数据库&#x27;</span>,</span><br><span class="line"><span class="keyword">sum</span>(table_rows) <span class="keyword">as</span> <span class="string">&#x27;记录数&#x27;</span>,</span><br><span class="line"><span class="keyword">sum</span>(<span class="keyword">truncate</span>(data_length/<span class="number">1024</span>/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>)) <span class="keyword">as</span> <span class="string">&#x27;数据容量(GB)&#x27;</span>,</span><br><span class="line"><span class="keyword">sum</span>(<span class="keyword">truncate</span>(index_length/<span class="number">1024</span>/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>)) <span class="keyword">as</span> <span class="string">&#x27;索引容量(GB)&#x27;</span></span><br><span class="line"><span class="keyword">from</span> information_schema.tables</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> table_schema</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">sum</span>(data_length) <span class="keyword">desc</span>, <span class="keyword">sum</span>(index_length) <span class="keyword">desc</span>; </span><br></pre></td></tr></table></figure>
 
 <h3 id="查看所有数据库各表容量大小"><a href="#查看所有数据库各表容量大小" class="headerlink" title="查看所有数据库各表容量大小"></a><strong>查看所有数据库各表容量大小</strong></h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">table_schema <span class="keyword">as</span> <span class="string">&#x27;数据库&#x27;</span>, </span><br><span class="line">table_name <span class="keyword">as</span> <span class="string">&#x27;表名&#x27;</span>,</span><br><span class="line">table_rows <span class="keyword">as</span> <span class="string">&#x27;记录数&#x27;</span>,</span><br><span class="line"><span class="keyword">truncate</span>(data_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>) <span class="keyword">as</span> <span class="string">&#x27;数据容量(MB)&#x27;</span>,</span><br><span class="line"><span class="keyword">truncate</span>(index_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>) <span class="keyword">as</span> <span class="string">&#x27;索引容量(MB)&#x27;</span></span><br><span class="line"><span class="keyword">from</span> information_schema.tables</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> data_length <span class="keyword">desc</span>, index_length <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
 
-
-
+<h2 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a>数据库优化</h2><h3 id="大表数据查询如何进行优化？"><a href="#大表数据查询如何进行优化？" class="headerlink" title="大表数据查询如何进行优化？"></a>大表数据查询如何进行优化？</h3><ul>
+<li>索引优化</li>
+<li>SQL语句优化</li>
+<li>水平拆分 </li>
+<li>垂直拆分</li>
+<li>建立中间表</li>
+<li>使用缓存技术</li>
+<li>固定长度的表访问起来更快</li>
+<li>越小的列访问越快</li>
+</ul>
+<h3 id="大表如何优化？"><a href="#大表如何优化？" class="headerlink" title="大表如何优化？"></a><strong>大表如何优化？</strong></h3><ul>
+<li>限定数据的范围：避免不带任何限制数据范围条件的查询语句。</li>
+<li>读写分离：主库负责写，从库负责读。</li>
+<li>垂直分表：将一个表按照字段分成多个表，每个表存储其中一部分字段。</li>
+<li>水平分表：在同一个数据库内，把一个表的数据按照一定规则拆分到多个表中。</li>
+<li>对单表进行优化：对表中的字段、索引、查询SQL进行优化。</li>
+<li>添加缓存</li>
+</ul>
 <p>参考：<a href="https://javaguide.cn/database/sql/sql-syntax-summary.html">https://javaguide.cn/database/sql/sql-syntax-summary.html</a></p>
+<p>参考：<a href="https://www.cnblogs.com/llzhang123/p/9239682.html">https://www.cnblogs.com/llzhang123/p/9239682.html</a></p>
+<p>参考：<a href="https://zhuanlan.zhihu.com/p/346064689">https://zhuanlan.zhihu.com/p/346064689</a></p>
+<p>参考：<a href="https://www.tizi365.com/question/topic-411.html">https://www.tizi365.com/question/topic-411.html</a></p>
+<h2 id="MySQL特性"><a href="#MySQL特性" class="headerlink" title="MySQL特性"></a>MySQL特性</h2><h3 id="on-duplicate-key-update"><a href="#on-duplicate-key-update" class="headerlink" title="on duplicate key update"></a>on duplicate key update</h3><p>主要作用是当插入的数据中含<strong>主键或唯一索引</strong>，且数据库中<strong>已存在</strong>时，该语句将会进行<strong>更新</strong>操作；而<strong>不存在时</strong>则会<strong>插入</strong>。</p>
+<p><strong>SQL使用范例</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">table</span> (<span class="keyword">id</span>,A,B,C) <span class="keyword">VALUES</span> (<span class="number">9</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>),(<span class="number">10</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)  </span><br><span class="line">      <span class="keyword">ON</span> <span class="keyword">DUPLICATE</span> <span class="keyword">KEY</span> <span class="keyword">UPDATE</span> C=<span class="keyword">VALUES</span>(A)+<span class="keyword">VALUES</span>(B),A=<span class="keyword">VALUES</span>(A),B=<span class="keyword">VALUES</span>(B);   </span><br><span class="line"><span class="comment">--- 存在重复记录时(主键或唯一索引重复)，上面的语句即为更新</span></span><br><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">table</span> <span class="keyword">SET</span> c=A+B,A=A,B=B <span class="keyword">WHERE</span> <span class="keyword">id</span>=<span class="number">9</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">table</span> <span class="keyword">SET</span> c=A+B,A=A,B=B <span class="keyword">WHERE</span> <span class="keyword">id</span>=<span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>mybatis使用范例</strong></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">&quot;insertOrUpdate&quot;</span> <span class="attr">paramerType</span>=<span class="string">&quot;java.util.List&quot;</span>&gt;</span></span><br><span class="line">    insert into table (id,A,B,C) </span><br><span class="line">    VALUES</span><br><span class="line">     <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span> =<span class="string">&quot;list&quot;</span> <span class="attr">item</span>=<span class="string">&quot;item&quot;</span> <span class="attr">separator</span> =<span class="string">&quot;,&quot;</span>&gt;</span></span><br><span class="line">             ( #&#123;item.id&#125;, #&#123;item.A&#125;,#&#123;item.B&#125;,#&#123;item.C&#125;)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line">    ON DUPLICATE KEY UPDATE </span><br><span class="line">    id = VALUES(id),</span><br><span class="line">    A = VALUES(A),B = VALUES(B),C = VALUES(C)</span><br><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>可能会产生死锁(<strong>dead Lock</strong>)</p>
+<p>1、执行 insert …… on duplicate key update</p>
+<p>2、key已存在，获取该记录的<strong>S锁</strong>，获取该记录</p>
+<p>3、对读取的记录进行修改</p>
+<p>4、修改写进存储引擎，给该记录加上<strong>X锁</strong></p>
+<p>如果两个事务同时执行该语句，3、4步交叉执行则会产生死锁</p>
+<p><a href="https://www.cnblogs.com/better-farther-world2099/articles/11737376.html">https://www.cnblogs.com/better-farther-world2099/articles/11737376.html</a></p>
+<h3 id="insert-ignore"><a href="#insert-ignore" class="headerlink" title="insert ignore"></a>insert ignore</h3><p>主要作用是当插入的数据中含<strong>主键或唯一索引</strong>，且数据库中<strong>已存在</strong>时，该语句将<strong>停止</strong>执行；而<strong>不存在时</strong>则会<strong>插入</strong>。</p>
+<p>**SQL使用范例</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">ignore</span> <span class="keyword">INTO</span> <span class="keyword">table</span> (<span class="keyword">id</span>,A,B,C) <span class="keyword">VALUES</span> (<span class="number">9</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>),(<span class="number">10</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)  </span><br></pre></td></tr></table></figure>
+
+<h3 id="IP转换"><a href="#IP转换" class="headerlink" title="IP转换"></a>IP转换</h3><p>IP转为整形节省空间，易于存储，查找</p>
+<ul>
+<li><code>INET_ATON()</code> ： 把 ip 转为无符号整型 (4-8 位)</li>
+<li><code>INET_NTOA()</code> :把整型的 ip 转为地址</li>
+</ul>
 ]]></content>
       <categories>
         <category>学海无涯</category>
@@ -2095,5 +2144,323 @@
         <tag>LeetCode</tag>
         <tag>竞赛</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Redis知识及应用</title>
+    <url>/2023/03/16/474bac5cf7e4/</url>
+    <content><![CDATA[<h1 id="Redis知识及应用"><a href="#Redis知识及应用" class="headerlink" title="Redis知识及应用"></a>Redis知识及应用</h1><h2 id="排行榜实现"><a href="#排行榜实现" class="headerlink" title="排行榜实现"></a>排行榜实现</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#添加一个</span></span><br><span class="line">zadd money_rank 100 zyf</span><br><span class="line"></span><br><span class="line"><span class="comment">#为 zyf 这个元素的得分 加上 3</span></span><br><span class="line">zincrby money_rank 3 zyf</span><br><span class="line"></span><br><span class="line"><span class="comment">#去处前三名</span></span><br><span class="line">zrange money_rank 0 3</span><br><span class="line"></span><br><span class="line"><span class="comment">#列出全部，并显示分数(从低到高）</span></span><br><span class="line">zrange money_rank 0 -1 withscores</span><br><span class="line"></span><br><span class="line"><span class="comment">#列出全部，并显示分数(从高到低）</span></span><br><span class="line">zrevrange WARNING_COUNT_RANK 0 -1 withscores</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看有多少人</span></span><br><span class="line">zcard money_rank</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看 zyf 的排名次序</span></span><br><span class="line">zrank money_rank zyf</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看 zyf 的排名次序 （倒序）</span></span><br><span class="line">zrevrank rank zyf</span><br><span class="line"></span><br><span class="line"><span class="comment">#移除</span></span><br><span class="line">zrem money_rank zyf</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>参考：<a href="https://www.jianshu.com/p/834b4e3ba980">https://www.jianshu.com/p/834b4e3ba980</a></p>
+]]></content>
+      <categories>
+        <category>学海无涯</category>
+      </categories>
+      <tags>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Fetch模拟请求</title>
+    <url>/2023/04/24/5578338b382a/</url>
+    <content><![CDATA[<h1 id="Fetch模拟请求"><a href="#Fetch模拟请求" class="headerlink" title="Fetch模拟请求"></a>Fetch模拟请求</h1><p>当有接口需要测试的时候，以前的想法都是采用postman保存URL，并从浏览器中复制cookie进行测试。最近发现了<strong>fetch</strong>这个工具，可以在浏览器控制台下模拟请求，直接就可以使用浏览器的用户环境，无需构造cookie，请求头等。这个工具对于简单的接口测试还是非常有效率的！</p>
+<a id="more"></a>
+
+<h2 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h2><h3 id="json对象的数据格式"><a href="#json对象的数据格式" class="headerlink" title="json对象的数据格式"></a><strong>json对象的数据格式</strong></h3><p>以json形式打印</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">fetch(<span class="string">&#x27;apiUrl&#x27;</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> res.json()</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="text文本的数据格式"><a href="#text文本的数据格式" class="headerlink" title="text文本的数据格式"></a><strong>text文本的数据格式</strong></h3><p>以文本形式打印</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">fetch(<span class="string">&#x27;apiUrl&#x27;</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> res.text()</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h2><h3 id="form-格式"><a href="#form-格式" class="headerlink" title="form 格式"></a>form 格式</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">fetch(<span class="string">&quot;apiUrl&quot;</span>, &#123;</span><br><span class="line">	method: <span class="string">&quot;post&quot;</span>,</span><br><span class="line">	headers: &#123;</span><br><span class="line">        <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&quot;application/x‐www‐form‐urlencoded&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">	body: <span class="string">&quot;name=CourageHe&amp;age=23&quot;</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> res.json()).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(res);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="application-json编码格式："><a href="#application-json编码格式：" class="headerlink" title="application/json编码格式："></a><strong>application/json编码格式：</strong></h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">fetch(<span class="string">&quot;apiUrl&quot;</span>, &#123;</span><br><span class="line">	method: <span class="string">&quot;post&quot;</span>,</span><br><span class="line">	headers: &#123;</span><br><span class="line">        <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&quot;application/json&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">	body: <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">	    <span class="string">&quot;name&quot;</span>:<span class="number">1</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> res.json()).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(res);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>实用工具</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式应用</title>
+    <url>/2023/04/24/ea70f58465a7/</url>
+    <content><![CDATA[<h1 id="正则表达式应用"><a href="#正则表达式应用" class="headerlink" title="正则表达式应用"></a>正则表达式应用</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><p>下表包含了元字符的完整列表以及它们在正则表达式上下文中的行为：</p>
+<table>
+<thead>
+<tr>
+<th align="left">字符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">\</td>
+<td align="left">将下一个字符标记为一个特殊字符、或一个原义字符、或一个 向后引用、或一个八进制转义符。例如，’n’ 匹配字符 “n”。’\n’ 匹配一个换行符。序列 ‘\‘ 匹配 “&quot; 而 “(“ 则匹配 “(“。</td>
+</tr>
+<tr>
+<td align="left">^</td>
+<td align="left">匹配输入字符串的开始位置。如果设置了 RegExp 对象的 Multiline 属性，^ 也匹配 ‘\n’ 或 ‘\r’ 之后的位置。</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">匹配输入字符串的结束位置。如果设置了RegExp 对象的 Multiline 属性，$ 也匹配 ‘\n’ 或 ‘\r’ 之前的位置。</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">匹配前面的子表达式零次或多次。例如，zo* 能匹配 “z” 以及 “zoo”。* 等价于{0,}。</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td align="left">匹配前面的子表达式一次或多次。例如，’zo+’ 能匹配 “zo” 以及 “zoo”，但不能匹配 “z”。+ 等价于 {1,}。</td>
+</tr>
+<tr>
+<td align="left">?</td>
+<td align="left">匹配前面的子表达式零次或一次。例如，”do(es)?” 可以匹配 “do” 或 “does” 。? 等价于 {0,1}。</td>
+</tr>
+<tr>
+<td align="left">{n}</td>
+<td align="left">n 是一个非负整数。匹配确定的 n 次。例如，’o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o。</td>
+</tr>
+<tr>
+<td align="left">{n,}</td>
+<td align="left">n 是一个非负整数。至少匹配n 次。例如，’o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。’o{1,}’ 等价于 ‘o+’。’o{0,}’ 则等价于 ‘o*’。</td>
+</tr>
+<tr>
+<td align="left">{n,m}</td>
+<td align="left">m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，”o{1,3}” 将匹配 “fooooood” 中的前三个 o。’o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+<tr>
+<td align="left">?</td>
+<td align="left">当该字符紧跟在任何一个其他限制符 (*, +, ?, {n}, {n,}, {n,m}) 后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串 “oooo”，’o+?’ 将匹配单个 “o”，而 ‘o+’ 将匹配所有 ‘o’。</td>
+</tr>
+<tr>
+<td align="left">.</td>
+<td align="left">匹配除换行符（\n、\r）之外的任何单个字符。要匹配包括 ‘\n’ 在内的任何字符，请使用像”<strong>(.|\n)</strong>“的模式。</td>
+</tr>
+<tr>
+<td align="left">(pattern)</td>
+<td align="left">匹配 pattern 并获取这一匹配。所获取的匹配可以从产生的 Matches 集合得到，在VBScript 中使用 SubMatches 集合，在JScript 中则使用 $0…$9 属性。要匹配圆括号字符，请使用 ‘(‘ 或 ‘)‘。</td>
+</tr>
+<tr>
+<td align="left">(?:pattern)</td>
+<td align="left">匹配 pattern 但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用 “或” 字符 (|) 来组合一个模式的各个部分是很有用。例如， ‘industr(?:y|ies) 就是一个比 ‘industry|industries’ 更简略的表达式。</td>
+</tr>
+<tr>
+<td align="left">(?=pattern)</td>
+<td align="left">正向肯定预查（look ahead positive assert），在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，”Windows(?=95|98|NT|2000)”能匹配”Windows2000”中的”Windows”，但不能匹配”Windows3.1”中的”Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td align="left">(?!pattern)</td>
+<td align="left">正向否定预查(negative assert)，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如”Windows(?!95|98|NT|2000)”能匹配”Windows3.1”中的”Windows”，但不能匹配”Windows2000”中的”Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td align="left">(?&lt;=pattern)</td>
+<td align="left">反向(look behind)肯定预查，与正向肯定预查类似，只是方向相反。例如，”`(?&lt;=95</td>
+</tr>
+<tr>
+<td align="left">(?&lt;!pattern)</td>
+<td align="left">反向否定预查，与正向否定预查类似，只是方向相反。例如”`(?&lt;!95</td>
+</tr>
+<tr>
+<td align="left">x|y</td>
+<td align="left">匹配 x 或 y。例如，’z|food’ 能匹配 “z” 或 “food”。’(z|f)ood’ 则匹配 “zood” 或 “food”。</td>
+</tr>
+<tr>
+<td align="left">[xyz]</td>
+<td align="left">字符集合。匹配所包含的任意一个字符。例如， ‘[abc]’ 可以匹配 “plain” 中的 ‘a’。</td>
+</tr>
+<tr>
+<td align="left">[^xyz]</td>
+<td align="left">负值字符集合。匹配未包含的任意字符。例如， ‘[^abc]’ 可以匹配 “plain” 中的’p’、’l’、’i’、’n’。</td>
+</tr>
+<tr>
+<td align="left">[a-z]</td>
+<td align="left">字符范围。匹配指定范围内的任意字符。例如，’[a-z]’ 可以匹配 ‘a’ 到 ‘z’ 范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td align="left">[^a-z]</td>
+<td align="left">负值字符范围。匹配任何不在指定范围内的任意字符。例如，’[^a-z]’ 可以匹配任何不在 ‘a’ 到 ‘z’ 范围内的任意字符。</td>
+</tr>
+<tr>
+<td align="left">\b</td>
+<td align="left">匹配一个单词边界，也就是指单词和空格间的位置。例如， ‘er\b’ 可以匹配”never” 中的 ‘er’，但不能匹配 “verb” 中的 ‘er’。</td>
+</tr>
+<tr>
+<td align="left">\B</td>
+<td align="left">匹配非单词边界。’er\B’ 能匹配 “verb” 中的 ‘er’，但不能匹配 “never” 中的 ‘er’。</td>
+</tr>
+<tr>
+<td align="left">\cx</td>
+<td align="left">匹配由 x 指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符。</td>
+</tr>
+<tr>
+<td align="left">\d</td>
+<td align="left">匹配一个数字字符。等价于 [0-9]。</td>
+</tr>
+<tr>
+<td align="left">\D</td>
+<td align="left">匹配一个非数字字符。等价于 [^0-9]。</td>
+</tr>
+<tr>
+<td align="left">\f</td>
+<td align="left">匹配一个换页符。等价于 \x0c 和 \cL。</td>
+</tr>
+<tr>
+<td align="left">\n</td>
+<td align="left">匹配一个换行符。等价于 \x0a 和 \cJ。</td>
+</tr>
+<tr>
+<td align="left">\r</td>
+<td align="left">匹配一个回车符。等价于 \x0d 和 \cM。</td>
+</tr>
+<tr>
+<td align="left">\s</td>
+<td align="left">匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td align="left">\S</td>
+<td align="left">匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td align="left">\t</td>
+<td align="left">匹配一个制表符。等价于 \x09 和 \cI。</td>
+</tr>
+<tr>
+<td align="left">\v</td>
+<td align="left">匹配一个垂直制表符。等价于 \x0b 和 \cK。</td>
+</tr>
+<tr>
+<td align="left">\w</td>
+<td align="left">匹配字母、数字、下划线。等价于’[A-Za-z0-9_]’。</td>
+</tr>
+<tr>
+<td align="left">\W</td>
+<td align="left">匹配非字母、数字、下划线。等价于 ‘[^A-Za-z0-9_]’。</td>
+</tr>
+<tr>
+<td align="left">\xn</td>
+<td align="left">匹配 n，其中 n 为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，’\x41’ 匹配 “A”。’\x041’ 则等价于 ‘\x04’ &amp; “1”。正则表达式中可以使用 ASCII 编码。</td>
+</tr>
+<tr>
+<td align="left">\num</td>
+<td align="left">匹配 num，其中 num 是一个正整数。对所获取的匹配的引用。例如，’(.)\1’ 匹配两个连续的相同字符。</td>
+</tr>
+<tr>
+<td align="left">\n</td>
+<td align="left">标识一个八进制转义值或一个向后引用。如果 \n 之前至少 n 个获取的子表达式，则 n 为向后引用。否则，如果 n 为八进制数字 (0-7)，则 n 为一个八进制转义值。</td>
+</tr>
+<tr>
+<td align="left">\nm</td>
+<td align="left">标识一个八进制转义值或一个向后引用。如果 \nm 之前至少有 nm 个获得子表达式，则 nm 为向后引用。如果 \nm 之前至少有 n 个获取，则 n 为一个后跟文字 m 的向后引用。如果前面的条件都不满足，若 n 和 m 均为八进制数字 (0-7)，则 \nm 将匹配八进制转义值 nm。</td>
+</tr>
+<tr>
+<td align="left">\nml</td>
+<td align="left">如果 n 为八进制数字 (0-3)，且 m 和 l 均为八进制数字 (0-7)，则匹配八进制转义值 nml。</td>
+</tr>
+<tr>
+<td align="left">\un</td>
+<td align="left">匹配 n，其中 n 是一个用四个十六进制数字表示的 Unicode 字符。例如， \u00A9 匹配版权符号 (?)。</td>
+</tr>
+</tbody></table>
+<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><p>正则表达式从左到右进行计算，并遵循优先级顺序，这与算术表达式非常类似。</p>
+<p>相同优先级的从左到右进行运算，不同优先级的运算先高后低。下表从最高到最低说明了各种正则表达式运算符的优先级顺序：</p>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">\</td>
+<td align="left">转义符</td>
+</tr>
+<tr>
+<td align="left">(), (?:), (?=), []</td>
+<td align="left">圆括号和方括号</td>
+</tr>
+<tr>
+<td align="left">*, +, ?, {n}, {n,}, {n,m}</td>
+<td align="left">限定符</td>
+</tr>
+<tr>
+<td align="left">^, $, \任何元字符、任何字符</td>
+<td align="left">定位点和序列（即：位置和顺序）</td>
+</tr>
+<tr>
+<td align="left">|</td>
+<td align="left">替换，”或”操作 字符具有高于替换运算符的优先级，使得”m|food”匹配”m”或”food”。若要匹配”mood”或”food”，请使用括号创建子表达式，从而产生”(m|f)ood”。</td>
+</tr>
+</tbody></table>
+<h3 id="定位符"><a href="#定位符" class="headerlink" title="定位符"></a>定位符</h3><p>定位符使您能够将正则表达式固定到行首或行尾。它们还使您能够创建这样的正则表达式，这些正则表达式出现在一个单词内、在一个单词的开头或者一个单词的结尾。</p>
+<p>定位符用来描述字符串或单词的边界，<strong>^</strong> 和 <strong>$</strong> 分别指字符串的开始与结束，<strong>\b</strong> 描述单词的前或后边界，<strong>\B</strong> 表示非单词边界。</p>
+<p>正则表达式的定位符有：</p>
+<table>
+<thead>
+<tr>
+<th align="left">字符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">^</td>
+<td align="left">匹配输入字符串开始的位置。如果设置了 RegExp 对象的 Multiline 属性，^ 还会与 \n 或 \r 之后的位置匹配。</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">匹配输入字符串结尾的位置。如果设置了 RegExp 对象的 Multiline 属性，$ 还会与 \n 或 \r 之前的位置匹配。</td>
+</tr>
+<tr>
+<td align="left">\b</td>
+<td align="left">匹配一个单词边界，即字与空格间的位置。</td>
+</tr>
+<tr>
+<td align="left">\B</td>
+<td align="left">非单词边界匹配。</td>
+</tr>
+</tbody></table>
+<h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><p>用圆括号 <strong>()</strong> 将所有选择项括起来，相邻的选择项之间用 <strong>|</strong> 分隔。</p>
+<p><strong>()</strong> 表示捕获分组，**()** 会把每个分组里的匹配的值保存起来， 多个匹配值可以通过数字 n 来查看(<strong>n</strong> 是一个数字，表示第 n 个捕获组的内容)。</p>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>下表列出了正则表达式常用的修饰符：</p>
+<table>
+<thead>
+<tr>
+<th align="left">修饰符</th>
+<th align="left">含义</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">i</td>
+<td align="left">ignore - 不区分大小写</td>
+<td align="left">将匹配设置为不区分大小写，搜索时不区分大小写: A 和 a 没有区别。</td>
+</tr>
+<tr>
+<td align="left">g</td>
+<td align="left">global - 全局匹配</td>
+<td align="left">查找所有的匹配项。</td>
+</tr>
+<tr>
+<td align="left">m</td>
+<td align="left">multi line - 多行匹配</td>
+<td align="left">使边界字符 <strong>^</strong> 和 <strong>$</strong> 匹配每一行的开头和结尾，记住是多行，而不是整个字符串的开头和结尾。</td>
+</tr>
+<tr>
+<td align="left">s</td>
+<td align="left">特殊字符圆点 <strong>.</strong> 中包含换行符 <strong>\n</strong></td>
+<td align="left">默认情况下的圆点 <strong>.</strong> 是匹配除换行符 <strong>\n</strong> 之外的任何字符，加上 <strong>s</strong> 修饰符之后, <strong>.</strong> 中包含换行符 \n。</td>
+</tr>
+</tbody></table>
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><h3 id="邮箱"><a href="#邮箱" class="headerlink" title="邮箱"></a>邮箱</h3><h3 id="手机号"><a href="#手机号" class="headerlink" title="手机号"></a>手机号</h3><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">/fdfd/&#123;id&#125;</span><br><span class="line"></span><br><span class="line">\&#123;[\S]*\&#125;</span><br><span class="line">/fdfd/courage.he@gmail.com/</span><br><span class="line">/fdfd/[a-zA-Z0-9@\-\.#%\$&amp;\+=_]+</span><br><span class="line"></span><br><span class="line">/fdfd/courag/</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> Pattern <span class="title">preCompile</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 如果url没有以/ 结尾，则默认添加/结尾</span></span><br><span class="line">  url = url.endsWith(<span class="string">&quot;/&quot;</span>) ? url : url.concat(<span class="string">&quot;/&quot;</span>);</span><br><span class="line">  <span class="comment">// 替换&#123;..&#125; 的内容</span></span><br><span class="line">  url = url.replaceAll(<span class="string">&quot;\\&#123;[^&#125;]*\\&#125;&quot;</span>, <span class="string">&quot;[a-zA-Z0-9@\\\\-\\.#%\\$&amp;\\+=_]+&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将/ 专业换为\/</span></span><br><span class="line">  url = <span class="string">&quot;^(&quot;</span> + url.replaceAll(<span class="string">&quot;/&quot;</span>, <span class="string">&quot;\\\\/&quot;</span>) + <span class="string">&quot;)$&quot;</span>;</span><br><span class="line">  <span class="keyword">return</span> Pattern.compile(url);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>实用工具</category>
+      </categories>
   </entry>
 </search>

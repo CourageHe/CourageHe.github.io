@@ -6,7 +6,7 @@
   <link href="https://couragehe.github.io/atom.xml" rel="self"/>
   
   <link href="https://couragehe.github.io/"/>
-  <updated>2023-03-05T14:24:50.152Z</updated>
+  <updated>2023-04-23T17:12:57.741Z</updated>
   <id>https://couragehe.github.io/</id>
   
   <author>
@@ -15,6 +15,73 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式应用</title>
+    <link href="https://couragehe.github.io/2023/04/24/ea70f58465a7/"/>
+    <id>https://couragehe.github.io/2023/04/24/ea70f58465a7/</id>
+    <published>2023-04-23T17:12:28.000Z</published>
+    <updated>2023-04-23T17:12:57.741Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;正则表达式应用&quot;&gt;&lt;a href=&quot;#正则表达式应用&quot; class=&quot;headerlink&quot; title=&quot;正则表达式应用&quot;&gt;&lt;/a&gt;正则表达式应用&lt;/h1&gt;&lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="实用工具" scheme="https://couragehe.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Fetch模拟请求</title>
+    <link href="https://couragehe.github.io/2023/04/24/5578338b382a/"/>
+    <id>https://couragehe.github.io/2023/04/24/5578338b382a/</id>
+    <published>2023-04-23T16:55:28.000Z</published>
+    <updated>2023-04-23T16:57:43.573Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Fetch模拟请求&quot;&gt;&lt;a href=&quot;#Fetch模拟请求&quot; class=&quot;headerlink&quot; title=&quot;Fetch模拟请求&quot;&gt;&lt;/a&gt;Fetch模拟请求&lt;/h1&gt;&lt;p&gt;当有接口需要测试的时候，以前的想法都是采用postman保存URL，并从浏览器中复制cookie进行测试。最近发现了&lt;strong&gt;fetch&lt;/strong&gt;这个工具，可以在浏览器控制台下模拟请求，直接就可以使用浏览器的用户环境，无需构造cookie，请求头等。这个工具对于简单的接口测试还是非常有效率的！&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="实用工具" scheme="https://couragehe.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="JavaScript" scheme="https://couragehe.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis知识及应用</title>
+    <link href="https://couragehe.github.io/2023/03/16/474bac5cf7e4/"/>
+    <id>https://couragehe.github.io/2023/03/16/474bac5cf7e4/</id>
+    <published>2023-03-16T11:50:44.000Z</published>
+    <updated>2023-03-16T11:50:49.176Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Redis知识及应用&quot;&gt;&lt;a href=&quot;#Redis知识及应用&quot; class=&quot;headerlink&quot; title=&quot;Redis知识及应用&quot;&gt;&lt;/a&gt;Redis知识及应用&lt;/h1&gt;&lt;h2 id=&quot;排行榜实现&quot;&gt;&lt;a href=&quot;#排行榜实现&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学海无涯" scheme="https://couragehe.github.io/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
+    
+    
+    <category term="Redis" scheme="https://couragehe.github.io/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>第 99 双周赛&amp;第335场周赛</title>
@@ -49,7 +116,7 @@
     <link href="https://couragehe.github.io/2023/03/01/691bbc5b3562/"/>
     <id>https://couragehe.github.io/2023/03/01/691bbc5b3562/</id>
     <published>2023-03-01T06:52:44.000Z</published>
-    <updated>2023-03-01T11:56:57.453Z</updated>
+    <updated>2023-04-23T16:27:22.720Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;SQL知识小结&quot;&gt;&lt;a href=&quot;#SQL知识小结&quot; class=&quot;headerlink&quot; title=&quot;SQL知识小结&quot;&gt;&lt;/a&gt;SQL知识小结&lt;/h1&gt;&lt;h2 id=&quot;常用函数&quot;&gt;&lt;a href=&quot;#常用函数&quot; class=&quot;headerlink&quot; title=&quot;常用函数&quot;&gt;&lt;/a&gt;常用函数&lt;/h2&gt;&lt;p&gt;不同数据库的函数往往各不相同，因此不可移植。本节主要以 MySQL 的函数为例。&lt;/p&gt;
@@ -468,86 +535,6 @@
     <category term="LeetCode" scheme="https://couragehe.github.io/tags/LeetCode/"/>
     
     <category term="每日一题" scheme="https://couragehe.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>剑指 Offer 03. 数组中重复的数字</title>
-    <link href="https://couragehe.github.io/2021/01/26/3000b056946c/"/>
-    <id>https://couragehe.github.io/2021/01/26/3000b056946c/</id>
-    <published>2021-01-25T16:25:23.000Z</published>
-    <updated>2023-02-15T06:54:06.865Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;剑指-Offer-03-数组中重复的数字&quot;&gt;&lt;a href=&quot;#剑指-Offer-03-数组中重复的数字&quot; class=&quot;headerlink&quot; title=&quot;剑指 Offer 03. 数组中重复的数字&quot;&gt;&lt;/a&gt;剑指 Offer 03. 数组中重复的数字&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;题目来源：剑指Offer03&lt;/p&gt;
-&lt;p&gt;题目链接：&lt;a href=&quot;https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/&quot;&gt;https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;找出数组中重复的数字。&lt;/p&gt;
-&lt;p&gt;在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。&lt;/p&gt;
-&lt;p&gt;示例 1：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[2, 3, 1, 0, 2, 5, 3]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出：2 或 3 &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-
-&lt;p&gt;限制：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;2 &amp;lt;= n &amp;lt;= 100000&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Algorithm" scheme="https://couragehe.github.io/categories/Algorithm/"/>
-    
-    
-    <category term="LeetCode" scheme="https://couragehe.github.io/tags/LeetCode/"/>
-    
-    <category term="剑指 Offer" scheme="https://couragehe.github.io/tags/%E5%89%91%E6%8C%87-Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GitBlit安装与使用</title>
-    <link href="https://couragehe.github.io/2021/01/18/e4bb3bf545c5/"/>
-    <id>https://couragehe.github.io/2021/01/18/e4bb3bf545c5/</id>
-    <published>2021-01-17T17:25:58.000Z</published>
-    <updated>2023-02-15T06:54:06.831Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;GitBlit安装&quot;&gt;&lt;a href=&quot;#GitBlit安装&quot; class=&quot;headerlink&quot; title=&quot;GitBlit安装&quot;&gt;&lt;/a&gt;GitBlit安装&lt;/h1&gt;&lt;h2 id=&quot;1-安装&quot;&gt;&lt;a href=&quot;#1-安装&quot; class=&quot;headerlink&quot; title=&quot;1. 安装&quot;&gt;&lt;/a&gt;1. 安装&lt;/h2&gt;&lt;p&gt;要求Windows电脑安装JAVA环境，在&lt;a href=&quot;http://gitblit.github.io/gitblit/&quot;&gt;GitBlit首页&lt;/a&gt;可根据操作系统选择不同的版本安装。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/data/20210117200211.png&quot; alt=&quot;image-20210117200211238&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Git" scheme="https://couragehe.github.io/categories/Git/"/>
-    
-    
-    <category term="Windows" scheme="https://couragehe.github.io/tags/Windows/"/>
-    
-    <category term="Git" scheme="https://couragehe.github.io/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FRP内网穿透</title>
-    <link href="https://couragehe.github.io/2021/01/17/dd7e0bbf808e/"/>
-    <id>https://couragehe.github.io/2021/01/17/dd7e0bbf808e/</id>
-    <published>2021-01-17T11:43:46.000Z</published>
-    <updated>2023-02-15T06:54:06.617Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;FRP内网穿透&quot;&gt;&lt;a href=&quot;#FRP内网穿透&quot; class=&quot;headerlink&quot; title=&quot;FRP内网穿透&quot;&gt;&lt;/a&gt;FRP内网穿透&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;frp 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;使用缘由&quot;&gt;&lt;a href=&quot;#使用缘由&quot; class=&quot;headerlink&quot; title=&quot;使用缘由&quot;&gt;&lt;/a&gt;使用缘由&lt;/h2&gt;&lt;p&gt;因为疫情的原因，公司提前休假，在家办公。公司的测试环境还有私服GIT都是在内网下，出于安全考虑，不考虑将GIT仓库移至GITHUB、GITEE等平台。首先想到的解决方案是使用类似花生壳这种内网穿透的服务，但是考虑到服务的收费标准与本司的使用需求相差较大。公司有六、七个端口需要转发，使用期限为一个月左右，而花生壳的套餐是按年付费，且线路数有限制，增加线路另外收费。然后想到了本人在大二时候使用的一个开源的内网穿透的代理应用，比较符合公司的解决方案。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="实用工具" scheme="https://couragehe.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Windows" scheme="https://couragehe.github.io/tags/Windows/"/>
-    
-    <category term="Linux" scheme="https://couragehe.github.io/tags/Linux/"/>
     
   </entry>
   
